@@ -1,6 +1,6 @@
 title: Saif Way Technology
 description: Networking, Python, and System Admin Portfolio & Blog
-baseurl: "/saifway"  # set to "" for root URL, or "/repo-name" if using GitHub pages on repo
+baseurl: " "  # set to "" for root URL, or "/repo-name" if using GitHub pages on repo
 url: "https://github.com/Imran5693/saifway.git" # change to your actual URL when deployed
 
 plugins:
