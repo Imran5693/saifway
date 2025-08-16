@@ -1,0 +1,71 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+pagination:
+  enabled: true
+---
+
+<div class="container">
+
+  <h1 class="text-primary fw-bold mb-4">Blog Posts</h1>
+
+  <div class="row gy-4">
+    {% for post in paginator.posts %}
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow-sm h-100 border-0">
+        {% if post.thumbnail %}
+        <img src="{{ post.thumbnail }}" class="card-img-top" alt="Post Thumbnail" style="object-fit: cover; height: 180px;">
+        {% elsif post.youtube_id %}
+        <div class="ratio ratio-16x9">
+          <iframe src="https://www.youtube.com/embed/{{ post.youtube_id }}" title="YouTube video" allowfullscreen></iframe>
+        </div>
+        {% endif %}
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title text-primary">{{ post.title }}</h5>
+          <p class="card-text text-muted mb-4">
+            {{ post.excerpt | strip_html | truncatewords: 30 }}
+          </p>
+          <a href="{{ post.url }}" class="mt-auto btn btn-outline-primary align-self-start">
+            Read More
+          </a>
+          <small class="text-secondary mt-3">{{ post.date | date: "%b %d, %Y" }}</small>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <nav aria-label="Page navigation" class="mt-5 d-flex justify-content-center">
+    <ul class="pagination">
+      {% if paginator.previous_page %}
+        <li class="page-item">
+          <a href="{{ paginator.previous_page_path }}" class="page-link">Previous</a>
+        </li>
+      {% else %}
+        <li class="page-item disabled"><span class="page-link">Previous</span></li>
+      {% endif %}
+
+      {% for page_number in (1..paginator.total_pages) %}
+        {% if page_number == paginator.page %}
+          <li class="page-item active"><span class="page-link">{{ page_number }}</span></li>
+        {% else %}
+          <li class="page-item">
+            <a href="{{ paginator.paginate_path | replace: ':num', page_number }}" class="page-link">{{ page_number }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+
+      {% if paginator.next_page %}
+        <li class="page-item">
+          <a href="{{ paginator.next_page_path }}" class="page-link">Next</a>
+        </li>
+      {% else %}
+        <li class="page-item disabled"><span class="page-link">Next</span></li>
+      {% endif %}
+    </ul>
+  </nav>
+
+
+</div>
+

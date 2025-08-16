@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Designing a Hybrid Network Architecture for Outsourced Data Centre Backup - Saif Way Technology</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="/assets/css/style.css" rel="stylesheet" />
+
+<!-- Favicon -->
+<link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="A research-driven study on implementing a secure, high-availability hybrid network for outsourced backup operations, integrating on-premises and cloud data centers with QoS, ACLs, OSPF, and VPN GRE.">
+<meta name="keywords" content="networking, cybersecurity, python, system administration, IT solutions">
+<meta name="author" content="Imran Sarwar">
+
+<!-- Open Graph / Social Media Meta Tags -->
+<meta property="og:title" content="Designing a Hybrid Network Architecture for Outsourced Data Centre Backup - Saif Way Technology">
+<meta property="og:description" content="A research-driven study on implementing a secure, high-availability hybrid network for outsourced backup operations, integrating on-premises and cloud data centers with QoS, ACLs, OSPF, and VPN GRE.">
+<meta property="og:image" content="/assets/images/og-image.jpg">
+<meta property="og:url" content="http://localhost:4000/2024/05/20/hybrid-data-center.html">
+<meta property="og:type" content="website">
+</head>
+<body>
+  
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm mb-4 sticky-top" style="background-color: #d6eaff;">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="/">
+      
+        <img src="/assets/images/logo.jpg" alt="Brand Logo" class="brand-logo me-2">
+        <span class="brand-name">Saif Way Technology</span>
+      
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav fw-semibold">
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/certificates/">About me</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/projects/">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"
+             href="/blog/">Blog</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+  <main class="content-wrapper">
+    <div class="container my-5">
+
+  <!-- Post Header -->
+  <header class="mb-5 text-center">
+  <img src="/assets/images/projects/net-topology.jpg" alt="Designing a Hybrid Network Architecture for Outsourced Data Centre Backup thumbnail"
+       class="mb-3"
+       style="width: 100%; max-width: 800px; height: auto; object-fit: cover; border-radius: 8px; border: 3px solid #4364F7; box-shadow: 0 12px 30px rgba(67, 100, 247, 0.3);" />
+  <h1 class="display-4 fw-bold text-primary mt-3">Designing a Hybrid Network Architecture for Outsourced Data Centre Backup</h1>
+  <p class="text-muted fs-5">May 20, 2024</p>
+</header>
+
+
+
+  <!-- Post Content -->
+  <article class="content fs-5" style="line-height: 1.7; max-width: 900px; margin: auto;">
+    <h2 id="introduction">Introduction</h2>
+<p>The rapid growth of <strong>data-driven enterprises</strong> has placed immense pressure on IT infrastructures to provide <strong>scalability, resilience, and security</strong>. Organizations increasingly adopt <strong>hybrid network architectures</strong> that blend <strong>on-premises infrastructure</strong> with <strong>cloud resources</strong> to support <strong>business continuity</strong> and <strong>disaster recovery</strong>.</p>
+
+<p>This study presents the design and implementation of a <strong>Hybrid Data Centre Network</strong> tailored for <strong>outsourced backup operations</strong>. The project integrates <strong>on-premises servers</strong>, <strong>remote sites</strong>, and a <strong>cloud-based backup infrastructure</strong>, ensuring <strong>low latency, secure communication, and high availability</strong>.</p>
+
+<hr />
+
+<h2 id="research-and-planning">Research and Planning</h2>
+<p>A systematic research methodology was adopted prior to deployment, focusing on:</p>
+
+<ul>
+  <li><strong>Hybrid Network Models</strong> — Analysis of on-premises and cloud integration strategies, including cost, performance, and operational trade-offs.</li>
+  <li><strong>Backup and Disaster Recovery (BDR) Practices</strong> — Review of redundancy models, data protection mechanisms, and compliance requirements.</li>
+  <li><strong>Routing and Protocols</strong> — Evaluation of <strong>OSPF</strong> for dynamic routing and <strong>VPN GRE tunnels</strong> for secure interconnectivity.</li>
+  <li><strong>Security Mechanisms</strong> — Study of Access Control Lists (ACLs), encryption standards, and network segmentation.</li>
+  <li><strong>Traffic Engineering</strong> — Investigation of <strong>QoS mechanisms</strong> to ensure critical workloads remain unaffected by backup processes.</li>
+</ul>
+
+<h3 id="key-considerations">Key Considerations</h3>
+<ol>
+  <li>Guaranteeing <strong>data integrity</strong> across all locations.</li>
+  <li>Achieving <strong>low-latency, high-availability connectivity</strong> for mission-critical backups.</li>
+  <li>Maintaining <strong>security compliance</strong> with enterprise and regulatory standards.</li>
+  <li>Ensuring <strong>future scalability</strong> for expansion and cloud growth.</li>
+</ol>
+
+<hr />
+
+<h2 id="implementation">Implementation</h2>
+<p>The proposed network design included:</p>
+
+<ul>
+  <li><strong>On-Premises Data Centre</strong>
+    <ul>
+      <li>Core Server</li>
+      <li>Monitoring Server</li>
+      <li>Backup Server</li>
+      <li>Storage Area Network (SAN) devices</li>
+    </ul>
+  </li>
+  <li><strong>Two Remote Sites</strong>
+    <ul>
+      <li>Interconnected via serial links</li>
+      <li>High availability configured between redundant paths</li>
+    </ul>
+  </li>
+  <li><strong>Cloud Data Centre</strong>
+    <ul>
+      <li>Connected using <strong>VPN GRE tunnels</strong> with encryption and authentication</li>
+    </ul>
+  </li>
+  <li><strong>Dynamic Routing</strong>
+    <ul>
+      <li><strong>OSPF</strong> deployed for automated route exchange and optimized path selection</li>
+    </ul>
+  </li>
+  <li><strong>Security</strong>
+    <ul>
+      <li>ACLs configured at boundary routers to enforce least-privilege access</li>
+    </ul>
+  </li>
+  <li><strong>Traffic Optimization</strong>
+    <ul>
+      <li><strong>QoS policies</strong> applied to prioritize backup traffic while protecting production services</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Tools Utilized:</strong></p>
+<ul>
+  <li>Cisco Packet Tracer (latest version) for network simulation</li>
+  <li>Microsoft Visio for professional network topology design</li>
+</ul>
+
+<hr />
+
+<h2 id="challenges-and-solutions">Challenges and Solutions</h2>
+<ul>
+  <li>
+    <p><strong>Challenge 1: Balancing Backup vs. Production Traffic</strong><br />
+<em>Solution:</em> Applied QoS with strict traffic classes, protecting VoIP and real-time applications.</p>
+  </li>
+  <li>
+    <p><strong>Challenge 2: Securing Cloud Connectivity</strong><br />
+<em>Solution:</em> Configured VPN GRE tunnels with strong encryption and authentication for end-to-end data security.</p>
+  </li>
+  <li>
+    <p><strong>Challenge 3: OSPF Instability in Dual Remote Sites</strong><br />
+<em>Solution:</em> Implemented route summarization and optimized OSPF hello/dead timers to minimize route flapping.</p>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="testing-and-validation">Testing and Validation</h2>
+<p>The design was validated through rigorous testing:</p>
+
+<ul>
+  <li><strong>Connectivity Tests:</strong> End-to-end ping and traceroute verification.</li>
+  <li><strong>Redundancy Checks:</strong> Simulated link/node failures to confirm high availability.</li>
+  <li><strong>Security Validation:</strong> ACL and VPN tunnel enforcement testing.</li>
+  <li><strong>Performance Evaluation:</strong> QoS monitoring under simulated peak backup load.</li>
+</ul>
+
+<hr />
+
+<h2 id="results">Results</h2>
+<p>The final hybrid network achieved:</p>
+
+<ul>
+  <li><strong>100% uptime</strong> in simulated failover tests</li>
+  <li><strong>Secure encrypted data transfer</strong> between all nodes and the cloud</li>
+  <li><strong>Optimized traffic flows</strong>, ensuring backup operations did not affect production services</li>
+  <li><strong>Future-ready scalability</strong>, with modular expansion for new sites or cloud providers</li>
+</ul>
+
+<hr />
+
+<h2 id="lessons-learned">Lessons Learned</h2>
+<ul>
+  <li><strong>Security-first design</strong> is crucial; retrofitting ACLs and encryption later proved inefficient.</li>
+  <li><strong>QoS policies are non-negotiable</strong> in hybrid networks where backup traffic coexists with real-time applications.</li>
+  <li><strong>Comprehensive documentation</strong> of topology and policies significantly reduces troubleshooting and accelerates scaling.</li>
+</ul>
+
+<hr />
+
+<h2 id="conclusion">Conclusion</h2>
+<p>This research-based implementation highlights the significance of <strong>planning, security engineering, and traffic optimization</strong> in hybrid networks. The proposed architecture effectively combines <strong>on-premises infrastructure with cloud resources</strong>, delivering a <strong>robust, secure, and scalable platform</strong> for outsourced backup operations.</p>
+
+<p><strong>Download Detailed Configuration:</strong> <a href="/assets/images/pf.png">Hybrid Data Centre Config PDF</a></p>
+
+<h2 id="network-topology">Network Topology</h2>
+
+<p><img src="/assets/images/projects/NET-top.png" alt="Hybrid Network Topology" class="post-image" /></p>
+
+  </article>
+
+  <!-- Author Section -->
+  <div class="author-box mt-5 p-4 rounded shadow-sm bg-light" style="max-width: 900px; margin: auto;">
+    <div class="d-flex align-items-center">
+      <img src="/assets/\images\myprof.jpg" alt="Author" class="rounded-circle me-3" style="width: 80px; height: 80px; object-fit: cover;">
+      <div>
+        <h6 class="mb-1 fw-bold">Imran Sarwar</h6>
+        <p class="mb-1 text-muted" style="font-size: 0.95rem;">
+          Network & Cloud Engineer specializing in OpenStack, Python, and Automation.  
+          Passionate about building scalable, secure, and high-performing IT solutions.
+        </p>
+        <div>
+          <a href="https://linkedin.com/in/imransarwaritpro" target="_blank" class="me-2 text-decoration-none">
+            <i class="fab fa-linkedin fa-lg"></i>
+          </a>
+         <a href="https://www.facebook.com/profile.php?id=61563409706801" target="_blank" class="text-decoration-none">
+    <i class="fab fa-facebook fa-lg"></i>
+  </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related Posts Placeholder -->
+  <div class="related-posts mt-5" style="max-width: 900px; margin: auto;">
+    <h5 class="fw-bold mb-3 text-primary">You Might Also Like</h5>
+    <div class="row g-4">
+      <!-- Example related post card -->
+      <div class="col-md-6">
+        <div class="card h-100 border-0 shadow-sm">
+          <img src="/assets/images/projects/net-topology.jpg" class="card-img-top" alt="Related Post Thumbnail" style="height: 160px; object-fit: cover;">
+          <div class="card-body">
+            <h6 class="card-title fw-bold text-primary">Designing a Hybrid Network Architecture</h6>
+            <a href="/2024/05/20/hybrid-data-center.html" class="btn btn-outline-primary btn-sm mt-2">Read More</a>
+          </div>
+        </div>
+      </div>
+      <!-- Add more related posts as needed -->
+    </div>
+  </div>
+
+  <!-- Back to Blog Button -->
+  <div class="text-center mt-5">
+    <a href="/blog/" class="btn btn-primary btn-lg px-4">
+      ← Back to Blog
+    </a>
+  </div>
+
+</div>
+
+  </main>
+
+  <footer class="bg-dark text-white py-4 mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h5 class="mb-3">Saif Way Technology</h5>
+        <p>Advanced networking, automation, and system administration solutions tailored for success.</p>
+        <div class="social-links mb-3">
+          <a href="https://www.linkedin.com/in/imransarwaritpro/" class="text-white me-3"><i class="fab fa-linkedin fa-lg"></i></a>
+          <a href="#" class="text-white me-3"><i class="fab fa-facebook fa-lg"></i></a>
+          <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+          <a href="#" class="text-white"><i class="fas fa-envelope fa-lg"></i></a>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <h5 class="mb-3">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="/" class="text-white text-decoration-none">Home</a></li>
+          <li class="mb-2"><a href="/certificates/" class="text-white text-decoration-none">Certifications</a></li>
+          <li class="mb-2"><a href="/projects/" class="text-white text-decoration-none">Projects</a></li>
+          <li><a href="/blog/" class="text-white text-decoration-none">Blog</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h5 class="mb-3">Contact</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> DUBAI, UAE</li>
+          <li class="mb-2"><i class="fas fa-phone me-2"></i> +971 56 71 26 908</li>
+          <li><i class="fas fa-envelope me-2"></i> contact@saifway.com</li>
+        </ul>
+      </div>
+    </div>
+    <hr class="my-4 bg-secondary">
+    <div class="row">
+      <div class="col-md-6">
+        <p class="mb-0">&copy; 2013 - 2025 Saif Way Technology. All rights reserved.</p>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <p class="mb-0">Powered by Imran Sarwar</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top Button -->
+<a href="#" class="btn btn-primary back-to-top" title="Go to top">
+  <i class="fas fa-arrow-up"></i>
+</a>
+
+<!-- Bootstrap JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom JS -->
+<script src="/assets/js/script.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/js/script.js"></script>
+
+</body>
+</html>

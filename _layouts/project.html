@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<div class="container my-5">
+
+  <!-- Project Title -->
+  <h1 class="mb-4 fw-bold">{{ page.title }}</h1>
+
+  <!-- Project Thumbnail -->
+  {% if page.thumbnail %}
+    <img src="{{ page.thumbnail }}" alt="{{ page.title }}" class="img-fluid rounded shadow-sm mb-4">
+  {% endif %}
+
+  <!-- Project Metadata -->
+  <p class="text-muted mb-4">
+    {% if page.date %} <strong>Completed:</strong> {{ page.date | date: "%B %d, %Y" }} {% endif %}
+    {% if page.tags %} <br><strong>Technologies:</strong> {{ page.tags | join: ", " }} {% endif %}
+  </p>
+
+  <!-- Project Content -->
+  <div class="project-content mb-5">
+    {{ content }}
+  </div>
+
+  <!-- Back Button -->
+  <a href="{{ '/#projects' | relative_url }}" class="btn btn-primary">
+    ← Back to Projects
+  </a>
+
+</div>
+

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include head.html %}
+</head>
+<body>
+  {% unless page.url == "/" %}
+    {% include navbar.html %}
+  {% endunless %}
+
+  <main class="content-wrapper">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+
+  {% include scripts.html %}
+</body>
+</html>

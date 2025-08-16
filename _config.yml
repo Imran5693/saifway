@@ -1,0 +1,25 @@
+title: Saif Way Technology
+description: Networking, Python, and System Admin Portfolio & Blog
+baseurl: ""  # set to "" for root URL, or "/repo-name" if using GitHub pages on repo
+url: "http://localhost:4000" # change to your actual URL when deployed
+
+plugins:
+  - jekyll-paginate
+
+paginate: 5
+paginate_path: "/blog/page:num/"
+
+markdown: kramdown
+theme: null  # no theme, using custom layouts
+
+# Exclude unnecessary files/folders
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/

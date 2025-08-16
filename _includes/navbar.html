@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-light shadow-sm mb-4 sticky-top" style="background-color: #d6eaff;">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="{{ '/' | relative_url }}">
+      {% if page.url == '/certificates/' or page.url contains '/certificates/' %}
+        <img src="{{ '/assets/images/myprof.jpg' | relative_url }}" alt="My Photo" class="brand-logo me-2">
+        <span class="brand-name">Imran Sarwar</span>
+      {% else %}
+        <img src="{{ '/assets/images/logo.jpg' | relative_url }}" alt="Brand Logo" class="brand-logo me-2">
+        <span class="brand-name">Saif Way Technology</span>
+      {% endif %}
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav fw-semibold">
+        <li class="nav-item">
+          <a class="nav-link{% if page.url == '/certificates/' %} active{% endif %}"
+             href="{{ '/certificates/' | relative_url }}">About me</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link{% if page.url == '/projects/' %} active{% endif %}"
+             href="{{ '/projects/' | relative_url }}">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link{% if page.url == '/blog/' %} active{% endif %}"
+             href="{{ '/blog/' | relative_url }}">Blog</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
