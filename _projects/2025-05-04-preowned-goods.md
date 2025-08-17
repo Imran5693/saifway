@@ -3,7 +3,7 @@ layout: project
 title: "Buy and Sell Pre-Owned Goods"
 description: "A web application enabling users to buy and sell second-hand items with secure transactions, user profiles, and admin control."
 date: 2025-05-04
-thumbnail: /assets/images/projects\pre-owned-home_page.JPG
+thumbnail: "{{ site.baseurl }}/assets/images/projects\pre-owned-home_page.JPG"
 tags: ["Web Development", "Flask", "python", "Marketplace", "E-commerce"]
 ---
 
@@ -53,12 +53,12 @@ The platform provided:
 ### 📂 Showcase
 
 #### 📄 Reports  
-- [Download Project Report (PDF)](/assets/files/preowned-goods-report.pdf)  
+- [Download Project Report (PDF)]({{ site.baseurl }}/assets/files/preowned-goods-report.pdf)  
 
 #### 📑 Slides  
-- [Presentation Slides](/assets/slides/preowned-goods-presentation.pdf)  
+- [Presentation Slides]({{ site.baseurl }}/assets/slides/preowned-goods-presentation.pdf)  
 
 #### 🖼️ Images  
-- ![Homepage](/assets/images/projects\pre-owned-admin-panel.JPG)  
-- ![Product Listing](/assets/images/projects/pre-owned-product-listing.JPG)  
-- ![Admin Dashboard](/assets/images/projects/pre-owned-report-page.JPG)  
+- ![Homepage]({{ site.baseurl }}/assets/images/projects\pre-owned-admin-panel.JPG)  
+- ![Product Listing]({{ site.baseurl }}/assets/images/projects/pre-owned-product-listing.JPG)  
+- ![Admin Dashboard]({{ site.baseurl }}/assets/images/projects/pre-owned-report-page.JPG)  
