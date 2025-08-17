@@ -3,7 +3,7 @@ layout: project
 title: "Enhanced Interdepartmental Communication System (Campus Area Network)"
 description: "Simulated and deployed a secure, scalable campus network integrating interdepartmental communication with centralized management and security."
 date: 2024-05-10
-thumbnail: /assets/images/projects\network topology.jpg
+thumbnail: {{ site.baseurl }}/assets/images/projects\network topology.jpg
 tags: ["Networking", "Campus Network", "OSPF", "VLAN", "Security", "Active Directory"]
 ---
 
@@ -45,13 +45,13 @@ This setup simulated a **real-world enterprise campus network**, preparing for s
 ### 📂 Showcase
 
 #### 📄 Reports  
-- [Download Final Report (PDF)](/assets/files/idmui-final-report.pdf)  
-- [System Design Document](/assets/files/idmui-design.pdf)  
+- [Download Final Report (PDF)]({{ site.baseurl }}/assets/files/idmui-final-report.pdf)  
+- [System Design Document]({{ site.baseurl }}/assets/files/idmui-design.pdf)  
 
 #### 📑 Slides  
-- [Presentation Slides](/assets/slides/idmui-presentation.pdf)  
+- [Presentation Slides]({{ site.baseurl }}/assets/slides/idmui-presentation.pdf)  
 
 #### 🖼️ Images  
-- ![System Architecture](/assets/images/\projects\architectural diagram.jpg)  
-- ![Use Case Diagram](/assets/images/projects\usecase.jpg)  
-- ![Dashboard Screenshot](/assets/images/projects\MY NETWORK topology.PNG)  
+- ![System Architecture]({{ site.baseurl }}/assets/images/\projects\architectural diagram.jpg)  
+- ![Use Case Diagram]({{ site.baseurl }}/assets/images/projects\usecase.jpg)  
+- ![Dashboard Screenshot]({{ site.baseurl }}/assets/images/projects\MY NETWORK topology.PNG)  
