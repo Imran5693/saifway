@@ -3,7 +3,7 @@ layout: project
 title: "Hybrid Network Architecture for Outsourced Data Centre Backup"
 description: "A secure, high-availability hybrid network integrating on-premises backup infrastructure with cloud data center services, featuring QoS, OSPF, VPN GRE, and ACL-based security."
 date: 2024-05-10
-thumbnail: /assets/images/projects/net-topology.jpg
+thumbnail: {{ site.baseurl }}/assets/images/projects/net-topology.jpg
 tags: ["Networking", "Hybrid Architecture", "Data Center", "Cloud Integration", "Security", "QoS", "OSPF", "VPN"]
 ---
 
@@ -57,7 +57,7 @@ The implemented hybrid network provides:
 - A **scalable and secure foundation** for future expansions
 
 **Topology:**
-![Hybrid Network Topology](/assets/images/projects/NET-top.png)
+![Hybrid Network Topology]({{ site.baseurl }}/assets/images/projects/NET-top.png)
 
 **Presentation:**
 <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
