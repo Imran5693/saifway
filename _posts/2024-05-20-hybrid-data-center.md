@@ -5,7 +5,7 @@ description: "A research-driven study on implementing a secure, high-availabilit
 date: 2024-05-20
 author: "Imran Sarwar"
 tags: ["Networking", "Hybrid Architecture", "Data Center", "Cloud Integration", "Research", "OSPF", "VPN", "QoS"]
-thumbnail: "{{ site.baseurl }}/assets/images/projects/net-topology.jpg"
+thumbnail: "/assets/images/projects/net-topology.jpg"
 ---
 
 ## Introduction
