@@ -1,12 +1,13 @@
 # Site Settings
 title: Saif Way Technology
 description: Networking, Python, and System Admin Portfolio & Blog
-baseurl: "/saifway"          # keep if your repo is in a subfolder; "" if root
+baseurl: ""          # keep if your repo is in a subfolder; "" if root
 url: "https://saifwaytech.com"   # your custom domain
 
 # Plugins
 plugins:
   - jekyll-paginate
+  - jekyll-sitemap
 
 paginate: 5
 paginate_path: "/blog/page:num/"
