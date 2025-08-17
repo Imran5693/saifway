@@ -6,7 +6,7 @@ layout: default
 
   <!-- Post Header -->
   <header class="mb-5 text-center">
-  <img src="{{ page.thumbnail }}" alt="{{ page.title }} thumbnail"
+  <img src="{{ site.baseurl }}{{ page.thumbnail }}" alt="{{ page.title }} thumbnail"
        class="mb-3"
        style="width: 100%; max-width: 800px; height: auto; object-fit: cover; border-radius: 8px; border: 3px solid #4364F7; box-shadow: 0 12px 30px rgba(67, 100, 247, 0.3);" />
   <h1 class="display-4 fw-bold text-primary mt-3">{{ page.title }}</h1>
@@ -23,7 +23,7 @@ layout: default
   <!-- Author Section -->
   <div class="author-box mt-5 p-4 rounded shadow-sm bg-light" style="max-width: 900px; margin: auto;">
     <div class="d-flex align-items-center">
-      <img src="/assets/\images\myprof.jpg" alt="Author" class="rounded-circle me-3" style="width: 80px; height: 80px; object-fit: cover;">
+      <img src="{{ site.baseurl }}/assets/images/myprof.jpg" alt="Author" class="rounded-circle me-3" style="width: 80px; height: 80px; object-fit: cover;">
       <div>
         <h6 class="mb-1 fw-bold">{{ page.author | default: "Imran Sarwar" }}</h6>
         <p class="mb-1 text-muted" style="font-size: 0.95rem;">
@@ -49,10 +49,10 @@ layout: default
       <!-- Example related post card -->
       <div class="col-md-6">
         <div class="card h-100 border-0 shadow-sm">
-          <img src="/assets/images/projects/net-topology.jpg" class="card-img-top" alt="Related Post Thumbnail" style="height: 160px; object-fit: cover;">
+          <img src="{{ site.baseurl }}/assets/images/projects/net-topology.jpg" class="card-img-top" alt="Related Post Thumbnail" style="height: 160px; object-fit: cover;">
           <div class="card-body">
             <h6 class="card-title fw-bold text-primary">Designing a Hybrid Network Architecture</h6>
-            <a href="/2024/05/20/hybrid-data-center.html" class="btn btn-outline-primary btn-sm mt-2">Read More</a>
+            <a href="{{ site.baseurl }}/2024/05/20/hybrid-data-center.html" class="btn btn-outline-primary btn-sm mt-2">Read More</a>
           </div>
         </div>
       </div>
