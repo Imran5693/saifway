@@ -3,7 +3,7 @@ layout: project
 title: "Multi-Vendor User Creation Script"
 description: "A Python automation script to create and manage user accounts across Cisco, Juniper, and Fortinet devices."
 date: 2025-05-10
-thumbnail: /assets/images/projects/python-network.png
+thumbnail: "{{ site.baseurl }}/assets/images/projects/python-network.png"
 tags: ["Network Automation", "Python", "Netmiko", "Multi-Vendor"]
 ---
 
@@ -36,11 +36,11 @@ It enables network teams to configure **Cisco IOS, Juniper JunOS, and Fortinet d
 
 ### 📂 Showcase
 #### 📄 Reports  
-- [Download Project Report (PDF)](/assets/files/multi-vendor-user-report.pdf)  
+- [Download Project Report (PDF)]({{ site.baseurl }}/assets/files/multi-vendor-user-report.pdf)  
 
 #### 📑 Slides  
-- [Presentation Slides](/assets/slides/multi-vendor-user-presentation.pdf)  
+- [Presentation Slides]({{ site.baseurl }}/assets/slides/multi-vendor-user-presentation.pdf)  
 
 #### 🖼️ Images  
-- ![Script Execution](/assets/images/projects/multi-vendor-user-execution.png)  
-- ![Sample Config](/assets/images/projects/multi-vendor-user-config.png)  
+- ![Script Execution]({{ site.baseurl }}/assets/images/projects/multi-vendor-user-execution.png)  
+- ![Sample Config]({{ site.baseurl }}/assets/images/projects/multi-vendor-user-config.png)  
