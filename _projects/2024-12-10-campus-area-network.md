@@ -3,7 +3,7 @@ layout: project
 title: "Enhanced Interdepartmental Communication System (Campus Area Network)"
 description: "Simulated and deployed a secure, scalable campus network integrating interdepartmental communication with centralized management and security."
 date: 2024-05-10
-thumbnail: "/assets/images/projects\network topology.jpg"
+thumbnail: "/assets/images/projects/network topology.jpg"
 tags: ["Networking", "Campus Network", "OSPF", "VLAN", "Security", "Active Directory"]
 ---
 
