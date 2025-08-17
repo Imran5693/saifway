@@ -5,7 +5,7 @@ description: "A professional, research-oriented exploration of the Identity Mana
 date: 2025-08-16
 author: "Imran Sarwar"
 tags: ["OpenStack", "Keystone", "Flask", "Python", "Identity Management", "Cloud Security", "Research"]
-thumbnail: "{{ site.baseurl }}/assets/images/projects/dashboard.jpg"
+thumbnail: "/assets/images/projects/dashboard.jpg"
 ---
 
 ## Introduction
