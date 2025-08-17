@@ -1,8 +1,10 @@
+# Site Settings
 title: Saif Way Technology
 description: Networking, Python, and System Admin Portfolio & Blog
-baseurl: ""  # set to "" for root URL, or "/repo-name" if using GitHub pages on repo
-url: "https://saifwaytech.com" # change to your actual URL when deployed
+baseurl: "/saifway"          # keep if your repo is in a subfolder; "" if root
+url: "https://saifwaytech.com"   # your custom domain
 
+# Plugins
 plugins:
   - jekyll-paginate
 
@@ -10,7 +12,7 @@ paginate: 5
 paginate_path: "/blog/page:num/"
 
 markdown: kramdown
-theme: null  # no theme, using custom layouts
+theme: null  # custom theme
 
 # Exclude unnecessary files/folders
 exclude:
@@ -19,7 +21,29 @@ exclude:
   - node_modules
   - vendor
 
+# Collections
 collections:
   projects:
     output: true
     permalink: /projects/:name/
+
+# Defaults (optional but recommended for SEO)
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "default"
+      author: "Imran Sarwar"
+      seo: true
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "default"
+      seo: true
+
+# Optional Sitemap / SEO plugin if you install
+# plugins:
+#   - jekyll-sitemap
+#   - jekyll-seo-tag
