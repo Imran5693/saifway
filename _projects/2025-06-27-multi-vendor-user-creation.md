@@ -3,7 +3,7 @@ layout: project
 title: "Multi-Vendor User Creation Script"
 description: "A Python automation script to create and manage user accounts across Cisco, Juniper, and Fortinet devices."
 date: 2025-05-10
-thumbnail: "{{ site.baseurl }}/assets/images/projects/python-network.png"
+thumbnail: "/assets/images/projects/python-network.png"
 tags: ["Network Automation", "Python", "Netmiko", "Multi-Vendor"]
 ---
 
