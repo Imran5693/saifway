@@ -5,7 +5,7 @@ description: "A professional insight into updating ACLs across Cisco, HP, Junipe
 date: 2025-08-17
 author: "Imran Sarwar"
 tags: ["Networking", "ACL", "Multi-Vendor", "Automation", "Cisco", "Juniper", "Brocade", "HP"]
-thumbnail: "{{ site.baseurl }}/assets/images/projects/automation.jpeg"
+thumbnail: "/assets/images/projects/automation.jpeg"
 ---
 
 ## Introduction
