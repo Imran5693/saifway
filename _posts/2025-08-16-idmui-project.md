@@ -5,7 +5,7 @@ description: "A professional, research-oriented exploration of the Identity Mana
 date: 2025-08-16
 author: "Imran Sarwar"
 tags: ["OpenStack", "Keystone", "Flask", "Python", "Identity Management", "Cloud Security", "Research"]
-thumbnail: /assets/images/projects/dashboard.jpg
+thumbnail: "{{ site.baseurl }}/assets/images/projects/dashboard.jpg"
 ---
 
 ## Introduction
@@ -118,4 +118,4 @@ By bridging the gap between **CLI-driven operations and graphical interfaces**, 
 **Source Code & Documentation:** [GitHub Repository (Coming Soon)](#)  
 
 **System Architecture Diagram:**  
-<img src="/assets/images/projects/architecture.jpg" alt="IDMUI Architecture Diagram" style="width:85%; max-width:700px; display:block; margin:auto; border:1px solid #ddd; border-radius:8px;">
+<img src="{{ site.baseurl }}/assets/images/projects/architecture.jpg" alt="IDMUI Architecture Diagram" style="width:85%; max-width:700px; display:block; margin:auto; border:1px solid #ddd; border-radius:8px;">

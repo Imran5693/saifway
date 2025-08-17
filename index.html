@@ -259,7 +259,6 @@ title: Home
   </div>
 </section>
 
-<!-- praject section -->
 <!-- Projects Section -->
 <section id="projects" class="projects-section">
   <div class="container">
@@ -269,7 +268,7 @@ title: Home
         <div class="project-card-wrapper">
           <div class="project-card">
             {% if project.thumbnail %}
-              <img src="{{ project.thumbnail }}" class="project-thumbnail" alt="{{ project.title }}">
+              <img src="{{ project.thumbnail | relative_url }}" class="project-thumbnail" alt="{{ project.title }}">
             {% endif %}
             <div class="project-content">
               <h3 class="project-title">{{ project.title }}</h3>
@@ -301,7 +300,7 @@ title: Home
     </div>
   </div>
 </section>
- <!-- Expertise Section -->
+
 <!-- Expertise Section -->
 <section id="expertise" class="py-5 bg-light">
   <div class="container">

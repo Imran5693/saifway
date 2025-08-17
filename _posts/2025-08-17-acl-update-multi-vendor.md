@@ -5,7 +5,7 @@ description: "A professional insight into updating ACLs across Cisco, HP, Junipe
 date: 2025-08-17
 author: "Imran Sarwar"
 tags: ["Networking", "ACL", "Multi-Vendor", "Automation", "Cisco", "Juniper", "Brocade", "HP"]
-thumbnail: /assets/images/projects/automation.jpeg
+thumbnail: "{{ site.baseurl }}/assets/images/projects/automation.jpeg"
 ---
 
 ## Introduction
@@ -95,4 +95,4 @@ Updating ACLs in a multi-vendor network can be challenging, but **strategic plan
 ---
 
 **Network Diagram (Multi-Vendor Environment):**  
-![Multi-Vendor Network](/assets/images/projects/multi-vendor-network.jpg)
+![Multi-Vendor Network]({{ site.baseurl }}/assets/images/projects/multi-vendor-network.jpg)

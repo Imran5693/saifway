@@ -9,7 +9,7 @@ layout: default
 
   <!-- Project Thumbnail -->
   {% if page.thumbnail %}
-    <img src="{{ page.thumbnail }}" alt="{{ page.title }}" class="img-fluid rounded shadow-sm mb-4">
+    <img src="{{ site.baseurl }}{{ page.thumbnail }}" alt="{{ page.title }}" class="img-fluid rounded shadow-sm mb-4">
   {% endif %}
 
   <!-- Project Metadata -->
@@ -24,7 +24,7 @@ layout: default
   </div>
 
   <!-- Back Button -->
-  <a href="{{ '/#projects' | relative_url }}" class="btn btn-primary">
+  <a href="{{ site.baseurl }}{{ '/#projects' | relative_url }}" class="btn btn-primary">
     ← Back to Projects
   </a>
 

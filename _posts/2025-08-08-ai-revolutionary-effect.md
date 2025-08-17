@@ -1,7 +1,7 @@
 ---
 title: "AI Revolution with Visuals"
 date: 2025-08-08
-thumbnail: /assets/images/ai-thumbnail.jpeg
+thumbnail: "{{ site.baseurl }}/assets/images/ai-thumbnail.jpeg"
 layout: post
 ---
 

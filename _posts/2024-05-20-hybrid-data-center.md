@@ -5,7 +5,7 @@ description: "A research-driven study on implementing a secure, high-availabilit
 date: 2024-05-20
 author: "Imran Sarwar"
 tags: ["Networking", "Hybrid Architecture", "Data Center", "Cloud Integration", "Research", "OSPF", "VPN", "QoS"]
-thumbnail: /assets/images/projects/net-topology.jpg
+thumbnail: "{{ site.baseurl }}/assets/images/projects/net-topology.jpg"
 ---
 
 ## Introduction
@@ -105,8 +105,8 @@ The final hybrid network achieved:
 ## Conclusion
 This research-based implementation highlights the significance of **planning, security engineering, and traffic optimization** in hybrid networks. The proposed architecture effectively combines **on-premises infrastructure with cloud resources**, delivering a **robust, secure, and scalable platform** for outsourced backup operations.  
 
-**Download Detailed Configuration:** [Hybrid Data Centre Config PDF](/assets/images/pf.png)  
+**Download Detailed Configuration:** [Hybrid Data Centre Config PDF]({{ site.baseurl }}/assets/images/pf.png)  
 
 ## Network Topology
 
-<img src="/assets/images/projects/NET-top.png" alt="Hybrid Network Topology" class="post-image">
+<img src="{{ site.baseurl }}/assets/images/projects/NET-top.png" alt="Hybrid Network Topology" class="post-image">
