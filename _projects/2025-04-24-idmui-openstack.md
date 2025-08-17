@@ -3,7 +3,7 @@ layout: project
 title: "Identity Management User Interface (IDMUI)"
 description: "A Flask-based web interface for managing OpenStack Keystone services with authentication, user/role management, and real-time service monitoring."
 date: 2025-04-24
-thumbnail: "{{ site.baseurl }}/assets/images/projects/idmui-login.PNG"
+thumbnail: "/assets/images/projects/idmui-login.PNG"
 tags: ["Flask", "OpenStack", "Python", "Keystone", "Web Development", "Identity Management"]
 ---
 
