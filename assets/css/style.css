@@ -172,27 +172,27 @@ body {
   transform: translateY(-3px);
 }
 
-/* Skills bar container - frosted glass effect */
 .skills-bar {
   position: fixed;
   top: 10px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  flex-wrap: wrap;       /* wrap on small screens */
   justify-content: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  background: rgba(255,255,255,0.15);
+  gap: 0.8rem;
+  padding: 0.5rem 1.2rem;
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 40px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.5s ease;
   z-index: 1000;
-  max-width: 90vw;       /* ensure it doesn’t overflow */
+  width: auto;     /* NEW: allow auto resizing */
 }
+
 
 /* Show when hero shrinks */
 .hero.shrink ~ .skills-bar {
