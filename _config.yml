@@ -1,50 +1,101 @@
+# =========================
 # Site Settings
+# =========================
 title: Saif Way Technology
-description: Networking, Python, and System Admin Portfolio & Blog
-baseurl: ""          # keep if your repo is in a subfolder; "" if root
-url: "https://saifwaytech.com"   # your custom domain
+tagline: IT Portfolio & Engineering Blog
+description: >
+  Imran Sarwar – Network, Cloud & Cybersecurity Engineer.
+  Portfolio and blog covering Python automation, OpenStack, DevNet,
+  network security, and system administration.
 
+url: "https://saifwaytech.com"
+baseurl: ""
+
+# =========================
+# Author / Brand Identity (VERY IMPORTANT)
+# =========================
+author:
+  name: Imran Sarwar
+  email: contact@saifway.com
+  linkedin: imransarwaritpro
+  github: Imran5693
+
+# =========================
 # Plugins
+# =========================
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-seo-tag
 
+# =========================
+# Blog Pagination
+# =========================
 paginate: 5
 paginate_path: "/blog/page:num/"
 
+# =========================
+# Markdown / Theme
+# =========================
 markdown: kramdown
-theme: null  # custom theme
+theme: null
 
-# Exclude unnecessary files/folders
+# =========================
+# Exclusions
+# =========================
 exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
   - vendor
+  - README.md
 
+# =========================
+# Sitemap Controls (IMPORTANT)
+# =========================
+defaults:
+  # Blog posts
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Imran Sarwar"
+      sitemap: true
+      priority: 0.8
+      changefreq: monthly
+
+  # Projects (HIGHEST SEO VALUE)
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+      sitemap: true
+      priority: 0.9
+      changefreq: monthly
+
+  # Assets (exclude PDFs & images from sitemap)
+  - scope:
+      path: "assets"
+    values:
+      sitemap: false
+
+# =========================
 # Collections
+# =========================
 collections:
   projects:
     output: true
     permalink: /projects/:name/
 
-# Defaults (optional but recommended for SEO)
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "default"
-      author: "Imran Sarwar"
-      seo: true
-  - scope:
-      path: ""
-      type: "projects"
-    values:
-      layout: "default"
-      seo: true
-
-# Optional Sitemap / SEO plugin if you install
-# plugins:
-#   - jekyll-sitemap
-#   - jekyll-seo-tag
+# =========================
+# Jekyll SEO Tag Settings
+# =========================
+social:
+  name: Imran Sarwar
+  links:
+    - https://www.linkedin.com/in/imransarwaritpro/
+    - https://github.com/Imran5693
+    - https://www.youtube.com/@SaifWayTech
+    - https://www.facebook.com/profile.php?id=61563409706801
