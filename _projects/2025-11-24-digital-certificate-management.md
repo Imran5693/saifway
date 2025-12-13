@@ -3,7 +3,7 @@ layout: project
 title: "Web-Based Digital Certificate Management Portal"
 description: "A full-featured web application integrating Step CA, ACME, LDAP, and REST APIs for managing digital certificates with issuance, revocation, renewal, and user authentication."
 date: 2025-11-24
-thumbnail: "/assets/images/projects/digital-certificate.PNG"
+thumbnail: "/assets/images/projects/digital-certificate.png"
 tags:
   - Digital Certificate Management
   - digital certificate authority 
