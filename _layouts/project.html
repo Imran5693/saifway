@@ -4,29 +4,85 @@ layout: default
 
 <div class="container my-5">
 
-  <!-- Project Title -->
-  <h1 class="mb-4 fw-bold">{{ page.title }}</h1>
+  <!-- ========================= -->
+  <!-- SEO: Project Title (H1) -->
+  <!-- ========================= -->
+  <h1 class="mb-2 fw-bold">
+    {{ page.title }}
+  </h1>
 
-  <!-- Project Thumbnail -->
-  {% if page.thumbnail %}
-    <img src="{{ site.baseurl }}{{ page.thumbnail }}" alt="{{ page.title }}" class="img-fluid rounded shadow-sm mb-4">
+  <!-- SEO Summary -->
+  {% if page.description %}
+  <p class="lead text-muted mb-4">
+    {{ page.description }}
+  </p>
   {% endif %}
 
+  <!-- ========================= -->
+  <!-- Project Thumbnail -->
+  <!-- ========================= -->
+  {% if page.thumbnail %}
+    <img
+      src="{{ site.baseurl }}{{ page.thumbnail }}"
+      alt="{{ page.title }} – Network Architecture Diagram"
+      class="img-fluid rounded shadow-sm mb-4"
+      loading="lazy">
+  {% endif %}
+
+  <!-- ========================= -->
   <!-- Project Metadata -->
+  <!-- ========================= -->
   <p class="text-muted mb-4">
-    {% if page.date %} <strong>Completed:</strong> {{ page.date | date: "%B %d, %Y" }} {% endif %}
-    {% if page.tags %} <br><strong>Technologies:</strong> {{ page.tags | join: ", " }} {% endif %}
+    {% if page.date %}
+      <strong>Completed:</strong>
+      <time datetime="{{ page.date | date_to_xmlschema }}">
+        {{ page.date | date: "%B %d, %Y" }}
+      </time>
+    {% endif %}
+
+    {% if page.tags %}
+      <br>
+      <strong>Technologies:</strong>
+      {{ page.tags | join: ", " }}
+    {% endif %}
   </p>
 
+  <!-- ========================= -->
   <!-- Project Content -->
-  <div class="project-content mb-5">
+  <!-- ========================= -->
+  <article class="project-content mb-5">
     {{ content }}
-  </div>
+  </article>
 
-  <!-- Back Button -->
-  <a href="{{ '/#projects' | relative_url }}" class="btn btn-primary">
-    ← Back to Projects
-  </a>
+  <!-- ========================= -->
+  <!-- Internal Navigation -->
+  <!-- ========================= -->
+  <div class="d-flex justify-content-between align-items-center mt-5">
+    <a href="{{ '/projects/' | relative_url }}" class="btn btn-outline-primary">
+      ← View All Projects
+    </a>
+
+    <a href="{{ '/blog/' | relative_url }}" class="btn btn-primary">
+      Read Related Blogs →
+    </a>
+  </div>
 
 </div>
 
+<!-- ========================= -->
+<!-- SEO: Project Schema -->
+<!-- ========================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "{{ page.title }}",
+  "description": "{{ page.description }}",
+  "author": {
+    "@type": "Person",
+    "name": "Imran Sarwar"
+  },
+  "url": "{{ site.url }}{{ page.url }}",
+  "keywords": "{{ page.tags | join: ', ' }}"
+}
+</script>
