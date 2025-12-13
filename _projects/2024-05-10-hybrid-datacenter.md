@@ -24,6 +24,8 @@ keywords:
   - VPN GRE OSPF implementation
   - hands-on network architecture lab
   - network engineer portfolio project
+  - network design case study
+  - network topology design lab
 
 sitemap: true
 priority: 0.9
@@ -37,6 +39,20 @@ The proposed design integrates:
 - **Storage Devices** – Network Attached Storage (NAS) or SAN-based storage systems for local backup storage.
 - **Network Infrastructure** – High-bandwidth, segmented network with QoS for prioritizing backup traffic.
 
+---
+
+## Case Study: Hybrid Network Backup Design
+**Problem:**  
+Organizations require secure and reliable backup connectivity between on-premises infrastructure and cloud data centers.
+
+**Solution:**  
+Implemented a hybrid network design using OSPF routing, VPN GRE tunnels, ACL-based security, and QoS policies to protect and prioritize backup traffic.
+
+**Result:**  
+A secure, scalable backup network topology with high availability, optimized performance, and centralized monitoring.
+
+---
+
 ## Project Scope
 The network is designed to guarantee the **security, integrity, and reliability** of communication between:
 - **On-Premises Data Center** (Core Server, Monitoring Server, Backup Server)
@@ -46,6 +62,13 @@ The network is designed to guarantee the **security, integrity, and reliability*
 - **ACL Security** – To filter and protect network traffic.
 - **QoS** – To optimize bandwidth usage and prioritize critical backup traffic.
 
+---
+
+## Network Design Lab Overview
+This project can also be treated as a **network design lab**, where OSPF routing, VPN GRE tunneling, ACL security, and QoS policies were validated using simulated environments. The lab tested routing convergence, tunnel stability, and secure backup traffic flow.
+
+---
+
 ## Objectives
 - Develop a **comprehensive hybrid architecture** aligned with organizational security requirements.
 - Clearly define the number and roles of routers and switches in the design.
@@ -53,6 +76,8 @@ The network is designed to guarantee the **security, integrity, and reliability*
 - Identify **vulnerabilities** and potential security weaknesses.
 - Enable **real-time monitoring and logging** for proactive threat detection.
 - Provide **comprehensive documentation** and training for IT staff.
+
+---
 
 ## Requirements Delivered
 - **Topology Diagram** (Visio-based, professional format)
@@ -64,11 +89,15 @@ The network is designed to guarantee the **security, integrity, and reliability*
   - QoS for traffic optimization
 - Security gap analysis and integration with existing infrastructure
 
+---
+
 ## Tools & Technologies
 - **Cisco Packet Tracer** (Latest Version)
 - **Microsoft Visio** (Topology Design)
 - Networking protocols: **OSPF, VPN GRE**
 - Security controls: **ACLs, QoS**
+
+---
 
 ## Outcome
 The implemented hybrid network provides:
@@ -86,6 +115,20 @@ The implemented hybrid network provides:
   <iframe src="https://docs.google.com/presentation/d/1dg-FAPuJUjT2bcoQSTLtvm4nZ2kDWOkIAlKtbpM0Xo4/edit?usp=sharing" 
   style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allowfullscreen></iframe>
 </div>
+
+---
+
+## Semantic Keyword Reinforcement
+This project demonstrates practical **network designing principles** including:
+- topology planning
+- protocol selection
+- redundancy
+- security zoning
+- traffic optimization
+
+It serves as a reference for **network design case studies**, **network topology labs**, and **portfolio projects** for aspiring network engineers.
+
+---
 
 ## Related Articles
 - [Designing a Hybrid Data Center Network – Blog](/2024/05/20/hybrid-data-center.html)
