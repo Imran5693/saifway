@@ -1,29 +1,29 @@
 ---
 layout: project
-title: "Hybrid Data Center Network Architecture for Outsourced Backup"
+title: "Hybrid Data Center Network Design – Backup Architecture Case Study"
+
 description: >
-  A secure and high-availability hybrid data center network architecture
-  integrating on-premises infrastructure with cloud backup services,
-  using OSPF routing, VPN GRE tunnels, QoS, and ACL-based security controls.
+  A hands-on hybrid data center network design project focused on secure
+  backup architecture, implementing OSPF routing, VPN GRE tunnels,
+  QoS traffic prioritization, and ACL-based security controls.
 
 date: 2024-05-10
 thumbnail: /assets/images/projects/net-topology.jpg
 
 tags:
-  - Hybrid Data Center
-  - Network Architecture
-  - OSPF
-  - VPN GRE
-  - QoS
-  - Network Security
-  - Cisco Networking
-  - Cloud Integration
+  - hybrid network design project
+  - network architecture case study
+  - VPN GRE OSPF lab
+  - secure backup network
+  - Cisco networking lab
+  - network engineer portfolio
 
 keywords:
-  - hybrid data center network
-  - network architecture project
-  - VPN GRE OSPF design
-  - secure backup network
+  - hybrid data center network design project
+  - hybrid backup network architecture
+  - VPN GRE OSPF implementation
+  - hands-on network architecture lab
+  - network engineer portfolio project
 
 sitemap: true
 priority: 0.9
