@@ -3,7 +3,7 @@ layout: project
 title: "Multi-Router LAN with Wireless Integration and Port Security Simulation"
 description: "Cisco Packet Tracer network simulation demonstrating secure multi-router LAN segmentation, wireless access, port security, and rogue device mitigation. Includes RIP routing, MAC filtering, and OSI/TCP-IP model alignment."
 date: 2025-05-15
-thumbnail: "/assets/images/projects/multi-router network.png"
+thumbnail: "/assets/images/projects/multi-router_network.png"
 tags:
   - Network Simulation
   - Cisco Packet Tracer
