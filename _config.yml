@@ -24,15 +24,8 @@ author:
 # Plugins
 # =========================
 plugins:
-  - jekyll-paginate
   - jekyll-sitemap
   - jekyll-seo-tag
-
-# =========================
-# Blog Pagination
-# =========================
-paginate: 5
-paginate_path: "/blog/page:num/"
 
 # =========================
 # Markdown / Theme
