@@ -1,116 +1,186 @@
 ---
 layout: project
-title: "Web-Based Digital Certificate Management Portal"
-description: "A full-featured web application integrating Step CA, ACME, LDAP, and REST APIs for managing digital certificates with issuance, revocation, renewal, and user authentication."
+title: "Web-Based Digital Certificate Management Portal (Private CA & ACME)"
+
+description: "A web-based digital certificate management system integrating Step CA, ACME protocol, LDAP authentication, and REST APIs to manage certificate issuance, renewal, revocation, and lifecycle automation in enterprise IT environments."
+
 date: 2025-11-24
+
 thumbnail: "/assets/images/projects/digital-certificate.png"
+
 tags:
   - Digital Certificate Management
-  - digital certificate authority 
-  - digital certificate authority management system
-  - identity and access management 
-  - securing web with ssl certificate
-  - ACME implementation
-  - ca signed certification 
-  - Web Application
-  - Python Flask Project
+  - Private Certificate Authority
   - Step CA Integration
   - ACME Certificate Automation
-  - LDAP User Management
-  - IAM Web Interface
   - Certificate Lifecycle Management
+  - PKI Management System
+  - IAM and Security Infrastructure
+  - Web-Based CA Portal
+  - Enterprise Security Automation
+
 keywords:
-  - digital certificate management system
-  - web-based certificate portal
-  - Step CA certificate issuance
-  - digital certificate authority 
-  - web based digital certificate authority management 
-  - wcaman
-  - how ssl works
-  - how digital certificate generate
-  - csr based certificate
-  - step ca server installation and configuration
-  - step ca integration with web application
-  - step cli web application  
-  - ACME certificate automation
-  - LDAP authentication and authorization
-  - certificate lifecycle management web app
-  - Python Flask certificate project
-  - REST API certificate integration
+  - web based digital certificate management system
+  - private certificate authority management portal
+  - step ca certificate management
+  - acme certificate automation system
+  - certificate lifecycle management web application
+  - pki management portal
+  - ssl certificate management system
+  - csr based certificate issuance
+  - ldap authenticated certificate portal
+
 sitemap: true
 priority: 0.9
 ---
 
+<!-- Structured Data: Software Application -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Web-Based Digital Certificate Management Portal",
+  "applicationCategory": "SecurityApplication",
+  "operatingSystem": "Linux",
+  "description": "A web-based digital certificate management system integrating Step CA, ACME, LDAP, and REST APIs for managing certificate issuance, renewal, revocation, and lifecycle automation.",
+  "creator": {
+    "@type": "Person",
+    "name": "Imran Sarwar"
+  },
+  "keywords": [
+    "Digital Certificate Management",
+    "Private Certificate Authority",
+    "Step CA",
+    "ACME Certificate Automation",
+    "PKI Management"
+  ]
+}
+</script>
+
 ## Project Overview
-The **Digital Certificate Management Portal** is a **Python Flask web application** designed to streamline the **lifecycle of digital certificates** in enterprise environments.  
-It integrates with **Step CA**, supports **ACME-based automation**, and connects to an **LDAP server** for authentication and authorization. The portal provides a centralized interface for **issuing, revoking, renewing, and monitoring certificates**, and includes REST APIs for integration with external systems.
 
-The project demonstrates hands-on expertise in **DevOps, cloud security, identity management, and web automation**, combining **Python scripting, Ubuntu server management, and modern web development practices**.
+The **Web-Based Digital Certificate Management Portal** is an **enterprise-grade security application** developed by **Imran Sarwar (Saif Way Technology)** to manage the **complete lifecycle of digital certificates** using a **private Certificate Authority (CA)**.
 
----
-
-### Functional Features
-
-#### User Roles & Access Control
-- **Admin**: Full control over certificates, users, and system configuration.  
-- **Certificate Manager**: Issue, revoke, renew certificates; deploy certificates on servers using SSH.  
-- **Regular User**: Request and view personal certificates.  
-
-#### Certificate Management
-- Generate **Certificate Signing Requests (CSR)**.  
-- Issue **new certificates** based on CSRs.  
-- Revoke certificates before expiration.  
-- Renew **expiring certificates** automatically.  
-- Support **self-signed** and **CA-signed certificates**.  
-
-#### Authentication & Security
-- OAuth 2.0 / OpenID Connect authentication.  
-- Two-Factor Authentication (2FA) for secure access.  
-- **Role-Based Access Control (RBAC)** for user permissions.  
-- LDAP / Active Directory integration for centralized authentication.  
-
-#### Logging & Monitoring
-- Maintain detailed **audit logs** of certificate activities.  
-- Alerts and notifications for certificate expiry or revocation.  
-- Exportable logs for compliance audits.  
-
-#### API & Integration
-- REST API for managing certificates programmatically.  
-- ACME protocol support for automated certificate issuance.  
-- Webhooks to notify external systems of certificate events.  
-
-#### User Interface
-- Dashboard displaying certificate status, expiry dates, and usage metrics.  
-- Search, filter, and graphical representation of certificates.  
-- Modern **responsive design** compatible with desktop and mobile devices.  
+The system integrates **Step CA**, **ACME protocol**, and **LDAP-based authentication** to provide a **centralized, secure, and automated certificate management platform** suitable for modern IT infrastructure, DevOps environments, and internal PKI deployments.
 
 ---
 
-### Tools & Technologies
+## What Problem This Project Solves
+
+In many organizations, certificate management is:
+- Manual
+- Error-prone
+- Poorly monitored
+- Lacking centralized visibility
+
+This project addresses those challenges by delivering:
+- A **single web portal** for certificate operations
+- **Automated issuance and renewal** via ACME
+- **Strong identity-based access control**
+- **Audit-ready logging and monitoring**
+
+---
+
+## Core Capabilities
+
+### User Roles & Access Control
+
+- **Administrator**
+  - Manage all users, certificates, and system settings
+- **Certificate Manager**
+  - Issue, revoke, renew certificates
+  - Deploy certificates to servers via SSH
+- **Regular User**
+  - Generate CSRs
+  - Request and view issued certificates
+
+Role enforcement is implemented using **RBAC** with LDAP-backed authentication.
+
+---
+
+### Certificate Management
+
+- CSR generation and submission
+- CA-signed certificate issuance via **Step CA**
+- Certificate renewal before expiration
+- Certificate revocation management
+- Support for:
+  - CA-signed certificates
+  - Internal private PKI use cases
+
+---
+
+### Authentication & Security
+
+- LDAP-based authentication and authorization
+- OAuth 2.0 / OpenID Connect support
+- Two-Factor Authentication (2FA)
+- Role-Based Access Control (RBAC)
+- Secure API access using token-based authentication
+
+---
+
+### Automation & Integration
+
+- **ACME protocol** for automated certificate issuance and renewal
+- REST APIs for external system integration
+- Webhooks for certificate lifecycle events
+- SSH-based certificate deployment to servers
+
+---
+
+### Logging & Monitoring
+
+- Full audit trail of certificate operations
+- Certificate expiry alerts and notifications
+- Exportable logs for compliance and security audits
+
+---
+
+### User Interface
+
+- Centralized dashboard showing:
+  - Certificate status
+  - Expiry timelines
+  - Key usage metrics
+- Search and filtering of certificates
+- Graphical visualization of certificate lifecycle
+- Responsive UI for desktop and mobile
+
+---
+
+## Tools & Technologies
+
 - **Backend**: Python (Flask), Paramiko  
 - **Frontend**: HTML5, CSS3, Bootstrap, JavaScript  
+- **Certificate Authority**: Step CA  
+- **Protocols**: ACME, HTTPS  
+- **Authentication**: LDAP, OAuth 2.0, RBAC, 2FA  
 - **Database**: MySQL  
-- **Server**: Ubuntu 22.04 LTS, deployed on Docker  
-- **Certificate Management**: Step CA, ACME protocol  
-- **Authentication & Authorization**: LDAP, OAuth 2.0, RBAC, 2FA  
-- **Reporting**: PDF generation using ReportLab  
-- **Integration**: REST APIs for external system connectivity  
+- **Server OS**: Ubuntu 22.04 LTS  
+- **Deployment**: Docker  
+- **Reporting**: PDF generation (ReportLab)  
 
 ---
 
-### Outcome
-This project successfully delivered:  
-- **Centralized certificate lifecycle management** for admins and users.  
-- **Automated issuance, renewal, and revocation** of digital certificates.  
-- **Secure authentication and role-based access** for all users.  
-- **Real-time monitoring and alerts** to prevent expired or revoked certificates.  
-- **Integration-ready platform** with REST APIs and ACME support for automation.  
-- **Professional-grade reports and dashboards** to enhance operational efficiency.  
+## Outcome & Impact
 
-It demonstrates practical expertise in **security, DevOps, web application development, identity management, and automation**, making it a highly valuable portfolio piece.
+This project successfully delivered:
+
+- A **fully functional private CA management portal**
+- Automated certificate issuance and renewal using ACME
+- Secure, role-based certificate operations
+- Centralized PKI visibility and lifecycle control
+- Enterprise-ready audit logging and monitoring
+- A real-world **PKI & security automation solution**
+
+This project strongly demonstrates expertise in **PKI, enterprise security, DevOps automation, IAM integration, and secure web application design**, making it highly relevant for **Security Engineer, DevOps Engineer, Cloud Engineer, and IAM-focused roles**.
 
 ---
 
 ## Additional Resources
 
-- **Video Tutorial / Demo**: <a href="https://www.youtube.com/watch?v=SSip5g1XGhc" target="_blank">YouTube Walkthrough</a>
+- **Video Demonstration**:  
+  <a href="https://www.youtube.com/watch?v=SSip5g1XGhc" target="_blank" rel="noopener">
+    Digital Certificate Management Portal – Demo
+  </a>
