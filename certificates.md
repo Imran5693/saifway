@@ -13,7 +13,9 @@ permalink: /certificates/
         <span class="position-relative z-index-2 px-3 bg-light">About Me</span>
         <span class="position-absolute bottom-0 start-0 w-100 border-bottom border-primary border-3 z-index-1"></span>
       </h2>
-      <p class="lead text-muted mt-3">A journey of resilience, continuous learning, and professional excellence</p>
+      <p class="lead text-muted mt-3">
+        UAE-based IT professional specializing in cybersecurity, network operations, and cloud infrastructure
+      </p>
     </div>
 
     <div class="row justify-content-center">
@@ -27,17 +29,31 @@ permalink: /certificates/
                   <img src="{{ '/assets/images/myprof.jpg' | relative_url }}" alt="Imran Sarwar" class="img-fluid h-100 w-100 object-fit-cover">
                 </div>
               </div>
+
               <div class="col-lg-8">
                 <p class="fs-5 mb-4">
-                  I'm <strong class="text-primary">Imran Sarwar</strong> — an IT professional with a proven track record in cybersecurity, network administration, and software development. My career began unconventionally when I entered the workforce after 12th grade to support my family, but I never compromised on my education.
+                  I'm <strong class="text-primary">Imran Sarwar</strong> — a <strong>cybersecurity and network engineer</strong> based in the UAE, with extensive experience in 
+                  <strong>enterprise network operations, data center management, Python automation, and cloud infrastructure</strong> for Dubai and Abu Dhabi organizations.
                 </p>
-                
+
+                <p class="fs-5 mb-4">
+                  I specialize in <strong>Linux systems, network troubleshooting, VLAN/IP management, NOC operations, and secure infrastructure automation</strong>, ensuring reliable and scalable IT environments for UAE enterprises.
+                </p>
+
+                <p class="fs-5 mb-4">
+                  I also design and implement <strong>web-based solutions for IT infrastructure management</strong>. Key projects include 
+                  <strong>IDMUI</strong> — a Flask-based interface for OpenStack Keystone identity management, and 
+                  <strong>WCAMAN</strong> — a web platform for digital certificate management with step-ca, enabling secure authentication and workflow automation.
+                </p>
+
                 <div class="d-flex align-items-center mb-4">
                   <div class="flex-shrink-0 text-primary">
                     <i class="fas fa-graduation-cap fs-3"></i>
                   </div>
                   <div class="flex-grow-1 ms-3">
-                    <p class="mb-0">Earned my <strong>BSc in Computer Science</strong> from Virtual University of Pakistan while working full-time, completing the 4-year program in 6 years through dedication and time management.</p>
+                    <p class="mb-0">
+                      Earned my <strong>BSc in Computer Science</strong> from Virtual University of Pakistan while working full-time, gaining hands-on experience in <strong>enterprise IT operations and UAE-focused projects</strong>.
+                    </p>
                   </div>
                 </div>
 
@@ -46,16 +62,19 @@ permalink: /certificates/
                     <i class="fas fa-certificate fs-3"></i>
                   </div>
                   <div class="flex-grow-1 ms-3">
-                    <p class="mb-0">Holder of multiple industry certifications including <strong>ISC² CC</strong>, <strong>Microsoft Azure Fundamentals</strong>, <strong>IBM Cybersecurity Analyst</strong>, and <strong>Cisco Networking</strong> credentials.</p>
+                    <p class="mb-0">
+                      Holder of industry certifications including <strong>ISC² CC</strong>, <strong>Microsoft Azure Fundamentals</strong>, <strong>IBM Cybersecurity Analyst</strong>, and <strong>Cisco Networking</strong>, demonstrating expertise in <strong>UAE enterprise IT, cloud, and security operations</strong>.
+                    </p>
                   </div>
                 </div>
 
                 <div class="skills-tags mb-4">
-                  <span class="badge bg-primary bg-opacity-10 text-primary fs-6 py-2 px-3 me-2 mb-2">Cybersecurity</span>
-                  <span class="badge bg-primary bg-opacity-10 text-primary fs-6 py-2 px-3 me-2 mb-2">Network Administration</span>
-                  <span class="badge bg-primary bg-opacity-10 text-primary fs-6 py-2 px-3 me-2 mb-2">Python Development</span>
-                  <span class="badge bg-primary bg-opacity-10 text-primary fs-6 py-2 px-3 me-2 mb-2">Cloud Computing</span>
-                  <span class="badge bg-primary bg-opacity-10 text-primary fs-6 py-2 px-3 me-2 mb-2">System Architecture</span>
+                  <span class="badge bg-primary bg-opacity-10 text-primary fs-6 py-2 px-3 me-2 mb-2">Cybersecurity UAE</span>
+                  <span class="badge bg-primary bg-opacity-10 text-primary fs-6 py-2 px-3 me-2 mb-2">Enterprise Network Operations</span>
+                  <span class="badge bg-primary bg-opacity-10 text-primary fs-6 py-2 px-3 me-2 mb-2">Python Automation</span>
+                  <span class="badge bg-primary bg-opacity-10 text-primary fs-6 py-2 px-3 me-2 mb-2">Cloud Infrastructure UAE</span>
+                  <span class="badge bg-primary bg-opacity-10 text-primary fs-6 py-2 px-3 me-2 mb-2">Data Center Operations</span>
+                  <span class="badge bg-primary bg-opacity-10 text-primary fs-6 py-2 px-3 me-2 mb-2">NOC Engineer UAE</span>
                 </div>
               </div>
             </div>
@@ -65,7 +84,67 @@ permalink: /certificates/
     </div>
   </div>
 </section>
+
 <br>
+
+<section id="projects" class="py-6">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-primary display-5">Software & Infrastructure Projects</h2>
+      <p class="lead text-muted">Designing practical tools for real-world IT operations</p>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- IDMUI -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body p-4">
+            <h5 class="fw-bold text-primary">IDMUI – Identity Management UI (OpenStack)</h5>
+            <p class="text-muted">
+              Flask-based web application for managing OpenStack Keystone identity
+              services.
+            </p>
+            <ul class="small">
+              <li>Keystone authentication & token handling</li>
+              <li>User, role, and project management</li>
+              <li>Service status monitoring & admin controls</li>
+              <li>API-driven infrastructure interaction</li>
+            </ul>
+            <span class="badge bg-light text-dark border">Python</span>
+            <span class="badge bg-light text-dark border">Flask</span>
+            <span class="badge bg-light text-dark border">OpenStack</span>
+            <span class="badge bg-light text-dark border">APIs</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step CA / WCAMAN -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body p-4">
+            <h5 class="fw-bold text-primary">Web based digital certificate management using Step CA (WCAMAN)</h5>
+            <p class="text-muted">
+              Certificate Authority and authentication workflow project focused on
+              secure access and trust-based infrastructure.
+            </p>
+            <ul class="small">
+              <li>Certificate lifecycle concepts</li>
+              <li>Security-focused authentication design</li>
+              <li>Infrastructure trust & access control</li>
+            </ul>
+            <span class="badge bg-light text-dark border">PKI</span>
+            <span class="badge bg-light text-dark border">Security</span>
+            <span class="badge bg-light text-dark border">Linux</span>
+            <span class="badge bg-light text-dark border">Infrastructure</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- Education Section -->
 <section id="education" class="py-6">
   <div class="container">
