@@ -52,7 +52,7 @@ permalink: /certificates/
                   </div>
                   <div class="flex-grow-1 ms-3">
                     <p class="mb-0">
-                      Earned my <strong>BSc in Computer Science</strong> from Virtual University of Pakistan while working full-time, gaining hands-on experience in <strong>enterprise IT operations and UAE-focused projects</strong>.
+                      Earned my <strong>BS in Computer Science</strong> from Virtual University of Pakistan while working full-time, gaining hands-on experience in <strong>enterprise IT operations and UAE-focused projects</strong>.
                     </p>
                   </div>
                 </div>
@@ -145,6 +145,8 @@ permalink: /certificates/
   </div>
 </section>
 
+<br>
+
 <!-- Education Section -->
 <section id="education" class="py-6">
   <div class="container">
@@ -227,6 +229,31 @@ permalink: /certificates/
   <div class="container">
     <h2 class="text-center fw-bold mb-5 display-6">📜 Professional Certifications</h2>
     <div class="row g-4 justify-content-center">
+
+<div class="col-md-4">
+  <div class="card shadow-lg border-0 h-100 certification-card text-center p-4">
+    <img src="{{ '/assets/images/Cisco_DevNetSpecialist.png' | relative_url }}" alt="Cisco DevNet Logo" class="cert-logo mb-4">
+    <h4 class="fw-bold mb-3">Cisco Certified DevNet Specialist – Core</h4>
+    <p class="text-muted small mb-2">Issued: <strong>September 27, 2025</strong></p>
+    <p class="text-muted small mb-2">Expires: <strong>December 16, 2028</strong></p>
+
+    <div class="mb-3">
+      <span class="badge bg-success me-2">Online Verifiable</span>
+      <span class="badge bg-primary">Active</span>
+    </div>
+
+    <p class="small text-muted">
+      Demonstrates expertise in APIs, software development, network automation,
+      application deployment, and infrastructure security.
+    </p>
+
+    <a href="https://www.credly.com/earner/earned/badge/bfcb41a1-8410-420c-b5a2-24f429e624b1"
+       target="_blank"
+       class="btn btn-outline-primary btn-lg mt-auto">
+       View Certification
+    </a>
+  </div>
+</div>
 
      <!-- MCSA -->
       <div class="col-md-4">
