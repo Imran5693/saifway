@@ -1,6 +1,9 @@
 ---
 layout: default
-title: About Me & Certifications
+title: IT & Network Operations Specialist | NOC & Data Center Engineer UAE
+description: Imran Sarwar — UAE-based IT professional specializing in NOC operations, data center management, network troubleshooting, Python automation, and cybersecurity for enterprise IT infrastructure in Dubai and Abu Dhabi.
+keywords: NOC Engineer UAE, Data Center Operations Dubai, Network Operations Abu Dhabi, Python Automation UAE, Enterprise IT UAE, Cybersecurity Fundamentals UAE, Linux Systems UAE, IT Infrastructure Management UAE
+
 permalink: /certificates/
 ---
 
