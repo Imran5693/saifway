@@ -36,7 +36,7 @@ permalink: /certificates/
               <div class="col-lg-8">
                 <p class="fs-5 mb-4">
                   I'm <strong class="text-primary">Imran Sarwar</strong> — a <strong>cybersecurity and network engineer</strong> based in the UAE, with extensive experience in 
-                  <strong>enterprise network operations, data center management a Python automation for Dubai and Abu Dhabi organizations.
+                  <strong>enterprise network operations, data center management, Python automation, and cloud infrastructure</strong> for Dubai and Abu Dhabi organizations.
                 </p>
 
                 <p class="fs-5 mb-4">
