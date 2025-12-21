@@ -17,7 +17,7 @@ permalink: /certificates/
         <span class="position-absolute bottom-0 start-0 w-100 border-bottom border-primary border-3 z-index-1"></span>
       </h2>
       <p class="lead text-muted mt-3">
-        UAE-based IT professional specializing in cybersecurity, network operations, and Automation 
+        UAE-based IT professional specializing in cybersecurity, network operations, and cloud infrastructure
       </p>
     </div>
 
@@ -36,7 +36,7 @@ permalink: /certificates/
               <div class="col-lg-8">
                 <p class="fs-5 mb-4">
                   I'm <strong class="text-primary">Imran Sarwar</strong> — a <strong>cybersecurity and network engineer</strong> based in the UAE, with extensive experience in 
-                  <strong>enterprise network operations, data center management and Python automation for Dubai and Abu Dhabi organizations.
+                  <strong>enterprise network operations, data center management a Python automation for Dubai and Abu Dhabi organizations.
                 </p>
 
                 <p class="fs-5 mb-4">
@@ -75,7 +75,7 @@ permalink: /certificates/
                   <span class="badge bg-primary bg-opacity-10 text-primary fs-6 py-2 px-3 me-2 mb-2">Cybersecurity UAE</span>
                   <span class="badge bg-primary bg-opacity-10 text-primary fs-6 py-2 px-3 me-2 mb-2">Enterprise Network Operations</span>
                   <span class="badge bg-primary bg-opacity-10 text-primary fs-6 py-2 px-3 me-2 mb-2">Python Automation</span>
-                  <span class="badge bg-primary bg-opacity-10 text-primary fs-6 py-2 px-3 me-2 mb-2">IT & network infrstructure UAE</span>
+                  <span class="badge bg-primary bg-opacity-10 text-primary fs-6 py-2 px-3 me-2 mb-2">Cloud Infrastructure UAE</span>
                   <span class="badge bg-primary bg-opacity-10 text-primary fs-6 py-2 px-3 me-2 mb-2">Data Center Operations</span>
                   <span class="badge bg-primary bg-opacity-10 text-primary fs-6 py-2 px-3 me-2 mb-2">NOC Engineer UAE</span>
                 </div>
@@ -126,7 +126,7 @@ permalink: /certificates/
       <div class="col-md-6">
         <div class="card h-100 shadow-sm border-0">
           <div class="card-body p-4">
-            <h5 class="fw-bold text-primary">Web based Digital Certificate Authority management with Step CA (WCAMAN)</h5>
+            <h5 class="fw-bold text-primary">Web based digital certificate management using Step CA (WCAMAN)</h5>
             <p class="text-muted">
               Certificate Authority and authentication workflow project focused on
               secure access and trust-based infrastructure.
