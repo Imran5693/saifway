@@ -1,0 +1,273 @@
+body {
+  font-family: 'Inter', 'Poppins', sans-serif;
+  background-color: #f8fafc;
+  color: #1f2937;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.content-wrapper {
+  width: 100%;
+}
+
+.container {
+  max-width: 1140px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+.py-6 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+section {
+  scroll-margin-top: 92px;
+}
+
+/* Headings */
+.section-title {
+  font-weight: 800;
+  font-size: 2.5rem;
+  text-align: center;
+  color: #0b2545;
+  margin-bottom: 2.5rem;
+}
+
+.section-title::after {
+  content: "";
+  width: 70px;
+  height: 4px;
+  background: #0d6efd;
+  display: block;
+  margin: 1rem auto 0;
+  border-radius: 10px;
+}
+
+/* Buttons */
+.btn-primary {
+  background: #0d6efd;
+  border: none;
+  border-radius: 50px;
+  padding: 0.7rem 2rem;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background: #0b5ed7;
+}
+
+/* Badge */
+.badge {
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* Card */
+.card {
+  border-radius: 8px;
+  border: none;
+}
+
+/* Hover shadow */
+.hover-shadow:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.section-heading {
+  max-width: 850px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.section-heading h1,
+.section-heading h2 {
+  color: #0b2545;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.section-heading h1 {
+  font-size: clamp(2.25rem, 5vw, 4rem);
+}
+
+.section-heading h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.section-heading p {
+  color: #64748b;
+  font-size: 1.08rem;
+  margin: 0 auto;
+}
+
+.section-kicker {
+  display: inline-flex;
+  align-items: center;
+  color: #0f766e;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 999px;
+  font-size: .82rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  margin-bottom: 1rem;
+  padding: .42rem .75rem;
+  text-transform: uppercase;
+}
+
+.professional-card,
+.publication-item,
+.project-card,
+.author-box,
+.article-content,
+.project-cta {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, .07);
+}
+
+.professional-card {
+  padding: 1.5rem;
+}
+
+.professional-card i {
+  color: #0f766e;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.professional-card h3 {
+  color: #0b2545;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.professional-card p {
+  color: #64748b;
+  margin-bottom: 0;
+}
+
+.credentials-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  justify-content: center;
+}
+
+.credentials-strip span {
+  background: #f8fafc;
+  border: 1px solid #dbe3ed;
+  border-radius: 999px;
+  color: #334155;
+  font-weight: 700;
+  padding: .65rem 1rem;
+}
+
+.article-header {
+  max-width: 900px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.article-header h1 {
+  color: #0b2545;
+  font-size: clamp(2.1rem, 5vw, 4rem);
+  font-weight: 800;
+}
+
+.article-description,
+.article-meta {
+  color: #64748b;
+  font-size: 1.08rem;
+}
+
+.article-hero-image {
+  width: 100%;
+  max-height: 440px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.article-content {
+  color: #334155;
+  font-size: 1.08rem;
+  line-height: 1.75;
+  margin: 0 auto;
+  max-width: 920px;
+  padding: clamp(1.25rem, 4vw, 3rem);
+}
+
+.project-detail-page .container-fluid {
+  max-width: 1480px;
+}
+
+.project-detail-page .article-header {
+  max-width: 1120px;
+}
+
+.project-detail-page .article-content,
+.project-detail-page .project-cta {
+  max-width: 1180px;
+}
+
+.project-detail-page .article-content {
+  font-size: 1.06rem;
+  padding: clamp(1.5rem, 3vw, 3rem);
+}
+
+.project-detail-page .project-image-wrapper {
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.article-content h2,
+.article-content h3 {
+  color: #0b2545;
+  font-weight: 800;
+  margin-top: 2rem;
+}
+
+.author-box {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem auto 0;
+  max-width: 920px;
+  padding: 1.25rem;
+}
+
+.author-box img {
+  border-radius: 50%;
+  height: 72px;
+  object-fit: cover;
+  width: 72px;
+}
+
+.author-box h2 {
+  color: #0b2545;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.author-box p {
+  color: #64748b;
+  margin-bottom: .5rem;
+}
+
+.author-links a {
+  color: #0d6efd;
+  margin-right: .75rem;
+}
+
+.project-meta-row {
+  color: #64748b;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}

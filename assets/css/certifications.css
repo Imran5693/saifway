@@ -1,0 +1,140 @@
+/* ================================
+   Certificates Page Layout
+================================ */
+
+.content-wrapper {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+.py-6 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+section {
+  scroll-margin-top: 90px;
+}
+
+/* Wider Bootstrap containers for certificate page */
+#about .container,
+#about .container-fluid,
+#projects .container,
+#projects .container-fluid,
+#education .container,
+#education .container-fluid,
+#certifications .container,
+#certifications .container-fluid {
+  max-width: 1800px;
+}
+
+/* Navbar width alignment */
+.navbar .container,
+.navbar .container-fluid {
+  max-width: 1800px;
+}
+
+/* About page profile image */
+#about img {
+  object-fit: cover;
+}
+
+/* Certification cards */
+.certification-card {
+  border-radius: 1.25rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.certification-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12) !important;
+}
+
+.cert-logo {
+  max-height: 95px;
+  width: auto;
+  object-fit: contain;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Equal card spacing */
+#certifications .card {
+  border-radius: 1.25rem;
+}
+
+#certifications .card-body,
+.certification-card {
+  display: flex;
+  flex-direction: column;
+}
+
+#certifications .btn {
+  margin-top: auto;
+}
+
+/* Better wide-screen spacing */
+@media (min-width: 1400px) {
+  .container-fluid {
+    padding-left: 4rem !important;
+    padding-right: 4rem !important;
+  }
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+  .py-6 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  #about .p-5,
+  #education .p-5 {
+    padding: 2rem !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 575px) {
+  .container-fluid {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  .display-5 {
+    font-size: 2rem;
+  }
+
+  .fs-5 {
+    font-size: 1rem !important;
+  }
+
+  .cert-logo {
+    max-height: 80px;
+  }
+}
+
+.course-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12) !important;
+}
+
+.course-logo {
+  max-height: 120px;
+  width: auto;
+  object-fit: contain;
+}
+
+#online-courses .card,
+#academic-excellence .card {
+  border-radius: 1.25rem;
+}
+
+.modal-content {
+  border-radius: 1.25rem;
+}

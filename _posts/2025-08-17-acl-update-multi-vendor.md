@@ -5,7 +5,7 @@ description: "A professional insight into updating ACLs across Cisco, HP, Junipe
 date: 2025-08-17
 author: "Imran Sarwar"
 tags: ["Networking", "ACL", "Multi-Vendor", "Automation", "Cisco", "Juniper", "Brocade", "HP"]
-thumbnail: "/assets/images/projects/automation.jpeg"
+thumbnail: "/assets/images/blog/multi-vendor-acl-operations.png"
 ---
 
 ## Introduction
@@ -82,17 +82,12 @@ Before deploying changes to production:
 ---
 
 ## Lessons Learned
-1. **Test before production** – Multi-vendor environments are unpredictable.  
-2. **Understand vendor-specific nuances** – Each CLI behaves differently.  
-3. **Plan for slower devices** – Delays and prompt checks are crucial for reliability.  
-4. **Automation saves time and improves consistency** – Critical for large networks.
+1. **Test before production** - Multi-vendor environments are unpredictable.  
+2. **Understand vendor-specific nuances** - Each CLI behaves differently.  
+3. **Plan for slower devices** - Delays and prompt checks are crucial for reliability.  
+4. **Automation saves time and improves consistency** - Critical for large networks.
 
 ---
 
 ## Conclusion
 Updating ACLs in a multi-vendor network can be challenging, but **strategic planning, vendor-aware automation, and careful validation** make it achievable. Addressing unique behaviors, such as Juniper CLI slowness, ensures **reliable and consistent network security** while minimizing risk.
-
----
-
-**Network Diagram (Multi-Vendor Environment):**  
-![Multi-Vendor Network]({{ site.baseurl }}/assets/images/projects/multi-vendor-network.jpg)

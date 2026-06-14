@@ -1,0 +1,16 @@
+footer {
+  background: #1f2937;
+  color: #e5e7eb;
+}
+
+footer a:hover {
+  color: #0d6efd;
+}
+
+.social-links a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+}

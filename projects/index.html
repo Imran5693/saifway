@@ -1,32 +1,47 @@
 ---
 layout: default
 title: Projects
+description: Case studies by Imran Sarwar covering cybersecurity, network automation, cloud IAM, PKI, Python Flask, AI security, and infrastructure labs.
 permalink: /projects/
 ---
 
-<div class="container my-5">
-  <h1 class="text-primary fw-bold mb-4">Projects</h1>
+<section class="py-6 bg-light">
+  <div class="container">
+    <div class="section-heading">
+      <span class="section-kicker">Case Studies</span>
+      <h1>Projects</h1>
+      <p>
+        Practical infrastructure, cybersecurity, automation, cloud IAM, and applied AI projects documented with tools,
+        architecture, implementation notes, and outcomes.
+      </p>
+    </div>
 
-  <div class="row g-4">
-    {% assign projects = site.projects | sort: 'date' | reverse %}
-    {% for project in projects %}
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm border-0">
-          {% if project.thumbnail %}
-          <img src="{{ site.baseurl }}{{ project.thumbnail }}" alt="{{ project.title }}" class="card-img-top" style="object-fit: cover; height: 180px;">
-          {% endif %}
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title text-primary">{{ project.title }}</h5>
-            <p class="card-text text-muted mb-4">
-              {{ project.excerpt | strip_html | truncatewords: 30 }}
-            </p>
-            <a href="{{ site.baseurl }}{{ project.url }}" class="mt-auto btn btn-outline-primary align-self-start">
-              Read More
-            </a>
-            <small class="text-secondary mt-3">{{ project.date | date: "%b %d, %Y" }}</small>
-          </div>
+    <div class="row g-4">
+      {% assign projects = site.projects | sort: 'date' | reverse %}
+      {% for project in projects %}
+        <div class="col-md-6 col-lg-4">
+          <article class="project-card h-100">
+            {% if project.thumbnail %}
+              <img src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}" class="project-thumbnail" loading="lazy">
+            {% endif %}
+            <div class="project-content">
+              <small class="project-meta">{{ project.date | date: "%B %Y" }}</small>
+              <h2 class="project-title">{{ project.title }}</h2>
+              <p class="project-description">
+                {{ project.description | default: project.excerpt | strip_html | truncatewords: 26 }}
+              </p>
+              {% if project.tags %}
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  {% for tag in project.tags limit:4 %}
+                    <span class="tech-badge">{{ tag }}</span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+              <a href="{{ project.url | relative_url }}" class="project-link">Read case study</a>
+            </div>
+          </article>
         </div>
-      </div>
-    {% endfor %}
+      {% endfor %}
+    </div>
   </div>
-</div>
+</section>

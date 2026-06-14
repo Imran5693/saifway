@@ -2,6 +2,7 @@
 layout: post
 title: "Multi-Router LAN with Wireless Integration and Port Security: Challenges and Solutions"
 description: "A detailed blog on Cisco Packet Tracer network simulation demonstrating multi-router LAN, secure wireless integration, port security, and rogue device mitigation. Includes challenges, resolutions, and step-by-step insights."
+thumbnail: "/assets/images/blog/multi-router-port-security.png"
 date: 2025-05-15
 author: "Imran Sarwar"
 tags:
@@ -73,7 +74,7 @@ This project is particularly relevant for **network engineers, DevNet learners, 
 **Resolution:** Verified using `show port-security address` and confirmed ping tests. Rogue device failed connectivity; violation counts increased correctly.  
 
 ### 3. Wireless Router Configuration Limitations in Packet Tracer
-**Challenge:** Packet Tracer APs don’t support WPA2 or MAC filtering.  
+**Challenge:** Packet Tracer APs don't support WPA2 or MAC filtering.  
 **Resolution:** Replaced with real home wireless router (Linksys WRT300N) configured with WPA2, MAC filtering, and static IPs.  
 
 ### 4. Connecting Legitimate Wireless Devices

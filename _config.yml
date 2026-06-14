@@ -2,17 +2,17 @@
 # Site Settings
 # =========================
 title: Saif Way Technology
-tagline: IT Portfolio & Engineering Blog
+tagline: Cybersecurity, Infrastructure & Automation Portfolio
 description: >
-  Imran Sarwar – Network, Cloud & Cybersecurity Engineer.
-  Portfolio and blog covering Python automation, OpenStack, DevNet,
-  network security, and system administration.
-
+  Professional portfolio of Imran Sarwar, a UAE-based IT infrastructure and NOC/DC
+  operations professional focused on cybersecurity, network automation, Python Flask,
+  cloud IAM, PKI, SSL certificate management, and applied AI security projects.
+  
 url: "https://saifwaytech.com"
 baseurl: ""
 
 # =========================
-# Author / Brand Identity (VERY IMPORTANT)
+# Author / Brand Identity
 # =========================
 author:
   name: Imran Sarwar
@@ -42,6 +42,9 @@ exclude:
   - node_modules
   - vendor
   - README.md
+  - .jekyll-cache
+  - .sass-cache
+  - .git
 
 # =========================
 # Sitemap Controls (IMPORTANT)

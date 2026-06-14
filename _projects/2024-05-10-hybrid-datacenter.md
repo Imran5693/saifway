@@ -1,135 +1,296 @@
 ---
 layout: project
-title: "Hybrid Data Center Network Design – Backup Architecture Case Study"
-
-description: >
-  A hands-on hybrid data center network design project focused on secure
-  backup architecture, implementing OSPF routing, VPN GRE tunnels,
-  QoS traffic prioritization, and ACL-based security controls.
-
+title: "Hybrid Data Center Network Design - Secure Backup Architecture"
+description: "A hands-on network design case study focused on hybrid data center backup connectivity, OSPF routing, GRE VPN tunnels, ACL-based security, QoS traffic prioritization, and secure inter-site communication."
 date: 2024-05-10
-thumbnail: /assets/images/projects/net-topology.jpg
-
+thumbnail: "/assets/images/projects/hybrid datacenter.png"
 tags:
-  - hybrid network design project
-  - network architecture case study
-  - VPN GRE OSPF lab
-  - secure backup network
-  - Cisco networking lab
-  - network engineer portfolio
-
+  - Network Design
+  - Hybrid Data Center
+  - OSPF
+  - GRE VPN
+  - ACL
+  - QoS
+  - Cisco Packet Tracer
 keywords:
-  - hybrid data center network design project
-  - hybrid backup network architecture
-  - VPN GRE OSPF implementation
-  - hands-on network architecture lab
-  - network engineer portfolio project
-  - network design case study
-  - network topology design lab
-
+  - hybrid data center network design
+  - secure backup network architecture
+  - OSPF GRE VPN lab
+  - Cisco network design project
+  - data center backup connectivity
+  - network engineer portfolio
 sitemap: true
 priority: 0.9
 ---
 
-## Project Overview
-This project focuses on the **design and implementation of a hybrid network architecture** to support outsourced data center backup operations. The network ensures **secure communication**, **high availability**, and **optimized performance** through QoS and segmentation policies.
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Hybrid Data Center Secure Backup Architecture",
+  "applicationCategory": "NetworkInfrastructureDesign",
+  "operatingSystem": "Cisco IOS",
+  "description": "A secure hybrid data center infrastructure design case study integrating multi-site OSPF routing, tokenless GRE VPN tunnels, and Class-Based Weighted Fair Queueing QoS configurations.",
+  "creator": {
+    "@type": "Person",
+    "name": "Imran Sarwar"
+  }
+}
+</script>
 
-The proposed design integrates:
-- **Backup Server** – Deployed within the organization's on-premises data center to manage backup operations.
-- **Storage Devices** – Network Attached Storage (NAS) or SAN-based storage systems for local backup storage.
-- **Network Infrastructure** – High-bandwidth, segmented network with QoS for prioritizing backup traffic.
+<div class="row align-items-center my-5">
+  <div class="col-lg-6">
+    <h2 class="fw-bold mb-3">
+      Hybrid Data Center Secure Backup Architecture
+    </h2>
+    <p class="lead text-muted">
+      An enterprise-grade network design engineering case study modeling a high-availability backup storage transport mesh. This project orchestrates secure site-to-site communication lines between corporate on-premises infrastructure, isolated branch nodes, and cloud disaster recovery centers.
+    </p>
 
----
+    <ul class="list-unstyled mt-4 text-secondary">
+      <li class="mb-2 d-flex align-items-center">
+        <i class="fas fa-check-circle text-primary me-2" style="vertical-align: middle;"></i> <span>Multi-Site OSPF Core Dynamic Path Optimization</span>
+      </li>
+      <li class="mb-2 d-flex align-items-center">
+        <i class="fas fa-check-circle text-primary me-2" style="vertical-align: middle;"></i> <span>Encapsulated Point-to-Point GRE VPN Cloud Tunnels</span>
+      </li>
+      <li class="mb-2 d-flex align-items-center">
+        <i class="fas fa-check-circle text-primary me-2" style="vertical-align: middle;"></i> <span>Granular Extended ACL Access Policies &amp; Control</span>
+      </li>
+      <li class="mb-2 d-flex align-items-center">
+        <i class="fas fa-check-circle text-primary me-2" style="vertical-align: middle;"></i> <span>Class-Based QoS Traffic Shaping &amp; Prioritization</span>
+      </li>
+    </ul>
+  </div>
 
-## Case Study: Hybrid Network Backup Design
-**Problem:**  
-Organizations require secure and reliable backup connectivity between on-premises infrastructure and cloud data centers.
-
-**Solution:**  
-Implemented a hybrid network design using OSPF routing, VPN GRE tunnels, ACL-based security, and QoS policies to protect and prioritize backup traffic.
-
-**Result:**  
-A secure, scalable backup network topology with high availability, optimized performance, and centralized monitoring.
-
----
-
-## Project Scope
-The network is designed to guarantee the **security, integrity, and reliability** of communication between:
-- **On-Premises Data Center** (Core Server, Monitoring Server, Backup Server)
-- **Two Remote Sites** – Connected via serial links with high availability enabled between them.
-- **Cloud Data Center** – Integrated using secure **VPN GRE tunnels**.
-- **OSPF Routing** – For dynamic, efficient path selection.
-- **ACL Security** – To filter and protect network traffic.
-- **QoS** – To optimize bandwidth usage and prioritize critical backup traffic.
-
----
-
-## Network Design Lab Overview
-This project can also be treated as a **network design lab**, where OSPF routing, VPN GRE tunneling, ACL security, and QoS policies were validated using simulated environments. The lab tested routing convergence, tunnel stability, and secure backup traffic flow.
-
----
-
-## Objectives
-- Develop a **comprehensive hybrid architecture** aligned with organizational security requirements.
-- Clearly define the number and roles of routers and switches in the design.
-- Assess the **existing network infrastructure** for compatibility and connectivity.
-- Identify **vulnerabilities** and potential security weaknesses.
-- Enable **real-time monitoring and logging** for proactive threat detection.
-- Provide **comprehensive documentation** and training for IT staff.
-
----
-
-## Requirements Delivered
-- **Topology Diagram** (Visio-based, professional format)
-- **Test Cases** ensuring reliable communication
-- **Configuration Commands** for:
-  - OSPF Routing
-  - VPN GRE setup
-  - ACLs for access control
-  - QoS for traffic optimization
-- Security gap analysis and integration with existing infrastructure
-
----
-
-## Tools & Technologies
-- **Cisco Packet Tracer** (Latest Version)
-- **Microsoft Visio** (Topology Design)
-- Networking protocols: **OSPF, VPN GRE**
-- Security controls: **ACLs, QoS**
-
----
-
-## Outcome
-The implemented hybrid network provides:
-- **Reliable inter-site connectivity** with high availability
-- **Secure cloud integration** for outsourced backup services
-- **Optimized traffic flow** for backup operations
-- **Real-time monitoring capability**
-- A **scalable and secure foundation** for future expansions
-
-**Topology:**
-![Hybrid Network Topology]({{ site.baseurl }}/assets/images/projects/NET-top.png)
-
-**Presentation:**
-<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
-  <iframe src="https://docs.google.com/presentation/d/1dg-FAPuJUjT2bcoQSTLtvm4nZ2kDWOkIAlKtbpM0Xo4/edit?usp=sharing" 
-  style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allowfullscreen></iframe>
+  <div class="col-lg-6 text-center">
+    <div class="project-image-wrapper mx-auto my-3" style="max-width: 500px; width: 100%; display: block;">
+      <img
+        src="{{ site.baseurl }}/assets/images/projects/net-topology.jpg"
+        class="img-fluid rounded shadow-lg border"
+        alt="Hybrid Data Center Infrastructure Network Thumbnail">
+    </div>
+  </div>
 </div>
 
 ---
 
-## Semantic Keyword Reinforcement
-This project demonstrates practical **network designing principles** including:
-- topology planning
-- protocol selection
-- redundancy
-- security zoning
-- traffic optimization
+<div class="row g-4 my-5">
+  <div class="col-md-6">
+    <div class="card h-100 p-4 border-0 shadow-sm bg-light">
+      <h3 class="h5 fw-bold text-danger mb-3 d-flex align-items-center">
+        <i class="fas fa-exclamation-triangle me-2" style="vertical-align: middle;"></i>
+        <span>The Enterprise Challenge</span>
+      </h3>
+      <p class="text-muted small mb-0">
+        Modern businesses face significant data replication challenges when scaling data transfers to off-site cloud storage targets. Unprotected public transport pipes introduce interception risks, while basic routing mechanics fail to protect primary pathways. Furthermore, high-volume storage synchronization bursts often consume critical network bandwidth, causing packet drops and system performance degradation for live production applications.
+      </p>
+    </div>
+  </div>
 
-It serves as a reference for **network design case studies**, **network topology labs**, and **portfolio projects** for aspiring network engineers.
+  <div class="col-md-6">
+    <div class="card h-100 p-4 border-0 shadow-sm bg-light">
+      <h3 class="h5 fw-bold text-success mb-3 d-flex align-items-center">
+        <i class="fas fa-check-circle me-2" style="vertical-align: middle;"></i>
+        <span>The Engineered Solution</span>
+      </h3>
+      <p class="text-muted small mb-0">
+        I engineered a secure hybrid topology framework within Cisco Packet Tracer. By combining dynamic multi-area OSPF path selection with Point-to-Point GRE VPN tunnel wrappers across the public cloud edge, data flows stay protected. Additionally, I implemented precise, strict Quality of Service (QoS) queue allocation policies and extended Access Control Lists (ACLs) to guarantee system path availability for critical storage operations.
+      </p>
+    </div>
+  </div>
+</div>
 
 ---
 
-## Related Articles
-- [Designing a Hybrid Data Center Network – Blog](/2024/05/20/hybrid-data-center.html)
-- [Campus Area Network Design Project](/projects/2024-12-10-campus-area-network/)
+<h2 class="text-center fw-bold my-5">
+  Core Architecture Implementation Pillars
+</h2>
+
+<div class="row g-4 mb-5">
+  <div class="col-md-6 col-lg-3">
+    <div class="card h-100 shadow-sm border-0 feature-card p-3">
+      <div class="card-body">
+        <i class="fas fa-network-wired text-primary fs-3 mb-3" style="vertical-align: middle;"></i>
+        <h4 class="h6 fw-bold">Dynamic Routing Core</h4>
+        <p class="text-muted small mb-0">
+          Deploys OSPF area configuration structures to optimize convergent data path calculations between data center core blocks and remote systems.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-lg-3">
+    <div class="card h-100 shadow-sm border-0 feature-card p-3">
+      <div class="card-body">
+        <i class="fas fa-key text-primary fs-3 mb-3" style="vertical-align: middle;"></i>
+        <h4 class="h6 fw-bold">Encapsulated Tunneling</h4>
+        <p class="text-muted small mb-0">
+          Establishes end-to-end Generic Routing Encapsulation (GRE) VPN tunnels across unsecure public provider lines to mask off-site sync packets.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-lg-3">
+    <div class="card h-100 shadow-sm border-0 feature-card p-3">
+      <div class="card-body">
+        <i class="fas fa-user-shield text-primary fs-3 mb-3" style="vertical-align: middle;"></i>
+        <h4 class="h6 fw-bold">Access Engineering</h4>
+        <p class="text-muted small mb-0">
+          Configures strict Extended Access Control Lists (ACLs) to isolate traffic profiles, permitting only authorized monitoring and core server storage nodes.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-lg-3">
+    <div class="card h-100 shadow-sm border-0 feature-card p-3">
+      <div class="card-body">
+        <i class="fas fa-sliders-h text-primary fs-3 mb-3" style="vertical-align: middle;"></i>
+        <h4 class="h6 fw-bold">QoS Bandwidth Tuning</h4>
+        <p class="text-muted small mb-0">
+          Applies explicit service policy traffic markers to ensure storage transfers do not choke real-time company transactions or trigger line time-outs.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+---
+
+<div class="row my-5 g-4">
+  <div class="col-md-6">
+    <h3 class="fw-bold mb-4">Functional Capabilities &amp; Design Scope</h3>
+    <div class="p-4 border rounded bg-white shadow-sm h-100">
+      <ul class="list-unstyled mb-0">
+        <li class="mb-3 d-flex align-items-start">
+          <i class="fas fa-server text-primary me-2 mt-1" style="vertical-align: middle;"></i>
+          <div>
+            <strong>Multi-Server Node Separation:</strong> Completely decouples primary transactional production environments from isolated backup systems and centralized monitoring network zones.
+          </div>
+        </li>
+        <li class="mb-3 d-flex align-items-start">
+          <i class="fas fa-warehouse text-primary me-2 mt-1" style="vertical-align: middle;"></i>
+          <div>
+            <strong>Multi-Branch Architecture Mapping:</strong> Models secure dual branch office node meshes utilizing redundant path options to navigate mid-route hardware link dropouts.
+          </div>
+        </li>
+        <li class="mb-3 d-flex align-items-start">
+          <i class="fas fa-shield-alt text-primary me-2 mt-1" style="vertical-align: middle;"></i>
+          <div>
+            <strong>Granular Traffic Policing:</strong> Drops unverified lateral connection attempts at the inner switch interface line via hardware edge policies.
+          </div>
+        </li>
+        <li class="mb-3 d-flex align-items-start">
+          <i class="fas fa-tachometer-alt text-primary me-2 mt-1" style="vertical-align: middle;"></i>
+          <div>
+            <strong>Congestion Management:</strong> Leverages Class-Based Weighted Fair Queueing (CBWFQ) to guarantee dedicated circuit percentages for database backup bursts.
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <h3 class="fw-bold mb-4">Technical Parameter Matrix</h3>
+    <table class="table table-bordered bg-white shadow-sm h-100 align-middle mb-0">
+      <tbody>
+        <tr>
+          <td class="bg-light fw-bold text-start ps-4" style="width: 40%;"><i class="fas fa-tools text-primary me-2" style="vertical-align: middle;"></i> Modeling Software</td>
+          <td>Cisco Packet Tracer, Microsoft Visio Pro Blueprints</td>
+        </tr>
+        <tr>
+          <td class="bg-light fw-bold text-start ps-4"><i class="fas fa-route text-primary me-2" style="vertical-align: middle;"></i> Core Routing Engine</td>
+          <td>OSPF Dynamic Routing Protocols (Area Multi-Subnet Meshes)</td>
+        </tr>
+        <tr>
+          <td class="bg-light fw-bold text-start ps-4"><i class="fas fa-ethernet text-primary me-2" style="vertical-align: middle;"></i> Transport Security</td>
+          <td>Generic Routing Encapsulation (GRE) Site-to-Cloud Tunnels</td>
+        </tr>
+        <tr>
+          <td class="bg-light fw-bold text-start ps-4"><i class="fas fa-lock text-primary me-2" style="vertical-align: middle;"></i> Access Management</td>
+          <td>Extended Access Control Lists (Traffic Profiling &amp; Enforcement)</td>
+        </tr>
+        <tr>
+          <td class="bg-light fw-bold text-start ps-4"><i class="fas fa-wave-square text-primary me-2" style="vertical-align: middle;"></i> Optimization Layer</td>
+          <td>QoS Class Maps, Policy Maps, Differentiated Services Code Point (DSCP)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+---
+
+<h3 class="fw-bold mb-4">Hybrid Network Topology Architecture</h3>
+<p class="text-muted small mb-4">
+  Review the complete hybrid routing blueprint below. The parent layout wrapper is capped at 800px to ensure crisp display across ultra-wide desktop monitors without layout stretching.
+</p>
+
+<div class="my-5 text-center">
+  <div class="project-image-wrapper mx-auto text-center" style="max-width: 800px; width: 100%; display: block;">
+    <img 
+      src="{{ site.baseurl }}/assets/images/projects/NET-top.png" 
+      alt="Hybrid Data Center Network Secure Backup Topology Blueprint"
+      class="img-fluid rounded shadow-lg border"
+      style="width: 100%; height: auto; object-fit: contain;">
+  </div>
+</div>
+
+---
+
+<div class="my-5 bg-dark text-white rounded-4 p-5 shadow-sm">
+  <div class="row align-items-center">
+    <div class="col-lg-8">
+      <h3 class="fw-bold text-info mb-3">
+        Data Center Infrastructure Perspective
+      </h3>
+      <p class="small mb-0 text-secondary" style="line-height: 1.7;">
+        This architecture project emphasizes the operational mechanics required to sustain zero-downtime enterprise computing structures. Building reliable hybrid channels by bridging local physical resources with cloud-hosted assets demonstrates deep competency in traffic manipulation, security filtering, and link load stabilization crucial across production-tier enterprise environments.
+      </p>
+    </div>
+
+    <div class="col-lg-4 text-center mt-4 mt-lg-0">
+      <div class="p-3 border border-secondary rounded-3">
+        <h2 class="display-5 fw-bold text-info mb-0" style="font-size: 1.8rem;">
+          Secure DR
+        </h2>
+        <p class="text-muted small mb-0">
+          Disaster Recovery Architecture
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+---
+
+<section id="external-resources" class="my-5 py-4 border-top">
+  <div class="row align-items-center g-4">
+    <div class="col-md-4">
+      <h4 class="fw-bold text-dark mb-2">
+        Project Assets &amp; Related Analysis
+      </h4>
+      <p class="text-muted small mb-0">
+        Review my technical deep-dive breakdown essay regarding hybrid setups or review neighboring infrastructure portfolio case files.
+      </p>
+    </div>
+
+    <div class="col-md-8">
+      <div class="d-flex flex-wrap gap-2 justify-content-md-end justify-content-start">
+        <a href="{{ '/2024/05/20/hybrid-data-center.html' | relative_url }}"
+           class="btn btn-dark btn-sm px-3 py-2 fw-semibold d-inline-flex align-items-center">
+          <i class="fas fa-book-open me-2" style="vertical-align: middle;"></i>
+          <span>Read Technical Design Blog</span>
+        </a>
+
+        <a href="{{ '/projects/' | relative_url }}"
+           class="btn btn-outline-primary btn-sm px-3 py-2 fw-semibold d-inline-flex align-items-center">
+          <i class="fas fa-folder-open me-2" style="vertical-align: middle;"></i>
+          <span>Explore All Portfolio Labs</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

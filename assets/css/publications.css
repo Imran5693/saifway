@@ -1,0 +1,52 @@
+.publications-section {
+  padding: 5rem 0;
+}
+
+.publication-item {
+  display: block;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 1rem;
+  transition: 0.3s;
+  color: inherit;
+  text-decoration: none;
+}
+
+.publication-item h2,
+.publication-item h3 {
+  color: #0b2545;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.publication-item p,
+.publication-item small {
+  color: #64748b;
+}
+
+.publication-item a {
+  color: #0d6efd;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.publication-thumbnail {
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  width: 100%;
+}
+
+.publication-item:hover {
+  border-color: #0d6efd;
+  box-shadow: 0 10px 25px rgba(13,110,253,0.1);
+}
+
+.view-all-btn {
+  background: #0d6efd;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+}

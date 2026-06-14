@@ -2,87 +2,66 @@
 layout: default
 ---
 
-<div class="container my-5">
+<article class="project-detail-page py-6 bg-white">
+  <div class="container-fluid px-4 px-xl-5">
+    <header class="article-header">
+      <span class="section-kicker">Project Case Study</span>
+      <h1>{{ page.title }}</h1>
 
-  <!-- ========================= -->
-  <!-- SEO: Project Title (H1) -->
-  <!-- ========================= -->
-  <h1 class="mb-2 fw-bold">
-    {{ page.title }}
-  </h1>
+      {% if page.description %}
+        <p class="article-description">{{ page.description }}</p>
+      {% endif %}
 
-  <!-- SEO Summary -->
-  {% if page.description %}
-  <p class="lead text-muted mb-4">
-    {{ page.description }}
-  </p>
-  {% endif %}
+      <div class="project-meta-row">
+        {% if page.date %}
+          <span><i class="fas fa-calendar-check"></i> {{ page.date | date: "%B %Y" }}</span>
+        {% endif %}
+        <span><i class="fas fa-user-cog"></i> Imran Sarwar</span>
+      </div>
 
-  <!-- ========================= -->
-  <!-- Project Thumbnail -->
-  <!-- ========================= -->
-  {% if page.thumbnail %}
-    <img
-      src="{{ site.baseurl }}{{ page.thumbnail }}"
-      alt="{{ page.title }} – Network Architecture Diagram"
-      class="img-fluid rounded shadow-sm mb-4"
-      loading="lazy">
-  {% endif %}
+      {% if page.tags %}
+        <div class="d-flex flex-wrap gap-2 justify-content-center mt-4">
+          {% for tag in page.tags %}
+            <span class="tech-badge">{{ tag }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </header>
 
-  <!-- ========================= -->
-  <!-- Project Metadata -->
-  <!-- ========================= -->
-  <p class="text-muted mb-4">
-    {% if page.date %}
-      <strong>Completed:</strong>
-      <time datetime="{{ page.date | date_to_xmlschema }}">
-        {{ page.date | date: "%B %d, %Y" }}
-      </time>
+    {% if page.thumbnail %}
+      <div class="project-image-wrapper">
+        <img src="{{ page.thumbnail | relative_url }}" alt="{{ page.title }}" class="project-image" loading="lazy">
+      </div>
     {% endif %}
 
-    {% if page.tags %}
-      <br>
-      <strong>Technologies:</strong>
-      {{ page.tags | join: ", " }}
-    {% endif %}
-  </p>
+    <div class="article-content">
+      {{ content }}
+    </div>
 
-  <!-- ========================= -->
-  <!-- Project Content -->
-  <!-- ========================= -->
-  <article class="project-content mb-5">
-    {{ content }}
-  </article>
-
-  <!-- ========================= -->
-  <!-- Internal Navigation -->
-  <!-- ========================= -->
-  <div class="d-flex justify-content-between align-items-center mt-5">
-    <a href="{{ '/projects/' | relative_url }}" class="btn btn-outline-primary">
-      ← View All Projects
-    </a>
-
-    <a href="{{ '/blog/' | relative_url }}" class="btn btn-primary">
-      Read Related Blogs →
-    </a>
+    <section class="project-cta">
+      <h2>Need a similar technical solution?</h2>
+      <p>
+        I build practical labs, dashboards, automation workflows, and infrastructure documentation around real technical problems.
+      </p>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a href="{{ '/#contact' | relative_url }}" class="btn btn-primary">Contact Me</a>
+        <a href="{{ '/projects/' | relative_url }}" class="btn btn-outline-primary">Browse Projects</a>
+      </div>
+    </section>
   </div>
+</article>
 
-</div>
-
-<!-- ========================= -->
-<!-- SEO: Project Schema -->
-<!-- ========================= -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
-  "name": "{{ page.title }}",
-  "description": "{{ page.description }}",
+  "name": "{{ page.title | escape }}",
+  "description": "{{ page.description | default: site.description | strip_newlines | escape }}",
   "author": {
     "@type": "Person",
     "name": "Imran Sarwar"
   },
   "url": "{{ site.url }}{{ page.url }}",
-  "keywords": "{{ page.tags | join: ', ' }}"
+  "keywords": "{{ page.tags | join: ', ' | escape }}"
 }
 </script>
