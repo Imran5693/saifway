@@ -2,79 +2,45 @@
 layout: default
 ---
 
-<div class="container my-5">
+<article class="py-6 bg-white">
+  <div class="container">
+    <header class="article-header">
+      {% if page.thumbnail %}
+        <img src="{{ page.thumbnail | relative_url }}" alt="{{ page.title }}" class="article-hero-image" loading="lazy">
+      {% endif %}
 
-  <!-- Post Header -->
-  <header class="mb-5 text-center">
-  <img src="{{ site.baseurl }}{{ page.thumbnail }}" alt="{{ page.title }} thumbnail"
-       class="mb-3"
-       style="width: 100%; max-width: 800px; height: auto; object-fit: cover; border-radius: 8px; border: 3px solid #4364F7; box-shadow: 0 12px 30px rgba(67, 100, 247, 0.3);" />
-  <h1 class="display-4 fw-bold text-primary mt-3">{{ page.title }}</h1>
-  <p class="text-muted fs-5">{{ page.date | date: "%B %d, %Y" }}</p>
-</header>
+      <span class="section-kicker">Technical Article</span>
+      <h1>{{ page.title }}</h1>
+      <p class="article-meta">
+        {{ page.date | date: "%B %d, %Y" }} / {{ page.author | default: site.author.name }}
+      </p>
+      {% if page.description %}
+        <p class="article-description">{{ page.description }}</p>
+      {% endif %}
+    </header>
 
+    <div class="article-content">
+      {{ content }}
+    </div>
 
-
-  <!-- Post Content -->
-  <article class="content fs-5" style="line-height: 1.7; max-width: 900px; margin: auto;">
-    {{ content | markdownify }}
-  </article>
-
-  <!-- Author Section -->
-  <div class="author-box mt-5 p-4 rounded shadow-sm bg-light" style="max-width: 900px; margin: auto;">
-    <div class="d-flex align-items-center">
-      <img src="{{ site.baseurl }}/assets/images/myprof.jpg" alt="Author" class="rounded-circle me-3" style="width: 80px; height: 80px; object-fit: cover;">
+    <aside class="author-box">
+      <img src="{{ '/assets/images/myprof.jpg' | relative_url }}" alt="Imran Sarwar">
       <div>
-        <h6 class="mb-1 fw-bold">{{ page.author | default: "Imran Sarwar" }}</h6>
-        <p class="mb-1 text-muted" style="font-size: 0.95rem;">
-          Network & Cloud Engineer specializing in OpenStack, Python, and Automation.  
-          Passionate about building scalable, secure, and high-performing IT solutions.
+        <h2>Imran Sarwar</h2>
+        <p>
+          IT infrastructure and NOC/DC operations professional focused on cybersecurity, automation,
+          cloud IAM, Python, and practical security engineering.
         </p>
-        <div>
-          <a href="https://linkedin.com/in/imransarwaritpro" target="_blank" class="me-2 text-decoration-none">
-  <i class="fab fa-linkedin fa-lg"></i>
-</a>
-<a href="https://www.facebook.com/profile.php?id=61563409706801" target="_blank" class="me-2 text-decoration-none">
-  <i class="fab fa-facebook fa-lg"></i>
-</a>
-<a href="https://www.youtube.com/@SaifWayTech" target="_blank" class="me-2 text-decoration-none">
-  <i class="fab fa-youtube fa-lg"></i>
-</a>
-<a href="https://instagram.com/imran_sarwar__" target="_blank" class="me-2 text-decoration-none">
-  <i class="fab fa-instagram fa-lg"></i>
-</a>
-<a href="https://wa.me/923146809271" target="_blank" class="text-decoration-none">
-  <i class="fab fa-whatsapp fa-lg"></i>
-</a>
-
+        <div class="author-links">
+          <a href="https://www.linkedin.com/in/imransarwaritpro/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/Imran5693" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.youtube.com/@SaifWayTech" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
+    </aside>
+
+    <div class="text-center mt-5">
+      <a href="{{ '/blog/' | relative_url }}" class="btn btn-primary">Back to Blog</a>
     </div>
   </div>
-
-  <!-- Related Posts Placeholder -->
-  <div class="related-posts mt-5" style="max-width: 900px; margin: auto;">
-    <h5 class="fw-bold mb-3 text-primary">You Might Also Like</h5>
-    <div class="row g-4">
-      <!-- Example related post card -->
-      <div class="col-md-6">
-        <div class="card h-100 border-0 shadow-sm">
-          <img src="{{ site.baseurl }}/assets/images/projects/net-topology.jpg" class="card-img-top" alt="Related Post Thumbnail" style="height: 160px; object-fit: cover;">
-          <div class="card-body">
-            <h6 class="card-title fw-bold text-primary">Designing a Hybrid Network Architecture</h6>
-            <a href="{{ site.baseurl }}/2024/05/20/hybrid-data-center.html" class="btn btn-outline-primary btn-sm mt-2">Read More</a>
-          </div>
-        </div>
-      </div>
-      <!-- Add more related posts as needed -->
-    </div>
-  </div>
-
-  <!-- Back to Blog Button -->
-  <div class="text-center mt-5">
-    <a href="{{ '/blog/' | relative_url }}" class="btn btn-primary btn-lg px-4">
-      ← Back to Blog
-    </a>
-  </div>
-
-</div>
+</article>

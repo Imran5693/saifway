@@ -1,512 +1,277 @@
 ---
 layout: default
-title: Home
+title: Cybersecurity, Network Automation & AI Security Portfolio
+description: Imran Sarwar builds practical cybersecurity, network automation, Python Flask, PKI, SSL certificate management, ML-based cyber attack detection, and NOC/data center solutions.
 ---
 
-<header class="hero">
-  <div class="hero-overlay"></div>
+<header class="hero cyber-hero">
+  <div class="cyber-grid"></div>
+  <div class="hero-scanline"></div>
 
-  <div class="hero-content container text-center d-flex flex-column align-items-center justify-content-center">
-    <!-- Profile / Personal Image -->
-    <img src="{{ '/assets/images/pf.png' | relative_url }}" alt="Imran Sarwar" class="profile-pic rounded-circle shadow-sm mb-3" />
+  <div class="container-fluid cyber-hero-inner px-4 px-lg-5">
+    <div class="row align-items-center min-vh-100 py-5 g-5">
 
-    <!-- Main Heading with Name and Company -->
-    <h1 class="mt-3">Imran Sarwar</h1>
-    <h2 class="text-primary fw-semibold mb-2">Founder & Lead Engineer at <span class="text-dark">Saif Way Technology</span></h2>
+      <div class="col-lg-6 col-xl-6">
+        <div class="hero-kicker">
+          <span></span> Cybersecurity / Network Security / Automation
+        </div>
 
-    <!-- Typed Skills / Expertise -->
-    <p class="lead">
-      <span class="typed-text" data-text='[
-        "Cisco Certified Network Engineer", 
-        "Python Developer", 
-        "Linux & Windows Server Admin", 
-        "Cybersecurity Consultant", 
-        "Web Developer"
-      ]'></span>
-    </p>
+        <h1 class="cyber-title">
+          Secure networks. Automated operations. Practical cyber defense.
+        </h1>
 
-    <!-- Short Intro / Keyword-rich paragraph -->
-    <p class="desc mb-3">
-      Delivering advanced IT solutions for small businesses in Abu Dhabi and UAE: Cisco & Fortinet configuration, firewall solutions, network security, IT infrastructure (windows/linux) solution, automation with Python, web development, network setup and structured cabling.
-    </p>
+        <p class="cyber-subtitle">
+          I am Imran Sarwar, a UAE-based IT infrastructure and NOC/DC operations professional building
+          hands-on security labs, Python automation, PKI/SSL workflows, cloud IAM tools, and ML-assisted
+          threat detection projects under Saif Way Technology.
+        </p>
 
-    <!-- Call to Action Button -->
-    <a href="#contact" class="btn btn-primary mt-3">Contact Me / Get a Quote</a>
+        <div class="d-flex flex-wrap gap-3 mt-4">
+          <a href="#projects" class="btn btn-cyber-primary">View Projects</a>
+          <a href="{{ '/professional-profile/' | relative_url }}" class="btn btn-cyber-secondary">Professional Profile</a>
+        </div>
+
+        <div class="cyber-metrics mt-5">
+          <div><strong>Security</strong><span>Zero Trust / PKI / IAM</span></div>
+          <div><strong>Network</strong><span>NOC / DC / Switching</span></div>
+          <div><strong>Automation</strong><span>Python / Flask / APIs</span></div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-xl-6">
+        <div class="hero-profile-wrapper">
+          <div class="hero-profile-glow"></div>
+
+          <div class="hero-profile-frame">
+            <img src="{{ '/assets/images/professional.jpg' | relative_url }}"
+                 alt="Imran Sarwar"
+                 class="hero-profile-image">
+          </div>
+
+          <div class="hero-profile-badge">
+            <span class="status-dot"></span>
+            Network Operations • Security Engineering • Automation
+          </div>
+
+          <div class="hero-profile-cards">
+            <div class="hero-mini-card">
+              <small>Cybersecurity</small>
+              <strong>SCOR • CC-ISC2 </strong>
+            </div>
+
+            <div class="hero-mini-card">
+              <small>Automation</small>
+              <strong>Python • Flask</strong>
+            </div>
+
+            <div class="hero-mini-card">
+              <small>Infrastructure</small>
+              <strong>NOC • DC</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 
-  <!-- Skill Badges / Certifications -->
-  <div class="skills-bar container mt-4 d-flex flex-wrap justify-content-center gap-2">
-    <span class="badge bg-primary">CCS</span>
-    <span class="badge bg-secondary">CC ISC2</span>
-    <span class="badge bg-success">MCSE</span>
-    <span class="badge bg-info">MCSA</span>
-    
+  <div class="floating-identity" id="floatingIdentity">
+    <img src="{{ '/assets/images/pf.png' | relative_url }}" alt="Imran Sarwar">
+    <div>
+      <strong>Imran Sarwar</strong>
+      <span>Saif Way Technology</span>
+    </div>
   </div>
 </header>
 
-
-
-<!-- Certifications Section -->
-<!-- Certifications Section -->
-<section id="certifications" class="py-5 bg-light">
+<section id="focus" class="py-6 bg-white">
   <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="display-5 fw-bold text-primary mb-3">Certifications & Achievements</h2>
-      <p class="lead text-muted">Validated expertise across multiple technology domains</p>
+    <div class="section-heading">
+      <span class="section-kicker">Technical Focus</span>
+      <h2>Practical engineering across infrastructure, security, and software.</h2>
+      <p>
+        I connect hands-on operations experience with modern security and automation work, using labs and working
+        applications to document what I build and learn.
+      </p>
     </div>
 
-    <div class="row g-4 justify-content-center">
-      <!-- Networking -->
-      <div class="col-md-10 col-lg-8">
-        <div class="card border-0 shadow-sm h-100">
-          <div class="card-header bg-primary text-white">
-            <h3 class="h5 mb-0">
-              <i class="fas fa-network-wired me-2"></i>Networking Certifications
-            </h3>
-          </div>
-          <div class="card-body">
-            <ul class="list-unstyled mb-0">
-              <li class="d-flex align-items-center mb-3">
-                <i class="fas fa-certificate text-primary me-3 fs-5"></i>
-                <div>
-                  <h4 class="h6 mb-0">Cisco Certified Specialist - Enterprise Core</h4>
-                  <small class="text-muted">Advanced networking infrastructure</small>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- System Administration -->
-      <div class="col-md-10 col-lg-8">
-        <div class="card border-0 shadow-sm h-100">
-          <div class="card-header bg-secondary text-white">
-            <h3 class="h5 mb-0">
-              <i class="fas fa-server me-2"></i>System Administration
-            </h3>
-          </div>
-          <div class="card-body">
-            <ul class="list-unstyled mb-0">
-              <li class="d-flex align-items-center mb-3">
-                <i class="fas fa-certificate text-secondary me-3 fs-5"></i>
-                <div>
-                  <h4 class="h6 mb-0">MCSE: Core Infrastructure</h4>
-                  <small class="text-muted">Microsoft Certified Solutions Expert</small>
-                </div>
-              </li>
-              <li class="d-flex align-items-center mb-3">
-                <i class="fas fa-certificate text-secondary me-3 fs-5"></i>
-                <div>
-                  <h4 class="h6 mb-0">MCSA: Windows Server 2016</h4>
-                  <small class="text-muted">Microsoft Certified Solutions Associate</small>
-                </div>
-              </li>
-              <li class="d-flex align-items-center">
-                <i class="fas fa-certificate text-secondary me-3 fs-5"></i>
-                <div>
-                  <h4 class="h6 mb-0">Google IT Support Professional</h4>
-                  <small class="text-muted">IT infrastructure support</small>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Cloud Infrastructure -->
-      <div class="col-md-10 col-lg-8">
-        <div class="card border-0 shadow-sm h-100">
-          <div class="card-header bg-info text-white">
-            <h3 class="h5 mb-0">
-              <i class="fas fa-cloud me-2"></i>Cloud Infrastructure
-            </h3>
-          </div>
-          <div class="card-body">
-            <ul class="list-unstyled mb-0">
-              <li class="d-flex align-items-center">
-                <i class="fas fa-certificate text-info me-3 fs-5"></i>
-                <div>
-                  <h4 class="h6 mb-0">Microsoft Certified: Azure Fundamentals</h4>
-                  <small class="text-muted">Cloud services foundation</small>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Cybersecurity -->
-      <div class="col-md-10 col-lg-8">
-        <div class="card border-0 shadow-sm h-100">
-          <div class="card-header bg-danger text-white">
-            <h3 class="h5 mb-0">
-              <i class="fas fa-shield-alt me-2"></i>Cybersecurity
-            </h3>
-          </div>
-          <div class="card-body">
-            <ul class="list-unstyled mb-0">
-              <li class="d-flex align-items-center mb-3">
-                <i class="fas fa-certificate text-danger me-3 fs-5"></i>
-                <div>
-                  <h4 class="h6 mb-0">Certified in Cybersecurity (CC)</h4>
-                  <small class="text-muted">(ISC)² Foundation</small>
-                </div>
-              </li>
-              <li class="d-flex align-items-center mb-3">
-                <i class="fas fa-certificate text-danger me-3 fs-5"></i>
-                <div>
-                  <h4 class="h6 mb-0">IBM Cybersecurity Analyst Professional</h4>
-                  <small class="text-muted">Security operations</small>
-                </div>
-              </li>
-              <li class="d-flex align-items-center">
-                <i class="fas fa-certificate text-danger me-3 fs-5"></i>
-                <div>
-                  <h4 class="h6 mb-0">Palo Alto Networks Cybersecurity</h4>
-                  <small class="text-muted">Network security</small>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Programming & Education -->
-      <div class="col-md-10 col-lg-8">
-        <div class="card border-0 shadow-sm h-100">
-          <div class="card-header bg-success text-white">
-            <h3 class="h5 mb-0">
-              <i class="fas fa-laptop-code me-2"></i>Programming & Education
-            </h3>
-          </div>
-          <div class="card-body">
-            <ul class="list-unstyled mb-0">
-              <li class="d-flex align-items-center mb-3">
-                <i class="fas fa-certificate text-success me-3 fs-5"></i>
-                <div>
-                  <h4 class="h6 mb-0">Python for Everybody Specialization</h4>
-                  <small class="text-muted">University of Michigan</small>
-                </div>
-              </li>
-              <li class="d-flex align-items-center">
-                <i class="fas fa-graduation-cap text-success me-3 fs-5"></i>
-                <div>
-                  <h4 class="h6 mb-0">Bachelor of Science in Computer Science</h4>
-                  <small class="text-muted">4-year degree program</small>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="text-center mt-5">
-      <a href="{{ '/certificates/' | relative_url }}" class="btn btn-primary btn-lg px-4 py-3">
-        <i class="fas fa-folder-open me-2"></i>View Detailed Certifications
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- Services Section -->
-<section id="services" class="py-5 bg-light">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="display-5 fw-bold text-primary mb-3">Our Services</h2>
-      <p class="lead text-muted">Professional solutions tailored to your technical needs</p>
-    </div>
-
-    <div class="row g-4 justify-content-center">
-      <!-- Networking Solutions -->
+    <div class="row g-4">
       <div class="col-md-6 col-lg-4">
-        <div class="service-item card border-0 p-4 h-100 text-center shadow-sm transition-all hover-shadow">
-          <div class="icon-wrapper bg-primary bg-opacity-10 mx-auto rounded-circle d-flex align-items-center justify-content-center mb-4">
-            <i class="fas fa-network-wired service-icon text-primary fs-3"></i>
-          </div>
-          <h3 class="h4 mb-3">Networking Solutions</h3>
-          <p class="text-muted mb-4">Design, configure, and manage secure, scalable enterprise-grade networks with optimized performance and reliability.</p>
-          <ul class="list-unstyled text-start text-muted small mx-auto" style="max-width: 250px;">
-            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Network architecture design</li>
-            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Router & switch configuration</li>
-            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Security implementation</li>
-            <li><i class="fas fa-check-circle text-primary me-2"></i>Performance optimization</li>
-          </ul>
-        </div>
+        <article class="professional-card h-100">
+          <i class="fas fa-network-wired"></i>
+          <h3>NOC & Data Center Operations</h3>
+          <p>Monitoring, incident analysis, access-switch support, connectivity troubleshooting, and service restoration coordination.</p>
+        </article>
       </div>
-
-      <!-- Python Development -->
       <div class="col-md-6 col-lg-4">
-        <div class="service-item card border-0 p-4 h-100 text-center shadow-sm transition-all hover-shadow">
-          <div class="icon-wrapper bg-primary bg-opacity-10 mx-auto rounded-circle d-flex align-items-center justify-content-center mb-4">
-            <i class="fab fa-python service-icon text-primary fs-3"></i>
-          </div>
-          <h3 class="h4 mb-3">Python Development</h3>
-          <p class="text-muted mb-4">Build custom automation scripts, APIs, and tools to streamline your IT operations and workflows.</p>
-          <ul class="list-unstyled text-start text-muted small mx-auto" style="max-width: 250px;">
-            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Network automation</li>
-            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>REST API development</li>
-            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Data processing scripts</li>
-            <li><i class="fas fa-check-circle text-primary me-2"></i>Custom CLI tools</li>
-          </ul>
-        </div>
+        <article class="professional-card h-100">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Cybersecurity & Network Security</h3>
+          <p>PKI and SSL certificate management, traffic analysis, network security concepts, IAM fundamentals and practical security labs.</p>
+        </article>
       </div>
-
-      <!-- System Administration -->
       <div class="col-md-6 col-lg-4">
-        <div class="service-item card border-0 p-4 h-100 text-center shadow-sm transition-all hover-shadow">
-          <div class="icon-wrapper bg-primary bg-opacity-10 mx-auto rounded-circle d-flex align-items-center justify-content-center mb-4">
-            <i class="fas fa-server service-icon text-primary fs-3"></i>
-          </div>
-          <h3 class="h4 mb-3">System Administration</h3>
-          <p class="text-muted mb-4">Comprehensive server management for both Linux and Windows environments with security best practices.</p>
-          <ul class="list-unstyled text-start text-muted small mx-auto" style="max-width: 250px;">
-            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Server setup & configuration</li>
-            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>User access management</li>
-            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Security hardening</li>
-            <li><i class="fas fa-check-circle text-primary me-2"></i>Backup & recovery</li>
-          </ul>
-        </div>
+        <article class="professional-card h-100">
+          <i class="fab fa-python"></i>
+          <h3>Python Automation</h3>
+          <p>Flask dashboards, REST integrations, Netmiko scripts, reporting tools, and repeatable infrastructure workflows.</p>
+        </article>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <article class="professional-card h-100">
+          <i class="fas fa-cloud"></i>
+          <h3>Cloud IAM</h3>
+          <p>OpenStack Keystone administration, identity governance concepts, RBAC, tenant management, and portal development.</p>
+        </article>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <article class="professional-card h-100">
+          <i class="fas fa-brain"></i>
+          <h3>Applied AI Security</h3>
+          <p>ML-based attack detection research,
+traffic feature extraction,
+security analytics experiments,
+and cybersecurity-focused AI projects.</p>
+        </article>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <article class="professional-card h-100">
+          <i class="fas fa-server"></i>
+          <h3>Systems Administration</h3>
+          <p>Linux and Windows Server support, access administration, troubleshooting, services, permissions, and hardening basics.</p>
+        </article>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Projects Section -->
-<section id="projects" class="projects-section">
+<section id="projects" class="py-6 bg-light">
   <div class="container">
-    <h2 class="section-title">Projects Done So Far</h2>
-    <div class="projects-grid">
-      {% for project in site.projects %}
-        <div class="project-card-wrapper">
-          <div class="project-card">
+    <div class="section-heading">
+      <span class="section-kicker">Portfolio</span>
+      <h2>Selected Projects</h2>
+      <p>Project write-ups include the problem, architecture, tools, implementation notes, and outcomes.</p>
+    </div>
+
+    <div class="row g-4">
+      {% assign projects = site.projects | sort: 'date' | reverse %}
+      {% for project in projects limit:6 %}
+        <div class="col-md-6 col-lg-4">
+          <article class="project-card h-100">
             {% if project.thumbnail %}
-              <img src="{{ project.thumbnail | relative_url }}" class="project-thumbnail" alt="{{ project.title }}">
+              <img src="{{ project.thumbnail | relative_url }}" class="project-thumbnail" alt="{{ project.title }}" loading="lazy">
             {% endif %}
             <div class="project-content">
               <h3 class="project-title">{{ project.title }}</h3>
-              <p class="project-description">{{ project.description | truncate: 100 }}</p>
-              <a href="{{ project.url | relative_url }}" class="project-link">Read More</a>
+              <p class="project-description">
+                {{ project.description | default: project.excerpt | strip_html | truncatewords: 22 }}
+              </p>
+              <a href="{{ project.url | relative_url }}" class="project-link">Read case study</a>
             </div>
-          </div>
+          </article>
         </div>
       {% endfor %}
     </div>
+
+    <div class="text-center mt-5">
+      <a href="{{ '/projects/' | relative_url }}" class="btn btn-primary">View All Projects</a>
+    </div>
   </div>
 </section>
 
-<!-- Publications Section -->
-<section id="publications" class="publications-section">
+<section id="credentials" class="py-6 bg-white">
   <div class="container">
-    <h2 class="section-title">My Publications</h2>
-    <div class="publications-list">
-      {% for post in site.posts limit:5 %}
-        <a href="{{ post.url | relative_url }}" class="publication-item">
-          <h3 class="publication-title">{{ post.title }}</h3>
-          <small class="publication-date">{{ post.date | date: "%b %d, %Y" }}</small>
-          <p class="publication-excerpt">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
-        </a>
+    <div class="section-heading">
+      <span class="section-kicker">Credentials</span>
+      <h2>Certifications and learning path</h2>
+      <p>
+Professional certifications and continuous learning focused on
+network operations, cybersecurity, security architecture,
+automation, cloud technologies, and infrastructure engineering.
+Current areas of specialization include Cisco Security,
+DevNet Automation, IAM, Zero Trust, and Security Design.
+</p>
+    </div>
+
+    <div class="credentials-strip">
+      <span>Cisco Enterprise Core</span>
+      <span>Cisco DevNet Core (DEVCOR)</span>
+      <span>ISC2 Certified in Cybersecurity</span>
+      <span>MCSE / MCSA</span>
+      <span>Azure Fundamentals</span>
+      <span>Google IT Support</span>
+      <span>IBM Cybersecurity Analyst</span>
+      <span>Python for Everybody</span>
+       <span>Cisco Security Core (SCOR)</span>
+      <span>Cisco Security Infrastructure Design (SDSI)</span>
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="{{ '/professional-profile/' | relative_url }}#certifications" class="btn btn-outline-primary">Open Full Profile</a>
+    </div>
+  </div>
+</section>
+
+<section id="publications" class="py-6 bg-light">
+  <div class="container">
+    <div class="section-heading">
+      <span class="section-kicker">Writing</span>
+      <h2>Latest Technical Notes</h2>
+      <p>Short articles on network operations, security design, automation, and learning through implementation.</p>
+    </div>
+
+    <div class="row g-4">
+      {% for post in site.posts limit:3 %}
+        <div class="col-lg-4">
+          <article class="publication-item h-100">
+            <small>{{ post.date | date: "%b %d, %Y" }}</small>
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.excerpt | strip_html | truncatewords: 24 }}</p>
+            <a href="{{ post.url | relative_url }}">Read article</a>
+          </article>
+        </div>
       {% endfor %}
     </div>
-    <div class="publications-footer">
-      <a href="{{ '/blog/' | relative_url }}" class="view-all-btn">View All Publications</a>
+
+    <div class="text-center mt-5">
+      <a href="{{ '/blog/' | relative_url }}" class="btn btn-primary">View All Articles</a>
     </div>
   </div>
 </section>
 
-<!-- Expertise Section -->
-<section id="expertise" class="py-5 bg-light">
+<section id="contact" class="contact-section">
   <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="section-title display-5 fw-bold text-primary mb-3">Field of Expertise</h2>
-      <p class="text-muted lead">Technical skills and specialized knowledge</p>
+    <div class="section-heading">
+      <span class="section-kicker">Contact</span>
+      <h2>Let's discuss infrastructure, security, or automation work.</h2>
+      <p>Use the form below for project inquiries, collaboration, or professional opportunities.</p>
     </div>
-    
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <div class="expertise-list">
-          <!-- Repeatable Expertise Item -->
-          <div class="expertise-item shadow-sm rounded-4 p-4 mb-4 bg-white animate__animated animate__fadeInUp" style="animation-delay: 0ms;">
-            <div class="d-flex align-items-center">
-              <div class="expertise-icon bg-primary bg-opacity-10 text-primary rounded-circle p-3 me-4 d-flex align-items-center justify-content-center" style="width: 56px; height: 56px;">
-                <i class="fas fa-network-wired fs-4"></i>
-              </div>
-              <h3 class="mb-0 fs-5 fw-semibold">Network Design & Implementation</h3>
-            </div>
-          </div>
-          
-          <div class="expertise-item shadow-sm rounded-4 p-4 mb-4 bg-white animate__animated animate__fadeInUp" style="animation-delay: 100ms;">
-            <div class="d-flex align-items-center">
-              <div class="expertise-icon bg-primary bg-opacity-10 text-primary rounded-circle p-3 me-4 d-flex align-items-center justify-content-center" style="width: 56px; height: 56px;">
-                <i class="fas fa-code fs-4"></i>
-              </div>
-              <h3 class="mb-0 fs-5 fw-semibold">Network Automation with Python</h3>
-            </div>
-          </div>
-          
-          <div class="expertise-item shadow-sm rounded-4 p-4 mb-4 bg-white animate__animated animate__fadeInUp" style="animation-delay: 200ms;">
-            <div class="d-flex align-items-center">
-              <div class="expertise-icon bg-primary bg-opacity-10 text-primary rounded-circle p-3 me-4 d-flex align-items-center justify-content-center" style="width: 56px; height: 56px;">
-                <i class="fas fa-server fs-4"></i>
-              </div>
-              <h3 class="mb-0 fs-5 fw-semibold">Linux & Windows Server Administration</h3>
-            </div>
-          </div>
-          
-          <div class="expertise-item shadow-sm rounded-4 p-4 mb-4 bg-white animate__animated animate__fadeInUp" style="animation-delay: 300ms;">
-            <div class="d-flex align-items-center">
-              <div class="expertise-icon bg-primary bg-opacity-10 text-primary rounded-circle p-3 me-4 d-flex align-items-center justify-content-center" style="width: 56px; height: 56px;">
-                <i class="fas fa-cloud fs-4"></i>
-              </div>
-              <h3 class="mb-0 fs-5 fw-semibold">OpenStack Keystone Integration</h3>
-            </div>
-          </div>
-          
-          <div class="expertise-item shadow-sm rounded-4 p-4 bg-white animate__animated animate__fadeInUp" style="animation-delay: 400ms;">
-            <div class="d-flex align-items-center">
-              <div class="expertise-icon bg-primary bg-opacity-10 text-primary rounded-circle p-3 me-4 d-flex align-items-center justify-content-center" style="width: 56px; height: 56px;">
-                <i class="fas fa-terminal fs-4"></i>
-              </div>
-              <h3 class="mb-0 fs-5 fw-semibold">API Development & Scripting</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-  <!-- Testimonials Section -->
-<section id="testimonials" class="mb-5 py-5 bg-light">
-  <div class="container">
-    <h2 class="section-title text-center mb-4">What Clients & Students Say</h2>
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <div class="testimonial shadow-sm rounded-4 p-4 mb-4 bg-white">
-          <p class="fst-italic mb-3">"This is one of the best Fiverr guys I have ever worked with. He's very knowledgeable and well experienced. I will always recommend him to everyone and all."</p>
-          <div class="client-name fw-semibold text-primary">- Paul Joseph, Network Manager</div>
-        </div>
-         <div class="testimonial shadow-sm rounded-4 p-4 mb-4 bg-white">
-          <p class="fst-italic mb-3">"Dear @Imran Sarwar 
-
-My FYP is Marked as Completed.
-This has been a Pleasure getting in touch with you by watching a YouTube Video,
-I,m so Happy to announce that I didn't had any idea of the Project you guided me so Well and You even persuade yourself by texting each one of us..
-I wish pray and tend to look forward to work along with you in the future.
-This has been a Short but Wonderful Journey
-God Bless You.
-
-
-Regards:
-Syed Zahid"</p>
-          <div class="client-name fw-semibold text-primary">- Syed Zahid, IDMUI</div>
-        </div>
-        <div class="testimonial shadow-sm rounded-4 p-4 mb-4 bg-white">
-          <p class="fst-italic mb-3">"Congratulations on developing IDMUI, a user-friendly solution for managing OpenStack Keystone services. The real-time updates feature is particularly noteworthy. "</p>
-          <div class="client-name fw-semibold text-primary">- Adnan Akhtar- IDMUI</div>
-        </div>
-        <div class="testimonial shadow-sm rounded-4 p-4 mb-4 bg-white">
-          <p class="fst-italic mb-3">"Thank you for your valuable guidance and support on my project. Your expertise and support have been invaluable to my learning experience. I’m truly grateful for the time and effort you invested in helping me succeed."</p>
-          <div class="client-name fw-semibold text-primary">- Rimsha, VU BSCS - Buy and Sell Pre-Owned Goods </div>
-        </div>
-        <div class="testimonial shadow-sm rounded-4 p-4 bg-white">
-          <p class="fst-italic mb-3">"My FYP is Marked as complete.
-Thank you for your guidance and for pushing me to do it.
-
-Your passion for teaching makes a huge impact on students like me.
-
-I appreciate the extra time you spend helping me succeed.
-
-You've helped me grow not just as a student, but as a person.
-
-Thank you for your mentorship—it means the world to me!"</p>
-          <div class="client-name fw-semibold text-primary">- Roba., Project: IDMUI</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="mb-5">
-    <h2>Get In Touch</h2>
-    <p>Questions? Project inquiries? Send me a message.</p>
-
-    <form id="contactForm" action="https://formspree.io/f/xanbzwwg" method="POST" class="needs-validation" novalidate>
+    <form id="contactForm" action="https://formspree.io/f/xanbzwwg" method="POST" class="needs-validation contact-form" novalidate>
       <div class="form-floating mb-3">
-        <input
-          type="text"
-          class="form-control"
-          id="name"
-          name="name"
-          placeholder="Your Full Name"
-          required
-        />
-        <label for="name"><i class="fas fa-user me-2"></i>Full Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Your Full Name" required>
+        <label for="name">Full Name</label>
         <div class="invalid-feedback">Please enter your name.</div>
       </div>
 
       <div class="form-floating mb-3">
-        <input
-          type="email"
-          class="form-control"
-          id="email"
-          name="_replyto"
-          placeholder="name@example.com"
-          required
-        />
-        <label for="email"><i class="fas fa-envelope me-2"></i>Email Address</label>
+        <input type="email" class="form-control" id="email" name="_replyto" placeholder="name@example.com" required>
+        <label for="email">Email Address</label>
         <div class="invalid-feedback">Please enter a valid email address.</div>
       </div>
 
       <div class="form-floating mb-3">
-        <input
-          type="text"
-          class="form-control"
-          id="subject"
-          name="subject"
-          placeholder="Subject"
-        />
-        <label for="subject"><i class="fas fa-tag me-2"></i>Subject</label>
+        <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
+        <label for="subject">Subject</label>
       </div>
 
       <div class="form-floating mb-4">
-        <textarea
-          class="form-control"
-          placeholder="Your message here"
-          id="message"
-          name="message"
-          style="height: 140px"
-          required
-        ></textarea>
-        <label for="message"><i class="fas fa-comments me-2"></i>Message</label>
+        <textarea class="form-control" placeholder="Your message here" id="message" name="message" required></textarea>
+        <label for="message">Message</label>
         <div class="invalid-feedback">Please write your message.</div>
       </div>
 
-      <button type="submit" class="btn btn-primary btn-lg fw-semibold">Send Message</button>
+      <button type="submit" class="btn btn-primary btn-lg fw-semibold w-100">Send Message</button>
     </form>
-  </section>
-</main>
-
-
-
-<script>
-  (() => {
-    'use strict';
-    const forms = document.querySelectorAll('.needs-validation');
-    Array.from(forms).forEach((form) => {
-      form.addEventListener(
-        'submit',
-        (event) => {
-          if (!form.checkValidity()) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
-          form.classList.add('was-validated');
-        },
-        false
-      );
-    });
-  })();
-</script>
+  </div>
+</section>

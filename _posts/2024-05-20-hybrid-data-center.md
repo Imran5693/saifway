@@ -28,7 +28,7 @@ keywords:
   - data center simulation
   - secure backup architecture
   - network redundancy and high availability
-thumbnail: "/assets/images/projects/net-topology.jpg"
+thumbnail: "/assets/images/blog/hybrid-data-center-backup.png"
 sitemap: true
 priority: 0.8
 ---
@@ -43,11 +43,11 @@ This study presents a design and implementation of a **Hybrid Data Centre Networ
 ## Research and Planning
 Prior to implementation, the following research methodology was applied:  
 
-- **Hybrid Network Models** — Analysis of cloud and on-premises integration strategies.  
-- **Backup & Disaster Recovery (BDR)** — Redundancy models, data protection mechanisms, compliance requirements.  
-- **Routing & Protocols** — **OSPF** for dynamic routing; **VPN GRE tunnels** for secure connectivity.  
-- **Security Measures** — **ACLs**, encryption, network segmentation, and access control.  
-- **Traffic Engineering** — **QoS** for backup traffic prioritization while protecting production applications.  
+- **Hybrid Network Models** - Analysis of cloud and on-premises integration strategies.  
+- **Backup & Disaster Recovery (BDR)** - Redundancy models, data protection mechanisms, compliance requirements.  
+- **Routing & Protocols** - **OSPF** for dynamic routing; **VPN GRE tunnels** for secure connectivity.  
+- **Security Measures** - **ACLs**, encryption, network segmentation, and access control.  
+- **Traffic Engineering** - **QoS** for backup traffic prioritization while protecting production applications.  
 
 **Key Considerations:**  
 1. Guaranteeing **data integrity** across all nodes.  
@@ -135,7 +135,7 @@ Including the IP addressing table in your blog **adds technical value** and impr
 The project demonstrates the **importance of planning, security, and traffic optimization** in hybrid networks. This architecture effectively integrates **on-premises and cloud resources**, delivering a **robust, secure, and scalable backup platform** for enterprise operations.  
 
 **Download Configuration & Report:**  
-[Hybrid Data Centre Backup – Design & Implementation (Google Slides)](https://docs.google.com/presentation/d/1dg-FAPuJUjT2bcoQSTLtvm4nZ2kDWOkIAlKtbpM0Xo4/edit?usp=sharing)
+[Hybrid Data Centre Backup - Design & Implementation (Google Slides)](https://docs.google.com/presentation/d/1dg-FAPuJUjT2bcoQSTLtvm4nZ2kDWOkIAlKtbpM0Xo4/edit?usp=sharing)
 
 
 ---

@@ -1,32 +1,48 @@
-<nav class="navbar navbar-expand-lg navbar-light shadow-sm mb-4 sticky-top" style="background-color: #d6eaff;">
-  <div class="container">
+<nav class="navbar navbar-expand-lg navbar-light shadow-sm sticky-top">
+  <div class="container-fluid px-4 px-xl-5">
     <a class="navbar-brand d-flex align-items-center" href="{{ '/' | relative_url }}">
-      {% if page.url == '/certificates/' or page.url contains '/certificates/' %}
-        <img src="{{ '/assets/images/myprof.jpg' | relative_url }}" alt="My Photo" class="brand-logo me-2">
+      {% if page.url contains '/professional-profile/' or page.url contains '/journey/' or page.url contains '/certificates/' %}
+        <img src="{{ '/assets/images/myprof.jpg' | relative_url }}" alt="Imran Sarwar" class="brand-logo me-2">
         <span class="brand-name">Imran Sarwar</span>
       {% else %}
-        <img src="{{ '/assets/images/og-image.JPG' | relative_url }}" alt="Brand Logo" class="brand-logo me-2">
+        <img src="{{ '/assets/images/og-image.JPG' | relative_url }}" alt="Saif Way Technology" class="brand-logo me-2">
         <span class="brand-name">Saif Way Technology</span>
       {% endif %}
     </a>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarNav" aria-controls="navbarNav"
             aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav fw-semibold">
         <li class="nav-item">
-          <a class="nav-link{% if page.url == '/certificates/' %} active{% endif %}"
-             href="{{ '/certificates/' | relative_url }}">About me</a>
+          <a class="nav-link{% if page.url == '/' %} active{% endif %}"
+             href="{{ '/' | relative_url }}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link{% if page.url == '/projects/' %} active{% endif %}"
+          <a class="nav-link{% if page.url contains '/professional-profile/' or page.url contains '/certificates/' %} active{% endif %}"
+             href="{{ '/professional-profile/' | relative_url }}">Professional Profile</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link{% if page.url contains '/journey/' %} active{% endif %}"
+             href="{{ '/journey/' | relative_url }}">My Journey</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link{% if page.url contains '/projects/' %} active{% endif %}"
              href="{{ '/projects/' | relative_url }}">Projects</a>
         </li>
+
         <li class="nav-item">
-          <a class="nav-link{% if page.url == '/blog/' %} active{% endif %}"
+          <a class="nav-link{% if page.url contains '/blog/' %} active{% endif %}"
              href="{{ '/blog/' | relative_url }}">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ '/#contact' | relative_url }}">Contact</a>
         </li>
       </ul>
     </div>

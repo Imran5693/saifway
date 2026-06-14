@@ -1,47 +1,35 @@
 ---
 layout: default
-title: Blog
+title: Technical Blog
+description: Technical articles by Imran Sarwar on cybersecurity, network operations, automation, cloud IAM, and applied AI security projects.
 permalink: /blog/
 ---
 
-<div class="container">
-
-  <h1 class="text-primary fw-bold mb-4">Blog Posts</h1>
-
-  <div class="row gy-4">
-
-    {% for post in site.posts %}
-    <div class="col-md-6 col-lg-4">
-      <div class="card shadow-sm h-100 border-0">
-
-        {% if post.thumbnail %}
-        <img src="{{ site.baseurl }}{{ post.thumbnail }}"
-             class="card-img-top"
-             alt="{{ post.title }}"
-             style="height: 180px; object-fit: cover;">
-        {% endif %}
-
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title text-primary">{{ post.title }}</h5>
-
-          <p class="card-text text-muted mb-4">
-            {{ post.excerpt | strip_html | truncatewords: 28 }}
-          </p>
-
-          <a href="{{ site.baseurl }}{{ post.url }}"
-             class="mt-auto btn btn-outline-primary">
-            Read More
-          </a>
-
-          <small class="text-secondary mt-3">
-            {{ post.date | date: "%b %d, %Y" }}
-          </small>
-        </div>
-
-      </div>
+<section class="py-6 bg-light">
+  <div class="container">
+    <div class="section-heading">
+      <span class="section-kicker">Technical Writing</span>
+      <h1>Blog</h1>
+      <p>
+        Notes from hands-on labs, project builds, network operations, cybersecurity learning, and automation experiments.
+      </p>
     </div>
-    {% endfor %}
 
+    <div class="row g-4">
+      {% assign sorted_posts = site.posts | sort: "date" | reverse %}
+      {% for post in sorted_posts %}
+        <div class="col-md-6 col-lg-4">
+          <article class="publication-item h-100">
+            {% if post.thumbnail %}
+              <img src="{{ post.thumbnail | relative_url }}" class="publication-thumbnail" alt="{{ post.title }}" loading="lazy">
+            {% endif %}
+            <small>{{ post.date | date: "%B %d, %Y" }}</small>
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.excerpt | strip_html | truncatewords: 28 }}</p>
+            <a href="{{ post.url | relative_url }}">Read article</a>
+          </article>
+        </div>
+      {% endfor %}
+    </div>
   </div>
-
-</div>
+</section>

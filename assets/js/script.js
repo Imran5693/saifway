@@ -107,3 +107,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const floatingIdentity = document.getElementById("floatingIdentity");
+
+  if (!floatingIdentity) return;
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 420) {
+      floatingIdentity.classList.add("show");
+    } else {
+      floatingIdentity.classList.remove("show");
+    }
+  });
+});

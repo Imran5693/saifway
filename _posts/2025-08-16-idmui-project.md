@@ -5,7 +5,7 @@ description: "A professional, research-oriented exploration of the Identity Mana
 date: 2025-08-16
 author: "Imran Sarwar"
 tags: ["OpenStack", "Keystone", "Flask", "Python", "Identity Management", "Cloud Security", "Research"]
-thumbnail: "/assets/images/projects/dashboard.jpg"
+thumbnail: "/assets/images/blog/idmui-cloud-iam.png"
 ---
 
 ## Introduction
@@ -63,7 +63,7 @@ The IDMUI architecture is composed of several key layers:
 
 ## Implementation Highlights
 - **Keystone Authentication**  
-  - Validates users by checking against Keystone’s identity store.  
+  - Validates users by checking against Keystone's identity store.  
   - Differentiates between **admin users** and **regular users** for UI access.  
 
 - **Service Management**  
@@ -107,7 +107,7 @@ The IDMUI project achieved:
 ## Lessons Learned
 - A **modular architecture** (separating routes, utils, and configs) makes scaling easier.  
 - **Security-first design** is essential for IAM projects; integrating Keystone tokens early avoided major pitfalls.  
-- **Frontend usability** is as important as backend logic—users value intuitive design.  
+- **Frontend usability** is as important as backend logic-users value intuitive design.  
 
 ---
 
