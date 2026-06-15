@@ -1,5 +1,13 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{% assign page_title = page.title | default: site.title %}
+{% assign page_description = page.description | default: site.description | strip_newlines | strip %}
+{% assign canonical_url = page.url | replace:'index.html','' | absolute_url %}
+{% assign social_image = page.thumbnail | default: '/assets/images/og-image.JPG' | absolute_url %}
+{% assign og_type = 'website' %}
+{% if page.layout == 'post' %}
+  {% assign og_type = 'article' %}
+{% endif %}
 
 <title>
   {% if page.title %}
@@ -9,32 +17,47 @@
   {% endif %}
 </title>
 
-<meta name="description" content="{{ page.description | default: site.description | strip_newlines }}">
+<meta name="description" content="{{ page_description }}">
 {% if page.keywords %}
 <meta name="keywords" content="{{ page.keywords }}">
 {% endif %}
 <meta name="author" content="Imran Sarwar">
 <meta name="robots" content="{{ page.robots | default: 'index, follow' }}">
 
-<link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html','' }}">
+<link rel="canonical" href="{{ canonical_url }}">
 
 <!-- Favicon -->
-<link rel="icon" href="{{ '/assets/images/swt-icon.png' | relative_url }}" type="image/png">
-<link rel="shortcut icon" href="{{ '/assets/images/swt-icon.png' | relative_url }}" type="image/png">
+<link rel="icon" href="/assets/images/falcon_eye.png" sizes="any">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/images/logo_falcon.png">
+<link rel="apple-touch-icon" href="/assets/images/falcon_eye.png">
 
 <!-- Open Graph -->
-<meta property="og:title" content="{{ page.title | default: site.title }}">
-<meta property="og:description" content="{{ page.description | default: site.description | strip_newlines }}">
-<meta property="og:image" content="{{ site.url }}/assets/images/og-image.JPG">
-<meta property="og:url" content="{{ site.url }}{{ page.url }}">
-<meta property="og:type" content="website">
+<meta property="og:title" content="{{ page_title }}">
+<meta property="og:description" content="{{ page_description }}">
+<meta property="og:image" content="{{ social_image }}">
+<meta property="og:image:secure_url" content="{{ social_image }}">
+<meta property="og:image:alt" content="{{ page_title }}">
+<meta property="og:url" content="{{ canonical_url }}">
+<meta property="og:type" content="{{ og_type }}">
 <meta property="og:site_name" content="Saif Way Technology">
+<meta property="og:locale" content="en_US">
+{% if page.layout == 'post' %}
+<meta property="article:author" content="Imran Sarwar">
+<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+{% if page.modified_date %}
+<meta property="article:modified_time" content="{{ page.modified_date | date_to_xmlschema }}">
+{% endif %}
+{% for tag in page.tags %}
+<meta property="article:tag" content="{{ tag }}">
+{% endfor %}
+{% endif %}
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ page.title | default: site.title }}">
-<meta name="twitter:description" content="{{ page.description | default: site.description | strip_newlines }}">
-<meta name="twitter:image" content="{{ site.url }}/assets/images/og-image.JPG">
+<meta name="twitter:title" content="{{ page_title }}">
+<meta name="twitter:description" content="{{ page_description }}">
+<meta name="twitter:image" content="{{ social_image }}">
+<meta name="twitter:image:alt" content="{{ page_title }}">
 
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -85,3 +108,34 @@
   ]
 }
 </script>
+
+{% if page.layout == 'post' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ page_title | escape }}",
+  "description": "{{ page_description | escape }}",
+  "image": "{{ social_image }}",
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  {% if page.modified_date %}"dateModified": "{{ page.modified_date | date_to_xmlschema }}",{% else %}"dateModified": "{{ page.date | date_to_xmlschema }}",{% endif %}
+  "author": {
+    "@type": "Person",
+    "name": "Imran Sarwar",
+    "url": "{{ '/professional-profile/' | absolute_url }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Saif Way Technology",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ '/assets/images/swt-icon.png' | absolute_url }}"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ canonical_url }}"
+  }
+}
+</script>
+{% endif %}

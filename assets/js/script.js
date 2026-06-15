@@ -121,3 +121,37 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".copy-link-btn").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const url = button.getAttribute("data-copy-url");
+      if (!url) return;
+
+      try {
+        await navigator.clipboard.writeText(url);
+        button.classList.add("copied");
+        setTimeout(() => button.classList.remove("copied"), 1400);
+      } catch (error) {
+        window.prompt("Copy this article link:", url);
+      }
+    });
+  });
+});
+
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+        scrollTopBtn.classList.add("show");
+    } else {
+        scrollTopBtn.classList.remove("show");
+    }
+});
+
+scrollTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});

@@ -1,9 +1,11 @@
 ---
 layout: default
 ---
+{% assign post_url = page.url | absolute_url %}
+{% assign whatsapp_text = page.title | append: ' ' | append: post_url %}
 
 <article class="py-6 bg-white">
-  <div class="container">
+  <div class="container-fluid px-4">
     <header class="article-header">
       {% if page.thumbnail %}
         <img src="{{ page.thumbnail | relative_url }}" alt="{{ page.title }}" class="article-hero-image" loading="lazy">
@@ -17,9 +19,28 @@ layout: default
       {% if page.description %}
         <p class="article-description">{{ page.description }}</p>
       {% endif %}
+
+      <div class="share-toolbar" aria-label="Share this article">
+        <span>Share</span>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ post_url | url_encode }}" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ post_url | url_encode }}" target="_blank" rel="noopener" aria-label="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://twitter.com/intent/tweet?url={{ post_url | url_encode }}&text={{ page.title | url_encode }}" target="_blank" rel="noopener" aria-label="Share on X">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+        <a href="https://wa.me/?text={{ whatsapp_text | url_encode }}" target="_blank" rel="noopener" aria-label="Share on WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <button type="button" class="copy-link-btn" data-copy-url="{{ post_url }}" aria-label="Copy article link">
+          <i class="fas fa-link"></i>
+        </button>
+      </div>
     </header>
 
-    <div class="article-content">
+    <div class="article-content article-content-wide">
       {{ content }}
     </div>
 

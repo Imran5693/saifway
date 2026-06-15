@@ -349,3 +349,28 @@ body {
     width: auto;
   }
 }
+
+.hero-brand {
+    margin-bottom: 1.rem;
+}
+
+.hero-brand-logo {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 25px rgba(0, 255, 255, 0.35));
+    transition: all 0.3s ease;
+}
+
+.hero-brand-logo:hover {
+    transform: scale(1.05);
+}
+
+.hero-brand-logo {
+    animation: floatLogo 4s ease-in-out infinite;
+}
+
+@keyframes floatLogo {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}

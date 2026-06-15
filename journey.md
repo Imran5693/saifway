@@ -21,7 +21,7 @@ permalink: /journey/
 
       <div class="col-lg-8">
         <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 mb-3">
-          Personal Growth â€¢ Professional Discipline â€¢ Continuous Learning
+          Personal Growth . Professional Discipline . Continuous Learning
         </span>
 
         <h1 class="fw-bold text-primary display-5 mb-4">
@@ -163,7 +163,7 @@ permalink: /journey/
           <li>Switch deployment and testing</li>
           <li>Wireless access point installations</li>
           <li>CCTV and surveillance systems</li>
-          <li>Server installations</li>
+          <li>Windows Server (2012) installations & configuration (DNS,DHCP)</li>
           <li>User support and troubleshooting</li>
           <li>Annual maintenance contract (AMC) support</li>
         </ul>

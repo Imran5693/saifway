@@ -14,3 +14,67 @@ footer a:hover {
   display: inline-block;
   text-align: center;
 }
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.footer-logo {
+    width: 92px;
+    height: 92px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.footer-brand h5 {
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+#scrollTopBtn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 52px;
+    height: 52px;
+    border: none;
+    border-radius: 50%;
+    background: #0d6efd;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    z-index: 9999;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+
+    transition: all 0.3s ease;
+
+    box-shadow: 0 8px 20px rgba(13,110,253,.35);
+}
+
+#scrollTopBtn:hover {
+    background: #0b5ed7;
+    transform: translateY(-3px);
+}
+
+#scrollTopBtn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#scrollTopBtn {
+    background: linear-gradient(
+        135deg,
+        #00d4ff,
+        #0d6efd
+    );
+
+    box-shadow:
+        0 0 15px rgba(0,212,255,.4),
+        0 0 30px rgba(13,110,253,.2);
+}
