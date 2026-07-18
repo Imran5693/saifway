@@ -107,7 +107,6 @@
 .wcaman-status-line,
 .wcaman-feature-grid article,
 .wcaman-three-grid article,
-.wcaman-screenshot-grid div,
 .wcaman-faq details {
   background: #fff;
   border: 1px solid #dbe4ef;
@@ -141,6 +140,7 @@
 .wcaman-use-grid,
 .wcaman-scope-grid,
 .wcaman-screenshot-grid,
+.wcaman-login-grid,
 .wcaman-three-grid {
   display: grid;
   gap: 1rem;
@@ -255,8 +255,7 @@
 
 .wcaman-timeline h3,
 .wcaman-feature-grid h3,
-.wcaman-three-grid h3,
-.wcaman-screenshot-grid strong {
+.wcaman-three-grid h3 {
   color: #0b2545;
   font-size: 1.12rem;
   font-weight: 850;
@@ -331,29 +330,179 @@
   width: 100%;
 }
 
-.wcaman-screenshot-grid {
+.wcaman-screenshot-grid,
+.wcaman-login-grid {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
-.wcaman-screenshot-grid div {
+.wcaman-login-grid {
+  margin: 0 auto;
+  max-width: 980px;
+}
+
+.wcaman-screenshot-grid figure,
+.wcaman-login-grid figure {
+  background: #fff;
+  border: 1px solid #dbe4ef;
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, .08);
+  margin: 0;
+  overflow: hidden;
+}
+
+.wcaman-preview-trigger {
+  background: #0b1728;
+  border: 0;
+  cursor: zoom-in;
+  display: block;
+  padding: 0;
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
+
+.wcaman-preview-trigger::after {
+  background: linear-gradient(180deg, rgba(11, 23, 40, 0), rgba(11, 23, 40, .78));
+  bottom: 0;
+  content: "";
+  height: 48%;
+  left: 0;
+  opacity: .76;
+  position: absolute;
+  right: 0;
+  transition: opacity .2s ease;
+}
+
+.wcaman-preview-trigger span {
   align-items: center;
-  background: repeating-linear-gradient(-45deg, #fff, #fff 10px, #f4f8fc 10px, #f4f8fc 20px);
-  color: #334155;
-  display: flex;
-  flex-direction: column;
-  min-height: 170px;
-  padding: 1.25rem;
-  text-align: center;
+  background: rgba(255, 255, 255, .94);
+  border: 1px solid rgba(203, 213, 225, .9);
+  border-radius: 999px;
+  bottom: .85rem;
+  color: #0b2545;
+  display: inline-flex;
+  font-size: .78rem;
+  font-weight: 850;
+  gap: .35rem;
+  line-height: 1;
+  padding: .5rem .7rem;
+  position: absolute;
+  right: .85rem;
+  text-transform: uppercase;
+  z-index: 1;
 }
 
-.wcaman-screenshot-grid i {
-  color: #0d6efd;
-  font-size: 2rem;
-  margin-bottom: .8rem;
+.wcaman-preview-trigger span::before {
+  content: "\f00e";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
 }
 
-.wcaman-screenshot-grid small {
+.wcaman-preview-trigger:hover::after,
+.wcaman-preview-trigger:focus-visible::after {
+  opacity: .98;
+}
+
+.wcaman-preview-trigger:focus-visible {
+  outline: 3px solid #2dd4bf;
+  outline-offset: -3px;
+}
+
+.wcaman-screenshot-grid img,
+.wcaman-login-grid img {
+  aspect-ratio: 16 / 10;
+  background: #eef5fb;
+  display: block;
+  height: auto;
+  object-fit: cover;
+  object-position: top center;
+  width: 100%;
+}
+
+.wcaman-screenshot-grid figcaption,
+.wcaman-login-grid figcaption {
+  padding: 1rem;
+}
+
+.wcaman-screenshot-grid figcaption strong,
+.wcaman-login-grid figcaption strong {
+  color: #0b2545;
+  display: block;
+  font-weight: 850;
+  margin-bottom: .25rem;
+}
+
+.wcaman-screenshot-grid figcaption span,
+.wcaman-login-grid figcaption span {
   color: #64748b;
+  display: block;
+  font-size: .92rem;
+}
+
+.wcaman-lightbox {
+  align-items: center;
+  background: rgba(3, 10, 22, .88);
+  display: none;
+  inset: 0;
+  justify-content: center;
+  padding: 5rem 1.25rem 1.25rem;
+  position: fixed;
+  z-index: 2000;
+}
+
+.wcaman-lightbox.is-open {
+  display: flex;
+}
+
+.wcaman-lightbox-dialog {
+  max-height: calc(100vh - 7rem);
+  max-width: min(1280px, 96vw);
+  text-align: center;
+  width: 100%;
+}
+
+.wcaman-lightbox-dialog h2 {
+  color: #f8fafc;
+  font-size: clamp(1.05rem, 2vw, 1.45rem);
+  font-weight: 850;
+  margin: 0 0 1rem;
+}
+
+.wcaman-lightbox-dialog img {
+  background: #fff;
+  border: 1px solid rgba(226, 232, 240, .35);
+  border-radius: 8px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, .45);
+  display: block;
+  height: auto;
+  max-height: calc(100vh - 10rem);
+  max-width: 100%;
+  object-fit: contain;
+  width: auto;
+}
+
+.wcaman-lightbox-close {
+  align-items: center;
+  background: #fff;
+  border: 0;
+  border-radius: 999px;
+  color: #0b1728;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 2rem;
+  font-weight: 400;
+  height: 2.75rem;
+  justify-content: center;
+  line-height: 1;
+  position: fixed;
+  right: 1.25rem;
+  top: 1.25rem;
+  width: 2.75rem;
+  z-index: 2001;
+}
+
+.wcaman-lightbox-open {
+  overflow: hidden;
 }
 
 .wcaman-faq {
@@ -409,5 +558,23 @@
     align-items: flex-start;
     flex-direction: column;
     gap: .35rem;
+  }
+
+  .wcaman-lightbox {
+    padding: 4.5rem .75rem .75rem;
+  }
+
+  .wcaman-lightbox-dialog {
+    max-height: calc(100vh - 5.5rem);
+    max-width: 100%;
+  }
+
+  .wcaman-lightbox-dialog img {
+    max-height: calc(100vh - 8rem);
+  }
+
+  .wcaman-lightbox-close {
+    right: .75rem;
+    top: .75rem;
   }
 }

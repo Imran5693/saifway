@@ -415,6 +415,7 @@ permalink: /professional-profile/
                     <li>ISC2 Certified in Cybersecurity</li>
                     <li>IBM Cybersecurity Analyst</li>
                     <li>Cisco Security Core Learning</li>
+                    <li>Cisco U Security Design Specialist</li>
                   </ul>
                 </div>
               </div>
@@ -551,18 +552,52 @@ permalink: /professional-profile/
   </div>
 </div>
 
+<div class="col-xl-3 col-lg-4 col-md-6">
+  <div class="card shadow-lg border-0 h-100 certification-card text-center p-4">
+    <img src="{{ '/assets/images/cisco_sdsi.png' | relative_url }}"
+         alt="Cisco U Security Design Specialist Logo"
+         class="cert-logo mb-4">
+
+    <h4 class="fw-bold mb-3">Designing Cisco Security Infrastructure</h4>
+
+    <p class="text-muted small mb-2">
+      Completed: <strong>July 09, 2026</strong>
+    </p>
+
+    <p class="text-muted small mb-2">
+      Platform: <strong>Cisco U</strong>
+    </p>
+
+    <div class="mb-3">
+      <span class="badge bg-primary me-2">Cisco U</span>
+      <span class="badge bg-success">Completed</span>
+    </div>
+
+    <p class="small text-muted">
+     This badge earner demonstrates core capabilities in designing and maintaining secure Cisco infrastructures. They can implement robust security layers, frameworks, and access control tools to protect networks, endpoints, and cloud environments. They have the skills to optimize enterprise security strategies against modern threats by leveraging advanced technologies, including artificial intelligence (AI), network automation, and DevSecOps methodologies..
+    </p>
+
+    <a href="https://www.credly.com/badges/9169f009-051c-4658-b7de-4df5c24da38b"
+       target="_blank"
+       rel="noopener"
+       class="btn btn-outline-primary btn-lg mt-auto">
+      View Certification
+    </a>
+  </div>
+</div>
+
 
       <div class="col-xl-3 col-lg-4 col-md-6">
         <div class="card shadow-lg border-0 h-100 certification-card text-center p-4">
-          <img src="{{ '/assets/images/Cisco_DevNetSpecialist.png' | relative_url }}" alt="Cisco DevNet Logo" class="cert-logo mb-4">
-          <h4 class="fw-bold mb-3">Cisco Certified DevNet Specialist - Core</h4>
+          <img src="{{ '/assets/images/Cisco_automation_core.png' | relative_url }}" alt="Cisco DevNet Logo" class="cert-logo mb-4">
+          <h4 class="fw-bold mb-3">Cisco Certified Specialist - Automation Core</h4>
           <p class="text-muted small mb-2">Issued: <strong>September 27, 2025</strong></p>
           <p class="text-muted small mb-2">Expires: <strong>December 16, 2028</strong></p>
           <div class="mb-3">
             <span class="badge bg-success me-2">Online Verifiable</span>
             <span class="badge bg-primary">Active</span>
           </div>
-          <p class="small text-muted">Demonstrates expertise in APIs, software development, network automation, application deployment, and infrastructure security.</p>
+          <p class="small text-muted">Earners of Cisco Certified Specialist - Automation Core have demonstrated knowledge of software development and design including using APIs, Cisco platforms, application deployment and security, and infrastructure and automation</p>
           <a href="https://www.credly.com/earner/earned/badge/bfcb41a1-8410-420c-b5a2-24f429e624b1" target="_blank" rel="noopener" class="btn btn-outline-primary btn-lg mt-auto">View Certification</a>
         </div>
       </div>

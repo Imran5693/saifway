@@ -1,68 +1,123 @@
-<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1200 720">
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1200 830">
   <title id="title">WCAMAN Private PKI Architecture</title>
-  <desc id="desc">Architecture diagram showing administrators and users accessing WCAMAN over HTTPS, with integrations to LDAP or Active Directory, database, step-ca, and internal certificate consumers.</desc>
+  <desc id="desc">Clean WCAMAN Private PKI architecture diagram showing browser access, portal services, directory authentication, database records, internal certificate authority workflow, certificate delivery, and internal certificate consumers.</desc>
   <defs>
     <style>
-      .bg{fill:#f8fafc}.panel{fill:#fff;stroke:#d7e1ec;stroke-width:2}.core{fill:#082539;stroke:#38bdf8;stroke-width:2}.text{font:700 24px Inter,Arial,sans-serif;fill:#0b2545}.small{font:600 17px Inter,Arial,sans-serif;fill:#526173}.coreText{font:800 25px Inter,Arial,sans-serif;fill:#fff}.coreSmall{font:600 16px Inter,Arial,sans-serif;fill:#bde6ff}.line{stroke:#0d6efd;stroke-width:4;fill:none;marker-end:url(#arrow)}.flow{stroke:#0f766e;stroke-width:4;fill:none;marker-end:url(#arrowGreen)}.dash{stroke-dasharray:10 8}.icon{fill:#eaf6ff;stroke:#8bd8ff;stroke-width:2}.legend{font:600 15px Inter,Arial,sans-serif;fill:#526173}
+      .bg{fill:#f8fafc}
+      .title{font:800 28px Inter,Arial,sans-serif;fill:#0b2545}
+      .subtitle{font:600 16px Inter,Arial,sans-serif;fill:#526173}
+      .label{font:800 22px Inter,Arial,sans-serif;fill:#0b2545}
+      .small{font:600 15px Inter,Arial,sans-serif;fill:#526173}
+      .tiny{font:600 13px Inter,Arial,sans-serif;fill:#64748b}
+      .panel{fill:#fff;stroke:#d7e1ec;stroke-width:2}
+      .core{fill:#082539;stroke:#38bdf8;stroke-width:2.5}
+      .coreText{font:850 26px Inter,Arial,sans-serif;fill:#fff}
+      .coreSmall{font:600 15px Inter,Arial,sans-serif;fill:#bde6ff}
+      .blueLine{stroke:#0d6efd;stroke-width:4;fill:none;marker-end:url(#arrowBlue)}
+      .brownLine{stroke:#9a5b13;stroke-width:4;fill:none;marker-end:url(#arrowBrown)}
+      .greenLine{stroke:#0f766e;stroke-width:4;fill:none;marker-end:url(#arrowGreen)}
+      .dash{stroke-dasharray:10 8}
+      .badgeBlue{fill:#e8f1ff;stroke:#9cc3ff;stroke-width:1.5}
+      .badgeBrown{fill:#fff4e5;stroke:#e6b46d;stroke-width:1.5}
+      .badgeGreen{fill:#e8faf6;stroke:#86d9ca;stroke-width:1.5}
+      .badgeTextBlue{font:800 13px Inter,Arial,sans-serif;fill:#0b4fb3}
+      .badgeTextBrown{font:800 13px Inter,Arial,sans-serif;fill:#7a3e06}
+      .badgeTextGreen{font:800 13px Inter,Arial,sans-serif;fill:#0f766e}
+      .icon{fill:#eaf6ff;stroke:#8bd8ff;stroke-width:2}
+      .consumer{font:800 18px Inter,Arial,sans-serif;fill:#0b2545}
+      .legendTitle{font:850 17px Inter,Arial,sans-serif;fill:#0b2545}
+      .legendBody{font:600 14px Inter,Arial,sans-serif;fill:#526173}
     </style>
-    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
-      <path d="M2,2 L10,6 L2,10 Z" fill="#0d6efd"/>
+    <marker id="arrowBlue" markerWidth="13" markerHeight="13" refX="10" refY="6.5" orient="auto">
+      <path d="M2,2 L11,6.5 L2,11 Z" fill="#0d6efd"/>
     </marker>
-    <marker id="arrowGreen" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
-      <path d="M2,2 L10,6 L2,10 Z" fill="#0f766e"/>
+    <marker id="arrowBrown" markerWidth="13" markerHeight="13" refX="10" refY="6.5" orient="auto">
+      <path d="M2,2 L11,6.5 L2,11 Z" fill="#9a5b13"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="13" markerHeight="13" refX="10" refY="6.5" orient="auto">
+      <path d="M2,2 L11,6.5 L2,11 Z" fill="#0f766e"/>
     </marker>
   </defs>
-  <rect class="bg" width="1200" height="720" rx="20"/>
-  <text class="text" x="60" y="62">WCAMAN Internal Private PKI Deployment</text>
-  <text class="small" x="60" y="92">Example architecture for customer-controlled certificate authority management</text>
 
-  <rect class="panel" x="60" y="145" width="220" height="120" rx="14"/>
-  <circle class="icon" cx="105" cy="190" r="24"/>
-  <text class="text" x="145" y="186">Admins</text>
-  <text class="small" x="145" y="214">CSR review</text>
-  <text class="small" x="145" y="238">Issuance control</text>
+  <rect class="bg" width="1200" height="830" rx="22"/>
 
-  <rect class="panel" x="60" y="330" width="220" height="120" rx="14"/>
-  <circle class="icon" cx="105" cy="375" r="24"/>
-  <text class="text" x="145" y="372">Users</text>
-  <text class="small" x="145" y="400">CSR request</text>
-  <text class="small" x="145" y="424">Download certs</text>
+  <text class="title" x="54" y="56">WCAMAN Internal Private PKI Deployment</text>
+  <text class="subtitle" x="54" y="84">Customer-controlled certificate authority management with directory-backed access and internal certificate delivery</text>
 
-  <rect class="core" x="430" y="220" width="340" height="170" rx="18"/>
-  <text class="coreText" x="500" y="282">WCAMAN Portal</text>
-  <text class="coreSmall" x="488" y="318">Flask web management interface</text>
-  <text class="coreSmall" x="488" y="348">Internal DNS: pki.company.local</text>
+  <rect class="panel" x="54" y="135" width="235" height="125" rx="16"/>
+  <circle class="icon" cx="101" cy="182" r="25"/>
+  <text class="label" x="142" y="178">Admins</text>
+  <text class="small" x="142" y="207">Review CSR requests</text>
+  <text class="small" x="142" y="232">Approve issuance</text>
 
-  <path class="line" d="M280 205 C330 205 360 255 430 270"/>
-  <text class="legend" x="310" y="194">HTTPS</text>
-  <path class="line" d="M280 390 C330 390 360 340 430 335"/>
-  <text class="legend" x="310" y="415">HTTPS</text>
+  <rect class="panel" x="54" y="315" width="235" height="125" rx="16"/>
+  <circle class="icon" cx="101" cy="362" r="25"/>
+  <text class="label" x="142" y="358">Users</text>
+  <text class="small" x="142" y="387">Submit CSR requests</text>
+  <text class="small" x="142" y="412">Download certificates</text>
 
-  <rect class="panel" x="890" y="120" width="250" height="105" rx="14"/>
-  <text class="text" x="940" y="166">LDAP / AD</text>
-  <text class="small" x="940" y="194">User authentication</text>
-  <path class="flow" d="M770 265 C820 235 835 180 890 172"/>
+  <rect class="core" x="425" y="215" width="350" height="178" rx="20"/>
+  <text class="coreText" x="495" y="277">WCAMAN Portal</text>
+  <text class="coreSmall" x="485" y="313">Flask web management interface</text>
+  <text class="coreSmall" x="485" y="339">Internal DNS: pki.company.local</text>
+  <text class="coreSmall" x="485" y="365">Role-based request and approval workflow</text>
 
-  <rect class="panel" x="890" y="300" width="250" height="105" rx="14"/>
-  <text class="text" x="960" y="346">Database</text>
-  <text class="small" x="940" y="374">Requests, audit records</text>
-  <path class="flow dash" d="M770 315 C825 315 835 350 890 352"/>
+  <path class="blueLine" d="M289 198 C340 198 363 250 425 268"/>
+  <rect class="badgeBlue" x="308" y="167" width="75" height="28" rx="14"/>
+  <text class="badgeTextBlue" x="323" y="186">HTTPS</text>
 
-  <rect class="panel" x="890" y="480" width="250" height="115" rx="14"/>
-  <text class="text" x="960" y="526">step-ca</text>
-  <text class="small" x="930" y="554">Internal certificate authority</text>
-  <path class="flow" d="M770 365 C825 410 835 505 890 535"/>
+  <path class="blueLine" d="M289 378 C340 378 363 335 425 332"/>
+  <rect class="badgeBlue" x="308" y="400" width="75" height="28" rx="14"/>
+  <text class="badgeTextBlue" x="323" y="419">HTTPS</text>
 
-  <rect class="panel" x="115" y="565" width="970" height="85" rx="14"/>
-  <text class="text" x="165" y="615">Internal Web Apps</text>
-  <text class="text" x="425" y="615">VPN / Network Services</text>
-  <text class="text" x="780" y="615">Servers / Devices</text>
-  <path class="line" d="M1015 595 C1015 660 775 680 600 650"/>
-  <path class="line" d="M1015 595 C875 680 380 680 250 650"/>
+  <rect class="panel" x="910" y="122" width="235" height="105" rx="16"/>
+  <text class="label" x="954" y="165">LDAP / AD</text>
+  <text class="small" x="954" y="193">User authentication</text>
+  <path class="greenLine" d="M775 260 C830 230 850 176 910 174"/>
+  <rect class="badgeGreen" x="810" y="205" width="92" height="28" rx="14"/>
+  <text class="badgeTextGreen" x="827" y="224">Identity</text>
 
-  <rect class="panel" x="60" y="675" width="1080" height="1" rx="0"/>
-  <circle cx="72" cy="696" r="6" fill="#0d6efd"/>
-  <text class="legend" x="88" y="701">Blue arrows: browser access and certificate deployment flow</text>
-  <circle cx="478" cy="696" r="6" fill="#0f766e"/>
-  <text class="legend" x="494" y="701">Green arrows: backend integration and CA workflow</text>
+  <rect class="panel" x="910" y="284" width="235" height="105" rx="16"/>
+  <text class="label" x="970" y="327">Database</text>
+  <text class="small" x="946" y="355">Requests and audit logs</text>
+  <path class="greenLine dash" d="M775 310 C835 310 850 336 910 336"/>
+  <rect class="badgeGreen" x="808" y="319" width="82" height="28" rx="14"/>
+  <text class="badgeTextGreen" x="826" y="338">Records</text>
+
+  <rect class="panel" x="910" y="446" width="235" height="112" rx="16"/>
+  <text class="label" x="978" y="491">step-ca</text>
+  <text class="small" x="944" y="519">Internal certificate authority</text>
+  <path class="brownLine" d="M775 364 C835 404 852 487 910 502"/>
+  <rect class="badgeBrown" x="805" y="424" width="105" height="28" rx="14"/>
+  <text class="badgeTextBrown" x="823" y="443">CA Issue</text>
+
+  <rect class="panel" x="95" y="545" width="1010" height="96" rx="18"/>
+  <text class="consumer" x="158" y="591">Internal Web Apps</text>
+  <text class="tiny" x="164" y="617">TLS for portals and APIs</text>
+  <text class="consumer" x="447" y="591">VPN / Network Services</text>
+  <text class="tiny" x="478" y="617">Device and service trust</text>
+  <text class="consumer" x="815" y="591">Servers / Devices</text>
+  <text class="tiny" x="825" y="617">Managed internal certificates</text>
+
+  <path class="brownLine" d="M1032 558 C1028 520 991 513 958 521"/>
+  <path class="blueLine" d="M600 393 C600 460 600 500 600 545"/>
+  <rect class="badgeBlue" x="541" y="468" width="118" height="28" rx="14"/>
+  <text class="badgeTextBlue" x="561" y="487">Cert Delivery</text>
+
+  <rect class="panel" x="54" y="675" width="1092" height="112" rx="18"/>
+
+  <rect class="badgeBlue" x="82" y="700" width="115" height="30" rx="15"/>
+  <text class="badgeTextBlue" x="105" y="720">Blue Flow</text>
+  <text class="legendTitle" x="82" y="752">User and admin access</text>
+  <text class="legendBody" x="82" y="775">HTTPS portal access and certificate delivery.</text>
+
+  <rect class="badgeGreen" x="431" y="700" width="118" height="30" rx="15"/>
+  <text class="badgeTextGreen" x="451" y="720">Green Flow</text>
+  <text class="legendTitle" x="431" y="752">Backend services</text>
+  <text class="legendBody" x="431" y="775">Directory auth, records, audit logs, integrations.</text>
+
+  <rect class="badgeBrown" x="790" y="700" width="122" height="30" rx="15"/>
+  <text class="badgeTextBrown" x="811" y="720">Brown Flow</text>
+  <text class="legendTitle" x="790" y="752">CA issuance workflow</text>
+  <text class="legendBody" x="790" y="775">Certificate authority request signing and issuance.</text>
 </svg>

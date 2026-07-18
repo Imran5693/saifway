@@ -278,15 +278,107 @@ changefreq: monthly
       <div class="wcaman-section-heading">
         <span>Screenshots</span>
         <h2>WCAMAN Interface Preview</h2>
-        <p>Replace these placeholders with real WCAMAN screenshots when ready.</p>
+        <p>
+          A closer look at administrator and user workflows, certificate request handling,
+          approval status, certificate details, and directory-backed access.
+        </p>
       </div>
       <div class="wcaman-screenshot-grid">
-        <div data-filename="wcaman-admin-dashboard.webp"><i class="fas fa-gauge"></i><strong>Admin dashboard</strong><small>Place wcaman-admin-dashboard.webp here</small></div>
-        <div data-filename="wcaman-user-dashboard.webp"><i class="fas fa-user"></i><strong>User dashboard</strong><small>Place wcaman-user-dashboard.webp here</small></div>
-        <div data-filename="wcaman-csr-request.webp"><i class="fas fa-file-signature"></i><strong>CSR request</strong><small>Place wcaman-csr-request.webp here</small></div>
-        <div data-filename="wcaman-admin-approval.webp"><i class="fas fa-clipboard-check"></i><strong>Admin approval</strong><small>Place wcaman-admin-approval.webp here</small></div>
-        <div data-filename="wcaman-certificate-download.webp"><i class="fas fa-download"></i><strong>Certificate download</strong><small>Place wcaman-certificate-download.webp here</small></div>
-        <div data-filename="wcaman-user-management.webp"><i class="fas fa-users-gear"></i><strong>User management</strong><small>Place wcaman-user-management.webp here</small></div>
+        <figure>
+          <button class="wcaman-preview-trigger" type="button" data-preview-src="{{ '/assets/images/wcaman-screenshot/wcaman-admin-dashboard.JPG' | relative_url }}" data-preview-title="Admin Dashboard">
+            <img src="{{ '/assets/images/wcaman-screenshot/wcaman-admin-dashboard.JPG' | relative_url }}" alt="WCAMAN administrator dashboard showing certificate authority management status and administrative actions." loading="lazy">
+            <span>Preview</span>
+          </button>
+          <figcaption><strong>Admin Dashboard</strong><span>Centralized administrator view for certificate operations.</span></figcaption>
+        </figure>
+
+        <figure>
+          <button class="wcaman-preview-trigger" type="button" data-preview-src="{{ '/assets/images/wcaman-screenshot/wcaman-user-dashboard.JPG' | relative_url }}" data-preview-title="User Dashboard">
+            <img src="{{ '/assets/images/wcaman-screenshot/wcaman-user-dashboard.JPG' | relative_url }}" alt="WCAMAN user dashboard showing certificate request and download workflow." loading="lazy">
+            <span>Preview</span>
+          </button>
+          <figcaption><strong>User Dashboard</strong><span>User workflow for requesting and managing certificates.</span></figcaption>
+        </figure>
+
+        <figure>
+          <button class="wcaman-preview-trigger" type="button" data-preview-src="{{ '/assets/images/wcaman-screenshot/wcaman-csr-request.JPG' | relative_url }}" data-preview-title="CSR Request">
+            <img src="{{ '/assets/images/wcaman-screenshot/wcaman-csr-request.JPG' | relative_url }}" alt="WCAMAN certificate signing request page for internal certificate generation." loading="lazy">
+            <span>Preview</span>
+          </button>
+          <figcaption><strong>CSR Request</strong><span>Certificate request workflow for approved users.</span></figcaption>
+        </figure>
+
+        <figure>
+          <button class="wcaman-preview-trigger" type="button" data-preview-src="{{ '/assets/images/wcaman-screenshot/wcaman-csr-request-submission.JPG' | relative_url }}" data-preview-title="CSR Submission">
+            <img src="{{ '/assets/images/wcaman-screenshot/wcaman-csr-request-submission.JPG' | relative_url }}" alt="WCAMAN certificate signing request submission form with organizational certificate details." loading="lazy">
+            <span>Preview</span>
+          </button>
+          <figcaption><strong>CSR Submission</strong><span>Structured request form for certificate details.</span></figcaption>
+        </figure>
+
+        <figure>
+          <button class="wcaman-preview-trigger" type="button" data-preview-src="{{ '/assets/images/wcaman-screenshot/wcaman-admin-approval.JPG' | relative_url }}" data-preview-title="Admin Approval">
+            <img src="{{ '/assets/images/wcaman-screenshot/wcaman-admin-approval.JPG' | relative_url }}" alt="WCAMAN administrator approval screen for reviewing and approving certificate signing requests." loading="lazy">
+            <span>Preview</span>
+          </button>
+          <figcaption><strong>Admin Approval</strong><span>Administrative CSR review before certificate issuance.</span></figcaption>
+        </figure>
+
+        <figure>
+          <button class="wcaman-preview-trigger" type="button" data-preview-src="{{ '/assets/images/wcaman-screenshot/csr_approved-notification.JPG' | relative_url }}" data-preview-title="Approval Notification">
+            <img src="{{ '/assets/images/wcaman-screenshot/csr_approved-notification.JPG' | relative_url }}" alt="WCAMAN notification showing an approved certificate signing request." loading="lazy">
+            <span>Preview</span>
+          </button>
+          <figcaption><strong>Approval Notification</strong><span>Clear request status after administrator approval.</span></figcaption>
+        </figure>
+
+        <figure>
+          <button class="wcaman-preview-trigger" type="button" data-preview-src="{{ '/assets/images/wcaman-screenshot/wcaman-cert-details.JPG' | relative_url }}" data-preview-title="Certificate Details">
+            <img src="{{ '/assets/images/wcaman-screenshot/wcaman-cert-details.JPG' | relative_url }}" alt="WCAMAN certificate details page showing issued certificate information." loading="lazy">
+            <span>Preview</span>
+          </button>
+          <figcaption><strong>Certificate Details</strong><span>Issued certificate information and lifecycle visibility.</span></figcaption>
+        </figure>
+
+        <figure>
+          <button class="wcaman-preview-trigger" type="button" data-preview-src="{{ '/assets/images/wcaman-screenshot/wcaman-user-management.JPG' | relative_url }}" data-preview-title="User Management">
+            <img src="{{ '/assets/images/wcaman-screenshot/wcaman-user-management.JPG' | relative_url }}" alt="WCAMAN user management page for administrative user access control." loading="lazy">
+            <span>Preview</span>
+          </button>
+          <figcaption><strong>User Management</strong><span>Administrator workflow for user access and ownership.</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="wcaman-section wcaman-muted">
+    <div class="container-fluid px-4 px-xl-5">
+      <div class="wcaman-section-heading">
+        <span>Service Health</span>
+        <h2>Backend Service Health Checks</h2>
+        <p>
+          WCAMAN checks whether required backend services are reachable from the application VM,
+          including LDAP directory services, step-ca certificate authority services, and configured
+          supporting services. Online status confirms the portal can reach those service endpoints;
+          offline status helps administrators identify service availability, network, or configuration issues.
+        </p>
+      </div>
+      <div class="wcaman-login-grid">
+        <figure>
+          <button class="wcaman-preview-trigger" type="button" data-preview-src="{{ '/assets/images/wcaman-screenshot/login_page-with_backend connectivity.JPG' | relative_url }}" data-preview-title="Backend Services Online">
+            <img src="{{ '/assets/images/wcaman-screenshot/login_page-with_backend connectivity.JPG' | relative_url }}" alt="WCAMAN login page showing LDAP, step-ca, and configured backend services online." loading="lazy">
+            <span>Preview</span>
+          </button>
+          <figcaption><strong>Backend Services Online</strong><span>LDAP, step-ca, and configured VM services are reachable from the WCAMAN application.</span></figcaption>
+        </figure>
+
+        <figure>
+          <button class="wcaman-preview-trigger" type="button" data-preview-src="{{ '/assets/images/wcaman-screenshot/login_page_without-backend connectitiy.JPG' | relative_url }}" data-preview-title="Backend Services Offline">
+            <img src="{{ '/assets/images/wcaman-screenshot/login_page_without-backend connectitiy.JPG' | relative_url }}" alt="WCAMAN login page showing LDAP, step-ca, or configured backend services offline or unreachable." loading="lazy">
+            <span>Preview</span>
+          </button>
+          <figcaption><strong>Backend Services Offline</strong><span>The portal clearly shows when a required service is unavailable or unreachable.</span></figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -328,6 +420,14 @@ changefreq: monthly
   </section>
 </article>
 
+<div class="wcaman-lightbox" id="wcamanLightbox" aria-hidden="true">
+  <button class="wcaman-lightbox-close" type="button" aria-label="Close screenshot preview">&times;</button>
+  <div class="wcaman-lightbox-dialog" role="dialog" aria-modal="true" aria-labelledby="wcamanLightboxTitle">
+    <h2 id="wcamanLightboxTitle">Screenshot Preview</h2>
+    <img src="" alt="">
+  </div>
+</div>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -343,4 +443,44 @@ changefreq: monthly
   "url": "{{ page.url | absolute_url }}",
   "description": "{{ page.description | escape }}"
 }
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const lightbox = document.getElementById("wcamanLightbox");
+    if (!lightbox) return;
+
+    const previewImage = lightbox.querySelector("img");
+    const previewTitle = document.getElementById("wcamanLightboxTitle");
+    const closeButton = lightbox.querySelector(".wcaman-lightbox-close");
+
+    function closePreview() {
+      lightbox.classList.remove("is-open");
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("wcaman-lightbox-open");
+      previewImage.setAttribute("src", "");
+    }
+
+    document.querySelectorAll(".wcaman-preview-trigger").forEach((button) => {
+      button.addEventListener("click", () => {
+        const image = button.querySelector("img");
+        const title = button.getAttribute("data-preview-title") || image.alt || "Screenshot Preview";
+        previewTitle.textContent = title;
+        previewImage.setAttribute("src", button.getAttribute("data-preview-src"));
+        previewImage.setAttribute("alt", image.alt);
+        lightbox.classList.add("is-open");
+        lightbox.setAttribute("aria-hidden", "false");
+        document.body.classList.add("wcaman-lightbox-open");
+        closeButton.focus();
+      });
+    });
+
+    closeButton.addEventListener("click", closePreview);
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) closePreview();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && lightbox.classList.contains("is-open")) closePreview();
+    });
+  });
 </script>
