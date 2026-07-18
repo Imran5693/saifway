@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1200 720">
+  <title id="title">WCAMAN Private PKI Architecture</title>
+  <desc id="desc">Architecture diagram showing administrators and users accessing WCAMAN over HTTPS, with integrations to LDAP or Active Directory, database, step-ca, and internal certificate consumers.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.panel{fill:#fff;stroke:#d7e1ec;stroke-width:2}.core{fill:#082539;stroke:#38bdf8;stroke-width:2}.text{font:700 24px Inter,Arial,sans-serif;fill:#0b2545}.small{font:600 17px Inter,Arial,sans-serif;fill:#526173}.coreText{font:800 25px Inter,Arial,sans-serif;fill:#fff}.coreSmall{font:600 16px Inter,Arial,sans-serif;fill:#bde6ff}.line{stroke:#0d6efd;stroke-width:4;fill:none;marker-end:url(#arrow)}.flow{stroke:#0f766e;stroke-width:4;fill:none;marker-end:url(#arrowGreen)}.dash{stroke-dasharray:10 8}.icon{fill:#eaf6ff;stroke:#8bd8ff;stroke-width:2}.legend{font:600 15px Inter,Arial,sans-serif;fill:#526173}
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#0d6efd"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#0f766e"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="720" rx="20"/>
+  <text class="text" x="60" y="62">WCAMAN Internal Private PKI Deployment</text>
+  <text class="small" x="60" y="92">Example architecture for customer-controlled certificate authority management</text>
+
+  <rect class="panel" x="60" y="145" width="220" height="120" rx="14"/>
+  <circle class="icon" cx="105" cy="190" r="24"/>
+  <text class="text" x="145" y="186">Admins</text>
+  <text class="small" x="145" y="214">CSR review</text>
+  <text class="small" x="145" y="238">Issuance control</text>
+
+  <rect class="panel" x="60" y="330" width="220" height="120" rx="14"/>
+  <circle class="icon" cx="105" cy="375" r="24"/>
+  <text class="text" x="145" y="372">Users</text>
+  <text class="small" x="145" y="400">CSR request</text>
+  <text class="small" x="145" y="424">Download certs</text>
+
+  <rect class="core" x="430" y="220" width="340" height="170" rx="18"/>
+  <text class="coreText" x="500" y="282">WCAMAN Portal</text>
+  <text class="coreSmall" x="488" y="318">Flask web management interface</text>
+  <text class="coreSmall" x="488" y="348">Internal DNS: pki.company.local</text>
+
+  <path class="line" d="M280 205 C330 205 360 255 430 270"/>
+  <text class="legend" x="310" y="194">HTTPS</text>
+  <path class="line" d="M280 390 C330 390 360 340 430 335"/>
+  <text class="legend" x="310" y="415">HTTPS</text>
+
+  <rect class="panel" x="890" y="120" width="250" height="105" rx="14"/>
+  <text class="text" x="940" y="166">LDAP / AD</text>
+  <text class="small" x="940" y="194">User authentication</text>
+  <path class="flow" d="M770 265 C820 235 835 180 890 172"/>
+
+  <rect class="panel" x="890" y="300" width="250" height="105" rx="14"/>
+  <text class="text" x="960" y="346">Database</text>
+  <text class="small" x="940" y="374">Requests, audit records</text>
+  <path class="flow dash" d="M770 315 C825 315 835 350 890 352"/>
+
+  <rect class="panel" x="890" y="480" width="250" height="115" rx="14"/>
+  <text class="text" x="960" y="526">step-ca</text>
+  <text class="small" x="930" y="554">Internal certificate authority</text>
+  <path class="flow" d="M770 365 C825 410 835 505 890 535"/>
+
+  <rect class="panel" x="115" y="565" width="970" height="85" rx="14"/>
+  <text class="text" x="165" y="615">Internal Web Apps</text>
+  <text class="text" x="425" y="615">VPN / Network Services</text>
+  <text class="text" x="780" y="615">Servers / Devices</text>
+  <path class="line" d="M1015 595 C1015 660 775 680 600 650"/>
+  <path class="line" d="M1015 595 C875 680 380 680 250 650"/>
+
+  <rect class="panel" x="60" y="675" width="1080" height="1" rx="0"/>
+  <circle cx="72" cy="696" r="6" fill="#0d6efd"/>
+  <text class="legend" x="88" y="701">Blue arrows: browser access and certificate deployment flow</text>
+  <circle cx="478" cy="696" r="6" fill="#0f766e"/>
+  <text class="legend" x="494" y="701">Green arrows: backend integration and CA workflow</text>
+</svg>
