@@ -1,22 +1,53 @@
 ---
 layout: post
-title: "Netmiko vs NETCONF vs RESTCONF: Choosing a Python Network Automation Interface"
-description: "Compare SSH automation with Netmiko, NETCONF and RESTCONF. Imran Sarwar explains device support, structured data, validation and production change considerations."
+title: Netmiko vs NETCONF vs RESTCONF for Python Network Automation
+description: 'Choose a Python network automation interface: compare Netmiko SSH, NETCONF RPCs, RESTCONF resources and vendor APIs, with capability and validation checks.'
 date: 2026-10-17 09:00:00 +0400
 permalink: /blog/netmiko-netconf-restconf-python-network-automation/
-tags: [Python, Network Automation, Netmiko, NETCONF, RESTCONF, Network APIs]
+tags:
+- Python network automation
+- Netmiko vs NETCONF vs RESTCONF
+- Python network automation interfaces
+- NETCONF capabilities
 expertise: automation
 thumbnail: /assets/images/blog/python-netmiko-automation.png
+excerpt: 'Choose a Python network automation interface: compare Netmiko SSH, NETCONF RPCs, RESTCONF resources and vendor APIs, with capability and validation checks.'
+modified_date: '2026-10-17T16:00:00+04:00'
+author: Imran Sarwar
+search_terms:
+- Netmiko vs NETCONF vs RESTCONF
+- Python network automation interfaces
+- NETCONF capabilities
+- RESTCONF vs REST API
+takeaways:
+- Match the interface to supported device capabilities and the task.
+- Do not assume a vendor REST API implements RESTCONF.
+- Verify resulting state before treating a request as successful.
+article_type: Protocol comparison
+topic_label: Python network automation
+related_projects:
+- title: Python multi-vendor user management and configuration auditing
+  url: /projects/2025-06-27-multi-vendor-user-creation/
+- title: 'IDMUI: Flask and OpenStack Keystone integration'
+  url: /projects/2025-04-24-idmui-openstack/
+related_posts:
+- python-network-automation-with-netmiko
+- idmui-project
+service_url: /network-automation-services/#request-engineering-support
+image_alt: Netmiko vs NETCONF vs RESTCONF for Python Network Automation — illustrative article cover
+cta_title: Need help with a Python network automation workflow?
+cta_text: Share the script behavior, device platforms, sanitized error and expected result. We can assess a targeted debugging, implementation or configuration-check task.
+seo_title: Netmiko vs NETCONF vs RESTCONF
 ---
 
-**By Imran Sarwar — network infrastructure and Python automation.** This is a technical comparison, not a claim that all three interfaces have been deployed in my projects. My implementation case study uses Python and Netmiko; NETCONF and RESTCONF are described here using their protocol specifications.
+
+
+
+Choosing a Python network automation interface starts with device support, the task and the evidence needed to verify the result. This guide compares CLI automation with model-driven interfaces and vendor APIs. My implementation case study uses Netmiko; NETCONF and RESTCONF are explained using their specifications rather than presented as my delivered production deployments.
 
 ## Which interface should you choose?
 
-<figure class="my-4">
-  <img src="{{ '/assets/images/diagrams/network-automation-interfaces.svg' | relative_url }}" alt="Comparison of Netmiko CLI sessions, NETCONF XML RPCs, RESTCONF YANG resources and vendor REST APIs" width="1100" height="960" class="img-fluid rounded-4" loading="lazy">
-  <figcaption class="small text-muted mt-2">Four alternative interfaces to assess against device support and the required workflow.</figcaption>
-</figure>
+{% include blog-diagram.html src="/assets/images/diagrams/network-automation-interfaces.svg" alt="Comparison of Netmiko CLI sessions, NETCONF XML RPCs, RESTCONF YANG resources and vendor REST APIs" caption="Four alternative interfaces to evaluate against actual platform capabilities and the required workflow." %}
 
 Start with what the device supports and the result you need. **Netmiko** is useful for automating existing CLI workflows over SSH. **NETCONF** provides structured RPC operations for configuration and state, with capabilities that vary by server. **RESTCONF** provides an HTTP interface to YANG-defined data using XML or JSON. A vendor REST API may expose a different model and is not automatically RESTCONF.
 

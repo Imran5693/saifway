@@ -1,0 +1,15 @@
+<section class="blog-related" aria-labelledby="related-work-title">
+  <h2 id="related-work-title">Related projects &amp; reading</h2>
+  <ul>
+    {% for item in page.related_projects %}
+    <li><a href="{{ item.url | relative_url }}">{{ item.title | escape }}</a><span>Project evidence</span></li>
+    {% endfor %}
+    {% for related_path in page.related_posts %}
+      {% for other in site.posts %}
+        {% if other.path contains related_path and other.url != page.url %}
+        <li><a href="{{ other.url | relative_url }}">{{ other.title | escape }}</a><span>Technical article</span></li>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </ul>
+</section>

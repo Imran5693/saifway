@@ -10,7 +10,9 @@
 {% endif %}
 
 <title>
-  {% if page.title %}
+  {% if page.layout == 'post' %}
+    {{ page.seo_title | default: page.title | escape }} | Imran Sarwar
+  {% elsif page.title %}
     {{ page.title | escape }}{% if page.layout == 'post' or page.layout == 'project' %} | Imran Sarwar{% endif %} | Saif Way Technology
   {% else %}
     Saif Way Technology | Cybersecurity, Infrastructure & Automation Portfolio
@@ -67,6 +69,9 @@
 
 <!-- Custom CSS -->
 <link href="{{ '/assets/css/style.css' | relative_url }}?v=20261017-heading" rel="stylesheet" />
+{% if page.layout == 'post' or page.url == '/blog/' %}
+<link href="{{ '/assets/css/blog-reading.css' | relative_url }}" rel="stylesheet" />
+{% endif %}
 
 <!-- Structured Data -->
 <script type="application/ld+json">
@@ -117,6 +122,9 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
+  "inLanguage": "en",
+  "articleSection": {{ page.topic_label | default: 'Infrastructure engineering' | jsonify }},
+  "wordCount": {{ content | strip_html | number_of_words }},
   "headline": {{ page_title | jsonify }},
   "description": {{ page_description | jsonify }},
   "image": "{{ social_image }}",

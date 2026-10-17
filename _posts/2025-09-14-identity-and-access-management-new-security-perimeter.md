@@ -1,100 +1,93 @@
 ---
 expertise: security
 layout: post
-title: "Identity and Access Management: Why Identity Is the New Security Perimeter"
-description: "A practical IAM article based on OpenStack Keystone lab work, IDMUI, role-based access control, least privilege, and secure access design."
+title: 'OpenStack Keystone IAM: RBAC, Least Privilege and Access Reviews'
+description: Review OpenStack Keystone IAM with RBAC, least privilege and access-review examples. Understand role scope, lifecycle checks and audit evidence.
 date: 2025-09-14
-author: "Imran Sarwar"
-thumbnail: "/assets/images/blog/iam-new-security-perimeter.png"
+author: Imran Sarwar
+thumbnail: /assets/images/blog/iam-new-security-perimeter.png
 tags:
-  - Identity and Access Management
-  - IAM
-  - OpenStack Keystone
-  - Role Based Access Control
-  - Cloud Security
-  - Zero Trust
-  - Cybersecurity
-keywords:
-  - identity and access management
-  - IAM security
-  - identity is the new perimeter
-  - OpenStack Keystone IAM
-  - role based access control
-  - least privilege access
+- Identity and access management
+- OpenStack Keystone IAM
+- OpenStack Keystone RBAC
+- least privilege access review
+excerpt: Review OpenStack Keystone IAM with RBAC, least privilege and access-review examples. Understand role scope, lifecycle checks and audit evidence.
+modified_date: '2026-10-17T16:00:00+04:00'
+search_terms:
+- OpenStack Keystone IAM
+- OpenStack Keystone RBAC
+- least privilege access review
+- Keystone role scope
+takeaways:
+- Authentication does not establish permission for every action.
+- Review role assignments with their scope and owner.
+- Treat identity, network and application controls as complementary.
+article_type: Lab-informed technical guide
+topic_label: Identity and access management
+related_projects:
+- title: 'IDMUI: Flask and OpenStack Keystone integration'
+  url: /projects/2025-04-24-idmui-openstack/
+- title: Web-based digital certificate management portal
+  url: /projects/2025-11-24-digital-certificate-management/
+related_posts:
+- idmui-project
+- zero-trust-architecture
+service_url: /network-automation-services/#request-engineering-support
+image_alt: 'OpenStack Keystone IAM: RBAC, Least Privilege and Access Reviews — illustrative article cover'
+cta_title: Need help with the implementation behind the design?
+cta_text: Bring the specific access, certificate, configuration or infrastructure workflow and the result you need. Scope and fit are assessed against the project evidence, rather than assumed to cover a full security audit.
+seo_title: 'OpenStack Keystone IAM: RBAC & Least Privilege'
 ---
 
-## Introduction
 
-In traditional network security, the firewall was often treated as the main security boundary. If users were inside the network, they were usually trusted more than users outside the network.
 
-Modern infrastructure does not work that way anymore. Users access systems from offices, remote locations, VPNs, cloud portals, SaaS platforms, and mobile devices. Because of this shift, identity has become one of the most important security control points.
 
-This article is based on my practical learning from cloud IAM lab work, especially while building the [IDMUI - Identity Management User Interface for OpenStack Keystone]({{ '/projects/2025-04-24-idmui-openstack/' | relative_url }}) project.
 
-## Background: Why This Topic Matters to Me
+Identity and access management (IAM) answers who can perform an action and under what scope. In cloud infrastructure, an overly broad assignment can expose resources even when network connectivity is well controlled.
 
-While working on OpenStack Keystone and IDMUI, I noticed that many security risks do not start from open ports or firewall rules. They often start from weak identity control.
+My OpenStack Keystone and IDMUI work helped me connect users, roles, projects and tokens with day-to-day administrative decisions. This article focuses on reviewing access. It complements the separate Flask application walkthrough rather than repeating its UI architecture.
 
-Examples include:
+## Separate identity, permission and scope
 
-- Too many users having administrative privileges
-- No clear separation between user, operator, and administrator roles
-- Shared credentials
-- Old accounts remaining active
-- No proper audit trail
-- Access granted without review
+Authentication establishes an identity. Authorization evaluates an action against policy. A role name alone is not enough to describe effective access: its scope and the service's configured policy also matter.
 
-In cloud and enterprise environments, these problems can become more dangerous than a single network misconfiguration.
+For a review, list the principal, assigned role, target scope, business purpose and owner. Ask whether the access is still required and how it will be removed. Shared accounts make that ownership harder to establish.
 
-## Identity as the New Security Perimeter
+{% include blog-diagram.html src="/assets/images/diagrams/iam-access-review.svg" alt="Access review cycle: identify a principal, inspect role scope, validate the permission and review its lifecycle" caption="A conceptual IAM review cycle informed by the portfolio lab." %}
 
-Identity is now a security boundary because every important action begins with access. Before a user can create a resource, delete a service, modify a configuration, or view sensitive data, the system must know who the user is and what they are allowed to do.
+## Review administrative access separately
 
-That means IAM must answer three questions:
+A user who needs a read operation may not need account creation or role assignment rights. A service integration should have the permissions required for its task, not simply reuse an administrator's identity.
 
-1. Who is requesting access?
-2. What are they allowed to do?
-3. Should this access still be trusted?
+Check both successful and denied operations in a test environment. The [Keystone role documentation](https://docs.openstack.org/keystone/latest/admin/service-api-protection.html) describes how default roles interact with scope; verify your deployment's release and policy before applying those expectations.
 
-In my OpenStack Keystone-based work, this became very clear. Keystone manages users, roles, projects, domains, and tokens. If these are not designed properly, the cloud environment becomes difficult to control.
+## Example access-review record
 
-## Practical IAM Controls
+Suppose an integration needs a limited operation in one project. Review the requested permission, assignment scope and actual service policy together. These are illustrative requirements to test; they do not assert what every Keystone role permits by default.
 
-A strong IAM design should include:
+| Review question | Evidence to collect | Follow-up if unclear |
+| --- | --- | --- |
+| Does the integration need this action? | Named operation, purpose and owner | Clarify the requirement before granting broad access |
+| Is the assignment in the intended scope? | Principal, role and project/domain identifiers | Compare the assignment with the target resource |
+| Is unrelated access denied? | Result of an approved negative test | Investigate policy and effective permissions |
+| Who removes stale access? | Owner, expiry or review action | Assign responsibility for the lifecycle |
 
-- Role-based access control
-- Least privilege permissions
-- Separate admin and user roles
-- Multi-factor authentication where possible
-- Account lifecycle management
-- Logging and audit review
-- Periodic access validation
+The output should support an administrative decision. A list of role names without scope, purpose or ownership cannot establish least privilege.
 
-In a practical lab or production environment, IAM is not only about creating users. It is about controlling privilege and reducing unnecessary access.
+## Follow the account lifecycle
 
-## Lessons from IDMUI and Cloud IAM Work
+Account creation is only the beginning. Record what happens when a person changes responsibilities, a temporary assignment expires or an integration is retired. Review old tokens, credentials and service dependencies under the system's supported lifecycle controls.
 
-While building IDMUI, I understood that identity management should be simple enough for administrators to use, but strict enough to prevent accidental over-permissioning.
+A practical review output can be simple: assignment, reason, owner, review date and agreed next action. It should help the administrator resolve exceptions rather than produce a list that nobody owns.
 
-A good IAM interface should help administrators:
+## Keep an audit trail without leaking secrets
 
-- Create users safely
-- Assign roles clearly
-- Understand project ownership
-- Review access
-- Reduce manual command-line mistakes
-- Improve visibility into identity operations
+Log the actor, target, operation, time and outcome where the implementation supports it. A raw token or password is not useful audit evidence. Decide who can access logs and how an investigation can correlate events across the application and identity service.
 
-The project source is available here: [IDMUI GitHub repository](https://github.com/Imran5693/idmui-app.git).
+A UI should show enough context to prevent an accidental assignment to the wrong project. Server-side validation and service policy must still enforce the decision. My [IDMUI application article]({{ '/2025/08/16/idmui-project.html' | relative_url }}) explains that separation.
 
-## Related Portfolio References
+## Identity does not replace network security
 
-- Project case study: [IDMUI - Identity Management User Interface for OpenStack Keystone]({{ '/projects/2025-04-24-idmui-openstack/' | relative_url }})
-- Related profile section: [Professional Profile and Certifications]({{ '/professional-profile/' | relative_url }})
-- GitHub reference: [Imran5693/idmui-app](https://github.com/Imran5693/idmui-app.git)
+The phrase identity is the new perimeter is a useful reminder, but it should not imply that routing, segmentation, endpoint controls and application security stop mattering. An attacker can exploit weaknesses across several layers.
 
-## Conclusion
-
-Identity is now one of the strongest security perimeters in modern infrastructure. Firewalls and network controls are still important, but they are not enough without proper identity governance.
-
-From my IAM and OpenStack Keystone learning, the biggest lesson is simple: if identity is weak, the whole environment becomes weak.
+For a broader design discussion, read [Zero Trust in enterprise networks]({{ '/2025/10/26/zero-trust-architecture-enterprise-networks.html' | relative_url }}). For a Flask/API project involving identity operations, use the [engineering support inquiry]({{ '/network-automation-services/#request-engineering-support' | relative_url }}) and include the intended actions, scopes and current implementation. This portfolio demonstrates lab and application work, not an independent compliance certification of an IAM deployment.

@@ -3,67 +3,58 @@ layout: default
 ---
 {% assign post_url = page.url | absolute_url %}
 {% assign whatsapp_text = page.title | append: ' ' | append: post_url %}
-
-<article class="py-6 bg-white">
-  <div class="container-fluid px-4">
-    <header class="article-header">
-      {% if page.thumbnail %}
-        <img src="{{ page.thumbnail | relative_url }}" alt="{{ page.title }}" class="article-hero-image" loading="lazy">
-      {% endif %}
-
-      <span class="section-kicker">Technical Article</span>
-      <h1>{{ page.title }}</h1>
-      <p class="article-meta">
-        {{ page.date | date: "%B %d, %Y" }} / {{ page.author | default: site.author.name }}
-      </p>
-      {% if page.description %}
-        <p class="article-description">{{ page.description }}</p>
-      {% endif %}
-
-      <div class="share-toolbar" aria-label="Share this article">
-        <span>Share</span>
-        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ post_url | url_encode }}" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://www.facebook.com/sharer/sharer.php?u={{ post_url | url_encode }}" target="_blank" rel="noopener" aria-label="Share on Facebook">
-          <i class="fab fa-facebook"></i>
-        </a>
-        <a href="https://twitter.com/intent/tweet?url={{ post_url | url_encode }}&text={{ page.title | url_encode }}" target="_blank" rel="noopener" aria-label="Share on X">
-          <i class="fab fa-x-twitter"></i>
-        </a>
-        <a href="https://wa.me/?text={{ whatsapp_text | url_encode }}" target="_blank" rel="noopener" aria-label="Share on WhatsApp">
-          <i class="fab fa-whatsapp"></i>
-        </a>
-        <button type="button" class="copy-link-btn" data-copy-url="{{ post_url }}" aria-label="Copy article link">
-          <i class="fas fa-link"></i>
-        </button>
+{% assign reading_minutes = content | strip_html | number_of_words | divided_by: 200 | plus: 1 %}
+<article class="blog-article">
+  <div class="blog-shell">
+    <header class="blog-header">
+      <a class="blog-back" href="{{ '/blog/' | relative_url }}">← Engineering articles</a>
+      <p class="blog-eyebrow">{{ page.article_type | default: 'Technical guide' }} · {{ page.topic_label | default: 'Infrastructure engineering' }}</p>
+      <h1>{{ page.title | escape }}</h1>
+      <p class="blog-deck">{{ page.description | escape }}</p>
+      <div class="blog-byline">
+        <a href="{{ '/professional-profile/' | relative_url }}" rel="author">{{ site.author.name }}</a>
+        <span>Published {{ page.date | date: '%b %d, %Y' }}</span>
+        {% if page.modified_date %}<span>Reviewed {{ page.modified_date | date: '%b %d, %Y' }}</span>{% endif %}
+        <span>{{ reading_minutes }} min read</span>
       </div>
+      {% if page.thumbnail %}<img src="{{ page.thumbnail | relative_url }}" alt="{{ page.image_alt | default: page.title | escape }}" class="blog-cover" width="1200" height="630" fetchpriority="high">{% endif %}
     </header>
-
-    <div class="article-content article-content-wide">
-      {{ content }}
-      {% include expertise-links.html %}
-    </div>
-
-    <aside class="author-box">
-      <img src="{{ '/assets/images/myprof.jpg' | relative_url }}" alt="Imran Sarwar">
-      <div>
-        <h2>Imran Sarwar</h2>
-        <p>
-          Network infrastructure and Python automation professional with NOC/data center experience,
-          building multi-vendor Netmiko workflows and Flask/REST API applications.
-        </p>
-        <p>Explore <a href="{{ '/professional-profile/' | relative_url }}">Imran Sarwar's infrastructure and automation experience</a>, read the <a href="{{ '/network-automation-python/' | relative_url }}">Python network automation project guide</a>, or request <a href="{{ '/student-project-support/' | relative_url }}">student project support in Pakistan</a>.</p>
-        <div class="author-links">
-          <a href="https://www.linkedin.com/in/imransarwaritpro/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="https://github.com/Imran5693" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="https://www.youtube.com/@SaifWayTech" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    <div class="blog-grid">
+      <div class="blog-main">
+        {% if page.takeaways %}
+        <section class="blog-takeaways" aria-label="Key points">
+          <h2>What you’ll learn</h2>
+          <ul>{% for point in page.takeaways %}<li>{{ point | escape }}</li>{% endfor %}</ul>
+        </section>
+        {% endif %}
+        <div class="blog-body" id="article-body">
+          {{ content }}
+        </div>
+        {% include blog-related.html %}
+        <section class="blog-contact" aria-labelledby="article-contact-title">
+          <p class="blog-eyebrow">Discuss a related technical problem</p>
+          <h2 id="article-contact-title">{{ page.cta_title | default: 'Need help with an infrastructure or automation workflow?' | escape }}</h2>
+          <p>{{ page.cta_text | default: 'Share your environment, current problem and expected result. Imran Sarwar will assess technical fit, scope and availability before work is agreed.' | escape }}</p>
+          <a class="btn btn-primary" href="{{ page.service_url | default: '/network-automation-services/#request-engineering-support' | relative_url }}">Discuss your project</a>
+          <a class="blog-profile-link" href="{{ '/professional-profile/' | relative_url }}">Review Imran Sarwar’s experience</a>
+          <p class="blog-contact-note">Remote English-language inquiries: USA, UK, Europe and beyond. UAE-based (UTC+4); working overlap is agreed per project.</p>
+        </section>
+        <aside class="blog-author" aria-label="About the author">
+          <img src="{{ '/assets/images/myprof.jpg' | relative_url }}" alt="Imran Sarwar" width="72" height="72" loading="lazy">
+          <div><h2><a href="{{ '/professional-profile/' | relative_url }}">Imran Sarwar</a></h2><p>Network infrastructure and Python automation professional with NOC/data center experience. My portfolio documents Netmiko workflows, Flask applications, infrastructure labs and security learning.</p><a href="{{ '/projects/' | relative_url }}">Explore the project evidence</a></div>
+        </aside>
+        <div class="share-toolbar" aria-label="Share this article">
+          <span>Share</span>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ post_url | url_encode }}" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+          <a href="https://wa.me/?text={{ whatsapp_text | url_encode }}" target="_blank" rel="noopener noreferrer" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+          <button type="button" class="copy-link-btn" data-copy-url="{{ post_url }}" aria-label="Copy article link"><i class="fas fa-link" aria-hidden="true"></i></button>
         </div>
       </div>
-    </aside>
-
-    <div class="text-center mt-5">
-      <a href="{{ '/blog/' | relative_url }}" class="btn btn-primary">Back to Blog</a>
+      <aside class="blog-sidebar" aria-label="Article navigation">
+        <nav class="blog-toc" aria-label="In this article" hidden><h2>In this article</h2><ol id="blog-toc-list"></ol></nav>
+        <div class="blog-sidebar-note"><strong>From reading to implementation</strong><p>Compare the guidance with the linked lab or project. For an existing workflow, bring the environment details and the result you need.</p><a href="{{ '/network-automation-services/#request-engineering-support' | relative_url }}">Request a technical scope review →</a></div>
+      </aside>
     </div>
   </div>
 </article>
+<script src="{{ '/assets/js/blog-reading.js' | relative_url }}" defer></script>

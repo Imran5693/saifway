@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760" role="img" aria-labelledby="title desc">
+<title id="title">Security Architecture Control Review</title>
+<desc id="desc">Give every control a testable purpose. Choose a scenario: Describe a required action and an unwanted outcome.. Assign enforcement: Connect identity, network and application controls to the need.. Check dependencies: Review trust, service reachability and shared failure modes.. Define validation evidence: Test the intended behavior and document the remaining limits.</desc>
+<rect width="1100" height="760" rx="24" fill="#10273e"/>
+<g font-family="Arial, Helvetica, sans-serif">
+<text x="48" y="47" fill="#72e2d0" font-size="18" letter-spacing="2">SAIF WAY TECHNOLOGY · IMRAN SARWAR</text>
+<text x="48" y="105" fill="#fff" font-size="37" font-weight="700">Security Architecture Control Review</text>
+<text x="48" y="147" fill="#c4d7e6" font-size="22">Give every control a testable purpose.</text>
+<rect x="48" y="180" width="1004" height="110" rx="15" fill="#1e3c55" stroke="#42637b"/>
+<circle cx="91" cy="219" r="21" fill="#72e2d0"/>
+<text x="91" y="227" text-anchor="middle" fill="#10273e" font-size="23" font-weight="700">1</text>
+<text x="132" y="221" fill="#fff" font-size="27" font-weight="700">Choose a scenario</text>
+<text x="132" y="262" fill="#d3e2ee" font-size="22">Describe a required action and an unwanted outcome.</text>
+<rect x="48" y="310" width="1004" height="110" rx="15" fill="#1e3c55" stroke="#42637b"/>
+<circle cx="91" cy="349" r="21" fill="#72e2d0"/>
+<text x="91" y="357" text-anchor="middle" fill="#10273e" font-size="23" font-weight="700">2</text>
+<text x="132" y="351" fill="#fff" font-size="27" font-weight="700">Assign enforcement</text>
+<text x="132" y="392" fill="#d3e2ee" font-size="22">Connect identity, network and application controls to the need.</text>
+<rect x="48" y="440" width="1004" height="110" rx="15" fill="#1e3c55" stroke="#42637b"/>
+<circle cx="91" cy="479" r="21" fill="#72e2d0"/>
+<text x="91" y="487" text-anchor="middle" fill="#10273e" font-size="23" font-weight="700">3</text>
+<text x="132" y="481" fill="#fff" font-size="27" font-weight="700">Check dependencies</text>
+<text x="132" y="522" fill="#d3e2ee" font-size="22">Review trust, service reachability and shared failure modes.</text>
+<rect x="48" y="570" width="1004" height="110" rx="15" fill="#1e3c55" stroke="#42637b"/>
+<circle cx="91" cy="609" r="21" fill="#72e2d0"/>
+<text x="91" y="617" text-anchor="middle" fill="#10273e" font-size="23" font-weight="700">4</text>
+<text x="132" y="611" fill="#fff" font-size="27" font-weight="700">Define validation evidence</text>
+<text x="132" y="652" fill="#d3e2ee" font-size="22">Test the intended behavior and document the remaining limits.</text>
+<text x="48" y="732" fill="#b0c6d8" font-size="19">Conceptual engineering guide · Validate against the actual environment.</text>
+</g></svg>

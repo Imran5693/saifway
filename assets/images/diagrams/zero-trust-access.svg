@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760" role="img" aria-labelledby="title desc">
+<title id="title">Resource Access in a Zero Trust Design</title>
+<desc id="desc">Evaluate a request beyond its network location. Describe the resource: Identify the required action and service dependencies.. Evaluate context: Consider the identity, device and relevant policy inputs.. Enforce the decision: Apply supported controls at the intended access boundary.. Observe and review: Check allowed and denied behavior and changing access needs.</desc>
+<rect width="1100" height="760" rx="24" fill="#10273e"/>
+<g font-family="Arial, Helvetica, sans-serif">
+<text x="48" y="47" fill="#72e2d0" font-size="18" letter-spacing="2">SAIF WAY TECHNOLOGY · IMRAN SARWAR</text>
+<text x="48" y="105" fill="#fff" font-size="37" font-weight="700">Resource Access in a Zero Trust Design</text>
+<text x="48" y="147" fill="#c4d7e6" font-size="22">Evaluate a request beyond its network location.</text>
+<rect x="48" y="180" width="1004" height="110" rx="15" fill="#1e3c55" stroke="#42637b"/>
+<circle cx="91" cy="219" r="21" fill="#72e2d0"/>
+<text x="91" y="227" text-anchor="middle" fill="#10273e" font-size="23" font-weight="700">1</text>
+<text x="132" y="221" fill="#fff" font-size="27" font-weight="700">Describe the resource</text>
+<text x="132" y="262" fill="#d3e2ee" font-size="22">Identify the required action and service dependencies.</text>
+<rect x="48" y="310" width="1004" height="110" rx="15" fill="#1e3c55" stroke="#42637b"/>
+<circle cx="91" cy="349" r="21" fill="#72e2d0"/>
+<text x="91" y="357" text-anchor="middle" fill="#10273e" font-size="23" font-weight="700">2</text>
+<text x="132" y="351" fill="#fff" font-size="27" font-weight="700">Evaluate context</text>
+<text x="132" y="392" fill="#d3e2ee" font-size="22">Consider the identity, device and relevant policy inputs.</text>
+<rect x="48" y="440" width="1004" height="110" rx="15" fill="#1e3c55" stroke="#42637b"/>
+<circle cx="91" cy="479" r="21" fill="#72e2d0"/>
+<text x="91" y="487" text-anchor="middle" fill="#10273e" font-size="23" font-weight="700">3</text>
+<text x="132" y="481" fill="#fff" font-size="27" font-weight="700">Enforce the decision</text>
+<text x="132" y="522" fill="#d3e2ee" font-size="22">Apply supported controls at the intended access boundary.</text>
+<rect x="48" y="570" width="1004" height="110" rx="15" fill="#1e3c55" stroke="#42637b"/>
+<circle cx="91" cy="609" r="21" fill="#72e2d0"/>
+<text x="91" y="617" text-anchor="middle" fill="#10273e" font-size="23" font-weight="700">4</text>
+<text x="132" y="611" fill="#fff" font-size="27" font-weight="700">Observe and review</text>
+<text x="132" y="652" fill="#d3e2ee" font-size="22">Check allowed and denied behavior and changing access needs.</text>
+<text x="48" y="732" fill="#b0c6d8" font-size="19">Conceptual engineering guide · Validate against the actual environment.</text>
+</g></svg>

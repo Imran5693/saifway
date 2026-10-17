@@ -1,122 +1,81 @@
 ---
 expertise: applications
 layout: post
-title: "Building IDMUI: A Web-Based Identity Management Interface for OpenStack Keystone"
-description: "A professional, research-oriented exploration of the Identity Management User Interface (IDMUI) project, developed as a secure and user-friendly platform for managing Keystone services in OpenStack."
+title: 'OpenStack Keystone with Flask: Building an Identity Management UI'
+description: Inside IDMUI, a Python Flask interface for OpenStack Keystone. Explore scoped role assignments, API errors, session handling and infrastructure dashboard design.
 date: 2025-08-16
-author: "Imran Sarwar"
-tags: ["OpenStack", "Keystone", "Flask", "Python", "Identity Management", "Cloud Security", "Research"]
-thumbnail: "/assets/images/blog/idmui-cloud-iam.png"
+author: Imran Sarwar
+tags:
+- Flask and cloud IAM
+- OpenStack Keystone Flask interface
+- Python identity management dashboard
+- Keystone RBAC scope
+thumbnail: /assets/images/blog/idmui-cloud-iam.png
+excerpt: Inside IDMUI, a Python Flask interface for OpenStack Keystone. Explore scoped role assignments, API errors, session handling and infrastructure dashboard design.
+modified_date: '2026-10-17T16:00:00+04:00'
+search_terms:
+- OpenStack Keystone Flask interface
+- Python identity management dashboard
+- Keystone RBAC scope
+- Flask REST API integration
+takeaways:
+- Treat the UI as a client of Keystone policy, not a replacement.
+- Validate roles and scope on the server for sensitive actions.
+- Make authentication, authorization and service failures distinguishable.
+article_type: Project architecture walkthrough
+topic_label: Flask and cloud IAM
+related_projects:
+- title: 'IDMUI: Flask and OpenStack Keystone integration'
+  url: /projects/2025-04-24-idmui-openstack/
+- title: Web-based digital certificate management portal
+  url: /projects/2025-11-24-digital-certificate-management/
+related_posts:
+- identity-and-access-management
+- security-by-design-building
+service_url: /network-automation-services/#request-engineering-support
+image_alt: 'OpenStack Keystone with Flask: Building an Identity Management UI — illustrative article cover'
+cta_title: Building or troubleshooting a Flask infrastructure application?
+cta_text: Describe the API, identity scope, application stack and operation that needs to work. A technical review can establish implementation fit and validation needs.
+seo_title: Flask & OpenStack Keystone Identity Management
 ---
 
-## Introduction
-In modern cloud environments, **identity and access management (IAM)** plays a critical role in ensuring secure operations.  
-While OpenStack Keystone provides a robust identity service, its **command-line and API-based interactions** can present a barrier for administrators and students who prefer a **graphical, web-based interface**.  
 
-The **Identity Management User Interface (IDMUI)** project addresses this challenge by delivering a **Flask-powered web platform** to manage Keystone services, projects, users, and roles with a focus on **security, usability, and extensibility**.
 
----
 
-## Research Motivation
-The project was driven by three key gaps in existing OpenStack deployments:
+IDMUI is my Python Flask interface for OpenStack Keystone administration. It brings identity operations into a workflow where an operator can review a project, user or role assignment and see the result of an API request.
 
-1. **Administrative Usability**  
-   Keystone is powerful but primarily CLI/API-based. A web UI simplifies operations for administrators, students, and researchers.  
+OpenStack already has web interfaces, including Horizon. The motivation for this project is a focused custom workflow and an integration learning exercise, not that OpenStack lacks a dashboard. The related case study and repository document the implementation; the recommendations below describe what to review before production use.
 
-2. **Security and Compliance**  
-   Identity services are often the target of attacks. IDMUI implements **Keystone-authenticated sessions**, **role-based access control**, and **real-time service monitoring**.  
+## Define the identity operation and its scope
 
-3. **Integration and Extensibility**  
-   By using **Python Flask** and **REST APIs**, the system is modular, allowing future expansion into **database management**, **real-time notifications**, and **PDF-based reporting**.  
+Keystone concepts include users, groups, projects, domains, roles and tokens. A role assignment has meaning in a scope. An operator must understand which project or domain an action affects before approving it.
 
----
+A useful interface displays the target clearly and handles stale selections. If a user opens a page, then their access changes, a hidden button is not sufficient protection. Server-side authorization and the underlying Keystone policy must still control the operation.
 
-## System Design
-The IDMUI architecture is composed of several key layers:
+{% include blog-diagram.html src="/assets/images/diagrams/iam-request-flow.svg" alt="Administrator request through a Flask application, Keystone policy and scoped result review" caption="Conceptual IDMUI integration flow; exact behavior depends on the deployed code and Keystone policy." %}
 
-- **Frontend (User Interface)**  
-  - Built with **HTML, CSS, and Bootstrap** for responsive design.  
-  - Sidebar-driven navigation for Identity Service and Database Management modules.  
-  - Flash messaging system for real-time feedback.  
+## Keep responsibilities separate
 
-- **Backend (Application Layer)**  
-  - Implemented in **Flask (Python)**.  
-  - Handles authentication, service communication, and session management.  
-  - Uses modular routes for Keystone operations such as:
-    - User & Role Management  
-    - Project Creation and Deletion  
-    - Service Status Viewing  
+The browser presents inputs and results. Flask validates the request, manages application state and calls the appropriate service. Keystone authenticates and applies its configured policy to identity operations.
 
-- **Integration with Keystone**  
-  - Communicates with Keystone API for authentication and identity operations.  
-  - Supports **admin token authentication** and **role-based session tokens**.  
+Keep service credentials and tokens away from browser-readable output and source code. Decide how a session expires, what happens when a token is invalid and how a user signs out. Flask's [security guidance](https://flask.palletsprojects.com/en/stable/web-security/) is a useful implementation reference for application-specific checks.
 
-- **Security Features**  
-  - Authentication enforced via Keystone.  
-  - ACL-like restrictions for sensitive operations.  
-  - Real-time service monitoring to detect downtime.  
+The project also explores operational service actions through SSH. Those actions have a different risk and authorization boundary from listing identity records. They should not inherit broad server access simply because a user can sign into a dashboard.
 
-- **Database Support**  
-  - Integrated with **MySQL** for storing application-level data.  
-  - Future support for PostgreSQL or MongoDB as extensions.  
+## Test role assignments and API failures
 
----
+For each sensitive operation, test an allowed user and a user who should be denied. Verify the target scope and examine the result when an object no longer exists, a token expires or the service is unreachable.
 
-## Implementation Highlights
-- **Keystone Authentication**  
-  - Validates users by checking against Keystone's identity store.  
-  - Differentiates between **admin users** and **regular users** for UI access.  
+Return useful feedback without exposing credentials, tokens or full internal traces. Distinguish an authentication problem from an authorization denial and a transport failure. An ambiguous error can lead an operator to retry a destructive action unnecessarily.
 
-- **Service Management**  
-  - Start/stop Keystone services remotely using **Paramiko (SSH integration)**.  
-  - View configuration sections such as `database`, `fernet_tokens`, `identity`, and `oslo_policy`.  
+## Design a dashboard an administrator can trust
 
-- **User and Role Management**  
-  - Create, view, and delete users.  
-  - Assign roles to users within specific projects.  
+Use explicit action labels and confirmations for destructive requests. Show the selected project or domain, the current state and the result returned by the service. Record enough audit context to investigate an operation while avoiding sensitive payloads.
 
-- **Real-Time Messaging**  
-  - Flash messages notify users of operation results (success/failure).  
+A custom UI should make the operation clearer, not hide important policy details. Check the [Keystone role and scope documentation](https://docs.openstack.org/keystone/latest/admin/service-api-protection.html) for the release being used; defaults and policy behavior are version-dependent.
 
-- **Reporting**  
-  - Export user/project/service configurations into **PDF reports**.  
+## Explore the implementation and discuss an integration
 
----
+The [IDMUI repository](https://github.com/Imran5693/idmui-app) and [project case study]({{ '/projects/2025-04-24-idmui-openstack/' | relative_url }}) replace the earlier placeholder source link. For a similar Flask infrastructure dashboard, bring the API documentation, identity model, workflow and expected output to a [remote engineering inquiry]({{ '/network-automation-services/#request-engineering-support' | relative_url }}).
 
-## Challenges and Solutions
-- **Challenge 1: Secure Remote Operations**  
-  *Solution:* Used **Paramiko SSH** with strong credentials for server-side commands.  
-
-- **Challenge 2: Session Management**  
-  *Solution:* Implemented session-based token storage validated against Keystone.  
-
-- **Challenge 3: Responsive Design**  
-  *Solution:* Leveraged **Bootstrap components** for a professional, mobile-friendly UI.  
-
----
-
-## Results
-The IDMUI project achieved:  
-
-- **Simplified Keystone Administration** through a clean, intuitive web interface.  
-- **Secure Access Control** with Keystone authentication and role-based access.  
-- **Operational Efficiency** by integrating monitoring, user management, and configuration views.  
-- **Educational Value** as a learning tool for students working with OpenStack.  
-
----
-
-## Lessons Learned
-- A **modular architecture** (separating routes, utils, and configs) makes scaling easier.  
-- **Security-first design** is essential for IAM projects; integrating Keystone tokens early avoided major pitfalls.  
-- **Frontend usability** is as important as backend logic-users value intuitive design.  
-
----
-
-## Conclusion
-The **IDMUI project** demonstrates how research-driven design and implementation can extend the functionality of OpenStack Keystone into a **secure, user-friendly, and educational tool**.  
-By bridging the gap between **CLI-driven operations and graphical interfaces**, IDMUI provides real value for administrators, researchers, and students.  
-
-**Source Code & Documentation:** [GitHub Repository (Coming Soon)](#)  
-
-**System Architecture Diagram:**  
-<img src="{{ site.baseurl }}/assets/images/projects/architecture.jpg" alt="IDMUI Architecture Diagram" style="width:85%; max-width:700px; display:block; margin:auto; border:1px solid #ddd; border-radius:8px;">
+A working lab application is a useful starting point. Production readiness also depends on deployment configuration, permissions, testing, maintenance and the client's access requirements.

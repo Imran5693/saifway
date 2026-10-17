@@ -1,180 +1,122 @@
 ---
 expertise: automation
 layout: post
-title: "Python Network Automation with Netmiko: Multi-Vendor User Management"
-description: "Learn Python network automation with Netmiko to create, update, and manage user accounts across Cisco, Juniper, and Fortinet devices. Real-world DevNet-style automation tested on enterprise networks."
-thumbnail: "/assets/images/blog/python-netmiko-automation.png"
+title: 'Python Network Automation with Netmiko: Multi-Vendor User Management'
+description: 'Plan multi-vendor user management with Python and Netmiko: inventory, SSH sessions, prompt handling, configuration checks and per-device results.'
+thumbnail: /assets/images/blog/python-netmiko-automation.png
 date: 2025-05-18
-author: "Imran Sarwar"
-
+author: Imran Sarwar
 tags:
-  - Python Network Automation
-  - Netmiko
-  - Multi-Vendor Network Automation
-  - Network Automation Script
-  - DevNet Automation
-  - Network Device Configuration Python
-  - Infrastructure Automation
-  - Cisco Juniper Fortinet
-  - User Account Management Automation
-  - DevOps Networking
-  - NetOps Python
-  - Multi-Vendor Network Script
-  - SSH Automation Python
-
-keywords:
-  - Python network automation project
-  - Netmiko multi-vendor automation
-  - Cisco Juniper Fortinet user creation
-  - DevNet automation project
-  - Network automation script tutorial
-  - Multi-vendor network device configuration
-  - Python SSH automation for networks
-  - Enterprise network automation
-  - Network access management script
-  - Automated user management across network devices
-
-canonical: "{{ site.url }}{{ page.url }}"
+- Python network automation
+- Python network automation with Netmiko
+- multi-vendor user management
+- Netmiko prompt detection
+excerpt: 'Plan multi-vendor user management with Python and Netmiko: inventory, SSH sessions, prompt handling, configuration checks and per-device results.'
+modified_date: '2026-10-17T16:00:00+04:00'
+search_terms:
+- Python network automation with Netmiko
+- multi-vendor user management
+- Netmiko prompt detection
+- network configuration auditing
+takeaways:
+- Separate inventory, platform-specific commands and verification.
+- Investigate timeouts before retrying configuration changes.
+- Keep per-device results and a recovery plan.
+article_type: Implementation walkthrough
+topic_label: Python network automation
+related_projects:
+- title: Python multi-vendor user management and configuration auditing
+  url: /projects/2025-06-27-multi-vendor-user-creation/
+related_posts:
+- acl-update-multi-vendor
+- netmiko-netconf-restconf
+service_url: /network-automation-services/#request-engineering-support
+image_alt: 'Python Network Automation with Netmiko: Multi-Vendor User Management — illustrative article cover'
+cta_title: Need help with a Python network automation workflow?
+cta_text: Share the script behavior, device platforms, sanitized error and expected result. We can assess a targeted debugging, implementation or configuration-check task.
+seo_title: Python Network Automation with Netmiko
 ---
 
-<figure class="my-4">
-  <img src="{{ '/assets/images/diagrams/netmiko-workflow.svg' | relative_url }}" alt="Python Netmiko workflow: classify inventory, connect, execute approved commands and verify per-device results" width="1100" height="960" class="img-fluid rounded-4" loading="lazy">
-  <figcaption class="small text-muted mt-2">Conceptual view of the workflow discussed in this article.</figcaption>
-</figure>
 
 
-## Introduction
 
-Modern enterprise networks cannot rely on device-by-device manual management.  
-With **Python network automation**, engineers can automate repetitive tasks across **hundreds of devices** reliably, securely, and consistently.
+Python network automation with Netmiko can turn a repeated device task into a workflow with defined inputs and reviewable results. User management is a useful example: the intended account policy may be consistent, while the commands and commit behavior differ across platforms.
 
-A critical challenge is **user account management** across multi-vendor environments such as:
-- Cisco IOS
-- Juniper JunOS
-- Fortinet FortiOS  
+My multi-vendor automation project documents inventory classification, account workflows, configuration auditing and CLI troubleshooting. This article explains the design decisions behind that work. It is not a universal script that can be pasted into every network.
 
-This blog demonstrates how **Netmiko-based automation** solves this problem using a **single Python script**, tested on **real network devices** and demonstrated in GNS3 labs for visualization.
+## Start with a reliable device inventory
 
----
+A device list needs more than an IP address. Record the platform, management address, access method, intended task and whether the device is in scope. Check duplicates, missing fields and unsupported types before opening sessions.
 
-## Why Network Automation Matters
+Keep credentials outside source code and ordinary inventory exports. Use the access method approved for the environment and verify server identity. A readable inventory improves troubleshooting because a failed result can be traced back to a specific target and handler.
 
-Manual CLI-based configuration can lead to:
-- Human errors
-- Configuration drift
-- Slow deployments
-- Security inconsistencies
+{% include blog-diagram.html src="/assets/images/diagrams/netmiko-workflow.svg" alt="Python Netmiko workflow from inventory classification to device verification" caption="Conceptual workflow based on the documented multi-vendor project; no performance benchmark is implied." %}
 
-Automation brings:
-- Repeatable workflows
-- Faster execution
-- Compliance enforcement
-- Scalable operations
+## Separate connection logic from vendor commands
 
-These are essential in **NetOps, DevNet, and Infrastructure as Code (IaC)** practices.
+Netmiko helps manage CLI sessions across device platforms. It does not make one vendor's account commands valid on another. Keep a small, reviewable command mapping and confirm the required privilege and configuration mode for each supported platform.
 
----
+My [implementation case study]({{ '/projects/2025-06-27-multi-vendor-user-creation/' | relative_url }}) describes the platform and timing problems encountered. The [official Netmiko documentation](https://ktbyers.github.io/netmiko/) explains the library's role in show-command retrieval and configuration sessions.
 
-## Why Netmiko for Multi-Vendor Automation?
+## What my public Netmiko scripts actually implement
 
-Netmiko is a Python library that:
-- Simplifies SSH connections to network devices
-- Abstracts vendor-specific command differences
-- Supports major platforms including:
-  - Cisco
-  - Juniper
-  - Fortinet
-  - Arista
-  - Huawei
-  - Palo Alto  
+The [Cisco IOS user-creation script](https://github.com/Imran5693/network-user_manage-automation/blob/c0fb973c1986366fd6973781f6e933726e1ecb88/Cisco%20IOS/Create_user.py#L23-L75) provides a concrete example. It reads an Excel inventory with pandas, renames the device, IP and hostname columns, filters rows to `cisco ios` and drops rows missing an address or hostname. It then opens a `cisco_ios` connection, enters enable mode, sends the account configuration, reads back matching configuration, saves it and writes a per-device log.
 
-It is ideal for **multi-vendor network automation projects**.
+This inventory-filtering excerpt is taken from that script. It opens no device session:
 
----
+```python
+df = pd.read_excel(EXCEL_PATH)
+df = df.rename(columns={
+    'Device Type': 'device_type',
+    'IP Address': 'ip',
+    'Hostname': 'hostname'
+})
+df_ios = df[df['device_type'].str.lower() == 'cisco ios'].dropna(
+    subset=['ip', 'hostname']
+)
+```
 
-## Real-World Use Case: Multi-Vendor User Management
+The useful separation is inventory selection before connection. However, this expression does not validate IP syntax, remove duplicate targets or normalize whitespace in platform values. Those are additional acceptance checks, not features I claim this version already implements.
 
-Network teams frequently need to:
-- Create users across multiple devices
-- Assign consistent privilege levels
-- Implement rapid changes during onboarding or audits  
+The [H3C user-creation script](https://github.com/Imran5693/network-user_manage-automation/blob/c0fb973c1986366fd6973781f6e933726e1ecb88/H3C%20hp/h3c_user_creation.py#L49-L85) takes a different CLI path: `hp_comware`, `read_until_prompt()`, timing-based command delivery, configuration readback and an interactive save sequence. That is a real example of why multi-vendor network automation needs separate platform handlers rather than one universal command block.
 
-With Python and Netmiko, this process can be done in **minutes instead of hours**.
+### Readback is useful evidence, but not a complete assertion
 
-### Automation Capabilities
-- Bulk user creation and deletion
-- Role-based privilege assignment
-- Vendor-aware command execution
-- Configuration verification and logging
+The Cisco script stores returned configuration, but it does not parse that text into an explicit expected-account and privilege assertion. Its success message therefore describes reaching the end of the workflow; it is not an independently verified account-policy result. A stronger next version would compare the returned state with the requested state and report `verified`, `failed` or `unknown` separately.
 
----
+There is also a platform-review lesson in the [HP-labelled script](https://github.com/Imran5693/network-user_manage-automation/blob/c0fb973c1986366fd6973781f6e933726e1ecb88/HP_Procurv/hp_proc-user_creation.py#L39-L82): it selects `hp_procurve` but includes commands such as `system-view` and `display current-configuration`. That inconsistency needs checking against the actual operating system before reuse. I would not present this file as a validated ProCurve template.
 
-## How the Automation Works (High-Level)
+The [repository README](https://github.com/Imran5693/network-user_manage-automation/blob/c0fb973c1986366fd6973781f6e933726e1ecb88/README.md) labels the published examples as lab demonstrations. These source links establish what the code contains; they do not establish production deployment, execution success or measured time savings. Credentials and full device configurations are deliberately excluded from the excerpts here.
 
-1. Device inventory defined in **YAML / JSON**
-2. Script reads device info:
-   - Type, IP address, credentials
-3. Establish SSH connections using Netmiko
-4. Execute vendor-specific commands
-5. Log and verify outputs  
+## Diagnose prompt detection and timeout failures
 
-This ensures **scalable and safe automation** without rewriting scripts for each device.
+A timeout can mean the command is slow, the session is waiting for interaction, the prompt differs from expectations or the connection has failed. Capture a sanitized session trace and reproduce the behavior on one authorized target.
 
----
+Distinguish authentication failures, privilege failures, incomplete output and command rejection. Increasing every delay may hide a diagnosis problem and make failures slower. Check the behavior and the installed library version before changing timing options.
 
-## Security & Operational Benefits
+For a configuration command, a timeout also creates uncertainty: the change may already have been applied. Verify state before retrying. A blind retry is especially risky for operations that are not safe to repeat.
 
-- Enforces **consistent access policies**
-- Reduces **credential misconfigurations**
-- Speeds up incident response
-- Improves **audit readiness**
-- Minimizes privileged access exposure
+## Verify the result, not only the session
 
----
+Define a check for each intended outcome. Did the account exist before the run? Does it have the intended privilege? Was the change committed or saved as the platform requires? Did the session return an error that the script ignored?
 
-## Career & DevNet Relevance
+A useful result record includes the target, task, start/end time, status, verification evidence and exception. Avoid putting passwords or sensitive configuration into logs. Keep failed and skipped devices visible rather than treating a completed loop as full success.
 
-This project aligns with:
-- Cisco DevNet Automation certifications
-- Network Automation Engineer roles
-- NetOps / SRE practices
-- Enterprise Infrastructure Automation  
+## Example acceptance checks for user automation
 
-It demonstrates **real-world automation maturity**, not just scripting knowledge.
+Use a small approved target set and record the starting state before execution. The table describes illustrative test cases, not new test results from my project.
 
----
+| Case | Check before execution | Evidence needed afterward |
+| --- | --- | --- |
+| Account already has the intended state | Confirm the current role and target | No unintended duplicate or privilege change |
+| Device rejects a command | Confirm the selected platform and privilege | Rejection captured as a failed task, not reported as success |
+| Session times out after a change request | Record which command was attempted | Read back state before deciding whether a retry is safe |
+| One target is unreachable | Confirm inventory and scope | That target is reported separately from verified devices |
 
-## Related Project (Hands-On Implementation)
+This record is more useful than a single message saying the script finished. It makes partial success visible and gives the next engineer a starting point for investigation.
 
-This blog is based on a **real, tested network automation project**:
+## Build a small acceptance test
 
-**Project Page:**  
-<a href="{{ site.baseurl }}/projects/2025-06-27-multi-vendor-user-creation/" target="_blank" rel="noopener">
-Python Network Automation - Multi-Vendor User Management
-</a>
+Start with a lab device or a limited approved group. Test a normal case, an unreachable device, a wrong privilege, an unsupported platform and an already-correct state. Agree on change approval and recovery arrangements before production execution.
 
-The project includes:
-- Testing on real network devices
-- GitHub source code
-- Execution evidence
-- Enterprise-scale use case
-
----
-
-## Final Thoughts
-
-Python network automation is no longer optional - it is **essential** for modern network engineers.  
-
-**Netmiko** allows engineers to:
-- Save time
-- Reduce errors
-- Build scalable, repeatable network automation workflows
-
-Whether you are a **network engineer, DevNet learner, or automation enthusiast**, mastering Python network automation unlocks **faster, more secure, and professional network operations**.
-
----
-
-**Source Code:**  
-See the [implementation project page]({{ '/projects/2025-06-27-multi-vendor-user-creation/' | relative_url }}) for source references and execution evidence.
-
----
+Use the [ACL change review]({{ '/2025/08/17/acl-update-multi-vendor.html' | relative_url }}) for policy-specific validation and the [interface comparison guide]({{ '/blog/netmiko-netconf-restconf-python-network-automation/' | relative_url }}) when deciding between CLI automation and model-driven APIs. If a current script is failing, include the sanitized error, device version and expected outcome in a [remote automation inquiry]({{ '/network-automation-services/#request-engineering-support' | relative_url }}).

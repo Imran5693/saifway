@@ -1,18 +1,18 @@
 ---
 layout: default
 title: Network Automation & Infrastructure Blog | Imran Sarwar
-description: Technical articles by Imran Sarwar on cybersecurity, network operations, automation, cloud IAM, and applied AI security projects.
+description: Practical engineering articles by Imran Sarwar on Python network automation, Netmiko troubleshooting, infrastructure support, Flask APIs and security design.
 permalink: /blog/
 ---
 
-<section class="py-6 bg-light">
+<section class="py-6 bg-light blog-index">
   <div class="container-fluid">
     <div class="section-heading">
-      <span class="section-kicker">Technical Writing</span>
+      <span class="section-kicker">Engineering Guides &amp; Project Notes</span>
       <h1>Network Automation &amp; Infrastructure Engineering Blog</h1>
       <p>Technical writing by <a href="{{ '/professional-profile/' | relative_url }}">Imran Sarwar</a>. Start with <a href="{{ '/network-automation-python/' | relative_url }}">Python network automation</a> or the <a href="{{ '/blog/netmiko-netconf-restconf-python-network-automation/' | relative_url }}">Netmiko, NETCONF and RESTCONF guide</a>.</p>
       <p>
-        Notes from hands-on labs, project builds, network operations, cybersecurity learning, and automation experiments.
+        Implementation lessons, lab walkthroughs and design reviews for infrastructure teams. Each article links to related project evidence and a way to discuss a technical requirement.
       </p>
     </div>
 
@@ -22,12 +22,12 @@ permalink: /blog/
         <div class="col-md-6 col-lg-4">
           <article class="publication-item h-100">
             {% if post.thumbnail %}
-              <img src="{{ post.thumbnail | relative_url }}" class="publication-thumbnail" alt="{{ post.title }}" loading="lazy">
+              <img src="{{ post.thumbnail | relative_url }}" class="publication-thumbnail" alt="{{ post.image_alt | default: post.title | escape }}" width="1200" height="630" loading="lazy">
             {% endif %}
-            <small>{{ post.date | date: "%B %d, %Y" }}</small>
-            <h2>{{ post.title }}</h2>
-            <p>{{ post.excerpt | strip_html | truncatewords: 28 }}</p>
-            <a href="{{ post.url | relative_url }}">Read article</a>
+            <small>{{ post.topic_label | escape }} · {{ post.article_type | escape }}</small>
+            <h2><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+            <p>{{ post.description | escape }}</p>
+            <a href="{{ post.url | relative_url }}">Read {{ post.article_type | downcase | escape }}</a>
           </article>
         </div>
       {% endfor %}

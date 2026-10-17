@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760" role="img" aria-labelledby="title desc">
+<title id="title">Resilience and Recovery Test Cycle</title>
+<desc id="desc">Measure the required service, not only a redundant component. Map dependencies: Review the service, management path and shared failure domains.. Define an approved test: Set initial conditions, stop criteria and observation points.. Observe the failure: Record client behavior, timing, telemetry and access.. Verify recovery: Retest the service; document results and unresolved cases.</desc>
+<rect width="1100" height="760" rx="24" fill="#10273e"/>
+<g font-family="Arial, Helvetica, sans-serif">
+<text x="48" y="47" fill="#72e2d0" font-size="18" letter-spacing="2">SAIF WAY TECHNOLOGY · IMRAN SARWAR</text>
+<text x="48" y="105" fill="#fff" font-size="37" font-weight="700">Resilience and Recovery Test Cycle</text>
+<text x="48" y="147" fill="#c4d7e6" font-size="22">Measure the required service, not only a redundant component.</text>
+<rect x="48" y="180" width="1004" height="110" rx="15" fill="#1e3c55" stroke="#42637b"/>
+<circle cx="91" cy="219" r="21" fill="#72e2d0"/>
+<text x="91" y="227" text-anchor="middle" fill="#10273e" font-size="23" font-weight="700">1</text>
+<text x="132" y="221" fill="#fff" font-size="27" font-weight="700">Map dependencies</text>
+<text x="132" y="262" fill="#d3e2ee" font-size="22">Review the service, management path and shared failure domains.</text>
+<rect x="48" y="310" width="1004" height="110" rx="15" fill="#1e3c55" stroke="#42637b"/>
+<circle cx="91" cy="349" r="21" fill="#72e2d0"/>
+<text x="91" y="357" text-anchor="middle" fill="#10273e" font-size="23" font-weight="700">2</text>
+<text x="132" y="351" fill="#fff" font-size="27" font-weight="700">Define an approved test</text>
+<text x="132" y="392" fill="#d3e2ee" font-size="22">Set initial conditions, stop criteria and observation points.</text>
+<rect x="48" y="440" width="1004" height="110" rx="15" fill="#1e3c55" stroke="#42637b"/>
+<circle cx="91" cy="479" r="21" fill="#72e2d0"/>
+<text x="91" y="487" text-anchor="middle" fill="#10273e" font-size="23" font-weight="700">3</text>
+<text x="132" y="481" fill="#fff" font-size="27" font-weight="700">Observe the failure</text>
+<text x="132" y="522" fill="#d3e2ee" font-size="22">Record client behavior, timing, telemetry and access.</text>
+<rect x="48" y="570" width="1004" height="110" rx="15" fill="#1e3c55" stroke="#42637b"/>
+<circle cx="91" cy="609" r="21" fill="#72e2d0"/>
+<text x="91" y="617" text-anchor="middle" fill="#10273e" font-size="23" font-weight="700">4</text>
+<text x="132" y="611" fill="#fff" font-size="27" font-weight="700">Verify recovery</text>
+<text x="132" y="652" fill="#d3e2ee" font-size="22">Retest the service; document results and unresolved cases.</text>
+<text x="48" y="732" fill="#b0c6d8" font-size="19">Conceptual engineering guide · Validate against the actual environment.</text>
+</g></svg>

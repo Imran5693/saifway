@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760" role="img" aria-labelledby="title desc">
+<title id="title">Identity and Access Review Cycle</title>
+<desc id="desc">A role assignment needs purpose, scope and ownership. Identify the principal: Record the user or service identity and accountable owner.. Review effective scope: Check roles, target scope and the configured service policy.. Validate required actions: Test permitted and denied operations in an agreed environment.. Review the lifecycle: Remove stale access and document the next review action.</desc>
+<rect width="1100" height="760" rx="24" fill="#10273e"/>
+<g font-family="Arial, Helvetica, sans-serif">
+<text x="48" y="47" fill="#72e2d0" font-size="18" letter-spacing="2">SAIF WAY TECHNOLOGY · IMRAN SARWAR</text>
+<text x="48" y="105" fill="#fff" font-size="37" font-weight="700">Identity and Access Review Cycle</text>
+<text x="48" y="147" fill="#c4d7e6" font-size="22">A role assignment needs purpose, scope and ownership.</text>
+<rect x="48" y="180" width="1004" height="110" rx="15" fill="#1e3c55" stroke="#42637b"/>
+<circle cx="91" cy="219" r="21" fill="#72e2d0"/>
+<text x="91" y="227" text-anchor="middle" fill="#10273e" font-size="23" font-weight="700">1</text>
+<text x="132" y="221" fill="#fff" font-size="27" font-weight="700">Identify the principal</text>
+<text x="132" y="262" fill="#d3e2ee" font-size="22">Record the user or service identity and accountable owner.</text>
+<rect x="48" y="310" width="1004" height="110" rx="15" fill="#1e3c55" stroke="#42637b"/>
+<circle cx="91" cy="349" r="21" fill="#72e2d0"/>
+<text x="91" y="357" text-anchor="middle" fill="#10273e" font-size="23" font-weight="700">2</text>
+<text x="132" y="351" fill="#fff" font-size="27" font-weight="700">Review effective scope</text>
+<text x="132" y="392" fill="#d3e2ee" font-size="22">Check roles, target scope and the configured service policy.</text>
+<rect x="48" y="440" width="1004" height="110" rx="15" fill="#1e3c55" stroke="#42637b"/>
+<circle cx="91" cy="479" r="21" fill="#72e2d0"/>
+<text x="91" y="487" text-anchor="middle" fill="#10273e" font-size="23" font-weight="700">3</text>
+<text x="132" y="481" fill="#fff" font-size="27" font-weight="700">Validate required actions</text>
+<text x="132" y="522" fill="#d3e2ee" font-size="22">Test permitted and denied operations in an agreed environment.</text>
+<rect x="48" y="570" width="1004" height="110" rx="15" fill="#1e3c55" stroke="#42637b"/>
+<circle cx="91" cy="609" r="21" fill="#72e2d0"/>
+<text x="91" y="617" text-anchor="middle" fill="#10273e" font-size="23" font-weight="700">4</text>
+<text x="132" y="611" fill="#fff" font-size="27" font-weight="700">Review the lifecycle</text>
+<text x="132" y="652" fill="#d3e2ee" font-size="22">Remove stale access and document the next review action.</text>
+<text x="48" y="732" fill="#b0c6d8" font-size="19">Conceptual engineering guide · Validate against the actual environment.</text>
+</g></svg>
