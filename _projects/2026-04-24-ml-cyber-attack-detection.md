@@ -1,4 +1,5 @@
 ---
+expertise: research
 layout: project
 title: "Machine Learning-Based Cyber Attack Detection in Simulated Enterprise Networks"
 description: "A cybersecurity engineering project that combines network simulation, packet analysis, machine learning, and real-time visualization to detect malicious activities such as port scanning, brute-force attempts, and denial-of-service attacks within a simulated enterprise environment."

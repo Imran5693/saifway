@@ -1,4 +1,5 @@
 ---
+expertise: applications
 layout: project
 title: "IDMUI - Identity Management User Interface for OpenStack Keystone"
 description: "A flagship Python Flask-based IAM platform for OpenStack Keystone, enabling centralized identity management, RBAC control, and API-driven automation."

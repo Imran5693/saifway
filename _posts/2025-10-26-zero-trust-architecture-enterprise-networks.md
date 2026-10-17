@@ -1,4 +1,5 @@
 ---
+expertise: security
 layout: post
 title: "Zero Trust Architecture in Enterprise Networks"
 description: "A practical Zero Trust article based on enterprise network security labs, segmentation, identity verification, least privilege, and secure network design."

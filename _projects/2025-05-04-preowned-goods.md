@@ -1,4 +1,5 @@
 ---
+expertise: applications
 layout: project
 title: "Buy and Sell Pre-Owned Goods Marketplace"
 description: "A Python Flask web application for buying and selling second-hand items with secure transactions, user profiles, advanced search, and admin management."

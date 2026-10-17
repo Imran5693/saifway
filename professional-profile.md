@@ -1,11 +1,13 @@
 ---
 layout: default
-title: Professional Profile | Imran Sarwar
-description: Imran Sarwar - UAE-based IT Infrastructure and NOC/DC support professional building practical projects in cybersecurity, cloud IAM, PKI, Python Flask, machine learning, and NLP.
+title: Imran Sarwar | Network Engineering & Python Portfolio
+description: Meet Imran Sarwar, a UAE-based network infrastructure and Python automation professional. Explore Netmiko and Flask projects and discuss remote engineering support.
 keywords: Imran Sarwar, NOC Engineer UAE, Data Center Operations, Cybersecurity Portfolio, Cloud IAM, Python Flask, Machine Learning, NLP, PKI, OpenStack Keystone, IT Infrastructure UAE
 permalink: /professional-profile/
 ---
 
+
+<section class="bg-white py-4"><div class="container"><p class="mb-0">Need help with an existing script or infrastructure workflow? <a href="{{ '/network-automation-services/' | relative_url }}">Discuss Python network automation, troubleshooting and project support</a>.</p></div></section>
 
 <!-- About Section -->
 <section id="about" class="py-6 bg-light">
@@ -16,12 +18,13 @@ permalink: /professional-profile/
         Infrastructure Operations, Cybersecurity, Software Development and AI
       </span>
 
-      <h2 class="fw-bold text-primary display-5">About Me</h2>
+      <h1 class="fw-bold text-primary display-5">Imran Sarwar — Network Infrastructure &amp; Python Automation</h1>
+      <p><a href="{{ '/network-automation-python/' | relative_url }}">Explore my Python network automation projects</a> or visit the <a href="{{ '/student-project-support/' | relative_url }}">student project support help desk</a>.</p>
 
       <p class="lead text-muted mx-auto" style="max-width: 850px;">
-        IT Infrastructure professional with operational experience in NOC/DC environments,
-        continuously expanding expertise in cybersecurity, cloud identity management,
-        software development, and applied artificial intelligence.
+        Network infrastructure and Python automation professional with operational experience in
+        NOC/data center environments, developing multi-vendor Netmiko workflows, Flask applications
+        and REST API integrations.
       </p>
     </div>
 

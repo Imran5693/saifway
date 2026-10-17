@@ -1,4 +1,5 @@
 ---
+expertise: infrastructure
 layout: project
 title: "Hybrid Data Center Network Design - Secure Backup Architecture"
 description: "A hands-on network design case study focused on hybrid data center backup connectivity, OSPF routing, GRE VPN tunnels, ACL-based security, QoS traffic prioritization, and secure inter-site communication."

@@ -1,4 +1,5 @@
 ---
+expertise: infrastructure
 layout: post
 title: "Designing a Hybrid Network Architecture for Outsourced Data Centre Backup"
 description: "A research-driven study on implementing a secure, high-availability hybrid network for outsourced backup operations, integrating on-premises and cloud data centers with QoS, ACLs, OSPF, VPN GRE, and enterprise-grade security."

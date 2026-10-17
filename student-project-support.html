@@ -1,0 +1,69 @@
+---
+layout: default
+title: Student Project Help Pakistan | FYP Support
+description: Student project support in Pakistan with Imran Sarwar. Get guidance on Python, networking, cybersecurity and Virtual University final year projects.
+permalink: /student-project-support/
+---
+<section class="py-6 bg-light">
+  <div class="container">
+    <span class="section-kicker">Student Help Desk · Pakistan & online</span>
+    <h1>Student project help in Pakistan</h1>
+    <p class="lead">Discuss your final year project with Imran Sarwar: Python development, network automation, networking labs, cybersecurity, Flask applications and technical troubleshooting.</p>
+    <p>Whether you need help choosing a workable idea or understanding an error in your implementation, share your requirements and the work you have already tried. Students from the Virtual University of Pakistan and other universities can request online project guidance through this help desk.</p>
+    <a class="btn btn-primary" href="#project-request">Discuss your project</a>
+  </div>
+</section>
+<section class="py-6 bg-white">
+  <div class="container">
+    <h2>Final year project support, from proposal to demonstration</h2>
+    <div class="row g-4 mt-2">
+      <div class="col-md-4"><article class="professional-card h-100"><h3>Python & software projects</h3><p>Get guidance on Python logic, Flask dashboards, REST APIs, database integration, debugging and structuring a manageable prototype.</p></article></div>
+      <div class="col-md-4"><article class="professional-card h-100"><h3>Networking & automation</h3><p>Discuss network topology, routing and switching labs, Python SSH scripts, Netmiko device automation, inventory handling and configuration checks.</p></article></div>
+      <div class="col-md-4"><article class="professional-card h-100"><h3>Cybersecurity projects</h3><p>Explore authorized security labs, certificate management, attack detection experiments and how to explain your architecture and findings.</p></article></div>
+    </div>
+    <h2 class="mt-5">Virtual University of Pakistan project guidance</h2>
+    <p>Working on a VU final year project? Bring your current project brief, supervisor feedback and submission milestones. We can discuss scope, module design, implementation problems, testing, documentation structure and preparation for your demonstration or viva. Guidance depends on your university's current requirements and your project's technical scope.</p>
+    <p>This is an independent student support service by Saif Way Technology, with no affiliation with or endorsement from the Virtual University of Pakistan. You remain responsible for your own work and university rules.</p>
+    <h2 class="mt-5">Explore relevant project examples</h2>
+    <ul>
+      <li><a href="{{ '/network-automation-python/' | relative_url }}">Python network automation: workflows and hands-on projects</a></li>
+      <li><a href="{{ '/projects/intelligent-bug-hunting-platform/' | relative_url }}">Intelligent Bug Hunting Platform: proposed Android security project</a></li>
+      <li><a href="{{ '/projects/' | relative_url }}">Browse networking, Python and cybersecurity case studies</a></li>
+    </ul>
+    <h2 class="mt-5">How project support works</h2>
+    <ol><li>Send your topic, university, requirements, deadline and current progress.</li><li>Imran reviews whether the topic fits his experience and discusses the scope, availability and any fees with you.</li><li>Agree on a support session or review focused on the specific problems you need to understand.</li></ol>
+    <h2 class="mt-5">Frequently asked questions</h2>
+    <details class="mb-3"><summary>Can I ask about a project other than bug hunting?</summary><p>Yes. This help desk accepts general project inquiries, including Python applications, network engineering, automation, cloud IAM and cybersecurity. Describe your topic so its fit can be assessed.</p></details>
+    <details class="mb-3"><summary>Can students outside Pakistan contact you?</summary><p>Yes. Online inquiries are welcome globally. Include your country and time zone so a suitable time can be discussed.</p></details>
+    <details class="mb-3"><summary>What should I prepare before asking for debugging help?</summary><p>Include the expected result, actual error, tools and versions, a short description of what you tried and a sanitized repository link if available. Remove passwords, tokens and private data.</p></details>
+  </div>
+</section>
+<section id="project-request" class="py-6 bg-light">
+  <div class="container" style="max-width: 850px;">
+    <h2>Tell me about your student project</h2>
+    <p>Complete your project details, then open WhatsApp to review and send your request. Fields marked * are required.</p>
+    <form id="studentProjectForm" class="card border-0 shadow-sm p-4">
+      <div class="row g-3">
+        <div class="col-md-6"><label for="student-name" class="form-label">Full name *</label><input id="student-name" name="name" class="form-control" autocomplete="name" maxlength="120" required></div>
+        <div class="col-md-6"><label for="student-id" class="form-label">Student ID *</label><input id="student-id" name="student_id" class="form-control" maxlength="60" placeholder="Your university student ID" required></div>
+        <div class="col-md-6"><label for="university" class="form-label">University / institution *</label><input id="university" name="university" class="form-control" maxlength="200" placeholder="e.g. Virtual University of Pakistan" required></div>
+        <div class="col-md-6"><label for="program" class="form-label">Program & semester *</label><input id="program" name="program_semester" class="form-control" maxlength="120" placeholder="e.g. BSCS, semester 7" required></div>
+        <div class="col-md-6"><label for="country" class="form-label">Country & time zone *</label><input id="country" name="country_timezone" class="form-control" maxlength="120" placeholder="e.g. Pakistan, PKT" required></div>
+        <div class="col-md-6"><label for="deadline" class="form-label">Project deadline (if known)</label><input id="deadline" name="deadline" type="date" class="form-control"></div>
+        <div class="col-12"><label for="topic" class="form-label">Project title / topic *</label><input id="topic" name="project_title" class="form-control" maxlength="250" required></div>
+        <div class="col-md-6"><label for="area" class="form-label">Project area *</label><select id="area" name="project_area" class="form-select" required><option value="">Select an area</option><option>Python / Flask development</option><option>Network engineering / automation</option><option>Cybersecurity</option><option>Cloud / infrastructure</option><option>AI / machine learning</option><option>Other project</option></select></div>
+        <div class="col-md-6"><label for="stage" class="form-label">Current project phase *</label><select id="stage" name="project_stage" class="form-select" required><option value="">Select a stage</option><option>Proposal / topic selection</option><option>SRS (Software Requirements Specification)</option><option>Design document</option><option>Prototype / implementation</option><option>Testing / final documentation</option><option>Viva preparation</option></select></div>
+        <div class="col-12"><label for="support-needed" class="form-label">What support do you need? *</label><select id="support-needed" name="support_needed" class="form-select" required><option value="">Choose the support you need</option><option>SRS only</option><option>Design document only</option><option>Documentation only</option><option>Viva / prototype only</option><option>Full project support and viva preparation</option></select></div>
+        <div class="col-12"><label for="requirements" class="form-label">Requirements, progress & help needed *</label><textarea id="requirements" name="message" class="form-control" rows="7" minlength="20" maxlength="2500" placeholder="Describe your requirements, tools, what you have tried and where you are stuck." required></textarea></div>
+        <div class="col-12"><label for="repository" class="form-label">Public project / repository link (optional)</label><input id="repository" name="project_link" type="url" class="form-control" placeholder="https://github.com/..."></div>
+        <div class="col-12"><div class="form-check"><input id="consent" name="contact_consent" type="checkbox" value="agreed" class="form-check-input" required><label for="consent" class="form-check-label">I agree to share these project details, including my student ID, with Saif Way Technology through WhatsApp for support. *</label></div></div>
+      </div>
+      <p class="small text-muted mt-3">Your details are added to a WhatsApp message for you to review before sending. Do not include passwords, device credentials or identity documents.</p>
+      <button class="btn btn-success" type="submit"><i class="fab fa-whatsapp me-2" aria-hidden="true"></i>Send project support request on WhatsApp</button>
+      <noscript><p class="mt-3">Enable JavaScript to prepare your project details, or use the WhatsApp link below and include your name, student ID, university, project, phase and support needed.</p></noscript>
+    </form>
+    <p class="mt-4">Want to ask a quick question? <a href="https://wa.me/923146809271?text=Hello%20Imran%2C%20I%20would%20like%20to%20discuss%20student%20project%20support." target="_blank" rel="noopener noreferrer">Discuss your project on WhatsApp</a>.</p>
+  </div>
+</section>
+
+<script src="{{ '/assets/js/student-support.js' | relative_url }}" defer></script>

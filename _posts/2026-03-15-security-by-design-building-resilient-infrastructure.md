@@ -1,4 +1,5 @@
 ---
+expertise: security
 layout: post
 title: "Security by Design: Building Resilient Infrastructure from the Ground Up"
 description: "A practical article based on secure infrastructure labs, showing why security should be designed into networks, identity, monitoring, and operations from the beginning."

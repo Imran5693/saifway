@@ -1,0 +1,16 @@
+{% assign focus = page.expertise | default: 'infrastructure' %}
+<aside class="expertise-links border rounded-4 p-4 my-5 bg-light" aria-label="Related engineering work">
+  <h2 class="h4">Continue exploring this work</h2>
+  {% if focus == 'automation' %}
+    <p>Connect this article or project with <a href="{{ '/network-automation-python/' | relative_url }}">Imran Sarwar's Python network automation portfolio</a>{% unless page.url == '/blog/netmiko-netconf-restconf-python-network-automation/' %} and the <a href="{{ '/blog/netmiko-netconf-restconf-python-network-automation/' | relative_url }}">Netmiko, NETCONF and RESTCONF comparison</a>{% endunless %}.</p>
+  {% elsif focus == 'applications' %}
+    <p>Explore <a href="{{ '/projects/2025-04-24-idmui-openstack/' | relative_url }}">Python Flask and OpenStack REST API integration</a> and <a href="{{ '/solutions/wcaman/' | relative_url }}">certificate management and private PKI workflows</a>.</p>
+  {% elsif focus == 'security' %}
+    <p>Explore related <a href="{{ '/solutions/wcaman/' | relative_url }}">private PKI and certificate management</a> and <a href="{{ '/projects/' | relative_url }}">security and infrastructure project case studies</a>.</p>
+  {% elsif focus == 'research' %}
+    <p>Browse <a href="{{ '/projects/' | relative_url }}">Imran Sarwar's applied AI and software projects</a> and <a href="{{ '/student-project-support/' | relative_url }}">student prototype and project documentation support</a>.</p>
+  {% else %}
+    <p>Connect network operations with <a href="{{ '/remote-network-infrastructure-support/' | relative_url }}">remote network infrastructure troubleshooting</a>, <a href="{{ '/network-automation-python/' | relative_url }}">Python automation for network infrastructure</a> and <a href="{{ '/professional-profile/' | relative_url }}">Imran Sarwar's NOC and data center experience</a>.</p>
+  {% endif %}
+  <p class="mb-0">Have a related technical problem? <a href="{{ '/network-automation-services/' | relative_url }}">Discuss remote Python network automation services</a>.</p>
+</aside>

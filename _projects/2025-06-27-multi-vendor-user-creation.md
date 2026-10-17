@@ -1,4 +1,5 @@
 ---
+expertise: automation
 layout: project
 title: "Python Network Automation Project - Multi-Vendor User Management & Configuration Auditing"
 description: "A production-focused Python and Netmiko automation framework developed to streamline user lifecycle management, inventory classification, credential updates, and security configuration deployment across heterogeneous enterprise network infrastructures."
@@ -22,6 +23,12 @@ keywords:
 sitemap: true
 priority: 0.9
 ---
+
+<figure class="my-4">
+  <img src="{{ '/assets/images/diagrams/netmiko-workflow.svg' | relative_url }}" alt="Architecture overview for the Python and Netmiko multi-vendor workflow" width="1100" height="960" class="img-fluid rounded-4" loading="lazy">
+  <figcaption class="small text-muted mt-2">Conceptual illustration of the inventory, session, execution and verification stages.</figcaption>
+</figure>
+
 
 <script type="application/ld+json">
 {

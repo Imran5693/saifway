@@ -16,7 +16,7 @@ layout: default
         {% if page.date %}
           <span><i class="fas fa-calendar-check"></i> {{ page.date | date: "%B %Y" }}</span>
         {% endif %}
-        <span><i class="fas fa-user-cog"></i> Imran Sarwar</span>
+        <span><i class="fas fa-user-cog"></i> <a href="{{ '/professional-profile/' | relative_url }}" rel="author">Imran Sarwar</a></span>
       </div>
 
       {% if page.tags %}
@@ -36,6 +36,7 @@ layout: default
 
     <div class="article-content">
       {{ content }}
+      {% include expertise-links.html %}
     </div>
 
     <section class="project-cta">
@@ -44,8 +45,11 @@ layout: default
         I build practical labs, dashboards, automation workflows, and infrastructure documentation around real technical problems.
       </p>
       <div class="d-flex flex-wrap justify-content-center gap-3">
-        <a href="{{ '/#contact' | relative_url }}" class="btn btn-primary">Contact Me</a>
+        <a href="{{ '/professional-profile/' | relative_url }}" class="btn btn-outline-primary">About Imran Sarwar</a>
+        <a href="{{ '/network-automation-python/' | relative_url }}" class="btn btn-outline-primary">Python Network Automation Projects</a>
+        <a href="{{ '/network-automation-services/' | relative_url }}" class="btn btn-primary">Discuss Engineering Support</a>
         <a href="{{ '/projects/' | relative_url }}" class="btn btn-outline-primary">Browse Projects</a>
+        <a href="{{ '/student-project-support/' | relative_url }}" class="btn btn-outline-primary">Student Project Support</a>
       </div>
     </section>
   </div>
@@ -55,13 +59,14 @@ layout: default
 {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
-  "name": "{{ page.title | escape }}",
-  "description": "{{ page.description | default: site.description | strip_newlines | escape }}",
+  "name": {{ page.title | jsonify }},
+  "description": {{ page.description | default: site.description | strip_newlines | jsonify }},
   "author": {
     "@type": "Person",
+    "@id": "{{ '/professional-profile/#imran-sarwar' | absolute_url }}",
     "name": "Imran Sarwar"
   },
   "url": "{{ site.url }}{{ page.url }}",
-  "keywords": "{{ page.tags | join: ', ' | escape }}"
+  "keywords": {{ page.tags | join: ', ' | jsonify }}
 }
 </script>

@@ -1,4 +1,5 @@
 ---
+expertise: research
 title: "AI Revolution with Visuals: How Artificial Intelligence is Transforming Industries"
 date: 2025-08-08
 thumbnail: "/assets/images/blog/ai-industry-transformation.png"

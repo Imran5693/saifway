@@ -1,4 +1,5 @@
 ---
+expertise: infrastructure
 layout: post
 title: "Multi-Router LAN with Wireless Integration and Port Security: Challenges and Solutions"
 description: "A detailed blog on Cisco Packet Tracer network simulation demonstrating multi-router LAN, secure wireless integration, port security, and rogue device mitigation. Includes challenges, resolutions, and step-by-step insights."
@@ -42,8 +43,7 @@ This project is particularly relevant for **network engineers, DevNet learners, 
 ---
 
 ## Network Topology
-![Network Topology]({{ site.baseurl }}/assets/images/projects/multi-router-net-top.PNG)  
-*The topology demonstrates 3 routers, 3 switches, multiple PCs, and wireless integration.*
+The simulation topology includes three routers, three switches, multiple PCs and wireless integration. See the linked video demonstration below for the lab walkthrough.
 
 ---
 
@@ -85,11 +85,7 @@ This project is particularly relevant for **network engineers, DevNet learners, 
 ## Demonstration
 - **Video Tutorial**: <a href="https://youtu.be/0MyrHqR190Y" target="_blank" rel="noopener">Watch on YouTube</a>  
 
-- Screenshots for routing tables, MAC tables, and blocked devices:  
-  - ![Routing Table]({{ site.baseurl }}/assets/images/projects/multi-router-lan-routing.png)  
-  - ![Port Security Violation - Rogue Attempt]({{ site.baseurl }}/assets/images/projects/rogue-attempt-violation-restricted.PNG)  
-  - ![Rogue Connection Attempt]({{ site.baseurl }}/assets/images/projects/rogue-connection.PNG)  
-  - ![Rogue Laptop Restricted]({{ site.baseurl }}/assets/images/projects/rogue-laptop-restricted.PNG)  
+Use the video walkthrough to review the lab topology and device behavior. For the full context, see the [multi-router LAN and port security project]({{ '/projects/2025-05-15-multi-router-lan-wireless-port-security/' | relative_url }}).
 
 ---
 

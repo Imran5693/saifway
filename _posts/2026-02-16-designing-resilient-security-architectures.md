@@ -1,4 +1,5 @@
 ---
+expertise: security
 layout: post
 title: "Designing Resilient Security Architectures"
 description: "A practical security architecture article based on infrastructure labs, redundancy, segmentation, monitoring, recovery planning, and defense-in-depth."

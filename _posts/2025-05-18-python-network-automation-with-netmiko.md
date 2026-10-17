@@ -1,4 +1,5 @@
 ---
+expertise: automation
 layout: post
 title: "Python Network Automation with Netmiko: Multi-Vendor User Management"
 description: "Learn Python network automation with Netmiko to create, update, and manage user accounts across Cisco, Juniper, and Fortinet devices. Real-world DevNet-style automation tested on enterprise networks."
@@ -35,6 +36,12 @@ keywords:
 
 canonical: "{{ site.url }}{{ page.url }}"
 ---
+
+<figure class="my-4">
+  <img src="{{ '/assets/images/diagrams/netmiko-workflow.svg' | relative_url }}" alt="Python Netmiko workflow: classify inventory, connect, execute approved commands and verify per-device results" width="1100" height="960" class="img-fluid rounded-4" loading="lazy">
+  <figcaption class="small text-muted mt-2">Conceptual view of the workflow discussed in this article.</figcaption>
+</figure>
+
 
 ## Introduction
 
@@ -168,6 +175,6 @@ Whether you are a **network engineer, DevNet learner, or automation enthusiast**
 ---
 
 **Source Code:**  
-Available via the [project page](#) linked above.
+See the [implementation project page]({{ '/projects/2025-06-27-multi-vendor-user-creation/' | relative_url }}) for source references and execution evidence.
 
 ---

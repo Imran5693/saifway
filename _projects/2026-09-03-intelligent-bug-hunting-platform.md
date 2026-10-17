@@ -1,4 +1,5 @@
 ---
+expertise: security
 layout: project
 title: Intelligent Bug Hunting Platform
 description: Intelligent Bug Hunting Platform for Android security analysis, vulnerability detection, APK static analysis, automated bug validation, security reporting, and AI-assisted cybersecurity testing.

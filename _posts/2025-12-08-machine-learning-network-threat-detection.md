@@ -1,4 +1,5 @@
 ---
+expertise: research
 layout: post
 title: "Machine Learning for Network Threat Detection"
 description: "A practical article based on ML cyber attack detection lab work using traffic analysis, feature extraction, Python, Flask, and network security concepts."

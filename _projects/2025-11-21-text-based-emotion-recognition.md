@@ -1,4 +1,5 @@
 ---
+expertise: research
 layout: project
 title: "Text-Based Emotion Recognition System via Deep Learning and NLP"
 description: "An advanced natural language processing project implementing text preprocessing, dense vector embedding configurations, and optimized multi-class linear classifiers to detect fine-grained human emotional states from transcribed speech data."

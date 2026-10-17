@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Cybersecurity, Network Automation & AI Security Portfolio
-description: Imran Sarwar builds practical cybersecurity, network automation, Python Flask, PKI, SSL certificate management, ML-based cyber attack detection, and NOC/data center solutions.
+title: Imran Sarwar | Network Infrastructure & Python Automation
+description: Imran Sarwar offers remote network infrastructure support and Python automation project services. Explore Netmiko and Flask work. USA, UK and Europe inquiries welcome.
 ---
 
 <header class="hero cyber-hero">
@@ -21,22 +21,27 @@ description: Imran Sarwar builds practical cybersecurity, network automation, Py
       </div>
 
         <div class="hero-kicker">
-          <span></span> Cybersecurity / Network Security / Automation
+          <span></span> Network Infrastructure / Python / Automation
         </div>
 
         <h1 class="cyber-title">
-          Secure networks. Automated operations. Practical cyber defense.
+          Imran Sarwar — Network Infrastructure &amp; Python Automation
         </h1>
 
         <p class="cyber-subtitle">
-          I am Imran Sarwar, a UAE-based IT infrastructure and NOC/DC operations professional building
-          hands-on security labs, Python automation, PKI/SSL workflows, cloud IAM tools, and ML-assisted
-          threat detection projects under Saif Way Technology.
+          I bring hands-on experience in network infrastructure and NOC/data center operations to
+          Python network automation. Through Saif Way Technology, I develop Netmiko workflows,
+          Flask applications and security tools that turn repetitive infrastructure tasks into
+          consistent, manageable processes.
         </p>
+        <p class="cyber-subtitle">UAE-based, working remotely on agreed project scopes. USA, UK and European teams can discuss Python automation, script troubleshooting and network infrastructure support directly with me.</p>
 
         <div class="d-flex flex-wrap gap-3 mt-4">
-          <a href="#projects" class="btn btn-cyber-primary">View Projects</a>
+          <a href="{{ '/network-automation-services/#request-engineering-support' | relative_url }}" class="btn btn-cyber-primary">Discuss Your Remote Project</a>
+          <a href="#projects" class="btn btn-cyber-secondary">View Hands-On Projects</a>
           <a href="{{ '/professional-profile/' | relative_url }}" class="btn btn-cyber-secondary">Professional Profile</a>
+          <a href="{{ '/network-automation-python/' | relative_url }}" class="btn btn-cyber-secondary">Python Network Automation</a>
+          <a href="{{ '/student-project-support/' | relative_url }}" class="btn btn-cyber-secondary">Student Project Help · Pakistan</a>
         </div>
 
         <div class="cyber-metrics mt-5">
@@ -91,6 +96,21 @@ description: Imran Sarwar builds practical cybersecurity, network automation, Py
     </div>
   </div>
 </header>
+
+<section class="py-6 bg-light" aria-labelledby="remote-services-title">
+  <div class="container">
+    <div class="section-heading">
+      <span class="section-kicker">Remote Engineering Services</span>
+      <h2 id="remote-services-title">Support for the work your team needs to fix or automate.</h2>
+      <p>Start with a defined operational problem, review the relevant project evidence and agree on a deliverable.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4"><article class="professional-card h-100"><h3>Python Network Automation</h3><p>Multi-vendor workflows, inventory processing, user management and configuration checks.</p><a href="{{ '/network-automation-services/' | relative_url }}">Explore Python automation services</a></article></div>
+      <div class="col-md-4"><article class="professional-card h-100"><h3>Remote Network Support</h3><p>Connectivity investigation, infrastructure project reviews and evidence-led troubleshooting.</p><a href="{{ '/remote-network-infrastructure-support/' | relative_url }}">Discuss remote infrastructure support</a></article></div>
+      <div class="col-md-4"><article class="professional-card h-100"><h3>Script &amp; API Troubleshooting</h3><p>Netmiko prompts and timeouts, existing Python workflows, Flask dashboards and REST API integrations.</p><a href="{{ '/network-automation-services/#request-engineering-support' | relative_url }}">Request a technical scope review</a></article></div>
+    </div>
+  </div>
+</section>
 
 <section id="focus" class="py-6 bg-white">
   <div class="container">
@@ -255,7 +275,9 @@ DevNet Automation, IAM, Zero Trust, and Security Design.
       <p>Use the form below for project inquiries, collaboration, or professional opportunities.</p>
     </div>
 
-    <form id="contactForm" action="https://formspree.io/f/xanbzwwg" method="POST" class="needs-validation contact-form" novalidate>
+    <form id="contactForm" action="https://formsubmit.co/{{ site.inquiry_email | escape }}" method="POST" class="contact-form">
+      <input type="hidden" name="_subject" value="Saif Way Technology — Website inquiry">
+      <input type="hidden" name="_template" value="table">
       <div class="form-floating mb-3">
         <input type="text" class="form-control" id="name" name="name" placeholder="Your Full Name" required>
         <label for="name">Full Name</label>
@@ -263,7 +285,7 @@ DevNet Automation, IAM, Zero Trust, and Security Design.
       </div>
 
       <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="email" name="_replyto" placeholder="name@example.com" required>
+        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
         <label for="email">Email Address</label>
         <div class="invalid-feedback">Please enter a valid email address.</div>
       </div>
@@ -279,7 +301,8 @@ DevNet Automation, IAM, Zero Trust, and Security Design.
         <div class="invalid-feedback">Please write your message.</div>
       </div>
 
-      <button type="submit" class="btn btn-primary btn-lg fw-semibold w-100">Send Message</button>
+      <p class="small text-muted">This form uses FormSubmit to email your inquiry to Imran Sarwar. Share a summary without passwords or confidential configurations.</p>
+      <button type="submit" class="btn btn-primary btn-lg fw-semibold w-100">Send Email Inquiry</button>
     </form>
   </div>
 </section>

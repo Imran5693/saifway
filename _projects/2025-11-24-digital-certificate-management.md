@@ -1,4 +1,5 @@
 ---
+expertise: applications
 layout: project
 title: "Web-Based Digital Certificate Management Portal"
 description: "A centralized PKI management platform integrating Step CA, OpenLDAP, and Role-Based Access Control to streamline certificate issuance, revocation, validation, and lifecycle governance."

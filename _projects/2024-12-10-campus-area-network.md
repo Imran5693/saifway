@@ -1,4 +1,5 @@
 ---
+expertise: infrastructure
 layout: project
 title: "Campus Network Design Lab - Secure VLAN & Active Directory Based Infrastructure"
 description: "A hands-on campus network design lab implementing VLAN segmentation, OSPF routing, Active Directory, DHCP/DNS services, and firewall-based security for secure interdepartmental communication."

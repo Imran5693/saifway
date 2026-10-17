@@ -1,4 +1,5 @@
 ---
+expertise: security
 layout: project
 title: "Multi-Router LAN with Wireless Integration and Port Security Simulation"
 description: "Cisco Packet Tracer network simulation demonstrating secure multi-router LAN segmentation, wireless access, port security, and rogue device mitigation. Includes RIP routing, MAC filtering, and OSI/TCP-IP model alignment."

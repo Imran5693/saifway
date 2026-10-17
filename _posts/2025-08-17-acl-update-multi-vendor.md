@@ -1,4 +1,5 @@
 ---
+expertise: automation
 layout: post
 title: "Overcoming ACL Challenges in a Multi-Vendor Network Environment"
 description: "A professional insight into updating ACLs across Cisco, HP, Juniper, and Brocade switches, addressing real-world challenges and automation strategies."
@@ -7,6 +8,12 @@ author: "Imran Sarwar"
 tags: ["Networking", "ACL", "Multi-Vendor", "Automation", "Cisco", "Juniper", "Brocade", "HP"]
 thumbnail: "/assets/images/blog/multi-vendor-acl-operations.png"
 ---
+
+<figure class="my-4">
+  <img src="{{ '/assets/images/diagrams/netmiko-workflow.svg' | relative_url }}" alt="Multi-vendor Python automation workflow with platform checks and per-device verification" width="1100" height="960" class="img-fluid rounded-4" loading="lazy">
+  <figcaption class="small text-muted mt-2">Use platform checks and post-change verification when designing a multi-vendor ACL workflow.</figcaption>
+</figure>
+
 
 ## Introduction
 Managing **Access Control Lists (ACLs)** in multi-vendor networks is a complex task. Different vendors such as **Cisco, HP, Juniper, and Brocade** have unique CLI behaviors and syntaxes. In large environments, **manual updates are error-prone** and time-consuming.  

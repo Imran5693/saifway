@@ -1,4 +1,5 @@
 ---
+expertise: security
 layout: post
 title: "Visibility vs Observability in Modern Security Operations"
 description: "A practical NOC and security operations article explaining the difference between visibility and observability using logs, metrics, traces, alerts, and context."

@@ -1,4 +1,5 @@
 ---
+expertise: security
 layout: post
 title: "Security by Design: Building Resilient Infrastructure from the Ground Up"
 description: "Exploring how Security by Design principles, Zero Trust, defense-in-depth, and secure architecture frameworks help organizations build resilient and secure infrastructure."

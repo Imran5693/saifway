@@ -1,4 +1,5 @@
 ---
+expertise: infrastructure
 layout: post
 title: "The Network Was Not the Problem: A Real NOC Troubleshooting Lesson"
 description: "A practical NOC troubleshooting article showing why network symptoms do not always mean network root cause, and how structured investigation avoids wrong conclusions."
@@ -19,6 +20,12 @@ keywords:
   - root cause analysis
   - endpoint issue network symptom
 ---
+
+<figure class="my-4">
+  <img src="{{ '/assets/images/diagrams/noc-troubleshooting.svg' | relative_url }}" alt="NOC investigation from user impact through network and service evidence to recovery validation" width="1100" height="960" class="img-fluid rounded-4" loading="lazy">
+  <figcaption class="small text-muted mt-2">A diagnostic framework for separating a network symptom from its root cause.</figcaption>
+</figure>
+
 
 ## Introduction
 

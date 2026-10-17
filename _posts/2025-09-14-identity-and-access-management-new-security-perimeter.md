@@ -1,4 +1,5 @@
 ---
+expertise: security
 layout: post
 title: "Identity and Access Management: Why Identity Is the New Security Perimeter"
 description: "A practical IAM article based on OpenStack Keystone lab work, IDMUI, role-based access control, least privilege, and secure access design."

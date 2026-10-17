@@ -2,21 +2,22 @@
 # Site Settings
 # =========================
 title: Saif Way Technology
-tagline: Cybersecurity, Infrastructure & Automation Portfolio
+tagline: Network Infrastructure & Python Automation by Imran Sarwar
 description: >
-  Professional portfolio of Imran Sarwar, a UAE-based IT infrastructure and NOC/DC
-  operations professional focused on cybersecurity, network automation, Python Flask,
-  cloud IAM, PKI, SSL certificate management, and applied AI security projects.
+  Imran Sarwar combines network infrastructure and NOC/data center operations
+  experience with Python network automation, multi-vendor Netmiko workflows,
+  Flask applications and REST API integration. Explore projects and engineering support.
   
 url: "https://saifwaytech.com"
 baseurl: ""
+inquiry_email: "m.imransaif786@gmail.com"
 
 # =========================
 # Author / Brand Identity
 # =========================
 author:
   name: Imran Sarwar
-  email: contact@saifway.com
+  email: contact@saifwaytech.com
   linkedin: imransarwaritpro
   github: Imran5693
 
@@ -42,9 +43,14 @@ exclude:
   - node_modules
   - vendor
   - README.md
+  - SEO-AUDIT.md
+  - SEO-POSITIONING.md
+  - SEO-INTERNATIONAL-RESEARCH.md
+  - EMAIL-DELIVERY.md
   - .jekyll-cache
   - .sass-cache
   - .git
+  - .agents
 
 # =========================
 # Sitemap Controls (IMPORTANT)
