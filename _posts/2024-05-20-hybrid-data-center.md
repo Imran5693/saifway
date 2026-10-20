@@ -67,7 +67,7 @@ OSPF provides route exchange in the lab. Review the routes in each direction, th
 
 Keep backup and management access explicit. Identify which systems need to reach storage services, which administrators need management access and which flows should be rejected. For traffic policy, compare the backup window with the needs of production applications before deciding what to prioritize.
 
-## A practical validation sequence
+## How should you validate the hybrid backup path?
 
 1. Confirm addresses, routes and return paths for each required service.
 2. Test an allowed backup connection and a connection that should be denied.
@@ -91,7 +91,7 @@ A useful review separates network observations from service outcomes. The exampl
 
 Keep the original test conditions with the result. That lets another engineer distinguish a repeatable observation from an assumption about production performance.
 
-## Apply the design lessons to an existing environment
+## Review hybrid backup requirements in an existing data center
 
 For a review, prepare a sanitized topology, route evidence, tunnel configuration summary, backup schedule and the failed operation. These help distinguish network capacity or routing issues from storage and application dependencies. Read the [NOC troubleshooting article]({{ '/2026/05/24/network-was-not-the-problem-real-noc-troubleshooting.html' | relative_url }}) for the same evidence-led approach.
 

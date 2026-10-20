@@ -219,6 +219,7 @@ changefreq: monthly
           Open Demo on YouTube
         </a>
       </div>
+
     </div>
   </section>
 
@@ -424,7 +425,7 @@ changefreq: monthly
   <button class="wcaman-lightbox-close" type="button" aria-label="Close screenshot preview">&times;</button>
   <div class="wcaman-lightbox-dialog" role="dialog" aria-modal="true" aria-labelledby="wcamanLightboxTitle">
     <h2 id="wcamanLightboxTitle">Screenshot Preview</h2>
-    <img src="" alt="">
+    <img alt="Expanded WCAMAN screenshot" hidden>
   </div>
 </div>
 
@@ -458,7 +459,8 @@ changefreq: monthly
       lightbox.classList.remove("is-open");
       lightbox.setAttribute("aria-hidden", "true");
       document.body.classList.remove("wcaman-lightbox-open");
-      previewImage.setAttribute("src", "");
+      previewImage.hidden = true;
+      previewImage.removeAttribute("src");
     }
 
     document.querySelectorAll(".wcaman-preview-trigger").forEach((button) => {
@@ -468,6 +470,7 @@ changefreq: monthly
         previewTitle.textContent = title;
         previewImage.setAttribute("src", button.getAttribute("data-preview-src"));
         previewImage.setAttribute("alt", image.alt);
+        previewImage.hidden = false;
         lightbox.classList.add("is-open");
         lightbox.setAttribute("aria-hidden", "false");
         document.body.classList.add("wcaman-lightbox-open");

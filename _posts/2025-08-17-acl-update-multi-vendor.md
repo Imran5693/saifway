@@ -54,7 +54,7 @@ Record where the policy is applied. An apparently correct rule on the wrong inte
 
 {% include blog-diagram.html src="/assets/images/diagrams/network-change-review.svg" alt="Network policy change through intent review, platform translation, limited execution and service verification" caption="Conceptual change workflow for the documented multi-vendor environment." %}
 
-## Keep platform differences visible
+## Account for vendor-specific ACL syntax and behavior
 
 A Cisco ACL and a Junos firewall filter are not interchangeable objects. Rule order, default handling, address family, interface binding and commit behavior need platform-specific review. Juniper's [filter evaluation documentation](https://www.juniper.net/documentation/us/en/software/junos/routing-policy/topics/concept/firewall-filter-qfx-series-evaluation-understanding.html) explains why term order matters.
 
@@ -94,7 +94,7 @@ Agree on an initial device group, the approver and the test window. Capture the 
 
 After execution, compare the intended rule with the applied policy. Then perform the allowed and denied service checks. Inspect logs or counters where they support the diagnosis, but do not treat one counter as proof that every dependency is healthy.
 
-## Make the handover useful
+## Document ACL rollout evidence and operational ownership
 
 A change record should name the target, policy version, execution result, verification evidence and unresolved exceptions. Include skipped devices and partial failures. Avoid publishing client configurations or credentials as proof of expertise.
 

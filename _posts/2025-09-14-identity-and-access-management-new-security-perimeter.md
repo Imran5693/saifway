@@ -61,7 +61,7 @@ A user who needs a read operation may not need account creation or role assignme
 
 Check both successful and denied operations in a test environment. The [Keystone role documentation](https://docs.openstack.org/keystone/latest/admin/service-api-protection.html) describes how default roles interact with scope; verify your deployment's release and policy before applying those expectations.
 
-## Example access-review record
+## Example IAM access-review record
 
 Suppose an integration needs a limited operation in one project. Review the requested permission, assignment scope and actual service policy together. These are illustrative requirements to test; they do not assert what every Keystone role permits by default.
 
@@ -74,7 +74,7 @@ Suppose an integration needs a limited operation in one project. Review the requ
 
 The output should support an administrative decision. A list of role names without scope, purpose or ownership cannot establish least privilege.
 
-## Follow the account lifecycle
+## Review access across the account lifecycle
 
 Account creation is only the beginning. Record what happens when a person changes responsibilities, a temporary assignment expires or an integration is retired. Review old tokens, credentials and service dependencies under the system's supported lifecycle controls.
 

@@ -66,13 +66,13 @@ Translate the requirement into rules at supported enforcement points. Check the 
 
 NIST's [Zero Trust Architecture publication](https://csrc.nist.gov/pubs/sp/800/207/final) describes the resource-focused approach. For implementation guidance, the UK NCSC's [ZTNA guidance](https://www.ncsc.gov.uk/collection/zero-trust/zero-trust-network-access-ztna/how-to-implement-ztna) is a useful reference. Neither reference proves that a particular lab meets every architectural requirement.
 
-## Test the access lifecycle
+## Test access approval, use and revocation
 
 Use an approved test identity and exercise the required operation. Then test a denied identity or invalid context and confirm the observed outcome. Check what happens when permissions change or a relevant service fails.
 
 Avoid opening broad access simply to make a test pass. Investigate the missing dependency and decide whether it is part of the legitimate requirement. Document the resulting exception and who will review it.
 
-## Connect design to day-to-day support
+## Translate Zero Trust policies into support procedures
 
 The [campus network project]({{ '/projects/2024-12-10-campus-area-network/' | relative_url }}) provides network context, while [IDMUI]({{ '/projects/2025-04-24-idmui-openstack/' | relative_url }}) shows identity-related application work. Read the [IAM access-review article]({{ '/2025/09/14/identity-and-access-management-new-security-perimeter.html' | relative_url }}) for role scope and lifecycle questions.
 

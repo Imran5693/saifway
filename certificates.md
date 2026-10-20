@@ -4,6 +4,7 @@ title: Professional Profile | Imran Sarwar
 description: This page has moved to the Professional Profile page.
 permalink: /certificates/
 robots: noindex, follow
+sitemap: false
 ---
 
 <section class="py-6 bg-light text-center">

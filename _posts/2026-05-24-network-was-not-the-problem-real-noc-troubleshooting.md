@@ -60,13 +60,13 @@ Inspect local link and interface state, addressing, gateway and the route releva
 
 A ping can help establish a particular form of reachability if permitted, but it does not validate DNS, authentication or an application transaction. Record exactly what the test demonstrates and what it leaves untested.
 
-## Use comparison tests carefully
+## Compare affected and working paths during NOC troubleshooting
 
 Compare a known-working client with the affected one. Keep the destination, operation and time window as similar as possible. If the problem follows a machine across locations, that is evidence for endpoint investigation; it does not automatically prove that the network has no role.
 
 Consider differences in identity, policy, software, name resolution and service dependencies. Change one variable at a time when possible, so the result has a useful interpretation.
 
-## Example comparison record
+## Example record for comparing working and failing paths
 
 Use comparisons to narrow the next investigation step rather than declare a root cause early. The cases below are illustrative and do not add an unrecorded diagnosis to the original incident.
 
@@ -98,7 +98,7 @@ show ip route
 
 Use interface status and errors to investigate the local link, VLAN information to check access placement, port-security state to investigate MAC limits and violations, and the router's routing table to check the destination path. A historical violation counter needs a time correlation; it does not by itself establish the cause of today's complaint. Do not disable port security or clear counters just to make the symptom disappear before recording the evidence.
 
-### Extend the test to DNS and identity
+### Extend connectivity checks to DNS and identity services
 
 My [campus network lab documentation](https://github.com/Imran5693/campus-network-design-lab/blob/0027cb5adcebcbc28dd4bee970171b8dc710c866/README.md) describes VLANs, OSPF, DHCP, DNS, Active Directory and Fortinet policies. Those dependencies explain why remote network troubleshooting often crosses into systems support. If an address is reachable but a domain resource fails by name, the next test should include the configured DNS server and the exact lookup, rather than an immediate routing change.
 

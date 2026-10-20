@@ -84,7 +84,7 @@ The objective of this project is therefore to develop a platform capable of auto
 
 ---
 
-# Main Objectives
+## Main Objectives
 
 The platform is intended to provide the following capabilities:
 
@@ -101,7 +101,7 @@ The platform is intended to provide the following capabilities:
 
 ---
 
-# Functional Requirements
+## Functional Requirements
 
 ## 1. Android Device Bug Detection
 
@@ -180,7 +180,7 @@ Potential checks include:
 
 ---
 
-# 2. Android Application Bug Detection
+## 2. Android Application Bug Detection
 
 The platform should support static analysis of Android applications and identify common security weaknesses.
 
@@ -268,7 +268,7 @@ Potential checks include:
 
 ---
 
-# 3. Automated Exploitation and Validation
+## 3. Automated Exploitation and Validation
 
 The platform should provide controlled workflows for validating identified vulnerabilities.
 
@@ -296,7 +296,7 @@ The system should clearly distinguish between:
 
 ---
 
-# 4. On-Device / Off-Device Analysis
+## 4. On-Device / Off-Device Analysis
 
 The platform should minimize reliance on traditional traffic-interception proxies.
 
@@ -319,7 +319,7 @@ This approach is intended to provide additional visibility into the device while
 
 ---
 
-# 5. Vulnerability Reporting
+## 5. Vulnerability Reporting
 
 The platform should provide a structured bug-reporting workflow.
 
@@ -363,7 +363,7 @@ Each vulnerability report should ideally include:
 
 ---
 
-# 6. Artificial Intelligence Integration
+## 6. Artificial Intelligence Integration
 
 Artificial intelligence is intended to assist the platform with security analysis rather than replace security validation.
 
@@ -384,7 +384,7 @@ The AI component should operate within controlled workflows and its generated fi
 
 ---
 
-# Proposed System Workflow
+## Proposed System Workflow
 
 <div class="project-image-wrapper my-4">
   <img
@@ -394,7 +394,7 @@ The AI component should operate within controlled workflows and its generated fi
     loading="lazy">
 </div>
 
-# Project Videos
+## Project Videos
 
 <div class="row g-4 my-4">
 
@@ -813,7 +813,7 @@ Saif Way Tech - Student Project Support`;
 });
 </script>
 
-# Frequently Asked Questions
+## Frequently Asked Questions
 
 ## What is the Intelligent Bug Hunting Platform?
 

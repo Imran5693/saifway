@@ -54,7 +54,7 @@ A useful interface displays the target clearly and handles stale selections. If 
 
 {% include blog-diagram.html src="/assets/images/diagrams/iam-request-flow.svg" alt="Administrator request through a Flask application, Keystone policy and scoped result review" caption="Conceptual IDMUI integration flow; exact behavior depends on the deployed code and Keystone policy." %}
 
-## Keep responsibilities separate
+## Separate identity requests, authorization and execution
 
 The browser presents inputs and results. Flask validates the request, manages application state and calls the appropriate service. Keystone authenticates and applies its configured policy to identity operations.
 
@@ -74,7 +74,7 @@ Use explicit action labels and confirmations for destructive requests. Show the 
 
 A custom UI should make the operation clearer, not hide important policy details. Check the [Keystone role and scope documentation](https://docs.openstack.org/keystone/latest/admin/service-api-protection.html) for the release being used; defaults and policy behavior are version-dependent.
 
-## Explore the implementation and discuss an integration
+## Review the identity-dashboard implementation and integration scope
 
 The [IDMUI repository](https://github.com/Imran5693/idmui-app) and [project case study]({{ '/projects/2025-04-24-idmui-openstack/' | relative_url }}) replace the earlier placeholder source link. For a similar Flask infrastructure dashboard, bring the API documentation, identity model, workflow and expected output to a [remote engineering inquiry]({{ '/network-automation-services/#request-engineering-support' | relative_url }}).
 

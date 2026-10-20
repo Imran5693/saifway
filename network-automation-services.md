@@ -1,12 +1,12 @@
 ---
 layout: default
 title: Python Network Automation Services | Imran Sarwar
-description: Remote Python network automation services with Imran Sarwar. Discuss Netmiko troubleshooting, multi-vendor workflows and Flask API tools from the USA, UK or Europe.
+description: Remote Python network automation services with Imran Sarwar. Discuss Netmiko troubleshooting, multi-vendor workflows and Flask API tools from the USA, UK, Canada or Europe.
 permalink: /network-automation-services/
 ---
 <section class="py-6 bg-light">
 <div class="container">
-<span class="section-kicker">Remote engineering · USA, UK &amp; Europe inquiries welcome</span>
+<span class="section-kicker">Remote engineering · USA, UK, Canada &amp; Europe inquiries welcome</span>
 <h1>Python Network Automation Services</h1>
 <p class="lead">I’m Imran Sarwar. I combine network infrastructure and NOC/data center experience with Python development to help teams investigate operational problems and automate repeatable work.</p>
 <p>Discuss an existing automation script, a multi-vendor device workflow, or an internal Flask application. Start with your current problem, device platforms and expected outcome so we can assess technical fit and agree on a practical scope.</p>
@@ -43,6 +43,12 @@ Discuss an internal dashboard, administrative workflow or integration that bring
 {% assign apps = site.projects | where_exp: 'project', "project.path contains 'idmui-openstack'" %}
 {% for project in apps %}[Explore the Flask and OpenStack REST API project]({{ project.url | relative_url }}).{% endfor %}
 
+## Review the implementation before discussing a project
+
+The [Netmiko implementation walkthrough]({{ '/2025/05/18/python-network-automation-with-netmiko.html' | relative_url }}) covers inventory selection, a read-only connection example, error handling and verification limits. The [multi-vendor configuration management project]({{ '/projects/2025-06-27-multi-vendor-user-creation/' | relative_url }}) explains why platform-specific commands and explicit acceptance checks matter. Use these to compare your requirement with the documented scope; neither establishes compatibility with an untested device image.
+
+For a timeout after a configuration command, preserve the error and inspect current state before rerunning the script. For a dashboard request, identify which device results must be verified, which can remain unknown, and who may approve a write operation. These details make an initial scope discussion more useful than a device count alone.
+
 ## Define a useful first deliverable
 
 <div class="table-responsive" markdown="1">
@@ -59,13 +65,13 @@ Discuss an internal dashboard, administrative workflow or integration that bring
 
 The deliverable, implementation responsibilities and price are agreed after review. These examples describe work to scope, not prepackaged guarantees.
 
-## Remote collaboration for USA, UK and European teams
+## Remote collaboration for USA, UK, Canadian and European teams
 
-I am based in the UAE (UTC+4) and welcome English-language project inquiries from the United States, United Kingdom and Europe. Share your time zone and preferred meeting or maintenance window; working overlap and availability are confirmed before an engagement.
+I am based in the UAE (UTC+4) and welcome English-language project inquiries from the United States, United Kingdom, Canada and Europe. Share your time zone and preferred meeting or maintenance window; working overlap and availability are confirmed before an engagement.
 
 Initial review can start with sanitized code, logs and a workflow description. If access is needed, we agree on a client-approved remote session or controlled access method, permitted actions and the person responsible for production approvals. Written findings and handover notes support collaboration between time zones.
 
-You work directly with Imran Sarwar on the agreed scope. A new automation task, a review of an existing script and follow-up implementation support can be discussed separately. No US, UK or European local office is represented by this remote service.
+You work directly with Imran Sarwar on the agreed scope. A new automation task, a review of an existing script and follow-up implementation support can be discussed separately. This is a UAE-based remote service; working arrangements are agreed per project.
 
 ## How a production-support engagement starts
 
@@ -126,7 +132,7 @@ Keep credentials and sensitive configurations out of an initial inquiry. Student
         <div class="col-md-6"><label class="form-label" for="client-name">Your name *</label><input class="form-control" id="client-name" name="name" autocomplete="name" maxlength="120" required></div>
         <div class="col-md-6"><label class="form-label" for="client-email">Email *</label><input class="form-control" id="client-email" name="email" type="email" autocomplete="email" required></div>
         <div class="col-12"><label class="form-label" for="client-company">Company / team</label><input class="form-control" id="client-company" name="company" autocomplete="organization" maxlength="200"></div>
-        <div class="col-md-6"><label class="form-label" for="client-market">Your region *</label><select class="form-select" id="client-market" name="region" required><option value="">Select your region</option><option>United States</option><option>United Kingdom</option><option>Europe</option><option>Other region</option></select></div>
+        <div class="col-md-6"><label class="form-label" for="client-market">Your region *</label><select class="form-select" id="client-market" name="region" required><option value="">Select your region</option><option>United States</option><option>United Kingdom</option><option>Canada</option><option>Europe</option><option>Other region</option></select></div>
         <div class="col-md-6"><label class="form-label" for="client-timezone">Country &amp; time zone *</label><input class="form-control" id="client-timezone" name="country_timezone" placeholder="e.g. Germany, Europe/Berlin" maxlength="120" required></div>
         <div class="col-12"><label class="form-label" for="client-service">What do you need? *</label><select class="form-select" id="client-service" name="service" required><option value="">Select a service</option><option>Python network automation development</option><option>Netmiko / Python script troubleshooting</option><option>Remote network infrastructure support</option><option>Flask dashboard / REST API integration</option><option>Review an existing technical project</option></select></div>
         <div class="col-12"><label class="form-label" for="client-environment">Device platforms / application stack</label><input class="form-control" id="client-environment" name="environment" maxlength="500" placeholder="Vendors, software versions, Python libraries or application frameworks"></div>
@@ -147,7 +153,7 @@ Keep credentials and sensitive configurations out of an initial inquiry. Student
   "serviceType": ["Python network automation", "Netmiko troubleshooting", "Network infrastructure support", "Flask and REST API integration"],
   "description": {{ page.description | jsonify }},
   "url": "{{ page.url | absolute_url }}",
-  "areaServed": [{"@type": "Country", "name": "United States"}, {"@type": "Country", "name": "United Kingdom"}, {"@type": "Place", "name": "Europe"}],
+  "areaServed": [{"@type": "Country", "name": "United States"}, {"@type": "Country", "name": "United Kingdom"}, {"@type": "Country", "name": "Canada"}, {"@type": "Place", "name": "Europe"}],
   "provider": {"@id": "{{ '/professional-profile/#imran-sarwar' | absolute_url }}"}
 }
 </script>

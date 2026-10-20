@@ -16,13 +16,21 @@ permalink: /blog/
       </p>
     </div>
 
+    <section class="mb-5 p-4 bg-white rounded-4" aria-labelledby="automation-starting-points">
+      <h2 id="automation-starting-points">Start with Python network automation and troubleshooting</h2>
+      <p>For a working approach, read <a href="{{ '/2025/05/18/python-network-automation-with-netmiko.html' | relative_url }}">Python network automation with Netmiko</a> and the <a href="{{ '/projects/2025-06-27-multi-vendor-user-creation/' | relative_url }}">multi-vendor configuration management project</a>. If a connectivity symptom needs investigation first, use the <a href="{{ '/2026/05/24/network-was-not-the-problem-real-noc-troubleshooting.html' | relative_url }}">NOC troubleshooting guide</a>.</p>
+      <p class="mb-0">Need help adapting a workflow? Review <a href="{{ '/network-automation-services/' | relative_url }}">Python network automation services</a>, including script troubleshooting and Flask/API integration.</p>
+    </section>
+
+    <p><a href="{{ '/blog/network-automation-troubleshooting/' | relative_url }}">Browse network automation troubleshooting guides by topic</a>.</p>
+
     <div class="row g-4">
       {% assign sorted_posts = site.posts | sort: "date" | reverse %}
       {% for post in sorted_posts %}
         <div class="col-md-6 col-lg-4">
           <article class="publication-item h-100">
             {% if post.thumbnail %}
-              <img src="{{ post.thumbnail | relative_url }}" class="publication-thumbnail" alt="{{ post.image_alt | default: post.title | escape }}" width="1200" height="630" loading="lazy">
+              <img src="{{ post.thumbnail | relative_url }}" class="publication-thumbnail" alt="{{ post.image_alt | default: post.title | escape }}" width="{{ post.thumbnail_width | default: 1200 }}" height="{{ post.thumbnail_height | default: 630 }}" loading="lazy" decoding="async">
             {% endif %}
             <small>{{ post.topic_label | escape }} · {{ post.article_type | escape }}</small>
             <h2><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>

@@ -55,7 +55,7 @@ Choose a workflow such as an administrator changing a network device or an appli
 
 A narrow scenario makes control selection more useful. It also exposes assumptions that broad labels hide: where authentication happens, whether a management connection crosses a trust boundary and which system records the outcome.
 
-## Assign a purpose to each layer
+## Define the security purpose of each infrastructure layer
 
 An identity control can restrict who requests an action. A network rule can constrain the path. Application authorization can govern the action on the target resource. Telemetry can make the result reviewable. Recovery arrangements limit the impact if the change fails.
 
@@ -63,7 +63,7 @@ Defense in depth is strongest when the layers address the scenario and their sha
 
 {% include blog-diagram.html src="/assets/images/diagrams/security-control-review.svg" alt="Control review from a specific requirement through enforcement layers and dependency checks to evidence" caption="Conceptual security review; deployment and assurance depend on the actual environment." %}
 
-## Review the interactions and exceptions
+## Review policy interactions and access exceptions
 
 Check certificate trust, DNS, time synchronization, token handling and service reachability where the workflow depends on them. An access failure can result from a dependency rather than the primary policy.
 
@@ -75,7 +75,7 @@ For each requirement, write the expected allowed and denied behavior and the obs
 
 NIST's [Zero Trust reference](https://csrc.nist.gov/pubs/sp/800/207/final) provides a framework for resource access. Use [the deployment checklist]({{ '/2026/03/15/security-by-design-building-resilient-infrastructure.html' | relative_url }}) for release evidence and [resilience testing]({{ '/2026/02/16/designing-resilient-security-architectures.html' | relative_url }}) for failure scenarios. These articles serve different review stages rather than repeating a single security checklist.
 
-## Connect the review to implementation work
+## Translate the security-design review into implementation tasks
 
 The [IDMUI project]({{ '/projects/2025-04-24-idmui-openstack/' | relative_url }}) provides identity/application context. The [certificate-management project]({{ '/projects/2025-11-24-digital-certificate-management/' | relative_url }}) provides lifecycle context, while the [campus lab]({{ '/projects/2024-12-10-campus-area-network/' | relative_url }}) shows network design learning.
 

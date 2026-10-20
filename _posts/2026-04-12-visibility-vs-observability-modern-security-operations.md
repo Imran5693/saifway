@@ -54,13 +54,13 @@ The labels vary between products. Judge a system by the questions it supports ra
 
 {% include blog-diagram.html src="/assets/images/diagrams/telemetry-investigation.svg" alt="Incident investigation combining metrics, events and traffic evidence with timing and dependency context" caption="Conceptual correlation workflow; a correlated event is a hypothesis until tested." %}
 
-## Choose signals around a service
+## Choose telemetry signals for the affected service
 
 For an application failure, consider the client experience, DNS result, connection path, authentication and application response. Network metrics, flow records and device logs provide different views. Application traces can add request-level context when instrumentation is present.
 
 The [OpenTelemetry observability primer](https://opentelemetry.io/docs/concepts/observability-primer/) explains the role of telemetry signals. A network device does not automatically emit application traces; plan collection around the systems and questions actually involved.
 
-## Build a shared time window
+## Align network, identity and application event timestamps
 
 Record when the symptom was first observed, the time zone, affected endpoints and recent changes. Check that timestamps can be compared before linking events from different systems. A clock difference can create a misleading sequence.
 

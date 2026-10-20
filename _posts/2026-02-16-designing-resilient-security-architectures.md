@@ -46,7 +46,7 @@ A resilient network security architecture must remain understandable when a link
 
 This guide builds on my hybrid backup and campus labs and my infrastructure operations perspective. It focuses on failure and recovery testing. The separate security-by-design checklist covers the decisions to make before a deployment.
 
-## Identify the failure domain
+## Identify security and infrastructure failure domains
 
 Map what each redundant component depends on: power, physical path, upstream connectivity, credentials, DNS, time and management access. Two devices can still fail together if they share a critical dependency.
 
@@ -60,7 +60,7 @@ A denied access request can be correct enforcement or an unexpected outage. Deci
 
 Protect recovery access as carefully as everyday administration. A recovery path that depends on the same unavailable service may not help during the incident. Check how the responsible operator can reach the system without widening routine access unnecessarily.
 
-## Write a test that can be repeated
+## Define a repeatable resilience test
 
 For each approved scenario, record the initial state, injected failure, observation points and recovery procedure. Include the person who can stop the test. Start in a lab or staging environment; a production exercise needs its own authorization and impact assessment.
 
@@ -84,7 +84,7 @@ For each exercise, name the service, approved disruption, expected behavior, obs
 
 State the acceptance condition before the exercise. A route converging after a link failure is a network observation; it does not establish that a storage transaction or application session recovered.
 
-## Turn observations into an operational handover
+## Document resilience findings, owners and recovery actions
 
 Document the expected failure behavior, where evidence appears and what remains outside the test. Identify who owns follow-up actions. A clear unresolved dependency is more useful than a diagram labeled highly available with no supporting exercise.
 

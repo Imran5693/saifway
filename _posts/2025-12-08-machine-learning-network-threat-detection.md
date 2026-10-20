@@ -44,7 +44,7 @@ Machine learning for network intrusion detection uses traffic-derived features t
 
 My simulated-network cyber attack detection project connects Python traffic processing with a Flask interface. This article explains the experiment design. It does not claim that a model validated in one simulation is ready to detect threats in an unrelated production network.
 
-## Define the detection question
+## Define the network-threat detection question
 
 Specify what the model is expected to distinguish and the unit being classified: a packet, flow, session or time window. A broad label such as attack is difficult to interpret unless its definition and collection method are clear.
 
@@ -70,7 +70,7 @@ A useful view connects the classification to the observed time, traffic unit, re
 
 For a production proposal, consider input drift, unavailable features, model failure and a human escalation path. Adding a dashboard does not remove the need to validate the detection process.
 
-## Review the lab and scope the next step
+## Review the threat-detection lab evidence and remaining scope
 
 The [project case study]({{ '/projects/2026-04-24-ml-cyber-attack-detection/' | relative_url }}) and [repository](https://github.com/Imran5693/ml-cyber-attack-detection) provide the implementation context. The [observability article]({{ '/2026/04/12/visibility-vs-observability-modern-security-operations.html' | relative_url }}) explains why correlated evidence is more useful than isolated alerts.
 

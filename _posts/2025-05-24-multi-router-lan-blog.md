@@ -46,7 +46,7 @@ A multi-router LAN lab is useful because a failed connection can have several ca
 
 My Cisco Packet Tracer project combines three routers, three switches, endpoints and wireless access. This walkthrough focuses on diagnosing the access behavior and explaining the result rather than treating a successful ping as complete security validation.
 
-## Establish a working path before enforcing restrictions
+## Establish LAN connectivity before applying port security
 
 Record the subnet and default gateway of each endpoint. Confirm the local link, the gateway and the route to the destination, including the return route. The project uses RIP for the simulation; that is a lab choice, not a recommendation for every enterprise network.
 
@@ -60,7 +60,7 @@ A wireless router or access point can present different upstream behavior depend
 
 {% include blog-diagram.html src="/assets/images/diagrams/port-security-review.svg" alt="Port security investigation: identify the port, observe MAC learning, inspect violations and retest access" caption="Conceptual diagnostic sequence for the lab; exact commands depend on the switch platform." %}
 
-## Compare protect, restrict and shutdown
+## How do protect, restrict and shutdown violation modes differ?
 
 The common Cisco violation modes differ in what they report and whether they disable the port. Protect and restrict can drop violating traffic; restrict adds violation reporting behavior on supported platforms. Shutdown can place the port into an error-disabled state. Confirm the exact behavior for your model in [Cisco's port-security guide](https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst2960l/software/15-2_7_e/configuration_guide/sec/b_1527e_security_2960l_cg/port_security.pdf).
 
@@ -77,7 +77,7 @@ For this lab, inspect the secure address list, violation count and port status b
 
 MAC filtering alone is not strong identity authentication; addresses can be imitated. Keep the exercise's learning goal separate from a production access-control design.
 
-## Review the lab evidence
+## Review the port-security lab evidence
 
 The [video demonstration](https://youtu.be/0MyrHqR190Y), [project repository](https://github.com/Imran5693/multi-router-lan-port-security) and [project report](https://github.com/Imran5693/multi-router-lan-port-security/blob/main/report/Introduction%20to%20Networks-assign%203.pdf) provide the original context. Simulator device features vary, so describe the actual model and settings used rather than making a blanket claim about every Packet Tracer access point.
 

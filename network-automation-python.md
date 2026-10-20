@@ -10,7 +10,7 @@ permalink: /network-automation-python/
 <h1>Network automation with Python — Imran Sarwar</h1>
 <p class="lead">I connect network engineering and infrastructure operations with practical Python development to make repeatable network tasks easier to manage.</p>
 <p>My work at Saif Way Technology includes multi-vendor device automation, user management, configuration auditing and Flask applications. My background is in UAE-based IT infrastructure and NOC/data center operations; this portfolio documents the projects, tools and implementation lessons behind that work.</p>
-<p>Looking for help with a business workflow? Explore <a href="{{ '/network-automation-services/' | relative_url }}">remote Python network automation services</a> or <a href="{{ '/remote-network-infrastructure-support/' | relative_url }}">network infrastructure troubleshooting support</a>. USA, UK and European project inquiries are welcome; scope and working overlap are agreed before delivery.</p>
+<p>Looking for help with a business workflow? Explore <a href="{{ '/network-automation-services/' | relative_url }}">remote Python network automation services</a> or <a href="{{ '/remote-network-infrastructure-support/' | relative_url }}">network infrastructure troubleshooting support</a>. USA, UK, Canadian and European project inquiries are welcome; scope and working overlap are agreed before delivery.</p>
 <a href="{{ '/network-automation-services/' | relative_url }}" class="btn btn-primary">Network Automation &amp; Infrastructure Support</a>
 </div>
 </section>
@@ -35,6 +35,13 @@ For network engineers learning Python, the Netmiko walkthrough explains the user
 {% for post in site.posts %}{% if post.path contains 'python-network-automation-with-netmiko' %}
 [Read Python network automation with Netmiko]({{ post.url | relative_url }}).
 {% endif %}{% endfor %}
+
+## Choose a practical network automation starting point
+
+- **Collect device information:** start with the [read-only Netmiko connection example]({{ '/2025/05/18/python-network-automation-with-netmiko.html#how-can-you-test-a-read-only-netmiko-connection-first' | relative_url }}), then define per-device failures and output checks.
+- **Manage account configuration across vendors:** review the [multi-vendor configuration management project]({{ '/projects/2025-06-27-multi-vendor-user-creation/' | relative_url }}) and its command, verification and persistence boundaries.
+- **Investigate a network symptom before automating it:** use the [NOC troubleshooting guide]({{ '/2026/05/24/network-was-not-the-problem-real-noc-troubleshooting.html' | relative_url }}) to separate network evidence from application and service dependencies.
+- **Review an existing script or dashboard:** describe the failure and desired result through [remote Python network automation services]({{ '/network-automation-services/' | relative_url }}).
 
 ## SSH automation, network APIs and model-driven interfaces
 

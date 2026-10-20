@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760" role="img" aria-labelledby="title desc">
+<title id="title">Proposed GNS3 or EVE-NG Netmiko lab</title>
+<desc id="desc">A Python Linux VM at 192.0.2.10 connects through a management switch to a Cisco virtual router at 192.0.2.20 using SSH on TCP port 22. Console access and session logs provide separate diagnostic evidence. This is a proposed topology, not a tested lab capture.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8" fill="#5eead4"/></marker></defs>
+<rect width="1100" height="760" rx="26" fill="#101c30"/>
+<g font-family="Arial, Helvetica, sans-serif">
+<text x="54" y="62" fill="#5eead4" font-size="19" letter-spacing="2">NETMIKO TROUBLESHOOTING · LAB DESIGN</text>
+<text x="54" y="120" fill="white" font-size="38" font-weight="700">One connection. Clear evidence.</text>
+<text x="54" y="162" fill="#cbd5e1" font-size="23">Proposed GNS3 / EVE-NG topology · no device results recorded</text>
+<rect x="54" y="226" width="292" height="214" rx="18" fill="#1d3049" stroke="#365472"/>
+<rect x="404" y="253" width="292" height="160" rx="18" fill="#1d3049" stroke="#365472"/>
+<rect x="754" y="226" width="292" height="214" rx="18" fill="#1d3049" stroke="#365472"/>
+<g text-anchor="middle">
+<text x="200" y="279" fill="white" font-size="28" font-weight="700">Python / Linux VM</text>
+<text x="200" y="324" fill="#5eead4" font-size="25">192.0.2.10/24</text>
+<text x="200" y="366" fill="#cbd5e1" font-size="22">Netmiko + known_hosts</text>
+<text x="200" y="402" fill="#cbd5e1" font-size="22">Password entered locally</text>
+<text x="550" y="306" fill="white" font-size="26" font-weight="700">Management switch</text>
+<text x="550" y="350" fill="#cbd5e1" font-size="22">Isolated lab segment</text>
+<text x="900" y="279" fill="white" font-size="28" font-weight="700">Cisco virtual router</text>
+<text x="900" y="324" fill="#5eead4" font-size="25">192.0.2.20/24</text>
+<text x="900" y="366" fill="#cbd5e1" font-size="22">Supported IOS-style CLI</text>
+<text x="900" y="402" fill="#cbd5e1" font-size="22">Record image + release</text>
+</g>
+<path d="M350 333H398 M700 333H748" stroke="#5eead4" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="550" y="475" text-anchor="middle" fill="#5eead4" font-size="23">SSH · TCP 22 · verify the host key before running Python</text>
+<rect x="54" y="518" width="480" height="137" rx="16" fill="#1d3049"/>
+<rect x="566" y="518" width="480" height="137" rx="16" fill="#1d3049"/>
+<text x="80" y="559" fill="white" font-size="25" font-weight="700">Collect on the Python host</text>
+<text x="80" y="599" fill="#cbd5e1" font-size="22">Traceback · session log · elapsed time</text>
+<text x="80" y="632" fill="#cbd5e1" font-size="22">Sanitize output before sharing</text>
+<text x="592" y="559" fill="white" font-size="25" font-weight="700">Keep console access available</text>
+<text x="592" y="599" fill="#cbd5e1" font-size="22">Check prompt, SSH and command access</text>
+<text x="592" y="632" fill="#cbd5e1" font-size="22">Recover independently of SSH</text>
+<text x="54" y="709" fill="#fbbf24" font-size="21">Documentation addresses shown. Illustration only; not an emulator screenshot.</text>
+</g></svg>

@@ -1,0 +1,30 @@
+---
+layout: default
+title: Network Automation Troubleshooting — Python, APIs and Infrastructure
+description: Find practical guides for Netmiko, Paramiko, NETCONF, RESTCONF, controller integration and infrastructure evidence collection.
+permalink: /blog/network-automation-troubleshooting/
+published: true
+sitemap: true
+robots: index, follow
+---
+<section class="py-5"><div class="container">
+<span class="section-kicker">Network engineering learning paths</span>
+<h1>Network automation troubleshooting</h1>
+<p>Start with the symptom, collect evidence, then choose a bounded correction. These guides connect Python automation, device interfaces and infrastructure diagnostics to practical tools and dashboards.</p>
+<p>Begin with <a href="{{ '/blog/netmiko-readtimeout-troubleshooting/' | relative_url }}">Netmiko ReadTimeout troubleshooting</a> or compare <a href="{{ '/blog/netmiko-netconf-restconf-python-network-automation/' | relative_url }}">Netmiko, NETCONF and RESTCONF</a>. The exercises below are proposed labs or offline examples, not claims of tested device results.</p>
+{% assign review_posts = site.posts | where: 'review_collection', 'automation-2026' | where: 'published', true %}
+{% assign groups = review_posts | group_by: 'topic_label' %}
+{% for group in groups %}
+<h2 class="mt-5">{{ group.name | escape }}</h2>
+{% case group.name %}
+{% when 'CLI automation' %}<p>Investigate prompts, SSH negotiation, parsing and per-host failures before choosing a library or adding retries.</p>
+{% when 'Model-driven APIs' %}<p>Distinguish authentication, resource paths, data-model errors and capabilities before attempting configuration changes.</p>
+{% when 'Controller and fabric' %}<p>Track tasks and sessions, then organize SD-WAN and SD-Access evidence. Live validation needs supported platforms beyond confirmed GNS3/EVE-NG access.</p>
+{% else %}<p>Build explicit evidence for patch readiness, operating-system issues, state validation, drift and certificate monitoring.</p>
+{% endcase %}
+<ul>{% for post in group.items %}<li class="mb-3"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a><br>{{ post.description | escape }}</li>{% endfor %}</ul>
+{% endfor %}
+<h2 class="mt-5">Need help turning a recurring issue into a tool?</h2>
+<p>Share the platform versions, sanitized failure and desired outcome. A suitable first scope may be a read-only collector, a guarded Netmiko workflow or a Python/Flask status dashboard. Remote English-language inquiries from USA, UK and Canadian teams are welcome; platform access and working overlap are agreed per project.</p>
+<a class="btn btn-primary" href="{{ '/network-automation-services/#request-engineering-support' | relative_url }}">Discuss an automation task</a>
+</div></section>

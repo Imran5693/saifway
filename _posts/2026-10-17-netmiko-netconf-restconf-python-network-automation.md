@@ -31,6 +31,7 @@ related_projects:
 - title: 'IDMUI: Flask and OpenStack Keystone integration'
   url: /projects/2025-04-24-idmui-openstack/
 related_posts:
+- netmiko-readtimeout-troubleshooting
 - python-network-automation-with-netmiko
 - idmui-project
 service_url: /network-automation-services/#request-engineering-support
@@ -45,7 +46,7 @@ seo_title: Netmiko vs NETCONF vs RESTCONF
 
 Choosing a Python network automation interface starts with device support, the task and the evidence needed to verify the result. This guide compares CLI automation with model-driven interfaces and vendor APIs. My implementation case study uses Netmiko; NETCONF and RESTCONF are explained using their specifications rather than presented as my delivered production deployments.
 
-## Which interface should you choose?
+## When should you choose Netmiko, NETCONF or RESTCONF?
 
 {% include blog-diagram.html src="/assets/images/diagrams/network-automation-interfaces.svg" alt="Comparison of Netmiko CLI sessions, NETCONF XML RPCs, RESTCONF YANG resources and vendor REST APIs" caption="Four alternative interfaces to evaluate against actual platform capabilities and the required workflow." %}
 
@@ -73,13 +74,13 @@ In my [multi-vendor automation project]({{ '/projects/2025-06-27-multi-vendor-us
 
 Use the [Netmiko walkthrough]({{ '/2025/05/18/python-network-automation-with-netmiko.html' | relative_url }}) for the related user management workflow. See the [official Netmiko documentation](https://ktbyers.github.io/netmiko/) for supported features and usage.
 
-## What NETCONF adds
+## What capabilities does NETCONF add to configuration workflows?
 
 NETCONF defines structured operations for retrieving and changing configuration. A server advertises its capabilities during session establishment. Features such as candidate configuration, validation and confirmed commit depend on the capabilities implemented by that server; do not assume that every device provides them.
 
 Before designing a Python NETCONF workflow, identify the supported models, select the intended datastore and test how the platform returns errors. The authoritative protocol description is [RFC 6241](https://www.rfc-editor.org/rfc/rfc6241).
 
-## What RESTCONF adds
+## How does RESTCONF expose YANG data over HTTP?
 
 RESTCONF exposes YANG-defined resources through HTTP methods. It can fit naturally into an application that already uses HTTP clients, but the workflow still depends on the platform's actual data models, authorization and implementation.
 
@@ -96,7 +97,7 @@ An HTTP success response should be followed by checks of the intended state. Rea
 
 For SSH workflows, include prompt detection and timing failures in the test plan. For HTTP APIs, include authentication failures, unexpected data and partial application behavior. Retry logic needs to account for whether an operation can safely be repeated.
 
-## From a script to an operational application
+## Turn network scripts into an accountable operational application
 
 A Flask application can provide an interface for inventory selection, approval inputs and result review. Device credentials, permissions, execution and audit records still need a deliberate design. My [OpenStack identity management application]({{ '/projects/2025-04-24-idmui-openstack/' | relative_url }}) shows a related Python/Flask and REST API application pattern; it is a separate project from network device NETCONF or RESTCONF delivery.
 

@@ -38,6 +38,12 @@ theme: null
 # Exclusions
 # =========================
 exclude:
+  - _editorial
+  - blog-review.html
+  - blog-keyword-audit.html
+  - AGENTS.md
+  - assets/images/blog/netmiko-readtimeout-troubleshooting.prompt.txt
+  - BLOG-KEYWORD-OPPORTUNITIES-2026-10-19.md
   - Gemfile
   - Gemfile.lock
   - node_modules

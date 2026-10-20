@@ -1,239 +1,78 @@
 ---
 expertise: automation
 layout: project
-title: "Python Network Automation Project - Multi-Vendor User Management & Configuration Auditing"
-description: "A production-focused Python and Netmiko automation framework developed to streamline user lifecycle management, inventory classification, credential updates, and security configuration deployment across heterogeneous enterprise network infrastructures."
+title: "Multi-Vendor Configuration Management with Python and Netmiko"
+description: "Review a Python and Netmiko project for multi-vendor configuration management: inventory filtering, account workflows, CLI differences and verification limits."
 date: 2025-06-27
+modified_date: '2026-10-20T12:00:00+04:00'
 thumbnail: "/assets/images/projects/multi-vendor_project.png"
-tags:
-  - Python Network Automation
-  - Netmiko
-  - Multi-Vendor Infrastructure
-  - Network Engineering
-  - Configuration Management
-  - Security Automation
-keywords:
-  - python network automation
-  - netmiko automation project
-  - multi vendor network management
-  - cisco juniper automation
-  - network user management python
-  - acl automation
-  - hp h3c automation
+tags: [Python Network Automation, Netmiko, Configuration Management, Multi-Vendor Infrastructure]
 sitemap: true
-priority: 0.9
 ---
 
-<figure class="my-4">
-  <img src="{{ '/assets/images/diagrams/netmiko-workflow.svg' | relative_url }}" alt="Architecture overview for the Python and Netmiko multi-vendor workflow" width="1100" height="960" class="img-fluid rounded-4" loading="lazy">
-  <figcaption class="small text-muted mt-2">Conceptual illustration of the inventory, session, execution and verification stages.</figcaption>
-</figure>
+Multi-vendor configuration management needs more than an SSH loop. Inventory records, privilege transitions, configuration syntax and persistence differ between device operating systems. This Python and Netmiko project explores those boundaries through account-management and configuration scripts.
 
+**Evidence boundary:** the linked public repository contains lab demonstration scripts. Source inspection establishes what those files implement; it does not establish successful execution on every listed platform, production deployment or measured efficiency improvements. The proposed acceptance checks below still require validation against the actual device images and installed library versions.
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Multi-Vendor Network Automation Framework",
-  "applicationCategory": "NetworkManagementApplication",
-  "operatingSystem": "Linux",
-  "description": "Python-based automation framework for inventory management, user lifecycle administration, credential updates, and security configuration deployment across multi-vendor enterprise network environments.",
-  "creator": {
-    "@type": "Person",
-    "name": "Imran Sarwar"
-  }
-}
-</script>
+{% include blog-diagram.html src="/assets/images/diagrams/netmiko-workflow.svg" alt="Inventory, platform selection, command execution and verification in a multi-vendor Netmiko workflow" caption="Conceptual workflow; not a captured production execution." %}
 
-### Project Overview
+## What does this multi-vendor configuration management project cover?
 
-Managing large-scale enterprise networks becomes increasingly complex when infrastructure consists of multiple vendors, operating systems, authentication methods, and command-line interfaces. This project was designed to automate repetitive operational tasks while maintaining reliability, consistency, and security across a diverse network ecosystem.
+The repository groups inventory processing, device checks and vendor-specific administrative tasks. Its workflows include local account creation and deletion, credential changes, configuration collection and ACL-related scripts. These are CLI-based operations. They do not establish a universal configuration model, automatic rollback or a compliance engine.
 
-Using Python and Netmiko, I developed a modular automation framework capable of processing device inventories, identifying device platforms, automating account management operations, deploying security configurations, and handling vendor-specific terminal behaviors that often disrupt standard automation workflows.
+For the SSH implementation details, read [Python network automation with Netmiko]({{ '/2025/05/18/python-network-automation-with-netmiko.html' | relative_url }}). For the choice between CLI and model-driven interfaces, use the [Netmiko, NETCONF and RESTCONF comparison]({{ '/blog/netmiko-netconf-restconf-python-network-automation/' | relative_url }}).
 
-The framework was built and tested against a mixed environment containing Cisco, Juniper, Check Point, HP ProCurve, H3C, Brocade, Aruba, F5, and Arista devices.
+## How does inventory selection affect configuration safety?
 
----
+The [Cisco IOS account script](https://github.com/Imran5693/network-user_manage-automation/blob/c0fb973c1986366fd6973781f6e933726e1ecb88/Cisco%20IOS/Create_user.py) reads Excel with pandas, renames inventory columns and selects Cisco IOS rows before opening device sessions. Selection matters: an address is not enough to determine which configuration syntax or Netmiko driver is appropriate.
 
-## Business Challenge
+**Review before execution:** normalize platform values, reject missing or malformed addresses, detect duplicate targets, and require an explicitly approved device list. Inventory labels should be checked against device identity. A mistaken label can select a valid SSH driver for the wrong operating system.
 
-Large device inventories often originate from spreadsheets containing inconsistent naming conventions, incomplete records, and mixed vendor platforms. 
+## Why do different vendors need separate command handlers?
 
-Performing tasks such as:
-* User creation and deletion
-* Credential rotation
-* ACL deployment
-* Security policy updates
-* Configuration verification
+The Cisco example uses `cisco_ios`, enable mode, configuration commands, readback and save. The [H3C example](https://github.com/Imran5693/network-user_manage-automation/blob/c0fb973c1986366fd6973781f6e933726e1ecb88/H3C%20hp/h3c_user_creation.py) uses `hp_comware`, prompt reads, timing-based delivery and an interactive save sequence. They require different terminal handling as well as different commands.
 
-across hundreds or thousands of devices manually creates operational risk and consumes significant engineering effort. This project addressed these challenges by creating structured automation workflows capable of safely handling multi-vendor environments.
+The [HP-labelled file](https://github.com/Imran5693/network-user_manage-automation/blob/c0fb973c1986366fd6973781f6e933726e1ecb88/HP_Procurv/hp_proc-user_creation.py) selects `hp_procurve` while including `system-view` and `display current-configuration`. That mismatch needs investigation against the actual OS before reuse. A vendor label is not proof of compatibility. This page therefore does not present that file, or the repository's broader platform list, as a validated support matrix.
 
----
+## What counts as a verified configuration change?
 
-## Automation Architecture
+A returned prompt proves that the CLI interaction progressed. It does not prove that the device accepted the intended account policy or persisted it. A complete workflow needs separate results for command acceptance, state verification and save or commit verification.
 
-### Inventory Classification & Device Discovery
+| Result | Required evidence | Next action |
+| --- | --- | --- |
+| Verified | Readback matches the requested state; persistence checked separately | Record the evidence and close the task |
+| Rejected | CLI or API reports a specific error | Stop that target and investigate syntax, privilege or policy |
+| Unknown | Timeout or disconnect after submitting a change | Reconnect and inspect state before retrying |
+| Skipped | Unsupported platform or missing approved input | Report the target and reason; do not count it as success |
 
-The first phase focused on transforming raw inventory spreadsheets into structured device groups. Custom parsing modules were developed to process Excel inventories, CSV device exports, and operational asset lists.
+The current Cisco script collects readback but does not implement a full expected-account and privilege assertion. That distinction is an improvement requirement, not a result already achieved. ACL changes also need traffic and rule-order checks; see the [multi-vendor ACL review]({{ '/2025/08/17/acl-update-multi-vendor.html' | relative_url }}).
 
-Automation scripts included:
-* `devices_filter.py`
-* `split_by_device_type.py`
-* `filter_hp_devices.py`
-* `get_devices_config.py`
+## How can you evaluate this workflow in GNS3 or EVE-NG?
 
-The output was automatically categorized into vendor-specific execution groups, including:
-* Cisco IOS / Nexus / ASA
-* Juniper JunOS
-* Check Point Firewalls
-* HP ProCurve
-* H3C
-* Brocade
-* Aruba
-* F5
-* Arista
+Use one authorized, appropriately licensed Cisco IOS/IOS XE lab image and a Python host with SSH access. Add another OS only when you have the image, credentials and a reviewed handler. GNS3/EVE-NG provides the topology; it does not make every vendor image or feature available.
 
-This ensured automation tasks targeted only compatible platforms and reduced operational risk.
+1. Record image versions, Python and Netmiko versions, and the starting account configuration.
+2. Verify the target and SSH host key manually. Start with a harmless show command and the read-only example in the [Netmiko walkthrough]({{ '/2025/05/18/python-network-automation-with-netmiko.html#how-can-you-test-a-read-only-netmiko-connection-first' | relative_url }}).
+3. Review a disposable local account change and recovery procedure before enabling writes. Keep a separate administrative session available.
+4. Compare expected and observed account state, then verify platform-specific persistence. Do not confuse running state with startup or committed state.
+5. Exercise an unreachable host, rejected command, wrong privilege and timeout. Report partial completion explicitly and inspect uncertain targets before any retry.
 
----
+These are proposed tests. No additional device runs or successful lab outcomes are claimed here. Configuration readbacks and SSH logs can contain secrets; restrict access, redact before sharing and define retention.
 
-### Device Validation & Platform Identification
+## When should this become a dashboard or managed workflow?
 
-Before executing production changes, device validation scripts were used to verify connectivity and identify platform-specific behavior.
+A dashboard should display per-device verification, skipped targets, uncertain changes and persistence status. Keep SSH execution in a controlled worker rather than an unrestricted web request. Use authentication, approved target scope, bounded concurrency and an audit trail that excludes credentials. A green job status must not hide failed devices.
 
-The project included dedicated validation routines capable of:
-* Testing SSH accessibility
-* Identifying CLI banners
-* Verifying privilege levels
-* Mapping devices to the correct Netmiko handler
-* Detecting unsupported platforms
+If your problem is policy compliance, backups or drift detection, define that requirement separately from account management. Different tasks need different parsers, comparison rules and acceptance criteria; this project is an implementation reference, not a claim to cover every configuration-management requirement.
 
-This validation stage significantly improved execution reliability before any configuration changes were applied.
+## Need help with a multi-vendor automation workflow?
 
----
-
-### Solving Netmiko Timing & Terminal Synchronization Challenges
-
-One of the most valuable engineering aspects of this project involved troubleshooting terminal synchronization issues across different vendors. During testing, several platforms-including HP ProCurve, H3C switches, and Juniper devices-exhibited delayed prompt responses, command execution failures, pagination inconsistencies, prompt detection issues, and configuration commit timing problems.
-
-To overcome these challenges, extensive debugging and session analysis were performed. Enhancements included:
-* Custom delay-factor tuning
-* Prompt-aware execution logic
-* Terminal buffer optimization
-* Vendor-specific execution timing adjustments
-* Commit verification routines
-* Execution logging and trace analysis
-
-These improvements dramatically increased automation reliability across non-standard platforms.
-
----
-
-## User Lifecycle Management Automation
-
-A dedicated collection of scripts was developed to automate account administration across multiple vendors.
-
-Scripts included:
-* `cisco-user_deletion.py`
-* `juniper_firewall_user_delete.py`
-* `check-point_user-deletion.py`
-
-Capabilities included user creation, user deletion, credential updates, account verification, and bulk execution against approved device inventories. This reduced manual CLI administration while ensuring consistency across network infrastructure.
-
----
-
-## Security & ACL Deployment Automation
-
-The framework also supported automated deployment of security-related configurations.
-
-Scripts included:
-* `juniper-update_acl.py`
-* `hp_aclconfig.py`
-
-Functions included ACL modifications, security policy updates, rule deployment, configuration validation, and execution logging. Vendor-specific handling was implemented to ensure commands executed correctly according to each platform's operational behavior.
-
----
-
-## Repository Structure
-
-The project repository was organized into modular execution layers.
-
-### Root Automation Layer
-Responsible for inventory processing, data normalization, and device classification.
-* `devices_filter.py`
-* `split_by_device_type.py`
-* `filter_hp_devices.py`
-* `get_devices_config.py`
-
-### checking device/
-Used for platform identification, device-type validation, SSH testing, and Netmiko compatibility verification.
-
-### tasks/local-devices-remove-list/
-Contains vendor-specific operational workflows including Cisco, Juniper, H3C, and Check Point administrative tasks.
-
-### update credentials/
-Dedicated to credential updates, ACL deployment, security configuration modifications, and verification logging.
-
----
-
-## Technologies Used
-
-### Programming
-* Python 3
-
-### Automation Libraries
-* Netmiko
-
-### Data Processing
-* Pandas
-* OpenPyXL
-
-### Connectivity
-* SSHv2
-
-### Logging & Verification
-* Session logging
-* Configuration trace analysis
-* Manual CLI validation
-
-### Supported Platforms
-* Cisco IOS / Cisco Nexus / Cisco ASA
-* Juniper JunOS
-* Check Point Firewall
-* HP ProCurve
-* H3C
-* Brocade
-* Aruba
-* F5
-* Arista
-
----
-
-## Engineering Lessons Learned
-
-This project reinforced several important network automation principles:
-* Reliable automation begins with accurate inventory management.
-* Device identification should always precede configuration execution.
-* Multi-vendor environments require platform-aware logic.
-* Timing and prompt synchronization issues are common in real-world deployments.
-* Logging and verification mechanisms are critical for safe automation.
-* Successful network automation requires both software development skills and operational networking expertise.
-
----
-
-## Project Outcome
-
-The final solution transformed a collection of manual operational tasks into a scalable automation framework capable of supporting multi-vendor enterprise environments.
-
-The project demonstrates practical experience in Python Development, Network Automation, Enterprise Infrastructure Operations, Security Configuration Management, Multi-Vendor Network Engineering, Netmiko Debugging & Optimization, and Operational Process Automation.
-
-By combining network engineering expertise with software-driven automation, the framework significantly improved operational efficiency while reducing configuration risk across large-scale infrastructure environments.
-
----
+Review the [Python network automation portfolio]({{ '/network-automation-python/' | relative_url }}) or discuss [Python network automation services]({{ '/network-automation-services/#request-engineering-support' | relative_url }}). Share sanitized inventory columns, device OS versions, the failing operation and the expected state. Remote work for USA, UK and Canadian teams starts with a scope and capability review, followed by agreed lab validation and change controls.
 
 <section id="external-resources" class="my-5 py-4 border-top">
   <div class="row align-items-center g-4">
     <div class="col-md-4">
-      <h4 class="fw-bold text-dark mb-2">Code Repository & Demonstration</h4>
+      <h2 class="h4 fw-bold text-dark mb-2">Code Repository & Demonstration</h2>
       <p class="text-muted small mb-0">
         Explore the source code architecture on GitHub or stream the operational demonstration.
       </p>

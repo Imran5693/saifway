@@ -12,7 +12,7 @@ tags:
 - multi-vendor user management
 - Netmiko prompt detection
 excerpt: 'Plan multi-vendor user management with Python and Netmiko: inventory, SSH sessions, prompt handling, configuration checks and per-device results.'
-modified_date: '2026-10-17T16:00:00+04:00'
+modified_date: '2026-10-20T12:00:00+04:00'
 search_terms:
 - Python network automation with Netmiko
 - multi-vendor user management
@@ -44,7 +44,7 @@ Python network automation with Netmiko can turn a repeated device task into a wo
 
 My multi-vendor automation project documents inventory classification, account workflows, configuration auditing and CLI troubleshooting. This article explains the design decisions behind that work. It is not a universal script that can be pasted into every network.
 
-## Start with a reliable device inventory
+## Build a reliable inventory for multi-vendor Netmiko jobs
 
 A device list needs more than an IP address. Record the platform, management address, access method, intended task and whether the device is in scope. Check duplicates, missing fields and unsupported types before opening sessions.
 
@@ -80,13 +80,98 @@ The useful separation is inventory selection before connection. However, this ex
 
 The [H3C user-creation script](https://github.com/Imran5693/network-user_manage-automation/blob/c0fb973c1986366fd6973781f6e933726e1ecb88/H3C%20hp/h3c_user_creation.py#L49-L85) takes a different CLI path: `hp_comware`, `read_until_prompt()`, timing-based command delivery, configuration readback and an interactive save sequence. That is a real example of why multi-vendor network automation needs separate platform handlers rather than one universal command block.
 
-### Readback is useful evidence, but not a complete assertion
+### Why does configuration readback still need acceptance checks?
 
 The Cisco script stores returned configuration, but it does not parse that text into an explicit expected-account and privilege assertion. Its success message therefore describes reaching the end of the workflow; it is not an independently verified account-policy result. A stronger next version would compare the returned state with the requested state and report `verified`, `failed` or `unknown` separately.
 
 There is also a platform-review lesson in the [HP-labelled script](https://github.com/Imran5693/network-user_manage-automation/blob/c0fb973c1986366fd6973781f6e933726e1ecb88/HP_Procurv/hp_proc-user_creation.py#L39-L82): it selects `hp_procurve` but includes commands such as `system-view` and `display current-configuration`. That inconsistency needs checking against the actual operating system before reuse. I would not present this file as a validated ProCurve template.
 
 The [repository README](https://github.com/Imran5693/network-user_manage-automation/blob/c0fb973c1986366fd6973781f6e933726e1ecb88/README.md) labels the published examples as lab demonstrations. These source links establish what the code contains; they do not establish production deployment, execution success or measured time savings. Credentials and full device configurations are deliberately excluded from the excerpts here.
+
+## How can you test a read-only Netmiko connection first?
+
+Start with one authorized Cisco IOS/IOS XE target in GNS3 or EVE-NG. Confirm management reachability, SSH access and the device host key outside this script. Install Netmiko in an isolated Python environment and record `python --version` and `python -m pip show netmiko`. This example uses Netmiko 4.x APIs and requires validation against your installed version and device image; it has not been executed against a lab device for this revision.
+
+```bash
+python -m venv .venv
+# Activate .venv using the command for your operating system.
+python -m pip install "netmiko>=4,<5"
+```
+
+Set `LAB_HOST` to the approved management IP and `LAB_USERNAME` to a read-only account in your shell. The script prompts for the password instead of embedding it. Add the independently verified host key to your user's known-hosts file before running. It deliberately rejects an unknown or changed key.
+
+```python
+import ipaddress
+import json
+import os
+from getpass import getpass
+
+from netmiko import ConnectHandler
+from netmiko.exceptions import (
+    NetmikoAuthenticationException,
+    NetmikoTimeoutException,
+    ReadTimeout,
+)
+from paramiko.ssh_exception import SSHException
+
+
+def main():
+    host = os.environ.get("LAB_HOST", "").strip()
+    username = os.environ.get("LAB_USERNAME", "").strip()
+    try:
+        ipaddress.ip_address(host)
+    except ValueError:
+        raise SystemExit("Set LAB_HOST to an approved lab management IP.")
+    if not username:
+        raise SystemExit("Set LAB_USERNAME to your authorized lab account.")
+
+    result = {"host": host, "status": "failed", "reason": None}
+    try:
+        with ConnectHandler(
+            device_type="cisco_ios",
+            host=host,
+            username=username,
+            password=getpass("Lab SSH password: "),
+            ssh_strict=True,
+            system_host_keys=True,
+            conn_timeout=10,
+            auth_timeout=15,
+            banner_timeout=15,
+        ) as connection:
+            output = connection.send_command("show version", read_timeout=30)
+            if not output.strip():
+                result["reason"] = "empty_output"
+            elif any(marker in output for marker in (
+                "% Invalid input", "% Authorization failed", "% Error"
+            )):
+                result["reason"] = "cli_rejected"
+            else:
+                result.update(status="collected", reason=None)
+                result["output_characters"] = len(output)
+    except NetmikoAuthenticationException:
+        result["reason"] = "authentication_failed"
+    except ReadTimeout:
+        result["reason"] = "command_read_timeout"
+    except NetmikoTimeoutException:
+        result["reason"] = "connection_timeout"
+    except SSHException:
+        result["reason"] = "ssh_or_host_key_error"
+    except (OSError, EOFError):
+        result["reason"] = "transport_or_local_io_error"
+
+    print(json.dumps(result))
+    return 0 if result["status"] == "collected" else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+```
+
+`collected` means nonempty output arrived without the small set of known CLI rejection markers. It does **not** certify the device version, account policy or configuration compliance. Add an image-specific parser and explicit assertions for those outcomes. The marker list is illustrative, not a complete Cisco error parser.
+
+The script sends no configuration or save commands and prints no raw device output, password or exception text. The result still identifies a management address; protect it appropriately. If you enable session logging for diagnosis, treat that log as sensitive and redact it before sharing.
+
+Test the normal connection, unreachable host, wrong credentials and changed host key separately. A wrong-credential test may trigger account lockout, so follow your lab's account policy. Validate timeout behavior without interpreting a connection timeout as evidence that a configuration change failed.
 
 ## Diagnose prompt detection and timeout failures
 
@@ -115,7 +200,7 @@ Use a small approved target set and record the starting state before execution. 
 
 This record is more useful than a single message saying the script finished. It makes partial success visible and gives the next engineer a starting point for investigation.
 
-## Build a small acceptance test
+## Define an acceptance test for the automation workflow
 
 Start with a lab device or a limited approved group. Test a normal case, an unreachable device, a wrong privilege, an unsupported platform and an already-correct state. Agree on change approval and recovery arrangements before production execution.
 

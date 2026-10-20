@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760" role="img" aria-labelledby="title desc">
+<title id="title">Netmiko timeout diagnostic stages</title>
+<desc id="desc">Locate the failing call in the traceback, inspect session setup or command output, compare the expected pattern and actual prompt, then change one variable and verify on a fresh connection. A timeout alone does not establish command success or failure.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#5eead4"/></marker></defs>
+<rect width="1100" height="760" rx="26" fill="#101c30"/>
+<g font-family="Arial, Helvetica, sans-serif">
+<text x="54" y="62" fill="#5eead4" font-size="19" letter-spacing="2">NETMIKO TROUBLESHOOTING · DIAGNOSTIC GUIDE</text>
+<text x="54" y="120" fill="white" font-size="38" font-weight="700">Find the stage before changing the timer.</text>
+<rect x="54" y="159" width="992" height="94" rx="16" fill="#1d3049" stroke="#365472"/>
+<text x="80" y="196" fill="white" font-size="26" font-weight="700">1 · Locate the failing call in the traceback</text>
+<text x="80" y="231" fill="#cbd5e1" font-size="22">Record the exception class, device image and library versions.</text>
+<path d="M300 257V284 M800 257V284" stroke="#5eead4" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="54" y="294" width="480" height="178" rx="16" fill="#1d3049" stroke="#365472"/>
+<rect x="566" y="294" width="480" height="178" rx="16" fill="#1d3049" stroke="#365472"/>
+<text x="80" y="334" fill="white" font-size="26" font-weight="700">2A · Connection / preparation</text>
+<text x="80" y="373" fill="#cbd5e1" font-size="22">Check reachability, SSH and login.</text>
+<text x="80" y="409" fill="#cbd5e1" font-size="22">After login: inspect driver and prompt.</text>
+<text x="80" y="445" fill="#fbbf24" font-size="21">A later command timer cannot fix setup.</text>
+<text x="592" y="334" fill="white" font-size="26" font-weight="700">2B · Command read</text>
+<text x="592" y="373" fill="#cbd5e1" font-size="22">Compare actual and expected prompt.</text>
+<text x="592" y="409" fill="#cbd5e1" font-size="22">Check output, echo and questions.</text>
+<text x="592" y="445" fill="#fbbf24" font-size="21">Wrong pattern or unfinished response?</text>
+<path d="M300 476V500H550 M800 476V500H550V523" fill="none" stroke="#5eead4" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="54" y="535" width="992" height="111" rx="16" fill="#1d3049" stroke="#365472"/>
+<text x="80" y="575" fill="white" font-size="26" font-weight="700">3 · Change one variable, reconnect and verify</text>
+<text x="80" y="613" fill="#cbd5e1" font-size="22">Retain logs. Validate returned content and, if relevant, resulting device state.</text>
+<text x="54" y="700" fill="#fbbf24" font-size="22">Conceptual workflow · a timeout alone does not prove command success or failure.</text>
+</g></svg>

@@ -46,7 +46,7 @@ Security by design becomes practical when a deployment team can answer who has a
 
 This checklist is informed by my network, IAM and certificate-management labs. It is a technical review aid, not a compliance certificate or a substitute for the system owner's security requirements. It has a different purpose from the resilience article: preparing the deployment and handover.
 
-## Establish ownership and required flows
+## Identify infrastructure owners and required traffic flows
 
 Name the service owner, technical approver and operator. Describe the resource, expected users and required connections. Record the difference between application access, administrative access and automated service identities.
 
@@ -72,7 +72,7 @@ Verify that a useful event appears when a test action is allowed, denied or fail
 
 Confirm the restore or rollback inputs and responsible person. Keep the expected validation steps with the change. Recovery should be an exercised procedure rather than a line in a template.
 
-## Use a concise release review record
+## Record security and recovery checks before infrastructure release
 
 For each requirement, record the control, owner, evidence, result and open exception. Avoid a yes/no checklist that does not identify what was tested. The UK NCSC's [secure design collection](https://www.ncsc.gov.uk/collection/cyber-security-design-principles) provides a reference for further design review; this checklist is not a claim of full alignment.
 

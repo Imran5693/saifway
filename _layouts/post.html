@@ -13,11 +13,17 @@ layout: default
       <p class="blog-deck">{{ page.description | escape }}</p>
       <div class="blog-byline">
         <a href="{{ '/professional-profile/' | relative_url }}" rel="author">{{ site.author.name }}</a>
+        {% if page.review_draft %}
+        <span>Local review draft</span>
+        <span>Editorial slot {{ page.editorial_date | date: '%b %d, %Y' }}</span>
+        <span>Created {{ page.created_date | date: '%b %d, %Y' }}</span>
+        {% else %}
         <span>Published {{ page.date | date: '%b %d, %Y' }}</span>
         {% if page.modified_date %}<span>Reviewed {{ page.modified_date | date: '%b %d, %Y' }}</span>{% endif %}
+        {% endif %}
         <span>{{ reading_minutes }} min read</span>
       </div>
-      {% if page.thumbnail %}<img src="{{ page.thumbnail | relative_url }}" alt="{{ page.image_alt | default: page.title | escape }}" class="blog-cover" width="1200" height="630" fetchpriority="high">{% endif %}
+      {% if page.thumbnail %}<img src="{{ page.thumbnail | relative_url }}" alt="{{ page.image_alt | default: page.title | escape }}" class="blog-cover" width="{{ page.thumbnail_width | default: 1200 }}" height="{{ page.thumbnail_height | default: 630 }}" fetchpriority="high" decoding="async">{% endif %}
     </header>
     <div class="blog-grid">
       <div class="blog-main">
@@ -37,18 +43,18 @@ layout: default
           <p>{{ page.cta_text | default: 'Share your environment, current problem and expected result. Imran Sarwar will assess technical fit, scope and availability before work is agreed.' | escape }}</p>
           <a class="btn btn-primary" href="{{ page.service_url | default: '/network-automation-services/#request-engineering-support' | relative_url }}">Discuss your project</a>
           <a class="blog-profile-link" href="{{ '/professional-profile/' | relative_url }}">Review Imran Sarwar’s experience</a>
-          <p class="blog-contact-note">Remote English-language inquiries: USA, UK, Europe and beyond. UAE-based (UTC+4); working overlap is agreed per project.</p>
+          <p class="blog-contact-note">Remote English-language inquiries: USA, UK, Canada, Europe and beyond. UAE-based (UTC+4); working overlap is agreed per project.</p>
         </section>
         <aside class="blog-author" aria-label="About the author">
           <img src="{{ '/assets/images/myprof.jpg' | relative_url }}" alt="Imran Sarwar" width="72" height="72" loading="lazy">
           <div><h2><a href="{{ '/professional-profile/' | relative_url }}">Imran Sarwar</a></h2><p>Network infrastructure and Python automation professional with NOC/data center experience. My portfolio documents Netmiko workflows, Flask applications, infrastructure labs and security learning.</p><a href="{{ '/projects/' | relative_url }}">Explore the project evidence</a></div>
         </aside>
-        <div class="share-toolbar" aria-label="Share this article">
+        {% unless page.review_draft %}<div class="share-toolbar" aria-label="Share this article">
           <span>Share</span>
           <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ post_url | url_encode }}" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
           <a href="https://wa.me/?text={{ whatsapp_text | url_encode }}" target="_blank" rel="noopener noreferrer" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
           <button type="button" class="copy-link-btn" data-copy-url="{{ post_url }}" aria-label="Copy article link"><i class="fas fa-link" aria-hidden="true"></i></button>
-        </div>
+        </div>{% endunless %}
       </div>
       <aside class="blog-sidebar" aria-label="Article navigation">
         <nav class="blog-toc" aria-label="In this article" hidden><h2>In this article</h2><ol id="blog-toc-list"></ol></nav>

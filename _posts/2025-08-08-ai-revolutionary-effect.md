@@ -53,7 +53,7 @@ A Python script that reads inventory and sends a known command is automation. A 
 
 For a deterministic task, inspect the input, rules and resulting state. For an ML model, evaluate its errors on appropriate held-out data. For generated text, check that statements are supported and that an engineer remains responsible for consequential decisions.
 
-## Start with a narrow use case
+## Choose a bounded use case for AI-assisted operations
 
 Possible infrastructure experiments include traffic classification, grouping recurring incident descriptions and summarizing a sanitized maintenance record. Before implementation, define the output, the person who uses it and what a wrong answer would cost.
 
@@ -67,13 +67,13 @@ A collection of examples may be incomplete or biased toward the lab in which it 
 
 Compare the model with a useful baseline: a rule, a simple classifier or the current manual method. More complexity is justified only when it improves the defined outcome. Scikit-learn's [guidance on data leakage](https://scikit-learn.org/stable/common_pitfalls.html) explains why information from evaluation data must not leak into training.
 
-## Two portfolio examples and their limits
+## Portfolio evidence: what the two AI examples demonstrate
 
 My [network threat-detection project]({{ '/projects/2026-04-24-ml-cyber-attack-detection/' | relative_url }}) connects traffic features with a Python/Flask interface. It is a simulated-network project, so deployment to an operational network would require separate validation and monitoring.
 
 The [text emotion-recognition project]({{ '/projects/2025-11-21-text-based-emotion-recognition/' | relative_url }}) explores NLP classification. A text label is a model output, not direct knowledge of a person's internal state. A different vocabulary, domain or label definition can change its usefulness.
 
-## Design the review and handover
+## Define human review and operational handover for AI outputs
 
 Document uncertain outcomes, unsuitable inputs and the action that requires human approval. Keep sensitive data out of unapproved services. Record the model and data version used so an unexpected result can be reproduced.
 
