@@ -1,0 +1,37 @@
+---
+layout: default
+title: VU CS619 Project Topics & Technical Support
+description: Browse project examples for Virtual University CS619 students. Explore the Intelligent Bug Hunting Platform and discuss scope, debugging and project support.
+permalink: /students/projects/
+student_section: true
+---
+<section class="py-6 bg-light">
+  <div class="container">
+    <span class="section-kicker">Saif Way Tech Student Help Desk</span>
+    <h1>VU CS619 project topics and support</h1>
+    <p class="lead">Explore a project example, review its technical scope, then discuss the support you need.</p>
+    <p>This independent catalogue is maintained by Saif Way Tech. A listing does not mean the project is currently offered or approved by Virtual University. Confirm your current project title, requirements and selection process with your supervisor or VULMS.</p>
+    {% assign project_months = site.data.student_projects | group_by: 'catalogue_month' | sort: 'name' | reverse %}
+    {% for month in project_months %}
+    <h2>{{ month.name | append: '-01' | date: '%B %Y' }} catalogue additions</h2>
+    <p class="small text-muted">Month added to this support catalogue; this is not an official university release date.</p>
+    {% for project in month.items %}
+    <article class="professional-card mt-4">
+      <h3><a href="{{ project.url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ project.title | escape }}</a></h3>
+      <p><strong>Project reference:</strong> {{ project.reference | escape }} · {{ project.technologies | escape }}</p>
+      <p>{{ project.summary | escape }}</p>
+      <a class="btn btn-outline-primary" href="{{ project.url | relative_url }}" target="_blank" rel="noopener noreferrer">Read the project scope</a>
+      {% capture project_message %}Hello Imran, I need support with {{ project.title }} ({{ project.reference }}).{% endcapture %}
+      <a class="btn btn-success" href="https://wa.me/923146809271?text={{ project_message | strip | url_encode }}" target="_blank" rel="noopener noreferrer">Discuss this project on WhatsApp</a>
+    </article>
+    {% endfor %}
+    {% endfor %}
+    {% assign uploaded_projects = site.student_projects | sort: 'date' | reverse %}
+    {% for project in uploaded_projects %}
+    <article class="professional-card mt-4"><h2><a href="{{ project.url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ project.title | escape }}</a></h2><p>{{ project.description | escape }}</p><p>{{ project.domain | escape }} · {{ project.technologies | escape }}</p><p>Listed {{ project.date | date: '%B %Y' }}</p><a href="{{ project.url | relative_url }}" target="_blank" rel="noopener noreferrer">Read project scope and download brief →</a></article>
+    {% endfor %}
+    <h2 class="mt-5">Have a different project title?</h2>
+    <p>Share your official brief, technology stack, current phase and deadline. Support availability is assessed for each topic; this catalogue is not an automatic project booking or university selection system.</p>
+    <a class="btn btn-primary" href="{{ '/vu-cs619-project-help/#project-request' | relative_url }}">Request support for your project</a>
+  </div>
+</section>

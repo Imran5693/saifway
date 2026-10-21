@@ -1,0 +1,148 @@
+whatsapp_url: https://wa.me/923146809271?text=Hello%20Saif%20Way%20Tech%2C%20I%20am%20a%20university%20student%20looking%20for%20technical%20guidance%20for%20my%20final%20year%20project.%0A%0AUniversity%3A%0ADegree%20Program%3A%0AProject%20Title%3A%0AProject%20Domain%3A%0ASupport%20Required%3A%0ADeadline%3A
+whatsapp_number: '923146809271'
+contact_confirmation: Confirmed by the user; use 923146809271 for student support.
+domains:
+- title: Networking and Network Engineering
+  icon: fa-network-wired
+  items:
+  - Cisco Packet Tracer, GNS3 and EVE-NG labs
+  - Routing, switching, VLANs, OSPF and BGP
+  - NAT, ACLs and campus network design
+  - Data center architecture and monitoring
+  - Connectivity and configuration troubleshooting
+- title: Cybersecurity Projects
+  icon: fa-shield-halved
+  items:
+  - Authorized security assessment and vulnerability scanning
+  - Firewall configuration and IDS/IPS demonstrations
+  - Security monitoring dashboards
+  - Android security assessment
+  - Python cybersecurity automation
+- title: Software Engineering Projects
+  icon: fa-code
+  items:
+  - Web applications using Flask or Django
+  - Database design and REST APIs
+  - Authentication and authorization
+  - UML diagrams and software architecture
+  - Testing, debugging and deployment problems
+- title: Artificial Intelligence and Machine Learning
+  icon: fa-brain
+  items:
+  - Dataset preparation and preprocessing
+  - Classification and prediction prototypes
+  - Model evaluation and interpreting results
+  - AI-assisted applications and dashboards
+  - Local LLM integration using Ollama
+- title: Python and Network Automation
+  icon: fa-terminal
+  items:
+  - Python scripting with Netmiko and Paramiko
+  - Configuration backups and inventory workflows
+  - API integration and Flask dashboards
+  - Monitoring scripts and automated reporting
+  - Input handling and execution troubleshooting
+- title: Linux, Ubuntu and Virtualization
+  icon: fa-server
+  items:
+  - Ubuntu installation and Python environments
+  - VMware and VirtualBox lab setup
+  - Linux networking, SSH and remote administration
+  - Apache, Nginx and Docker fundamentals
+  - Server and environment troubleshooting
+steps:
+- title: Share Your Requirements
+  text: Send your project title, university, degree program, project brief, technical requirements, current progress and deadline.
+- title: Technical Review
+  text: Discuss the technologies, feasibility, blockers and support needed. Availability, scope and any fees are agreed before work begins.
+- title: Practical Guidance
+  text: Work through the agreed troubleshooting, implementation mentoring, architecture review or development environment setup.
+- title: Testing and Demonstration Preparation
+  text: Understand your implementation, check functionality, interpret results and practise explaining your design for a demonstration or viva.
+projects:
+- source: _projects/2026-09-03-intelligent-bug-hunting-platform.md
+  domain: Android security · Proposed platform
+  summary: Explore a proposed Android security assessment architecture, module design and validation workflow. This is a project proposal, not
+    evidence of a completed deployed platform.
+  technologies: Python · Android · ADB · AI-assisted analysis
+  image: /assets/images/students/project-example-1.webp
+  image_width: 720
+  image_height: 402
+- source: _projects/2026-04-24-ml-cyber-attack-detection.md
+  domain: AI/ML · Simulated network lab
+  summary: Review a documented approach combining simulated enterprise traffic, packet analysis, machine learning and a security dashboard.
+  technologies: Python · Flask · GNS3 · Wireshark
+  image: /assets/images/students/project-example-2.webp
+  image_width: 720
+  image_height: 405
+- source: _projects/2024-12-10-campus-area-network.md
+  domain: Networking · Infrastructure lab
+  summary: Explore a campus lab covering VLAN segmentation, OSPF, Active Directory, DHCP/DNS and firewall-based separation.
+  technologies: GNS3 · VLANs · OSPF · Fortinet · VMware
+  image: /assets/images/students/project-example-3.webp
+  image_width: 720
+  image_height: 415
+- source: _projects/2025-06-27-multi-vendor-user-creation.md
+  domain: Python · Network automation lab
+  summary: Inspect lab scripts for inventory processing and vendor-specific configuration workflows, including their verification limits.
+  technologies: Python · Netmiko · Device inventory
+  image: /assets/images/students/project-example-4.webp
+  image_width: 720
+  image_height: 405
+- source: _projects/2025-11-24-digital-certificate-management.md
+  domain: Cybersecurity · PKI and identity
+  summary: Read the certificate management project covering issuance, revocation, directory integration and role-based access.
+  technologies: Step CA · OpenLDAP · RBAC · PKI
+  image: /assets/images/students/project-example-5.webp
+  image_width: 720
+  image_height: 480
+technologies:
+- category: Networking
+  icon: fa-network-wired
+  names: Cisco · Packet Tracer · GNS3 · EVE-NG
+- category: Programming
+  icon: fa-code
+  names: Python · Flask · Django · JavaScript
+- category: Cybersecurity
+  icon: fa-shield-halved
+  names: Kali Linux · Wireshark · Nmap · Fortinet · Palo Alto
+- category: AI and Machine Learning
+  icon: fa-brain
+  names: PyTorch · scikit-learn · Ollama
+- category: Infrastructure
+  icon: fa-server
+  names: Ubuntu · Linux · VMware · Docker · Nginx
+- category: Databases
+  icon: fa-database
+  names: MySQL · PostgreSQL · SQLite
+faq:
+- question: Where can I get final year project guidance in Pakistan?
+  answer: Contact Saif Way Tech for independent online technical guidance. Share your brief, university, tools and current progress so Imran Sarwar
+    can assess whether the topic fits his experience and availability.
+- question: Do you support Virtual University final year projects?
+  answer: Yes, VU students can discuss CS619 requirements, project scope, setup, debugging, documentation structure and viva preparation. Bring
+    your current brief and supervisor feedback. Saif Way Tech is independent of Virtual University.
+- question: Can you help me understand and implement my CS or IT project?
+  answer: Support can include architecture reviews, implementation mentoring and troubleshooting specific blockers. You remain responsible for
+    developing, understanding and submitting your own assessed work.
+- question: Do you provide Cisco Packet Tracer and GNS3 lab guidance?
+  answer: Share your topology, addressing plan, required protocols and sanitized configurations. Guidance can cover routing, VLANs, NAT, ACLs
+    and verification, with simulator or image limitations discussed first.
+- question: Can you help configure Ubuntu or Linux for my project?
+  answer: Requests can cover installation, virtual machines, networking, SSH, Python environments, Docker and web server setup. Include your OS
+    version, environment and the exact error.
+- question: Can you troubleshoot Python and Flask applications?
+  answer: Share a minimal reproducible example, package versions, expected behavior and sanitized error output. Sessions can focus on application
+    logic, APIs, databases, environments and deployment problems.
+- question: Do you provide AI and machine learning project guidance?
+  answer: Discuss dataset preparation, preprocessing, classification, evaluation, AI dashboards or local LLM integration. Feasibility depends
+    on your dataset access, hardware and university requirements; model accuracy is not guaranteed.
+- question: Can you help with UML diagrams and software architecture?
+  answer: Bring your requirements and draft diagrams for a review of actors, use cases, module boundaries, data flows and database relationships.
+    Guidance helps you explain and refine your own design.
+- question: Can I get help preparing for my demonstration or viva?
+  answer: Review your setup, test cases, results and design decisions, then practise explaining them. Support does not include impersonation,
+    attending an assessment for you or guaranteed academic results.
+- question: How can I share my project requirements?
+  answer: Use a WhatsApp button to open a prepared message, fill in your university, degree program, project title, domain, support needed and
+    deadline, then review and send it yourself. Do not send passwords, access tokens or private datasets.

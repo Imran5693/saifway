@@ -31,6 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ].join("\n");
 
     // Same support number used by the Intelligent Bug Hunting Platform project.
-    window.location.assign(`https://wa.me/923146809271?text=${encodeURIComponent(message)}`);
+    window.open(`https://wa.me/923146809271?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
   });
 });

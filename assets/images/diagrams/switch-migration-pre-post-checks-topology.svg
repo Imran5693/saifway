@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760" role="img" aria-labelledby="title desc"><title id="title">Switch cutover: preserve forwarding intent</title><desc id="desc">Hypothetical one-at-a-time access replacement under an unchanged distribution root.</desc>
+<rect width="1100" height="760" rx="18" fill="#f3f7fb"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8" fill="#168c87"/></marker></defs>
+<text x="40" y="50" font-family="Arial,sans-serif" font-size="27" fill="#17324d">Distribution remains root • VLANs 20, 42, 99</text>
+<rect x="380" y="100" width="360" height="100" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="393" y="130" font-family="Arial,sans-serif" font-size="21" fill="white">Distribution switch</text>
+<text x="393" y="159" font-family="Arial,sans-serif" font-size="21" fill="white">Intended STP root</text>
+<rect x="60" y="310" width="410" height="100" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="73" y="340" font-family="Arial,sans-serif" font-size="21" fill="white">BEFORE • old access</text>
+<text x="73" y="369" font-family="Arial,sans-serif" font-size="21" fill="white">Po1 • two LACP members</text>
+<rect x="630" y="310" width="410" height="100" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="643" y="340" font-family="Arial,sans-serif" font-size="21" fill="white">AFTER • new access</text>
+<text x="643" y="369" font-family="Arial,sans-serif" font-size="21" fill="white">Mapped ports • same intent</text>
+<path d="M460,200 L265,310" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<path d="M660,200 L835,310" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="60" y="490" width="980" height="150" rx="12" fill="#e0f5f1" stroke="#d0dce6"/>
+<text x="80" y="527" font-family="Arial,sans-serif" font-size="22" fill="#17324d">Cutover states are sequential; do not attach both unreviewed paths.</text>
+<text x="80" y="568" font-family="Arial,sans-serif" font-size="23" fill="#17324d">VLAN 99 native; VLAN 42 hosts use gateway 192.0.2.1.</text>
+<text x="80" y="607" font-family="Arial,sans-serif" font-size="22" fill="#17324d">Compare root role, selected partner, forwarding VLANs and services.</text>
+<text x="40" y="735" font-family="Arial,sans-serif" font-size="19" fill="#17324d">Proposed contract. Identity/counters change; intended forwarding must be checked.</text>
+</svg>

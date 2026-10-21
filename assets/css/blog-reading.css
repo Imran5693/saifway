@@ -25,6 +25,20 @@ body.blog-page { overflow-x: clip; }
 .blog-body pre { overflow-x: auto; background: #102238; color: #edf6ff; border-radius: 10px; padding: 1.25rem; }
 .blog-body code { overflow-wrap: anywhere; }
 .blog-body pre code { overflow-wrap: normal; }
+.blog-copy-code { display: block; margin: .8rem 0 .35rem auto; padding: .35rem .75rem; border: 1px solid #146b79; border-radius: 6px; background: #fff; color: #146b79; font: inherit; font-size: .85rem; cursor: pointer; }
+.blog-copy-code:focus-visible { outline: 3px solid #168c87; outline-offset: 3px; }
+.blog-body[data-copy-commands] .command-keyword,
+.blog-body[data-copy-commands] .highlight .k,
+.blog-body[data-copy-commands] .highlight .nb { color: #7ce3db; font-weight: 700; }
+.blog-body[data-copy-commands] .command-comment,
+.blog-body[data-copy-commands] .highlight .c,
+.blog-body[data-copy-commands] .highlight .c1 { color: #b3c2d1; }
+.blog-body[data-copy-commands] .highlight .s,
+.blog-body[data-copy-commands] .highlight .s2 { color: #ffd18a; }
+.blog-diagram-scrollable > a:first-of-type { display: block; overflow-x: auto; }
+@media (max-width: 767px) {
+  .blog-diagram-scrollable > a:first-of-type img { min-width: 900px; }
+}
 .blog-body blockquote { background: #f1f7fa; border-left: 4px solid #208ca2; padding: 1rem 1.25rem; margin: 1.5rem 0; }
 .blog-body blockquote p:last-child { margin-bottom: 0; }
 .blog-table-scroll { overflow-x: auto; margin: 1.5rem 0; }

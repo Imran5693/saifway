@@ -11,7 +11,9 @@
 {% endif %}
 
 <title>
-  {% if page.layout == 'post' %}
+  {% if page.student_landing %}
+    {{ page.title | escape }}
+  {% elsif page.layout == 'post' %}
     {{ page.seo_title | default: page.title | escape }} | Imran Sarwar
   {% elsif page.title %}
     {{ page.title | escape }}{% if page.layout == 'post' or page.layout == 'project' %} | Imran Sarwar{% endif %} | Saif Way Technology

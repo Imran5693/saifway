@@ -49,7 +49,7 @@ layout: default
         <a href="{{ '/network-automation-python/' | relative_url }}" class="btn btn-outline-primary">Python Network Automation Projects</a>
         <a href="{{ '/network-automation-services/' | relative_url }}" class="btn btn-primary">Discuss Engineering Support</a>
         <a href="{{ '/projects/' | relative_url }}" class="btn btn-outline-primary">Browse Projects</a>
-        <a href="{{ '/student-project-support/' | relative_url }}" class="btn btn-outline-primary">Student Project Support</a>
+        {% if page.student_support %}<a href="{{ '/vu-cs619-project-help/' | relative_url }}" class="btn btn-outline-primary">Student Project Support</a>{% endif %}
       </div>
     </section>
   </div>

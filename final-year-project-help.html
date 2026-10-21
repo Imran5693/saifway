@@ -1,0 +1,111 @@
+---
+layout: student-landing
+student_landing: true
+title: Final Year Project Help in Pakistan | Saif Way Tech
+description: Final year project guidance for CS, IT and Software Engineering students in Pakistan. Get help with Python, networking, cybersecurity, AI/ML and Linux.
+permalink: /final-year-project-help/
+thumbnail: /assets/images/students/final-year-project-guidance-pakistan.webp
+thumbnail_width: 1200
+thumbnail_height: 800
+image_alt: Technical illustration of a programming laptop connected to networking, cybersecurity and AI project elements
+---
+{% assign support = site.data.student_landing %}
+{% assign whatsapp = support.whatsapp_url %}
+<section id="home" class="fyp-hero">
+  <div class="fyp-container">
+    <div class="fyp-hero-grid">
+      <div>
+        <p class="fyp-eyebrow">Pakistan · University computing projects</p>
+        <h1>Final Year Project Help in Pakistan – CS, IT &amp; Software Engineering</h1>
+        <p class="fyp-tagline">Turn project roadblocks into practical understanding.</p>
+        <p class="fyp-intro">Get practical technical guidance for university final year projects, networking labs, cybersecurity projects, AI/ML applications, Python automation, Linux environments, and software development.</p>
+        <p class="fyp-intro">From project requirements and architecture to implementation troubleshooting, testing, documentation guidance, and viva preparation.</p>
+        <div class="fyp-actions"><a class="fyp-button fyp-whatsapp" href="{{ whatsapp }}" target="_blank" rel="noopener noreferrer">Discuss Your Project on WhatsApp</a><a class="fyp-button fyp-secondary" href="#project-domains">Explore Project Domains</a></div>
+        <p class="fyp-profile-link">Guidance with <a href="{{ '/professional-profile/' | relative_url }}" target="_blank" rel="noopener noreferrer">Imran Sarwar · View profile &amp; credentials</a><br><a href="{{ '/projects/' | relative_url }}" target="_blank" rel="noopener noreferrer">Explore my project portfolio →</a></p>
+      </div>
+      <figure><img src="{{ page.thumbnail | relative_url }}" width="1200" height="800" alt="{{ page.image_alt }}" fetchpriority="high" decoding="async"><figcaption>Programming, networking, cybersecurity and AI — connected through practical project work. Original illustration.</figcaption></figure>
+    </div>
+    <div class="fyp-trust"><span>Independent technical guidance</span><span>Virtual University &amp; universities across Pakistan</span><span>Scope agreed before support begins</span></div>
+  </div>
+</section>
+<section id="project-domains" class="fyp-section">
+  <div class="fyp-container">
+    <div class="fyp-section-intro"><p class="fyp-eyebrow">Find your technical starting point</p><h2>Project support for CS, IT, software engineering and related degrees</h2><p>Bring a final year project, semester project or computing lab. We first review your requirements and current progress, then agree on the specific guidance that is feasible.</p></div>
+    <div class="fyp-grid">{% for domain in support.domains %}<article class="fyp-card"><span class="fyp-icon" aria-hidden="true"><i class="fas {{ domain.icon }}"></i></span><h3>{{ domain.title }}</h3><ul>{% for item in domain.items %}<li>{{ item }}</li>{% endfor %}</ul></article>{% endfor %}</div>
+    <div class="fyp-callout"><p><strong>Not sure which tools your project needs?</strong><br>Share your brief and the problem you want to solve.</p><a class="fyp-button fyp-whatsapp" href="{{ whatsapp }}" target="_blank" rel="noopener noreferrer">Ask About Your Project</a></div>
+  </div>
+</section>
+<section id="vu-students" class="fyp-section fyp-tinted">
+  <div class="fyp-container fyp-split">
+    <div><p class="fyp-eyebrow">Virtual University students</p><h2>Final Year Project Guidance for Virtual University of Pakistan Students</h2><p>Studying CS, IT, SE or a related computing program at VU? Bring your CS619 brief, supervisor feedback and submission milestones. The discussion starts with what your current project actually requires.</p><p>Students from other Pakistani universities are also welcome. The support is tailored to your technical scope and university requirements.</p><a class="fyp-button fyp-whatsapp" href="{{ whatsapp }}" target="_blank" rel="noopener noreferrer">Discuss Your VU Project</a></div>
+    <div><h3>Work through the stage you are at</h3><ul class="fyp-checklist"><li>Project requirements, scope and proposal</li><li>Architecture, software design and UML</li><li>Development environment setup</li><li>Technical implementation problems</li><li>Testing, debugging and documentation guidance</li><li>Final demonstration and viva preparation</li></ul><p class="fyp-note">Saif Way Tech is an independent technical guidance service. It is not affiliated with, approved by or endorsed by Virtual University of Pakistan or any other university.</p><a href="{{ '/vu-cs619-project-help/' | relative_url }}">VU student support →</a></div>
+  </div>
+</section>
+<section id="how-it-works" class="fyp-section">
+  <div class="fyp-container"><div class="fyp-section-intro"><p class="fyp-eyebrow">A clear support process</p><h2>From your project brief to a clearer next step</h2></div><ol class="fyp-steps">{% for step in support.steps %}<li><h3>{{ step.title }}</h3><p>{{ step.text }}</p></li>{% endfor %}</ol><p class="fyp-note">This is mentoring and technical support, not a service for completing assessed work on your behalf. You develop, understand and submit your own work under your university’s rules.</p></div>
+</section>
+<section id="project-phases" class="fyp-section fyp-tinted">
+  <div class="fyp-container"><p class="fyp-eyebrow">Support at each milestone</p><h2>Four technical phases: SRS, design, prototype and final delivery</h2><p class="fyp-section-intro">Bring the template and marking requirements supplied by your university. Each phase should connect requirements to design decisions, working features and evidence from tests.</p>
+    <div class="fyp-grid">
+      <article class="fyp-card"><p class="fyp-label">Phase 1 · Requirements</p><h3>Software Requirements Specification (SRS)</h3><p>Define the problem, stakeholders, scope, actors and use cases. Separate functional requirements from security, performance and other non-functional requirements. Record assumptions, dependencies and measurable acceptance criteria.</p><p><strong>Bug-hunting example:</strong> specify authorized APK input, supported analysis scope, report fields and failure cases. Distinguish static findings from issues that require manual validation.</p><p><strong>Review output:</strong> a requirements checklist and traceability IDs that can be mapped to design and tests.</p></article>
+      <article class="fyp-card"><p class="fyp-label">Phase 2 · Architecture</p><h3>Design Document</h3><p>Map requirements to components, interfaces, data flows and database entities. Review use-case, sequence and deployment diagrams, API contracts, authentication, error handling and trust boundaries.</p><p><strong>Bug-hunting example:</strong> separate APK intake, analysis workers, findings storage and reporting. Define safe file handling, worker isolation and authorization for any device interaction.</p><p><strong>Review output:</strong> a coherent architecture and module plan that explain how each requirement will be implemented.</p></article>
+      <article class="fyp-card"><p class="fyp-label">Phase 3 · Working slice</p><h3>Prototype and Implementation</h3><p>Set up the development environment, pin dependencies, implement a small end-to-end workflow and test it with representative inputs. Debug reproducible errors before expanding features.</p><p><strong>Bug-hunting example:</strong> demonstrate a permitted sample APK moving through intake, one scoped analysis step and a basic report. Label fixture results and avoid presenting a prototype as a complete vulnerability scanner.</p><p><strong>Review output:</strong> a runnable prototype, setup instructions, test inputs and an explicit list of limitations.</p></article>
+      <article class="fyp-card"><p class="fyp-label">Phase 4 · Verification</p><h3>Final Delivery and Viva Preparation</h3><p>Trace tests back to SRS requirements. Check integration, negative inputs, access controls and recovery paths. Prepare installation instructions, a user guide, known issues, a reproducible demonstration and a clean source package.</p><p><strong>Bug-hunting example:</strong> explain false positives, unsupported APKs, analysis failures and the boundary between automated findings and validated vulnerabilities.</p><p><strong>Review output:</strong> a submission checklist, test evidence and practice explaining your own technical decisions.</p></article>
+    </div><p class="fyp-note mt-4">These are illustrative milestones for the proposed <a href="{{ '/projects/intelligent-bug-hunting-platform/' | relative_url }}">Intelligent Bug Hunting Platform</a>, not claims of completed deliverables. You write and submit your own assessed work; support focuses on review, understanding and troubleshooting.</p>
+  </div>
+</section>
+<section id="sample-projects" class="fyp-section fyp-tinted">
+  <div class="fyp-container"><div class="fyp-section-intro"><p class="fyp-eyebrow">Explore the work behind the guidance</p><h2>Technical projects, lab work and proposed designs</h2><p>These examples link to existing Saif Way Tech project pages. Read each page for its implementation status, evidence and limitations; proposed platforms are labelled separately from lab work.</p></div>
+    <div class="fyp-grid">{% for item in support.projects %}{% assign project = site.projects | where: 'path', item.source | first %}{% if project %}<article class="fyp-card fyp-project"><img src="{{ item.image | relative_url }}" width="600" height="380" alt="{{ project.title | escape }} project illustration" loading="lazy" decoding="async"><div class="fyp-project-body"><p class="fyp-label">{{ item.domain }}</p><h3>{{ project.title }}</h3><p>{{ item.summary }}</p><p class="fyp-note"><strong>Technologies:</strong> {{ item.technologies }}</p><div class="fyp-actions"><a class="fyp-button fyp-secondary" href="{{ project.url | relative_url }}" target="_blank" rel="noopener noreferrer">View Project</a>{% capture project_message %}Hello Saif Way Tech, I am a university student looking for technical guidance for my final year project.
+
+Similar project: {{ project.title }}
+University:
+Degree Program:
+Project Title:
+Project Domain:
+Support Required:
+Deadline:{% endcapture %}<a class="fyp-button fyp-whatsapp" href="https://wa.me/{{ support.whatsapp_number }}?text={{ project_message | strip | url_encode }}" target="_blank" rel="noopener noreferrer">Discuss Similar Project</a></div></div></article>{% endif %}{% endfor %}</div>
+    <div class="fyp-actions"><a class="fyp-button fyp-secondary" href="{{ '/projects/' | relative_url }}" target="_blank" rel="noopener noreferrer">View My Full Project Portfolio</a><a href="{{ '/students/projects/' | relative_url }}" class="fyp-button fyp-secondary">Browse the Student Project Catalogue</a></div>
+  </div>
+</section>
+<section id="technologies" class="fyp-section">
+  <div class="fyp-container"><div class="fyp-section-intro"><p class="fyp-eyebrow">Match the tools to the requirements</p><h2>Technologies you can discuss</h2><p>Bring your required stack and versions. Support is assessed per project; this list is not a promise of compatibility with every platform or a certification claim.</p></div><div class="fyp-tech-grid">{% for tech in support.technologies %}<div><h3><i class="fas {{ tech.icon }}" aria-hidden="true"></i> {{ tech.category }}</h3><p>{{ tech.names }}</p></div>{% endfor %}</div></div>
+</section>
+<section id="faq" class="fyp-section fyp-tinted">
+  <div class="fyp-container fyp-faq"><p class="fyp-eyebrow">Before you get in touch</p><h2>Student project support questions</h2>{% for item in support.faq %}<details><summary><h3>{{ item.question }}</h3></summary><p>{{ item.answer }}</p></details>{% endfor %}</div>
+</section>
+{% if site.student_projects.size > 0 %}
+<section id="listed-projects" class="fyp-section"><div class="fyp-container"><h2>Project briefs available for discussion</h2><p>Browse the project title and scope, then request support for the phase you are working on.</p><div class="fyp-grid">{% assign listed_projects = site.student_projects | sort: 'date' | reverse %}{% for project in listed_projects %}<article class="fyp-card"><p class="fyp-label">{{ project.domain | escape }}</p><h3><a href="{{ project.url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ project.title | escape }}</a></h3><p>{{ project.description | escape }}</p><p>{{ project.technologies | escape }}</p><a href="{{ project.url | relative_url }}" target="_blank" rel="noopener noreferrer">Read project brief and support options →</a></article>{% endfor %}</div></div></section>
+{% endif %}
+<section id="contact" class="fyp-section fyp-contact">
+  <div class="fyp-container fyp-split"><div><p class="fyp-eyebrow" style="color:#74e0d1">Start with the problem you need to solve</p><h2>Tell me about your project</h2><p>A clear brief makes the first conversation useful. Open the WhatsApp message, add your details and review it before sending.</p><div class="fyp-actions"><a class="fyp-button fyp-whatsapp" href="{{ whatsapp }}" target="_blank" rel="noopener noreferrer">Discuss Your Project on WhatsApp</a></div><p class="fyp-note" style="color:#becddd">Student project contact: +92 314 6809271. Availability, scope and fees are confirmed after review. No guaranteed grades or academic outcomes.</p><p><a href="{{ '/professional-profile/' | relative_url }}" target="_blank" rel="noopener noreferrer">Read Imran Sarwar’s professional background</a></p></div><div class="fyp-contact-list"><h3>Include these details</h3><ul><li>University and degree program</li><li>Project title and domain</li><li>Current requirements and deadline</li><li>What you have already implemented</li><li>The specific error or support you need</li></ul><p class="fyp-note" style="color:#becddd; margin-top:18px">Share sanitized error output or a public repository link when useful. Keep passwords, tokens and private data out of your message.</p></div></div>
+</section>
+<section id="send-project" class="fyp-section"><div class="fyp-container fyp-faq"><h2>Share your project brief and request support</h2><p>Prepare your details here, then review and send them in WhatsApp. Files stay on your device until you share them.</p>
+  <form id="fyp-request" class="fyp-request">
+    <div class="fyp-form-grid">
+      <label>Your name<input name="name" maxlength="100" autocomplete="name" required></label>
+      <label>University<input name="university" maxlength="160" required></label>
+      <label>Degree program<input name="program" maxlength="100" placeholder="BSCS, BSIT, BSSE, AI…" required></label>
+      <label>Project title<input name="title" maxlength="200" required></label>
+      <label>Project domain<input name="domain" maxlength="120" placeholder="Networking, software, AI/ML…" required></label>
+      <label>Current phase<select name="phase" required><option value="">Choose a phase</option><option>SRS / requirements</option><option>Design document</option><option>Prototype / implementation</option><option>Final delivery / demonstration / viva</option></select></label>
+      <label>Deadline, if known<input type="date" name="deadline"></label>
+      <label>Project document, optional<input id="fyp-file" type="file" accept=".pdf,.doc,.docx,.txt,.zip" aria-describedby="fyp-file-help"></label>
+    </div>
+    <label>What have you tried, and where do you need help?<textarea name="help" rows="4" maxlength="1500" required></textarea></label>
+    <label>Shareable document or repository URL, optional<input name="link" type="url" maxlength="700" placeholder="https://…"></label>
+    <p id="fyp-file-help" class="fyp-note">Selecting a document does not upload it. The WhatsApp message includes its filename; attach the file using WhatsApp’s attachment control after opening the chat. On supported phones, “Share selected file” opens your device’s sharing menu: choose WhatsApp and the recipient +92 314 6809271.</p>
+    <p id="fyp-file-status" role="status" class="fyp-note"></p>
+    <div class="fyp-actions"><button type="submit" class="fyp-button fyp-whatsapp">Prepare Request in WhatsApp</button><button type="button" id="fyp-share-file" class="fyp-button fyp-secondary" hidden>Share Selected File</button></div>
+    <noscript><p>Use <a href="https://wa.me/923146809271" target="_blank" rel="noopener noreferrer">WhatsApp directly</a> and attach your document there.</p></noscript>
+  </form>
+</div></section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type":"WebPage","@id":"{{ page.url | absolute_url }}#webpage","url":{{ page.url | absolute_url | jsonify }},"name":{{ page.title | jsonify }},"description":{{ page.description | jsonify }},"inLanguage":"en-PK","isPartOf":{"@id":"{{ '/#website' | absolute_url }}"},"about":{"@id":"{{ page.url | absolute_url }}#service"}},
+    {"@type":"Service","@id":"{{ page.url | absolute_url }}#service","name":"Independent student project technical guidance","serviceType":"Technical mentoring and troubleshooting for university computing projects","url":{{ page.url | absolute_url | jsonify }},"areaServed":{"@type":"Country","name":"Pakistan"},"provider":{"@id":"{{ '/#organization' | absolute_url }}"}}
+  ]
+}
+</script>

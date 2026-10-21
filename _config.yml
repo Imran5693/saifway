@@ -38,6 +38,12 @@ theme: null
 # Exclusions
 # =========================
 exclude:
+  - SEO_BLOG_OPTIMIZATION_REPORT.md
+  - CONTENT_INVENTORY.md
+  - SEO_CONTENT_GAP_ANALYSIS.md
+  - 30_ARTICLE_OPPORTUNITIES.csv
+  - TOP_10_ARTICLE_PRIORITIES.md
+  - CONTENT_IMPLEMENTATION_LOG.md
   - _editorial
   - blog-review.html
   - blog-keyword-audit.html
@@ -94,6 +100,9 @@ defaults:
 # Collections
 # =========================
 collections:
+  student_projects:
+    output: true
+    permalink: /students/projects/:name/
   projects:
     output: true
     permalink: /projects/:name/

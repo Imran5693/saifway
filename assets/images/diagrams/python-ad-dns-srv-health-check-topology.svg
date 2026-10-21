@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760" role="img" aria-labelledby="title desc"><title id="title">AD DNS: inspect every target dependency</title><desc id="desc">Hypothetical SRV discovery followed by independent A and AAAA outcomes.</desc>
+<rect width="1100" height="760" rx="18" fill="#f3f7fb"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8" fill="#168c87"/></marker></defs>
+<text x="40" y="50" font-family="Arial,sans-serif" font-size="27" fill="#17324d">Selected resolver 192.0.2.53 • example.test</text>
+<rect x="60" y="110" width="410" height="100" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="73" y="140" font-family="Arial,sans-serif" font-size="21" fill="white">_ldap._tcp.dc._msdcs</text>
+<text x="73" y="169" font-family="Arial,sans-serif" font-size="21" fill="white">Absolute SRV discovery</text>
+<rect x="630" y="110" width="410" height="100" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="643" y="140" font-family="Arial,sans-serif" font-size="21" fill="white">Advertised target</text>
+<text x="643" y="169" font-family="Arial,sans-serif" font-size="21" fill="white">dc01.example.test.</text>
+<path d="M470,160 L630,160" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="60" y="330" width="410" height="100" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="73" y="360" font-family="Arial,sans-serif" font-size="21" fill="white">A query</text>
+<text x="73" y="389" font-family="Arial,sans-serif" font-size="21" fill="white">192.0.2.10 • answer</text>
+<rect x="630" y="330" width="410" height="100" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="643" y="360" font-family="Arial,sans-serif" font-size="21" fill="white">AAAA query</text>
+<text x="643" y="389" font-family="Arial,sans-serif" font-size="21" fill="white">NoAnswer or timeout?</text>
+<rect x="60" y="500" width="980" height="140" rx="12" fill="#e0f5f1" stroke="#d0dce6"/>
+<text x="80" y="539" font-family="Arial,sans-serif" font-size="23" fill="#17324d">A answer + AAAA NoAnswer: narrow DNS contract can pass.</text>
+<text x="80" y="580" font-family="Arial,sans-serif" font-size="23" fill="#17324d">A answer + AAAA timeout: usable address, partial query result.</text>
+<text x="80" y="616" font-family="Arial,sans-serif" font-size="23" fill="#17324d">No usable target address: unresolved discovery dependency.</text>
+<text x="40" y="735" font-family="Arial,sans-serif" font-size="19" fill="#17324d">Synthetic DNS evidence only; no LDAP, Kerberos or successful join is implied.</text>
+</svg>

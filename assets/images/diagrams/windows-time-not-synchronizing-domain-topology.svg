@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760" role="img" aria-labelledby="title desc"><title id="title">Windows Time: restore member hierarchy</title><desc id="desc">Hypothetical locally configured member uses an unreachable manual source.</desc>
+<rect width="1100" height="760" rx="18" fill="#f3f7fb"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8" fill="#168c87"/></marker></defs>
+<text x="40" y="50" font-family="Arial,sans-serif" font-size="28" fill="#17324d">app01.example.test • ordinary domain member</text>
+<rect x="60" y="100" width="410" height="100" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="73" y="130" font-family="Arial,sans-serif" font-size="21" fill="white">BEFORE • app01</text>
+<text x="73" y="159" font-family="Arial,sans-serif" font-size="21" fill="white">Manual NTP Type</text>
+<rect x="630" y="100" width="410" height="100" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="643" y="130" font-family="Arial,sans-serif" font-size="21" fill="white">Old manual peer</text>
+<text x="643" y="159" font-family="Arial,sans-serif" font-size="21" fill="white">192.0.2.123 • unreachable</text>
+<path d="M470,150 L630,150" stroke="#bf6a0c" stroke-width="4"/>
+<path d="M542.0,138.0 L558.0,162.0 M558.0,138.0 L542.0,162.0" stroke="#bf6a0c" stroke-width="4"/>
+<text x="60" y="260" font-family="Arial,sans-serif" font-size="25" fill="#17324d">AFTER — NT5DS: discover eligible domain time</text>
+<rect x="60" y="310" width="290" height="100" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="73" y="340" font-family="Arial,sans-serif" font-size="21" fill="white">app01</text>
+<text x="73" y="369" font-family="Arial,sans-serif" font-size="21" fill="white">Domain member</text>
+<rect x="405" y="310" width="290" height="100" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="418" y="340" font-family="Arial,sans-serif" font-size="20" fill="white">Eligible DC</text>
+<text x="418" y="369" font-family="Arial,sans-serif" font-size="20" fill="white">e.g. dc01 • 192.0.2.10</text>
+<rect x="750" y="310" width="290" height="100" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="763" y="340" font-family="Arial,sans-serif" font-size="21" fill="white">Forest-root PDC</text>
+<text x="763" y="369" font-family="Arial,sans-serif" font-size="21" fill="white">Approved upstream</text>
+<path d="M350,360 L405,360" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<path d="M695,360 L750,360" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="60" y="470" width="980" height="155" rx="12" fill="#e0f5f1" stroke="#d0dce6"/>
+<text x="80" y="507" font-family="Arial,sans-serif" font-size="23" fill="#17324d">Arrows follow source dependency; actual DC selection is dynamic.</text>
+<text x="80" y="545" font-family="Arial,sans-serif" font-size="23" fill="#17324d">W32Time: UDP source 123 → destination 123</text>
+<text x="80" y="583" font-family="Arial,sans-serif" font-size="23" fill="#17324d">stripchart: ephemeral UDP source → destination 123</text>
+<text x="40" y="690" font-family="Arial,sans-serif" font-size="22" fill="#17324d">Member repair only. Review PDC, hypervisor and policy ownership separately.</text>
+<text x="40" y="735" font-family="Arial,sans-serif" font-size="19" fill="#17324d">Proposed simplified hierarchy; no measured offsets or successful sync claimed.</text>
+</svg>

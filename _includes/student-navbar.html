@@ -1,0 +1,20 @@
+{% assign student_home = '/final-year-project-help/' | relative_url %}
+{% assign section_prefix = student_home %}
+{% if page.url == '/final-year-project-help/' %}{% assign section_prefix = '' %}{% endif %}
+<header class="fyp-header">
+  <nav class="fyp-nav fyp-container" aria-label="Student Help Desk navigation">
+    <a class="fyp-brand" href="{{ student_home }}"><img src="{{ '/assets/images/falcon_eye.png' | relative_url }}" width="44" height="44" alt="Saif Way Tech"><span>Saif Way Tech<small>Student Help Desk</small></span></a>
+    <button class="fyp-menu-toggle" type="button" aria-expanded="false" aria-controls="fyp-menu" hidden>Menu <span aria-hidden="true">☰</span></button>
+    <div class="fyp-menu" id="fyp-menu">
+      <a href="{{ student_home }}"{% if page.url == '/final-year-project-help/' %} aria-current="page"{% endif %}>Home</a>
+      <a href="{{ section_prefix }}#project-domains">Domains</a>
+      <a href="{{ section_prefix }}#project-phases">Project Phases</a>
+      <a href="{{ '/students/projects/' | relative_url }}"{% if page.url contains '/students/projects/' %} aria-current="page"{% endif %}>Project List</a>
+      <a href="{{ '/vu-cs619-project-help/' | relative_url }}"{% if page.url == '/vu-cs619-project-help/' %} aria-current="page"{% endif %}>VU Support</a>
+      <a href="{{ section_prefix }}#faq">FAQ</a>
+      <a href="{{ section_prefix }}#send-project">Send Brief</a>
+      <a href="{{ '/projects/' | relative_url }}" target="_blank" rel="noopener noreferrer" aria-label="My Portfolio (opens in a new tab)">My Portfolio ↗</a>
+      <a class="fyp-button fyp-whatsapp fyp-nav-cta" href="{{ site.data.student_landing.whatsapp_url }}" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    </div>
+  </nav>
+</header>

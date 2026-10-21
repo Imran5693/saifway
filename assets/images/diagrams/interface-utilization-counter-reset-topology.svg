@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760" role="img" aria-labelledby="title desc"><title id="title">Utilization: validate the interval first</title><desc id="desc">Synthetic Counter64 arithmetic and reset interval rejection.</desc>
+<rect width="1100" height="760" rx="18" fill="#f3f7fb"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8" fill="#168c87"/></marker></defs>
+<text x="40" y="50" font-family="Arial,sans-serif" font-size="28" fill="#17324d">One identity • 1 Gbit/s • inbound Counter64</text>
+<rect x="60" y="120" width="410" height="125" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="73" y="150" font-family="Arial,sans-serif" font-size="21" fill="white">Sample A • t=0 s</text>
+<text x="73" y="179" font-family="Arial,sans-serif" font-size="21" fill="white">1,000,000,000 octets</text>
+<text x="73" y="208" font-family="Arial,sans-serif" font-size="21" fill="white">Discontinuity: 0</text>
+<rect x="630" y="120" width="410" height="125" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="643" y="150" font-family="Arial,sans-serif" font-size="21" fill="white">Sample B • t=60 s</text>
+<text x="643" y="179" font-family="Arial,sans-serif" font-size="21" fill="white">1,200,000,000 octets</text>
+<text x="643" y="208" font-family="Arial,sans-serif" font-size="21" fill="white">Discontinuity: 0</text>
+<path d="M470,185 L630,185" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="60" y="320" width="980" height="110" rx="12" fill="#e0f5f1" stroke="#d0dce6"/>
+<text x="80" y="359" font-family="Arial,sans-serif" font-size="24" fill="#17324d">VALID: 200,000,000 × 8 / 60 = 26,666,666.67 bit/s</text>
+<text x="80" y="399" font-family="Arial,sans-serif" font-size="24" fill="#17324d">Directional utilization: 2.67% of 1,000,000,000 bit/s</text>
+<rect x="60" y="490" width="980" height="140" rx="12" fill="#fff3df" stroke="#d0dce6"/>
+<text x="80" y="529" font-family="Arial,sans-serif" font-size="23" fill="#17324d">RESET EXAMPLE: discontinuity changes; new count = 1,000</text>
+<text x="80" y="569" font-family="Arial,sans-serif" font-size="23" fill="#17324d">Reject the interval → take a fresh baseline; do not record zero.</text>
+<text x="80" y="606" font-family="Arial,sans-serif" font-size="23" fill="#17324d">No modulo repair, invented spike or threshold increase.</text>
+<text x="40" y="735" font-family="Arial,sans-serif" font-size="19" fill="#17324d">Synthetic arithmetic only. A valid average does not prove or exclude congestion.</text>
+</svg>

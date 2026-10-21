@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760" role="img" aria-labelledby="title desc"><title id="title">Destination NAT and security selector before and after correction</title><desc id="desc">Hypothetical PAN-OS lab. DNAT maps published 192.0.2.100 to 198.51.100.10. Security uses original addresses and destination zone dmz. Only the security destination member changes.</desc>
+<rect width="1100" height="760" rx="18" fill="#f3f7fb"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8" fill="#168c87"/></marker></defs>
+<text x="40" y="44" font-family="Arial,sans-serif" font-size="20" fill="#17324d">SAIF WAY TECH · HYPOTHETICAL PAN-OS DNAT LAB</text>
+<rect x="25" y="80" width="1050" height="295" rx="12" fill="white" stroke="#d0dce6"/>
+<text x="45" y="117" font-family="Arial,sans-serif" font-size="27" fill="#17324d">BEFORE · NAT selects mapping; security rule misses</text>
+<rect x="50" y="145" width="300" height="125" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="63" y="175" font-family="Arial,sans-serif" font-size="20" fill="white">Client · untrust</text>
+<text x="63" y="204" font-family="Arial,sans-serif" font-size="20" fill="white">192.0.2.50</text>
+<text x="63" y="233" font-family="Arial,sans-serif" font-size="20" fill="white">To 192.0.2.100:443</text>
+<path d="M350,207 L395,207" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="400" y="145" width="300" height="125" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="413" y="175" font-family="Arial,sans-serif" font-size="20" fill="white">Firewall · PAN-OS</text>
+<text x="413" y="204" font-family="Arial,sans-serif" font-size="20" fill="white">192.0.2.100:443</text>
+<text x="413" y="233" font-family="Arial,sans-serif" font-size="20" fill="white">DNAT → 198.51.100.10:443</text>
+<path d="M700,207 L745,207" stroke="#bf6a0c" stroke-width="4"/>
+<path d="M714.5,195.0 L730.5,219.0 M730.5,195.0 L714.5,219.0" stroke="#bf6a0c" stroke-width="4"/>
+<rect x="750" y="145" width="300" height="125" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="763" y="175" font-family="Arial,sans-serif" font-size="20" fill="white">HTTPS server · dmz</text>
+<text x="763" y="204" font-family="Arial,sans-serif" font-size="20" fill="white">198.51.100.10/24</text>
+<text x="763" y="233" font-family="Arial,sans-serif" font-size="20" fill="white">Gateway 198.51.100.1</text>
+<text x="45" y="304" font-family="Arial,sans-serif" font-size="22" fill="#17324d">NAT rule zones: untrust → untrust. Security rule zones: untrust → dmz.</text>
+<text x="45" y="344" font-family="Arial,sans-serif" font-size="22" fill="#bf6a0c">Security destination: 198.51.100.10 · WRONG</text>
+<rect x="25" y="395" width="1050" height="295" rx="12" fill="white" stroke="#d0dce6"/>
+<text x="45" y="432" font-family="Arial,sans-serif" font-size="27" fill="#17324d">AFTER · security destination uses the published address</text>
+<rect x="50" y="460" width="300" height="125" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="63" y="490" font-family="Arial,sans-serif" font-size="20" fill="white">Client · untrust</text>
+<text x="63" y="519" font-family="Arial,sans-serif" font-size="20" fill="white">192.0.2.50</text>
+<text x="63" y="548" font-family="Arial,sans-serif" font-size="20" fill="white">To 192.0.2.100:443</text>
+<path d="M350,522 L395,522" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="400" y="460" width="300" height="125" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="413" y="490" font-family="Arial,sans-serif" font-size="20" fill="white">Firewall · PAN-OS</text>
+<text x="413" y="519" font-family="Arial,sans-serif" font-size="20" fill="white">192.0.2.100:443</text>
+<text x="413" y="548" font-family="Arial,sans-serif" font-size="20" fill="white">DNAT → 198.51.100.10:443</text>
+<path d="M700,522 L745,522" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="750" y="460" width="300" height="125" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="763" y="490" font-family="Arial,sans-serif" font-size="20" fill="white">HTTPS server · dmz</text>
+<text x="763" y="519" font-family="Arial,sans-serif" font-size="20" fill="white">198.51.100.10/24</text>
+<text x="763" y="548" font-family="Arial,sans-serif" font-size="20" fill="white">Gateway 198.51.100.1</text>
+<text x="45" y="619" font-family="Arial,sans-serif" font-size="22" fill="#17324d">NAT rule zones: untrust → untrust. Security rule zones: untrust → dmz.</text>
+<text x="45" y="659" font-family="Arial,sans-serif" font-size="22" fill="#168c87">Security destination: 192.0.2.100 · verify a NEW allowed connection</text>
+<text x="40" y="738" font-family="Arial,sans-serif" font-size="19" fill="#17324d">ethernet1/1: 192.0.2.1/24 · ethernet1/2: 198.51.100.1/24 · no source/port NAT</text>
+</svg>

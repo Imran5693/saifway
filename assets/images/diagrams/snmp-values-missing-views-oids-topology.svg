@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760" role="img" aria-labelledby="title desc"><title id="title">SNMP values: support, instance and read view</title><desc id="desc">Hypothetical supported ifHCInOctets omitted from the active view.</desc>
+<rect width="1100" height="760" rx="18" fill="#f3f7fb"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8" fill="#168c87"/></marker></defs>
+<text x="40" y="50" font-family="Arial,sans-serif" font-size="27" fill="#17324d">SNMPv3 authPriv • labPoller → 192.0.2.50</text>
+<text x="60" y="105" font-family="Arial,sans-serif" font-size="24" fill="#17324d">BEFORE — supported column omitted</text>
+<rect x="60" y="130" width="410" height="100" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="73" y="160" font-family="Arial,sans-serif" font-size="21" fill="white">Manager</text>
+<text x="73" y="189" font-family="Arial,sans-serif" font-size="21" fill="white">Same identity / context</text>
+<rect x="630" y="130" width="410" height="100" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="643" y="160" font-family="Arial,sans-serif" font-size="21" fill="white">Agent MONVIEW</text>
+<text x="643" y="189" font-family="Arial,sans-serif" font-size="21" fill="white">ifHCInOctets omitted</text>
+<path d="M470,180 L630,180" stroke="#bf6a0c" stroke-width="4"/>
+<path d="M542.0,168.0 L558.0,192.0 M558.0,168.0 L542.0,192.0" stroke="#bf6a0c" stroke-width="4"/>
+<text x="60" y="280" font-family="Arial,sans-serif" font-size="23" fill="#17324d">Uptime + ifName readable; target counter unavailable.</text>
+<text x="60" y="410" font-family="Arial,sans-serif" font-size="24" fill="#17324d">AFTER — one approved read column</text>
+<rect x="60" y="435" width="410" height="100" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="73" y="465" font-family="Arial,sans-serif" font-size="21" fill="white">Manager</text>
+<text x="73" y="494" font-family="Arial,sans-serif" font-size="21" fill="white">Same identity / context</text>
+<rect x="630" y="435" width="410" height="100" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="643" y="465" font-family="Arial,sans-serif" font-size="21" fill="white">Agent MONVIEW</text>
+<text x="643" y="494" font-family="Arial,sans-serif" font-size="21" fill="white">ifHCInOctets included</text>
+<path d="M470,485 L630,485" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<text x="60" y="585" font-family="Arial,sans-serif" font-size="23" fill="#17324d">GET the same discovered index; expect Counter64.</text>
+<text x="40" y="690" font-family="Arial,sans-serif" font-size="22" fill="#17324d">Column OID: 1.3.6.1.2.1.31.1.1.1.6 • example instance index 7</text>
+<text x="40" y="735" font-family="Arial,sans-serif" font-size="19" fill="#17324d">Proposed lab. A view grant cannot implement an unsupported object or row.</text>
+</svg>

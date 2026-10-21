@@ -1,19 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"{% if page.student_section %} class="fyp-document"{% endif %}>
 <head>
   {% include head.html %}
+  {% if page.student_section %}<link rel="stylesheet" href="{{ '/assets/css/student-landing.css' | relative_url }}">{% endif %}
 </head>
-<body{% if page.layout == 'post' %} class="blog-page"{% endif %}>
+<body{% if page.student_section %} class="fyp-page"{% elsif page.layout == 'post' %} class="blog-page"{% endif %}>
+  {% if page.student_section %}<a class="fyp-skip" href="#main-content">Skip to content</a>{% endif %}
   {% unless page.url == "/" %}
-    {% include navbar.html %}
+    {% if page.student_section %}
+      {% include student-navbar.html %}
+    {% else %}
+      {% include navbar.html %}
+    {% endif %}
   {% endunless %}
 
-  <main class="content-wrapper">
+  <main class="content-wrapper"{% if page.student_section %} id="main-content"{% endif %}>
     {{ content }}
   </main>
 
-  {% include footer.html %}
+  {% if page.student_section %}{% include student-footer.html %}{% else %}{% include footer.html %}{% endif %}
 
-  {% include scripts.html %}
+  {% unless page.student_section %}{% include scripts.html %}{% endunless %}
+  {% if page.student_section %}<script src="{{ '/assets/js/student-landing.js' | relative_url }}" defer></script>{% endif %}
 </body>
 </html>

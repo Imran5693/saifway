@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760" role="img" aria-labelledby="title desc"><title id="title">DHCP relay before and after adding the missing helper</title><desc id="desc">Hypothetical VLAN20 client without lease, relay Vlan20 192.0.2.1 and Vlan100 198.51.100.1, DHCP server 198.51.100.10. The added helper enables initial allocation.</desc>
+<rect width="1100" height="760" rx="18" fill="#f3f7fb"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8" fill="#168c87"/></marker></defs>
+<text x="40" y="44" font-family="Arial,sans-serif" font-size="20" fill="#17324d">SAIF WAY TECH · HYPOTHETICAL DHCP RELAY LAB</text>
+<rect x="25" y="80" width="1050" height="295" rx="12" fill="white" stroke="#d0dce6"/>
+<text x="45" y="118" font-family="Arial,sans-serif" font-size="27" fill="#17324d">BEFORE · no helper on client-facing Vlan20</text>
+<rect x="50" y="146" width="300" height="118" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="62" y="175" font-family="Arial,sans-serif" font-size="20" fill="white">Client · Gi1/0/10 access</text>
+<text x="62" y="208" font-family="Arial,sans-serif" font-size="20" fill="white">VLAN 20 · no valid lease</text>
+<text x="62" y="241" font-family="Arial,sans-serif" font-size="20" fill="white">Discover: UDP 68 → 67</text>
+<path d="M350,203 L395,203" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="400" y="146" width="300" height="118" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="412" y="175" font-family="Arial,sans-serif" font-size="20" fill="white">Relay · IOS XE</text>
+<text x="412" y="208" font-family="Arial,sans-serif" font-size="20" fill="white">Vlan20: 192.0.2.1/24</text>
+<text x="412" y="241" font-family="Arial,sans-serif" font-size="20" fill="white">Vlan100: 198.51.100.1/24</text>
+<path d="M700,203 L745,203" stroke="#bf6a0c" stroke-width="4"/>
+<path d="M714.5,191.0 L730.5,215.0 M730.5,191.0 L714.5,215.0" stroke="#bf6a0c" stroke-width="4"/>
+<rect x="750" y="146" width="300" height="118" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="762" y="175" font-family="Arial,sans-serif" font-size="20" fill="white">DHCP server</text>
+<text x="762" y="208" font-family="Arial,sans-serif" font-size="20" fill="white">198.51.100.10/24</text>
+<text x="762" y="241" font-family="Arial,sans-serif" font-size="20" fill="white">Gateway: 198.51.100.1</text>
+<text x="45" y="298" font-family="Arial,sans-serif" font-size="22" fill="#17324d">Scope: 192.0.2.0/24 · range .100–.150 · active with eligible free addresses</text>
+<text x="45" y="346" font-family="Arial,sans-serif" font-size="22" fill="#17324d">Client Discover reaches relay; no relayed transaction reaches this server.</text>
+<rect x="25" y="395" width="1050" height="295" rx="12" fill="white" stroke="#d0dce6"/>
+<text x="45" y="433" font-family="Arial,sans-serif" font-size="27" fill="#17324d">AFTER · helper 198.51.100.10 added to Vlan20</text>
+<rect x="50" y="461" width="300" height="118" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="62" y="490" font-family="Arial,sans-serif" font-size="20" fill="white">Client · expected lease</text>
+<text x="62" y="523" font-family="Arial,sans-serif" font-size="20" fill="white">192.0.2.100/24 example</text>
+<text x="62" y="556" font-family="Arial,sans-serif" font-size="20" fill="white">Verify gateway + options</text>
+<path d="M350,518 L395,518" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="400" y="461" width="300" height="118" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="412" y="490" font-family="Arial,sans-serif" font-size="20" fill="white">Relay · IOS XE</text>
+<text x="412" y="523" font-family="Arial,sans-serif" font-size="20" fill="white">Vlan20: 192.0.2.1/24</text>
+<text x="412" y="556" font-family="Arial,sans-serif" font-size="20" fill="white">Vlan100: 198.51.100.1/24</text>
+<path d="M700,518 L745,518" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="750" y="461" width="300" height="118" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="762" y="490" font-family="Arial,sans-serif" font-size="20" fill="white">DHCP server</text>
+<text x="762" y="523" font-family="Arial,sans-serif" font-size="20" fill="white">198.51.100.10/24</text>
+<text x="762" y="556" font-family="Arial,sans-serif" font-size="20" fill="white">Gateway: 198.51.100.1</text>
+<text x="45" y="613" font-family="Arial,sans-serif" font-size="22" fill="#17324d">Scope: 192.0.2.0/24 · range .100–.150 · active with eligible free addresses</text>
+<text x="45" y="650" font-family="Arial,sans-serif" font-size="22" fill="#17324d">Forward: relay giaddr 192.0.2.1 → correct scope.</text>
+<text x="45" y="678" font-family="Arial,sans-serif" font-size="21" fill="#17324d">Return: server → relay → client; verify Offer, Request, ACK and options.</text>
+<text x="40" y="744" font-family="Arial,sans-serif" font-size="20" fill="#17324d">Conceptual initial allocation. Existing unicast renewal may follow a different path.</text>
+</svg>

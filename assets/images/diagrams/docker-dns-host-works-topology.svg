@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760" role="img" aria-labelledby="title desc"><title id="title">Docker host and container resolver paths</title><desc id="desc">Hypothetical host resolves through approved DNS .53 in both states. User-defined network app-net uses embedded DNS 127.0.0.11; service override changes from retired .54 to approved .53.</desc>
+<rect width="1100" height="760" rx="18" fill="#f3f7fb"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8" fill="#168c87"/></marker></defs>
+<text x="40" y="44" font-family="Arial,sans-serif" font-size="20" fill="#17324d">SAIF WAY TECH · HYPOTHETICAL DOCKER DNS LAB</text>
+<rect x="25" y="80" width="1050" height="295" rx="12" fill="white" stroke="#d0dce6"/>
+<text x="45" y="116" font-family="Arial,sans-serif" font-size="26" fill="#17324d">BEFORE · container override points to retired DNS</text>
+<text x="45" y="153" font-family="Arial,sans-serif" font-size="22" fill="#17324d">Host lookup → 192.0.2.53: works in both states.</text>
+<rect x="50" y="175" width="300" height="110" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="63" y="205" font-family="Arial,sans-serif" font-size="20" fill="white">app-client · app-net</text>
+<text x="63" y="234" font-family="Arial,sans-serif" font-size="20" fill="white">Compose service: client</text>
+<text x="63" y="263" font-family="Arial,sans-serif" font-size="20" fill="white">Separate network namespace</text>
+<path d="M350,230 L395,230" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="400" y="175" width="300" height="110" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="413" y="205" font-family="Arial,sans-serif" font-size="20" fill="white">Docker embedded DNS</text>
+<text x="413" y="234" font-family="Arial,sans-serif" font-size="20" fill="white">127.0.0.11</text>
+<text x="413" y="263" font-family="Arial,sans-serif" font-size="20" fill="white">Expected on this network</text>
+<path d="M700,230 L745,230" stroke="#bf6a0c" stroke-width="4"/>
+<path d="M714.5,218.0 L730.5,242.0 M730.5,218.0 L714.5,242.0" stroke="#bf6a0c" stroke-width="4"/>
+<rect x="750" y="175" width="300" height="110" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="763" y="205" font-family="Arial,sans-serif" font-size="20" fill="white">Container upstream</text>
+<text x="763" y="234" font-family="Arial,sans-serif" font-size="20" fill="white">192.0.2.54 · retired</text>
+<text x="763" y="263" font-family="Arial,sans-serif" font-size="20" fill="white">No DNS service</text>
+<text x="45" y="324" font-family="Arial,sans-serif" font-size="22" fill="#17324d">api.lab.example.test: container lookup fails while host lookup succeeds.</text>
+<text x="45" y="359" font-family="Arial,sans-serif" font-size="21" fill="#17324d">Do not replace 127.0.0.11 or switch to host networking as a DNS fix.</text>
+<rect x="25" y="395" width="1050" height="295" rx="12" fill="white" stroke="#d0dce6"/>
+<text x="45" y="431" font-family="Arial,sans-serif" font-size="26" fill="#17324d">AFTER · only service DNS changes to the approved resolver</text>
+<text x="45" y="468" font-family="Arial,sans-serif" font-size="22" fill="#17324d">Host lookup → 192.0.2.53: works in both states.</text>
+<rect x="50" y="490" width="300" height="110" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="63" y="520" font-family="Arial,sans-serif" font-size="20" fill="white">app-client · app-net</text>
+<text x="63" y="549" font-family="Arial,sans-serif" font-size="20" fill="white">Compose service: client</text>
+<text x="63" y="578" font-family="Arial,sans-serif" font-size="20" fill="white">Separate network namespace</text>
+<path d="M350,545 L395,545" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="400" y="490" width="300" height="110" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="413" y="520" font-family="Arial,sans-serif" font-size="20" fill="white">Docker embedded DNS</text>
+<text x="413" y="549" font-family="Arial,sans-serif" font-size="20" fill="white">127.0.0.11</text>
+<text x="413" y="578" font-family="Arial,sans-serif" font-size="20" fill="white">Expected on this network</text>
+<path d="M700,545 L745,545" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="750" y="490" width="300" height="110" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="763" y="520" font-family="Arial,sans-serif" font-size="20" fill="white">Container upstream</text>
+<text x="763" y="549" font-family="Arial,sans-serif" font-size="20" fill="white">192.0.2.53 · approved</text>
+<text x="763" y="578" font-family="Arial,sans-serif" font-size="20" fill="white">Private-zone DNS service</text>
+<text x="45" y="639" font-family="Arial,sans-serif" font-size="22" fill="#17324d">api.lab.example.test → 203.0.113.20 expected after controlled recreation.</text>
+<text x="45" y="674" font-family="Arial,sans-serif" font-size="21" fill="#17324d">Verify the recreated service lookup, then the actual application health check.</text>
+<text x="40" y="738" font-family="Arial,sans-serif" font-size="19" fill="#17324d">Hypothetical Linux Engine/Compose bridge lab; no real query or container outcome shown.</text>
+</svg>

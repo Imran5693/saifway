@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760" role="img" aria-labelledby="title desc"><title id="title">Docker publishing: reach the container listener</title><desc id="desc">Hypothetical loopback-only application behind a correctly published host port.</desc>
+<rect width="1100" height="760" rx="18" fill="#f3f7fb"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8" fill="#168c87"/></marker></defs>
+<text x="40" y="50" font-family="Arial,sans-serif" font-size="27" fill="#17324d">Client 192.0.2.20 → host 192.0.2.10:8080</text>
+<text x="60" y="100" font-family="Arial,sans-serif" font-size="24" fill="#17324d">BEFORE — container loopback only</text>
+<rect x="60" y="125" width="410" height="125" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="73" y="155" font-family="Arial,sans-serif" font-size="21" fill="white">Host publish</text>
+<text x="73" y="184" font-family="Arial,sans-serif" font-size="21" fill="white">192.0.2.10:8080</text>
+<text x="73" y="213" font-family="Arial,sans-serif" font-size="21" fill="white">TCP → container 8000</text>
+<rect x="630" y="125" width="410" height="125" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="643" y="155" font-family="Arial,sans-serif" font-size="21" fill="white">Container app</text>
+<text x="643" y="184" font-family="Arial,sans-serif" font-size="21" fill="white">127.0.0.1:8000</text>
+<text x="643" y="213" font-family="Arial,sans-serif" font-size="21" fill="white">Loopback only</text>
+<path d="M470,190 L630,190" stroke="#bf6a0c" stroke-width="4"/>
+<path d="M542.0,178.0 L558.0,202.0 M558.0,178.0 L542.0,202.0" stroke="#bf6a0c" stroke-width="4"/>
+<text x="60" y="295" font-family="Arial,sans-serif" font-size="23" fill="#17324d">Mapping is correct; bridge delivery misses loopback listener.</text>
+<text x="60" y="395" font-family="Arial,sans-serif" font-size="24" fill="#17324d">AFTER — container IPv4 interfaces</text>
+<rect x="60" y="420" width="410" height="125" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="73" y="450" font-family="Arial,sans-serif" font-size="21" fill="white">Host publish</text>
+<text x="73" y="479" font-family="Arial,sans-serif" font-size="21" fill="white">192.0.2.10:8080</text>
+<text x="73" y="508" font-family="Arial,sans-serif" font-size="21" fill="white">TCP → container 8000</text>
+<rect x="630" y="420" width="410" height="125" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="643" y="450" font-family="Arial,sans-serif" font-size="21" fill="white">Container app</text>
+<text x="643" y="479" font-family="Arial,sans-serif" font-size="21" fill="white">0.0.0.0:8000</text>
+<text x="643" y="508" font-family="Arial,sans-serif" font-size="21" fill="white">Bridge listener reachable</text>
+<path d="M470,485 L630,485" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<text x="60" y="590" font-family="Arial,sans-serif" font-size="23" fill="#17324d">Only app bind changes; host address and port remain scoped.</text>
+<text x="40" y="700" font-family="Arial,sans-serif" font-size="22" fill="#17324d">Host loopback ≠ container loopback. Verify remote policy and return path.</text>
+<text x="40" y="735" font-family="Arial,sans-serif" font-size="19" fill="#17324d">Proposed bridge/NAT lab; no captured container or successful request claimed.</text>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760" role="img" aria-labelledby="title desc"><title id="title">Group Policy disabled link before and after enabling it</title><desc id="desc">Hypothetical directory scope, not network topology. LAB-PC1 stays in PolicyLab OU. Existing Lab-Computer-Baseline link changes from disabled to enabled.</desc>
+<rect width="1100" height="760" rx="18" fill="#f3f7fb"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8" fill="#168c87"/></marker></defs>
+<text x="40" y="44" font-family="Arial,sans-serif" font-size="20" fill="#17324d">SAIF WAY TECH · HYPOTHETICAL DIRECTORY SCOPE</text>
+<rect x="25" y="80" width="1050" height="295" rx="12" fill="white" stroke="#d0dce6"/>
+<text x="45" y="118" font-family="Arial,sans-serif" font-size="27" fill="#17324d">BEFORE · existing GPO link disabled</text>
+<rect x="50" y="150" width="300" height="118" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="62" y="181" font-family="Arial,sans-serif" font-size="20" fill="white">Lab-Computer-Baseline</text>
+<text x="62" y="213" font-family="Arial,sans-serif" font-size="20" fill="white">Computer settings enabled</text>
+<text x="62" y="245" font-family="Arial,sans-serif" font-size="20" fill="white">Link Enabled: No</text>
+<path d="M350,208 L395,208" stroke="#bf6a0c" stroke-width="4"/>
+<path d="M364.5,196.0 L380.5,220.0 M380.5,196.0 L364.5,220.0" stroke="#bf6a0c" stroke-width="4"/>
+<rect x="400" y="150" width="300" height="118" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="412" y="181" font-family="Arial,sans-serif" font-size="20" fill="white">OU = PolicyLab</text>
+<text x="412" y="213" font-family="Arial,sans-serif" font-size="20" fill="white">Domain: ad.example.test</text>
+<text x="412" y="245" font-family="Arial,sans-serif" font-size="20" fill="white">Same computer placement</text>
+<path d="M700,208 L745,208" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="750" y="150" width="300" height="118" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="762" y="181" font-family="Arial,sans-serif" font-size="20" fill="white">LAB-PC1</text>
+<text x="762" y="213" font-family="Arial,sans-serif" font-size="20" fill="white">Windows 11 domain client</text>
+<text x="762" y="245" font-family="Arial,sans-serif" font-size="20" fill="white">Computer policy target</text>
+<text x="45" y="306" font-family="Arial,sans-serif" font-size="22" fill="#17324d">Target: OU=PolicyLab,DC=ad,DC=example,DC=test</text>
+<text x="45" y="346" font-family="Arial,sans-serif" font-size="21" fill="#17324d">Correct placement alone cannot make a disabled link eligible.</text>
+<rect x="25" y="395" width="1050" height="295" rx="12" fill="white" stroke="#d0dce6"/>
+<text x="45" y="433" font-family="Arial,sans-serif" font-size="27" fill="#17324d">AFTER · same existing link enabled</text>
+<rect x="50" y="465" width="300" height="118" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="62" y="496" font-family="Arial,sans-serif" font-size="20" fill="white">Lab-Computer-Baseline</text>
+<text x="62" y="528" font-family="Arial,sans-serif" font-size="20" fill="white">Computer settings enabled</text>
+<text x="62" y="560" font-family="Arial,sans-serif" font-size="20" fill="white">Link Enabled: Yes</text>
+<path d="M350,523 L395,523" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="400" y="465" width="300" height="118" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="412" y="496" font-family="Arial,sans-serif" font-size="20" fill="white">OU = PolicyLab</text>
+<text x="412" y="528" font-family="Arial,sans-serif" font-size="20" fill="white">Domain: ad.example.test</text>
+<text x="412" y="560" font-family="Arial,sans-serif" font-size="20" fill="white">Same computer placement</text>
+<path d="M700,523 L745,523" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="750" y="465" width="300" height="118" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="762" y="496" font-family="Arial,sans-serif" font-size="20" fill="white">LAB-PC1</text>
+<text x="762" y="528" font-family="Arial,sans-serif" font-size="20" fill="white">Windows 11 domain client</text>
+<text x="762" y="560" font-family="Arial,sans-serif" font-size="20" fill="white">Computer policy target</text>
+<text x="45" y="621" font-family="Arial,sans-serif" font-size="22" fill="#17324d">Target: OU=PolicyLab,DC=ad,DC=example,DC=test</text>
+<text x="45" y="661" font-family="Arial,sans-serif" font-size="21" fill="#17324d">Refresh → inspect report/events → verify legalnoticecaption = PolicyLab Review.</text>
+<text x="40" y="744" font-family="Arial,sans-serif" font-size="20" fill="#17324d">Lab filters permit the computer. Disabling a link may not undo values already applied.</text>
+</svg>

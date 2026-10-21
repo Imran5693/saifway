@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760" role="img" aria-labelledby="title desc"><title id="title">RDP: TCP reachability is one checkpoint</title><desc id="desc">Hypothetical direct RDP stages and scoped logon authorization repair.</desc>
+<rect width="1100" height="760" rx="18" fill="#f3f7fb"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8" fill="#168c87"/></marker></defs>
+<text x="40" y="50" font-family="Arial,sans-serif" font-size="27" fill="#17324d">rdp01.example.test • 192.0.2.50 • direct RDP</text>
+<rect x="60" y="100" width="410" height="100" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="73" y="130" font-family="Arial,sans-serif" font-size="21" fill="white">Windows 11 Pro</text>
+<text x="73" y="159" font-family="Arial,sans-serif" font-size="21" fill="white">Approved client</text>
+<rect x="630" y="100" width="410" height="100" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="643" y="130" font-family="Arial,sans-serif" font-size="21" fill="white">Windows Server 2022/2025</text>
+<text x="643" y="159" font-family="Arial,sans-serif" font-size="21" fill="white">Member server • TCP 3389</text>
+<path d="M470,150 L630,150" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<text x="380" y="245" font-family="Arial,sans-serif" font-size="24" fill="#17324d">TCP succeeds</text>
+<rect x="60" y="300" width="220" height="100" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="73" y="330" font-family="Arial,sans-serif" font-size="21" fill="white">Listener</text>
+<text x="73" y="359" font-family="Arial,sans-serif" font-size="21" fill="white">identity</text>
+<path d="M280,350 L320,350" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="320" y="300" width="220" height="100" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="333" y="330" font-family="Arial,sans-serif" font-size="21" fill="white">TLS / NLA</text>
+<text x="333" y="359" font-family="Arial,sans-serif" font-size="21" fill="white">evidence</text>
+<path d="M540,350 L580,350" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="580" y="300" width="220" height="100" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="593" y="330" font-family="Arial,sans-serif" font-size="21" fill="white">Logon</text>
+<text x="593" y="359" font-family="Arial,sans-serif" font-size="21" fill="white">rights</text>
+<path d="M800,350 L840,350" stroke="#bf6a0c" stroke-width="4"/>
+<path d="M812.0,338.0 L828.0,362.0 M828.0,338.0 L812.0,362.0" stroke="#bf6a0c" stroke-width="4"/>
+<rect x="840" y="300" width="220" height="100" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="853" y="330" font-family="Arial,sans-serif" font-size="21" fill="white">Desktop</text>
+<text x="853" y="359" font-family="Arial,sans-serif" font-size="21" fill="white">session</text>
+<rect x="60" y="450" width="990" height="85" rx="12" fill="#fff3df" stroke="#d0dce6"/>
+<text x="80" y="482" font-family="Arial,sans-serif" font-size="23" fill="#17324d">BEFORE: approved account lacks the required access membership</text>
+<text x="80" y="513" font-family="Arial,sans-serif" font-size="22" fill="#17324d">Do not infer this cause from TCP success alone.</text>
+<rect x="60" y="560" width="990" height="105" rx="12" fill="#e0f5f1" stroke="#d0dce6"/>
+<text x="80" y="595" font-family="Arial,sans-serif" font-size="22" fill="#17324d">AFTER: add only the authorized account to Remote Desktop Users</text>
+<text x="80" y="630" font-family="Arial,sans-serif" font-size="22" fill="#17324d">Only if effective allow/deny policy permits it; NLA stays enabled.</text>
+<text x="40" y="730" font-family="Arial,sans-serif" font-size="20" fill="#17324d">Proposed evidence stages, not a complete protocol trace or captured session.</text>
+</svg>

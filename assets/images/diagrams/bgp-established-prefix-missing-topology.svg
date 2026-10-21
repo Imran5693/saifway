@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760" role="img" aria-labelledby="title desc"><title id="title">One prefix through an established BGP session</title><desc id="desc">Hypothetical exact-prefix export omission and correction.</desc>
+<rect width="1100" height="760" rx="18" fill="#f3f7fb"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8" fill="#168c87"/></marker></defs>
+<text x="40" y="50" font-family="Arial,sans-serif" font-size="28" fill="#17324d">Target 198.51.100.0/24 • IPv4 unicast</text>
+<rect x="60" y="100" width="410" height="125" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="73" y="130" font-family="Arial,sans-serif" font-size="21" fill="white">R1 • AS 64512</text>
+<text x="73" y="159" font-family="Arial,sans-serif" font-size="21" fill="white">192.0.2.1/30</text>
+<text x="73" y="188" font-family="Arial,sans-serif" font-size="21" fill="white">Loopback10: target /24</text>
+<rect x="630" y="100" width="410" height="125" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="643" y="130" font-family="Arial,sans-serif" font-size="21" fill="white">R2 • AS 64513</text>
+<text x="643" y="159" font-family="Arial,sans-serif" font-size="21" fill="white">192.0.2.2/30</text>
+<text x="643" y="188" font-family="Arial,sans-serif" font-size="21" fill="white">Import permits target</text>
+<path d="M470,165 L630,165" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<text x="400" y="260" font-family="Arial,sans-serif" font-size="24" fill="#17324d">Session: Established</text>
+<text x="60" y="310" font-family="Arial,sans-serif" font-size="24" fill="#17324d">BEFORE — target omitted</text>
+<rect x="60" y="335" width="290" height="90" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="73" y="365" font-family="Arial,sans-serif" font-size="21" fill="white">R1 local BGP</text>
+<text x="73" y="394" font-family="Arial,sans-serif" font-size="21" fill="white">Target present</text>
+<rect x="405" y="335" width="290" height="90" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="418" y="365" font-family="Arial,sans-serif" font-size="21" fill="white">TO-R2 export</text>
+<text x="418" y="394" font-family="Arial,sans-serif" font-size="21" fill="white">seq 100 deny</text>
+<rect x="750" y="335" width="290" height="90" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="763" y="365" font-family="Arial,sans-serif" font-size="21" fill="white">R2 BGP / RIB</text>
+<text x="763" y="394" font-family="Arial,sans-serif" font-size="21" fill="white">Target absent</text>
+<path d="M350,380 L405,380" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<path d="M695,380 L750,380" stroke="#bf6a0c" stroke-width="4"/>
+<path d="M714.5,368.0 L730.5,392.0 M730.5,368.0 L714.5,392.0" stroke="#bf6a0c" stroke-width="4"/>
+<text x="60" y="500" font-family="Arial,sans-serif" font-size="24" fill="#17324d">AFTER — exact /24 permitted</text>
+<rect x="60" y="525" width="290" height="90" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="73" y="555" font-family="Arial,sans-serif" font-size="21" fill="white">R1 local BGP</text>
+<text x="73" y="584" font-family="Arial,sans-serif" font-size="21" fill="white">Target present</text>
+<rect x="405" y="525" width="290" height="90" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="418" y="555" font-family="Arial,sans-serif" font-size="21" fill="white">TO-R2 export</text>
+<text x="418" y="584" font-family="Arial,sans-serif" font-size="21" fill="white">seq 20 permit /24</text>
+<rect x="750" y="525" width="290" height="90" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="763" y="555" font-family="Arial,sans-serif" font-size="21" fill="white">R2 BGP / RIB</text>
+<text x="763" y="584" font-family="Arial,sans-serif" font-size="21" fill="white">Verify target /24</text>
+<path d="M350,570 L405,570" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<path d="M695,570 L750,570" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<text x="40" y="690" font-family="Arial,sans-serif" font-size="22" fill="#17324d">Change: one exact prefix-list entry; soft outbound policy re-evaluation.</text>
+<text x="40" y="730" font-family="Arial,sans-serif" font-size="20" fill="#17324d">Proposed lab. Installation and end-to-end forwarding require separate evidence.</text>
+</svg>

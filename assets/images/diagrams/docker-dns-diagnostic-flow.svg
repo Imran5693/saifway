@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760" role="img" aria-labelledby="title desc"><title id="title">DOCKER DNS · HOST SUCCESS IS ONLY ONE PATH</title><desc id="desc">Hypothetical diagnostic decisions with Yes continuation and No evidence branches.</desc>
+<rect width="1100" height="760" rx="18" fill="#f3f7fb"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8" fill="#168c87"/></marker></defs>
+<text x="40" y="48" font-family="Arial,sans-serif" font-size="25" fill="#17324d">DOCKER DNS · HOST SUCCESS IS ONLY ONE PATH</text>
+<rect x="60" y="95" width="460" height="95" rx="12" fill="#17324d" stroke="#17324d"/>
+<rect x="590" y="95" width="460" height="95" rx="12" fill="white" stroke="#bf6a0c"/>
+<text x="80" y="150" font-family="Arial,sans-serif" font-size="23" fill="white">Same FQDN works on host?</text>
+<path d="M520,143 L590,143" stroke="#168c87" stroke-width="4"/>
+<text x="610" y="119" font-family="Arial,sans-serif" font-size="20" fill="#bf6a0c">No →</text>
+<text x="610" y="141" font-family="Arial,sans-serif" font-size="20" fill="#17324d">Investigate host resolver/zone</text>
+<text x="610" y="163" font-family="Arial,sans-serif" font-size="20" fill="#17324d">first; do not assume a container-</text>
+<text x="610" y="185" font-family="Arial,sans-serif" font-size="20" fill="#17324d">only fault.</text>
+<path d="M290,190 L290,250" stroke="#168c87" stroke-width="4"/>
+<text x="310" y="230" font-family="Arial,sans-serif" font-size="22" fill="#17324d">Yes ↓</text>
+<rect x="60" y="270" width="460" height="95" rx="12" fill="#17324d" stroke="#17324d"/>
+<rect x="590" y="270" width="460" height="95" rx="12" fill="white" stroke="#bf6a0c"/>
+<text x="80" y="325" font-family="Arial,sans-serif" font-size="23" fill="white">Container DNS/network known?</text>
+<path d="M520,318 L590,318" stroke="#168c87" stroke-width="4"/>
+<text x="610" y="294" font-family="Arial,sans-serif" font-size="20" fill="#bf6a0c">No →</text>
+<text x="610" y="316" font-family="Arial,sans-serif" font-size="20" fill="#17324d">Inspect actual network driver,</text>
+<text x="610" y="338" font-family="Arial,sans-serif" font-size="20" fill="#17324d">resolver file and creation-time</text>
+<text x="610" y="360" font-family="Arial,sans-serif" font-size="20" fill="#17324d">override.</text>
+<path d="M290,365 L290,425" stroke="#168c87" stroke-width="4"/>
+<text x="310" y="405" font-family="Arial,sans-serif" font-size="22" fill="#17324d">Yes ↓</text>
+<rect x="60" y="445" width="460" height="95" rx="12" fill="#17324d" stroke="#17324d"/>
+<rect x="590" y="445" width="460" height="95" rx="12" fill="white" stroke="#bf6a0c"/>
+<text x="80" y="500" font-family="Arial,sans-serif" font-size="23" fill="white">Approved resolver probe works?</text>
+<path d="M520,493 L590,493" stroke="#168c87" stroke-width="4"/>
+<text x="610" y="469" font-family="Arial,sans-serif" font-size="20" fill="#bf6a0c">No →</text>
+<text x="610" y="491" font-family="Arial,sans-serif" font-size="20" fill="#17324d">Inspect container egress, DNS</text>
+<text x="610" y="513" font-family="Arial,sans-serif" font-size="20" fill="#17324d">reachability and actual negative</text>
+<text x="610" y="535" font-family="Arial,sans-serif" font-size="20" fill="#17324d">answers.</text>
+<path d="M290,540 L290,600" stroke="#168c87" stroke-width="4"/>
+<text x="310" y="580" font-family="Arial,sans-serif" font-size="22" fill="#17324d">Yes ↓</text>
+<rect x="60" y="620" width="990" height="80" rx="12" fill="#e0f5f1" stroke="#e0f5f1"/>
+<text x="80" y="651" font-family="Arial,sans-serif" font-size="23" fill="#17324d">Correct the confirmed service override; recreate safely, verify DNS and</text>
+<text x="80" y="680" font-family="Arial,sans-serif" font-size="23" fill="#17324d">application.</text>
+<text x="40" y="738" font-family="Arial,sans-serif" font-size="19" fill="#17324d">Embedded 127.0.0.11 is expected on the user-defined network in this lab.</text>
+</svg>

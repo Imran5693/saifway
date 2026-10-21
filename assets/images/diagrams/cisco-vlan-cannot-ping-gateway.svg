@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760" role="img" aria-labelledby="title desc">
+<title id="title">Cisco VLAN Configured but Cannot Ping Gateway: Trace the Layer 2 Path</title><desc id="desc">Hypothetical lab before and after correction; not production evidence.</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8" fill="#168c87"/></marker></defs>
+<rect width="1100" height="760" rx="18" fill="#f3f7fb"/>
+<text x="40" y="48" fill="#17324d" font-family="Arial,sans-serif" font-size="20">SAIF WAY TECH · HYPOTHETICAL LAB</text>
+<rect x="25" y="90" width="1050" height="290" rx="14" fill="white" stroke="#d0dce6"/>
+<text x="45" y="130" fill="#17324d" font-family="Arial,sans-serif" font-size="27">BEFORE · VLAN 20 excluded from ACCESS1 trunk</text>
+<rect x="50" y="165" width="300" height="95" rx="10" fill="#17324d"/>
+<text x="65" y="200" fill="#ffffff" font-family="Arial,sans-serif" font-size="23">Workstation</text>
+<text x="65" y="235" fill="#d7f8f4" font-family="Arial,sans-serif" font-size="20">192.0.2.10/24</text>
+<path d="M350,210 L395,210" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="400" y="165" width="300" height="95" rx="10" fill="#17324d"/>
+<text x="415" y="200" fill="#ffffff" font-family="Arial,sans-serif" font-size="23">ACCESS1</text>
+<text x="415" y="235" fill="#d7f8f4" font-family="Arial,sans-serif" font-size="20">Gi1/0/10 · VLAN 20</text>
+<path d="M700,210 L740,210 M717,198 L732,222 M732,198 L717,222" stroke="#bf6a0c" stroke-width="4"/>
+<rect x="750" y="165" width="300" height="95" rx="10" fill="#17324d"/>
+<text x="765" y="200" fill="#ffffff" font-family="Arial,sans-serif" font-size="23">DIST1 · Vlan20</text>
+<text x="765" y="235" fill="#d7f8f4" font-family="Arial,sans-serif" font-size="20">Gateway 192.0.2.1/24</text>
+<text x="45" y="295" fill="#17324d" font-family="Arial,sans-serif" font-size="22">Path: workstation → access port → Gi1/0/48 trunk → DIST1 Gi1/0/48</text>
+<text x="45" y="340" fill="#17324d" font-family="Arial,sans-serif" font-size="21">ACCESS1 permits 10,30 only; DIST1 permits 10,20,30. ARP cannot cross.</text>
+<rect x="25" y="400" width="1050" height="290" rx="14" fill="white" stroke="#d0dce6"/>
+<text x="45" y="440" fill="#17324d" font-family="Arial,sans-serif" font-size="27">AFTER · add VLAN 20 to the documented trunk</text>
+<rect x="50" y="475" width="300" height="95" rx="10" fill="#17324d"/>
+<text x="65" y="510" fill="#ffffff" font-family="Arial,sans-serif" font-size="23">Workstation</text>
+<text x="65" y="545" fill="#d7f8f4" font-family="Arial,sans-serif" font-size="20">Gateway neighbor resolves</text>
+<path d="M350,520 L395,520" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="400" y="475" width="300" height="95" rx="10" fill="#17324d"/>
+<text x="415" y="510" fill="#ffffff" font-family="Arial,sans-serif" font-size="23">ACCESS1</text>
+<text x="415" y="545" fill="#d7f8f4" font-family="Arial,sans-serif" font-size="20">Allowed: 10,20,30</text>
+<path d="M700,520 L745,520" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="750" y="475" width="300" height="95" rx="10" fill="#17324d"/>
+<text x="765" y="510" fill="#ffffff" font-family="Arial,sans-serif" font-size="23">DIST1 · Vlan20</text>
+<text x="765" y="545" fill="#d7f8f4" font-family="Arial,sans-serif" font-size="20">Verify gateway + service</text>
+<text x="45" y="605" fill="#17324d" font-family="Arial,sans-serif" font-size="22">VLAN 20 tagged end to end; native VLAN settings remain unchanged.</text>
+<text x="45" y="650" fill="#17324d" font-family="Arial,sans-serif" font-size="21">Check allowed, active and forwarding lists; verify SVI and endpoint traffic.</text>
+<text x="40" y="735" fill="#17324d" font-family="Arial,sans-serif" font-size="19">Read the article for prerequisites, controlled changes and verification limits.</text>
+</svg>

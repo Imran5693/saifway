@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760" role="img" aria-labelledby="title desc"><title id="title">HSRP group 42: restore the peer path</title><desc id="desc">Hypothetical HSRPv2 dual-active example and intended post-repair election.</desc>
+<rect width="1100" height="760" rx="18" fill="#f3f7fb"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8" fill="#168c87"/></marker></defs>
+<text x="40" y="50" font-family="Arial,sans-serif" font-size="28" fill="#17324d">HSRPv2 • VLAN 42 • VIP 192.0.2.1/24</text>
+<text x="40" y="95" font-family="Arial,sans-serif" font-size="24" fill="#17324d">BEFORE — isolated gateways</text>
+<rect x="60" y="110" width="410" height="125" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="73" y="140" font-family="Arial,sans-serif" font-size="21" fill="white">SW-A • Vlan42</text>
+<text x="73" y="169" font-family="Arial,sans-serif" font-size="21" fill="white">192.0.2.2/24 • priority 110</text>
+<text x="73" y="198" font-family="Arial,sans-serif" font-size="21" fill="white">Active</text>
+<rect x="630" y="110" width="410" height="125" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="643" y="140" font-family="Arial,sans-serif" font-size="21" fill="white">SW-B • Vlan42</text>
+<text x="643" y="169" font-family="Arial,sans-serif" font-size="21" fill="white">192.0.2.3/24 • priority 100</text>
+<text x="643" y="198" font-family="Arial,sans-serif" font-size="21" fill="white">Active</text>
+<path d="M470,175 L630,175" stroke="#bf6a0c" stroke-width="4"/>
+<path d="M542.0,163.0 L558.0,187.0 M558.0,163.0 L542.0,187.0" stroke="#bf6a0c" stroke-width="4"/>
+<text x="60" y="273" font-family="Arial,sans-serif" font-size="23" fill="#17324d">Gi1/0/48 ↔ Gi1/0/48 • native 99 agrees</text>
+<text x="60" y="311" font-family="Arial,sans-serif" font-size="22" fill="#17324d">SW-B allows 99 only; VLAN 42 hellos cannot cross</text>
+<text x="40" y="405" font-family="Arial,sans-serif" font-size="24" fill="#17324d">AFTER — peer hellos delivered</text>
+<rect x="60" y="420" width="410" height="125" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="73" y="450" font-family="Arial,sans-serif" font-size="21" fill="white">SW-A • Vlan42</text>
+<text x="73" y="479" font-family="Arial,sans-serif" font-size="21" fill="white">192.0.2.2/24 • priority 110</text>
+<text x="73" y="508" font-family="Arial,sans-serif" font-size="21" fill="white">Active</text>
+<rect x="630" y="420" width="410" height="125" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="643" y="450" font-family="Arial,sans-serif" font-size="21" fill="white">SW-B • Vlan42</text>
+<text x="643" y="479" font-family="Arial,sans-serif" font-size="21" fill="white">192.0.2.3/24 • priority 100</text>
+<text x="643" y="508" font-family="Arial,sans-serif" font-size="21" fill="white">Standby</text>
+<path d="M470,485 L630,485" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<text x="60" y="583" font-family="Arial,sans-serif" font-size="23" fill="#17324d">Gi1/0/48 ↔ Gi1/0/48 • native 99 agrees</text>
+<text x="60" y="621" font-family="Arial,sans-serif" font-size="22" fill="#17324d">SW-B adds tagged 42; 224.0.0.102 UDP 1985 crosses</text>
+<text x="40" y="730" font-family="Arial,sans-serif" font-size="20" fill="#17324d">Both SVIs stay up through local access ports. Proposed lab; no captured state.</text>
+</svg>

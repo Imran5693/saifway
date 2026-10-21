@@ -6,6 +6,7 @@ description: Intelligent Bug Hunting Platform for Android security analysis, vul
 date: 2026-09-03
 thumbnail: /assets/images/projects/intelligent-bug-hunting-platform/Intelligent_bug_hunting_platform.jpg
 student_support: true
+student_section: true
 tags:
   - Intelligent Bug Hunting Platform
   - Android Security
@@ -55,6 +56,28 @@ Traditional security testing is often performed using separate tools and manual 
 This project aims to provide a unified platform that can automate significant parts of this process and provide structured security findings with supporting evidence, validation steps, exploitation results, and remediation recommendations.
 
 ---
+
+## Project support across four technical phases
+
+The following milestones describe guidance for this **proposed** platform; they do not imply that these deliverables have already been implemented or validated.
+
+### Phase 1: SRS and acceptance criteria
+
+Define authorized users, permitted APK/device inputs, analysis boundaries and required report fields. Assign requirement IDs and write measurable acceptance criteria. Specify unsupported inputs, analysis failures and the difference between a potential finding and a validated vulnerability.
+
+### Phase 2: Design document and architecture
+
+Map requirements to APK intake, analysis workers, findings storage and reporting. Review use-case, sequence and deployment diagrams, data models, API boundaries, authentication and safe handling of untrusted APKs. Any device interaction needs explicit authorization and isolation appropriate to the lab.
+
+### Phase 3: Prototype and implementation troubleshooting
+
+Start with a reproducible environment and one end-to-end workflow: a permitted sample input, one scoped analysis task and a basic report. Document dependencies, test fixtures, failure handling and limitations before adding more analysis modules or AI-assisted interpretation.
+
+### Phase 4: Final delivery, testing and viva preparation
+
+Trace tests back to requirements and cover both valid and invalid inputs. Prepare source/setup instructions, a user guide, test evidence, known issues and a repeatable demonstration. Be ready to explain false positives, unsupported APKs and why an automated finding is not proof of exploitability.
+
+[Read the phase support guide]({{ '/final-year-project-help/#project-phases' | relative_url }}) or [prepare a WhatsApp request and share your project brief]({{ '/final-year-project-help/#send-project' | relative_url }}). Mentoring helps you understand and develop your own work; you remain responsible for your assessed submission.
 
 ## Problem Statement
 
@@ -808,7 +831,7 @@ Saif Way Tech - Student Project Support`;
    * Open WhatsApp
    */
 
-  window.open(whatsappURL, "_blank");
+  window.open(whatsappURL, "_blank", "noopener,noreferrer");
 
 });
 </script>

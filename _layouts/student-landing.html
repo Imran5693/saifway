@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" class="fyp-document">
+<head>
+  {% include head.html %}
+  <link rel="stylesheet" href="{{ '/assets/css/student-landing.css' | relative_url }}">
+  <link rel="preload" as="image" href="{{ '/assets/images/students/final-year-project-guidance-pakistan.webp' | relative_url }}">
+</head>
+<body class="fyp-page">
+  <a class="fyp-skip" href="#main-content">Skip to content</a>
+  {% include student-navbar.html %}
+  <main id="main-content">{{ content }}</main>
+  {% include student-footer.html %}
+  <a class="fyp-floating" href="{{ site.data.student_landing.whatsapp_url }}" target="_blank" rel="noopener noreferrer" aria-label="Discuss your student project on WhatsApp"><span aria-hidden="true">â†—</span> WhatsApp</a>
+  <script src="{{ '/assets/js/student-landing.js' | relative_url }}" defer></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760"><title>LACP passive/passive and active/passive lab topology</title><rect width="1100" height="760" rx="18" fill="#f3f7fb"/>
+<text x="40" y="45" font-family="Arial,sans-serif" font-size="20" fill="#17324d">SAIF WAY TECH · HYPOTHETICAL LACP LAB</text>
+<rect x="25" y="85" width="1050" height="295" rx="14" fill="white" stroke="#d0dce6"/>
+<text x="45" y="125" font-family="Arial,sans-serif" font-size="27" fill="#17324d">BEFORE · passive/passive: no initiator</text>
+<rect x="65" y="157" width="300" height="110" rx="10" fill="#17324d"/>
+<text x="83" y="195" font-family="Arial,sans-serif" font-size="25" fill="white">SW-A · passive</text>
+<text x="83" y="235" font-family="Arial,sans-serif" font-size="23" fill="#d7f8f4">Port-channel10</text>
+<rect x="735" y="157" width="300" height="110" rx="10" fill="#17324d"/>
+<text x="753" y="195" font-family="Arial,sans-serif" font-size="25" fill="white">SW-B · passive</text>
+<text x="753" y="235" font-family="Arial,sans-serif" font-size="23" fill="#d7f8f4">Port-channel10</text>
+<path d="M365,190 H735" stroke="#bf6a0c" stroke-width="4"/>
+<text x="415" y="180" font-family="Arial,sans-serif" font-size="21" fill="#17324d">Gi1/0/1 ↔ Gi1/0/1</text>
+<path d="M365,243 H735" stroke="#bf6a0c" stroke-width="4"/>
+<text x="415" y="233" font-family="Arial,sans-serif" font-size="21" fill="#17324d">Gi1/0/2 ↔ Gi1/0/2</text>
+<text x="45" y="305" font-family="Arial,sans-serif" font-size="22" fill="#17324d">Layer 2 trunk · VLANs 10,20 · native VLAN 1 agrees · no routed address</text>
+<text x="45" y="350" font-family="Arial,sans-serif" font-size="22" fill="#17324d">Connected cables ≠ negotiated bundle.</text>
+<rect x="25" y="400" width="1050" height="295" rx="14" fill="white" stroke="#d0dce6"/>
+<text x="45" y="440" font-family="Arial,sans-serif" font-size="27" fill="#17324d">AFTER · active/passive: verify selected members</text>
+<rect x="65" y="472" width="300" height="110" rx="10" fill="#17324d"/>
+<text x="83" y="510" font-family="Arial,sans-serif" font-size="25" fill="white">SW-A · active</text>
+<text x="83" y="550" font-family="Arial,sans-serif" font-size="23" fill="#d7f8f4">Port-channel10</text>
+<rect x="735" y="472" width="300" height="110" rx="10" fill="#17324d"/>
+<text x="753" y="510" font-family="Arial,sans-serif" font-size="25" fill="white">SW-B · passive</text>
+<text x="753" y="550" font-family="Arial,sans-serif" font-size="23" fill="#d7f8f4">Port-channel10</text>
+<path d="M365,505 H735" stroke="#168c87" stroke-width="4"/>
+<text x="415" y="495" font-family="Arial,sans-serif" font-size="21" fill="#17324d">Gi1/0/1 ↔ Gi1/0/1</text>
+<path d="M365,558 H735" stroke="#168c87" stroke-width="4"/>
+<text x="415" y="548" font-family="Arial,sans-serif" font-size="21" fill="#17324d">Gi1/0/2 ↔ Gi1/0/2</text>
+<text x="45" y="620" font-family="Arial,sans-serif" font-size="22" fill="#17324d">Layer 2 trunk · VLANs 10,20 · native VLAN 1 agrees · no routed address</text>
+<text x="45" y="665" font-family="Arial,sans-serif" font-size="22" fill="#17324d">Expect Po10(SU), both members (P); verify VLAN forwarding and services.</text>
+<text x="40" y="745" font-family="Arial,sans-serif" font-size="20" fill="#17324d">Only SW-A mode changes. This is not a multi-chassis aggregation example.</text>
+</svg>

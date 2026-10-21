@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760" role="img" aria-labelledby="title desc"><title id="title">LACP collector: evidence before health</title><desc id="desc">Synthetic expected-versus-observed Po1 membership contract.</desc>
+<rect width="1100" height="760" rx="18" fill="#f3f7fb"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8" fill="#168c87"/></marker></defs>
+<text x="40" y="50" font-family="Arial,sans-serif" font-size="27" fill="#17324d">Read-only command: show etherchannel summary</text>
+<rect x="60" y="110" width="410" height="100" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="73" y="140" font-family="Arial,sans-serif" font-size="21" fill="white">Expected Po1 • SU / LACP</text>
+<text x="73" y="169" font-family="Arial,sans-serif" font-size="21" fill="white">Gi1/0/1(P), Gi1/0/2(P)</text>
+<rect x="630" y="110" width="410" height="100" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="643" y="140" font-family="Arial,sans-serif" font-size="21" fill="white">Observed summary</text>
+<text x="643" y="169" font-family="Arial,sans-serif" font-size="21" fill="white">One validated output format</text>
+<path d="M470,160 L630,160" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="60" y="310" width="980" height="90" rx="12" fill="#e0f5f1" stroke="#d0dce6"/>
+<text x="80" y="343" font-family="Arial,sans-serif" font-size="24" fill="#17324d">MATCH</text>
+<text x="80" y="378" font-family="Arial,sans-serif" font-size="23" fill="#17324d">Same expected members; both have (P).</text>
+<rect x="60" y="425" width="980" height="90" rx="12" fill="#fff3df" stroke="#d0dce6"/>
+<text x="80" y="458" font-family="Arial,sans-serif" font-size="24" fill="#17324d">MISMATCH</text>
+<text x="80" y="493" font-family="Arial,sans-serif" font-size="23" fill="#17324d">Report missing, unexpected or unbundled ports.</text>
+<rect x="60" y="540" width="980" height="90" rx="12" fill="#fff3df" stroke="#d0dce6"/>
+<text x="80" y="573" font-family="Arial,sans-serif" font-size="24" fill="#17324d">UNKNOWN EVIDENCE</text>
+<text x="80" y="608" font-family="Arial,sans-serif" font-size="23" fill="#17324d">Collection/parser error stays separate.</text>
+<text x="40" y="735" font-family="Arial,sans-serif" font-size="19" fill="#17324d">Synthetic fixtures only. Summary state does not prove partner or VLAN forwarding.</text>
+</svg>

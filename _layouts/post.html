@@ -33,7 +33,7 @@ layout: default
           <ul>{% for point in page.takeaways %}<li>{{ point | escape }}</li>{% endfor %}</ul>
         </section>
         {% endif %}
-        <div class="blog-body" id="article-body">
+        <div class="blog-body" id="article-body"{% if page.copy_commands %} data-copy-commands="true"{% endif %}>
           {{ content }}
         </div>
         {% include blog-related.html %}

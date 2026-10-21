@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760" role="img" aria-labelledby="title desc"><title id="title">BGP loopback reachability before and after a host route</title><desc id="desc">Hypothetical eBGP loopback peering over a connected /30. Physical link works in both states. R1 lacks the route to R2 peer loopback until the host route is added.</desc>
+<rect width="1100" height="760" rx="18" fill="#f3f7fb"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8" fill="#168c87"/></marker></defs>
+<text x="40" y="44" font-family="Arial,sans-serif" font-size="20" fill="#17324d">SAIF WAY TECH · HYPOTHETICAL BGP TRANSPORT LAB</text>
+<rect x="25" y="80" width="1050" height="295" rx="12" fill="white" stroke="#d0dce6"/>
+<text x="45" y="117" font-family="Arial,sans-serif" font-size="27" fill="#17324d">BEFORE · connected link, missing R1 peer route</text>
+<rect x="60" y="145" width="300" height="120" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="73" y="175" font-family="Arial,sans-serif" font-size="21" fill="white">R1 · AS 64512</text>
+<text x="73" y="204" font-family="Arial,sans-serif" font-size="21" fill="white">Gi1: 192.0.2.1/30</text>
+<text x="73" y="233" font-family="Arial,sans-serif" font-size="21" fill="white">Lo0: 198.51.100.1/32</text>
+<rect x="740" y="145" width="300" height="120" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="753" y="175" font-family="Arial,sans-serif" font-size="21" fill="white">R2 · AS 64513</text>
+<text x="753" y="204" font-family="Arial,sans-serif" font-size="21" fill="white">Gi1: 192.0.2.2/30</text>
+<text x="753" y="233" font-family="Arial,sans-serif" font-size="21" fill="white">Lo0: 203.0.113.2/32</text>
+<path d="M360,205 L740,205" stroke="#168c87" stroke-width="4"/>
+<text x="399" y="174" font-family="Arial,sans-serif" font-size="22" fill="#17324d">Gi1 ↔ Gi1 · link up</text>
+<text x="388" y="250" font-family="Arial,sans-serif" font-size="21" fill="#17324d">Loopback-sourced BGP</text>
+<text x="45" y="302" font-family="Arial,sans-serif" font-size="23" fill="#bf6a0c">R1 → 203.0.113.2/32: MISSING</text>
+<text x="45" y="342" font-family="Arial,sans-serif" font-size="22" fill="#17324d">R2 return route already exists; both use update-source Lo0 and eBGP multihop 2.</text>
+<rect x="25" y="395" width="1050" height="295" rx="12" fill="white" stroke="#d0dce6"/>
+<text x="45" y="432" font-family="Arial,sans-serif" font-size="27" fill="#17324d">AFTER · narrow underlay route restores peer reachability</text>
+<rect x="60" y="460" width="300" height="120" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="73" y="490" font-family="Arial,sans-serif" font-size="21" fill="white">R1 · AS 64512</text>
+<text x="73" y="519" font-family="Arial,sans-serif" font-size="21" fill="white">Gi1: 192.0.2.1/30</text>
+<text x="73" y="548" font-family="Arial,sans-serif" font-size="21" fill="white">Lo0: 198.51.100.1/32</text>
+<rect x="740" y="460" width="300" height="120" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="753" y="490" font-family="Arial,sans-serif" font-size="21" fill="white">R2 · AS 64513</text>
+<text x="753" y="519" font-family="Arial,sans-serif" font-size="21" fill="white">Gi1: 192.0.2.2/30</text>
+<text x="753" y="548" font-family="Arial,sans-serif" font-size="21" fill="white">Lo0: 203.0.113.2/32</text>
+<path d="M360,520 L740,520" stroke="#168c87" stroke-width="4"/>
+<text x="399" y="489" font-family="Arial,sans-serif" font-size="22" fill="#17324d">Gi1 ↔ Gi1 · link up</text>
+<text x="388" y="565" font-family="Arial,sans-serif" font-size="21" fill="#17324d">Loopback-sourced BGP</text>
+<text x="45" y="617" font-family="Arial,sans-serif" font-size="23" fill="#168c87">R1 → 203.0.113.2/32: next hop 192.0.2.2</text>
+<text x="45" y="657" font-family="Arial,sans-serif" font-size="22" fill="#17324d">R2 return route already exists; both use update-source Lo0 and eBGP multihop 2.</text>
+<text x="40" y="738" font-family="Arial,sans-serif" font-size="19" fill="#17324d">Test prefixes: R1 198.51.100.20/32 ↔ R2 203.0.113.20/32. No live results shown.</text>
+</svg>

@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<article class="container py-6">
+  <p><a href="{{ '/final-year-project-help/' | relative_url }}">Student project guidance</a> / <a href="{{ '/students/projects/' | relative_url }}">Project catalogue</a></p>
+  <h1>{{ page.title | escape }}</h1>
+  <p class="lead">{{ page.description | escape }}</p>
+  <p><strong>Domain:</strong> {{ page.domain | escape }} · <strong>Technologies:</strong> {{ page.technologies | escape }}</p>
+  <p><strong>Listed:</strong> {{ page.date | date: '%B %d, %Y' }}{% if page.reference %} · <strong>Reference:</strong> {{ page.reference | escape }}{% endif %}</p>
+  {{ content }}
+  <h2>Project requirements document</h2>
+  <p><a href="{{ page.project_file | relative_url }}">Download the {{ page.title | escape }} brief ({{ page.file_type | escape }})</a></p>
+  <h2>Support for SRS, design, prototype and final delivery</h2>
+  <p>Discuss requirements and acceptance criteria, architecture and UML, implementation troubleshooting, test evidence and demonstration preparation. Share your university brief, current phase and the specific help you need. Support is independent mentoring; you develop and submit your own assessed work.</p>
+  {% capture message %}Hello Imran, I need technical guidance for {{ page.title }}.
+University:
+Degree Program:
+Current Phase (SRS / Design / Prototype / Final):
+Support Required:
+Deadline:{% endcapture %}
+  <a class="btn btn-success" href="https://wa.me/923146809271?text={{ message | strip | url_encode }}" target="_blank" rel="noopener noreferrer">Discuss this project on WhatsApp</a>
+  <p class="mt-4"><a href="{{ '/final-year-project-help/#project-phases' | relative_url }}">Read the four technical project phases</a> · <a href="{{ '/final-year-project-help/#send-project' | relative_url }}">Share your project details</a></p>
+</article>

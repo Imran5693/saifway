@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760" role="img" aria-labelledby="title desc"><title id="title">Native VLAN classification before and after agreement</title><desc id="desc">Hypothetical standalone Catalyst trunk with native99 on SW-A and native999 on SW-B before correction. Untagged classification can differ unless STP blocks. SW-B changes to native99; allowed list remains20,99,999.</desc>
+<rect width="1100" height="760" rx="18" fill="#f3f7fb"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8" fill="#168c87"/></marker></defs>
+<text x="40" y="44" font-family="Arial,sans-serif" font-size="20" fill="#17324d">SAIF WAY TECH · HYPOTHETICAL NATIVE VLAN LAB</text>
+<rect x="25" y="80" width="1050" height="295" rx="12" fill="white" stroke="#d0dce6"/>
+<text x="45" y="116" font-family="Arial,sans-serif" font-size="26" fill="#17324d">BEFORE · native identities disagree</text>
+<rect x="60" y="150" width="300" height="120" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="73" y="180" font-family="Arial,sans-serif" font-size="21" fill="white">SW-A · Gi1/0/48</text>
+<text x="73" y="209" font-family="Arial,sans-serif" font-size="21" fill="white">Native VLAN 99</text>
+<text x="73" y="238" font-family="Arial,sans-serif" font-size="21" fill="white">VLAN 20 remains tagged</text>
+<rect x="740" y="150" width="300" height="120" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="753" y="180" font-family="Arial,sans-serif" font-size="21" fill="white">SW-B · Gi1/0/48</text>
+<text x="753" y="209" font-family="Arial,sans-serif" font-size="21" fill="white">Native VLAN 999</text>
+<text x="753" y="238" font-family="Arial,sans-serif" font-size="21" fill="white">VLAN 20 remains tagged</text>
+<path d="M360,210 L740,210" stroke="#bf6a0c" stroke-width="4"/>
+<path d="M542.0,198.0 L558.0,222.0 M558.0,198.0 L542.0,222.0" stroke="#bf6a0c" stroke-width="4"/>
+<text x="423" y="181" font-family="Arial,sans-serif" font-size="22" fill="#17324d">802.1Q trunk</text>
+<text x="403" y="252" font-family="Arial,sans-serif" font-size="21" fill="#17324d">Native data untagged</text>
+<text x="45" y="310" font-family="Arial,sans-serif" font-size="22" fill="#17324d">If not blocked, untagged data can map: A VLAN 99 ↔ B VLAN 999.</text>
+<text x="45" y="350" font-family="Arial,sans-serif" font-size="21" fill="#17324d">Rapid PVST+ may block affected VLANs. Do not disable inconsistency protection.</text>
+<rect x="25" y="395" width="1050" height="295" rx="12" fill="white" stroke="#d0dce6"/>
+<text x="45" y="431" font-family="Arial,sans-serif" font-size="26" fill="#17324d">AFTER · SW-B native identity aligned to the recorded design</text>
+<rect x="60" y="465" width="300" height="120" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="73" y="495" font-family="Arial,sans-serif" font-size="21" fill="white">SW-A · Gi1/0/48</text>
+<text x="73" y="524" font-family="Arial,sans-serif" font-size="21" fill="white">Native VLAN 99</text>
+<text x="73" y="553" font-family="Arial,sans-serif" font-size="21" fill="white">VLAN 20 remains tagged</text>
+<rect x="740" y="465" width="300" height="120" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="753" y="495" font-family="Arial,sans-serif" font-size="21" fill="white">SW-B · Gi1/0/48</text>
+<text x="753" y="524" font-family="Arial,sans-serif" font-size="21" fill="white">Native VLAN 99</text>
+<text x="753" y="553" font-family="Arial,sans-serif" font-size="21" fill="white">VLAN 20 remains tagged</text>
+<path d="M360,525 L740,525" stroke="#168c87" stroke-width="4"/>
+<text x="423" y="496" font-family="Arial,sans-serif" font-size="22" fill="#17324d">802.1Q trunk</text>
+<text x="403" y="567" font-family="Arial,sans-serif" font-size="21" fill="#17324d">Native data untagged</text>
+<text x="45" y="625" font-family="Arial,sans-serif" font-size="22" fill="#17324d">Untagged data maps to VLAN 99 at both ends; verify STP and services.</text>
+<text x="45" y="665" font-family="Arial,sans-serif" font-size="21" fill="#17324d">Allowed list remains 20,99,999. Global native tagging remains unchanged.</text>
+<text x="40" y="738" font-family="Arial,sans-serif" font-size="19" fill="#17324d">Classification model, not a packet capture. No IP addressing change is involved.</text>
+</svg>

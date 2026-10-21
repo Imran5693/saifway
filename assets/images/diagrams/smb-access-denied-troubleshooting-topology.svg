@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760" role="img" aria-labelledby="title desc"><title id="title">SMB Reports share: identify the denied stage</title><desc id="desc">Hypothetical share ACL omission; NTFS already permits approved read access.</desc>
+<rect width="1100" height="760" rx="18" fill="#f3f7fb"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8" fill="#168c87"/></marker></defs>
+<text x="40" y="50" font-family="Arial,sans-serif" font-size="27" fill="#17324d">fs01.example.test • 192.0.2.60 • SMB over TCP 445</text>
+<rect x="60" y="100" width="410" height="100" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="73" y="130" font-family="Arial,sans-serif" font-size="21" fill="white">Windows client</text>
+<text x="73" y="159" font-family="Arial,sans-serif" font-size="21" fill="white">EXAMPLE domain identity</text>
+<rect x="630" y="100" width="410" height="100" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="643" y="130" font-family="Arial,sans-serif" font-size="21" fill="white">Windows member server</text>
+<text x="643" y="159" font-family="Arial,sans-serif" font-size="21" fill="white">Reports → D:\Shares\Reports</text>
+<path d="M470,150 L630,150" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<text x="60" y="275" font-family="Arial,sans-serif" font-size="24" fill="#17324d">BEFORE — share Read grant absent</text>
+<rect x="60" y="300" width="290" height="100" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="73" y="330" font-family="Arial,sans-serif" font-size="21" fill="white">Session identity</text>
+<text x="73" y="359" font-family="Arial,sans-serif" font-size="21" fill="white">Approved account</text>
+<rect x="405" y="300" width="290" height="100" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="418" y="330" font-family="Arial,sans-serif" font-size="21" fill="white">Reports share ACL</text>
+<text x="418" y="359" font-family="Arial,sans-serif" font-size="21" fill="white">Read absent</text>
+<rect x="750" y="300" width="290" height="100" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="763" y="330" font-family="Arial,sans-serif" font-size="21" fill="white">NTFS ACL</text>
+<text x="763" y="359" font-family="Arial,sans-serif" font-size="21" fill="white">Read already allowed</text>
+<path d="M350,350 L405,350" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<path d="M695,350 L750,350" stroke="#bf6a0c" stroke-width="4"/>
+<path d="M714.5,338.0 L730.5,362.0 M730.5,338.0 L714.5,362.0" stroke="#bf6a0c" stroke-width="4"/>
+<text x="60" y="485" font-family="Arial,sans-serif" font-size="24" fill="#17324d">AFTER — approved share Read grant</text>
+<rect x="60" y="510" width="290" height="100" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="73" y="540" font-family="Arial,sans-serif" font-size="21" fill="white">Session identity</text>
+<text x="73" y="569" font-family="Arial,sans-serif" font-size="21" fill="white">Approved account</text>
+<rect x="405" y="510" width="290" height="100" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="418" y="540" font-family="Arial,sans-serif" font-size="21" fill="white">Reports share ACL</text>
+<text x="418" y="569" font-family="Arial,sans-serif" font-size="21" fill="white">ReportReaders: Read</text>
+<rect x="750" y="510" width="290" height="100" rx="12" fill="#17324d" stroke="#17324d"/>
+<text x="763" y="540" font-family="Arial,sans-serif" font-size="21" fill="white">NTFS ACL</text>
+<text x="763" y="569" font-family="Arial,sans-serif" font-size="21" fill="white">Read already allowed</text>
+<path d="M350,560 L405,560" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<path d="M695,560 L750,560" stroke="#168c87" stroke-width="4" marker-end="url(#arrow)"/>
+<text x="40" y="700" font-family="Arial,sans-serif" font-size="22" fill="#17324d">Only the share ACL changes. Verify the exact file and operation afterward.</text>
+<text x="40" y="735" font-family="Arial,sans-serif" font-size="19" fill="#17324d">Proposed lab; no captured session, permission result or production evidence.</text>
+</svg>

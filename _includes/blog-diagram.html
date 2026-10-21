@@ -1,8 +1,8 @@
-<figure class="blog-diagram">
+<figure class="blog-diagram{% if include.scrollable %} blog-diagram-scrollable{% endif %}">
   {% assign diagram_height = 760 %}
   {% if include.src contains 'netmiko-workflow' or include.src contains 'noc-troubleshooting' or include.src contains 'network-automation-interfaces' %}{% assign diagram_height = 960 %}{% endif %}
   <a href="{{ include.src | relative_url }}" target="_blank" rel="noopener noreferrer" aria-label="Open full-size diagram: {{ include.alt | escape }}">
     <img src="{{ include.src | relative_url }}" alt="{{ include.alt | escape }}" width="1100" height="{{ diagram_height }}" loading="lazy">
   </a>
-  <figcaption>{{ include.caption | escape }} <a href="{{ include.src | relative_url }}" target="_blank" rel="noopener noreferrer">Open full-size diagram</a>.</figcaption>
+  <figcaption>{{ include.caption | escape }}{% if include.scrollable %} Scroll horizontally on small screens to read all labels.{% endif %} <a href="{{ include.src | relative_url }}" target="_blank" rel="noopener noreferrer">Open full-size diagram</a>.</figcaption>
 </figure>
