@@ -30,7 +30,7 @@ layout: default
 
     {% if page.thumbnail %}
       <div class="project-image-wrapper">
-        <img src="{{ page.thumbnail | relative_url }}" alt="{{ page.title }}" class="project-image" loading="lazy">
+        <img src="{{ page.thumbnail | relative_url }}"{% if page.thumbnail_small %} srcset="{{ page.thumbnail_small | relative_url }} 640w, {{ page.thumbnail | relative_url }} {{ page.thumbnail_width }}w" sizes="(min-width: 960px) 920px, 100vw" width="{{ page.thumbnail_width }}" height="{{ page.thumbnail_height }}" fetchpriority="high"{% endif %} alt="{{ page.title }}" class="project-image"{% unless page.thumbnail_small %} loading="lazy"{% endunless %}>
       </div>
     {% endif %}
 

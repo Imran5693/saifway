@@ -3,7 +3,10 @@ expertise: automation
 layout: post
 title: 'Python Network Automation with Netmiko: Multi-Vendor User Management'
 description: 'Plan multi-vendor user management with Python and Netmiko: inventory, SSH sessions, prompt handling, configuration checks and per-device results.'
-thumbnail: /assets/images/blog/python-netmiko-automation.png
+thumbnail: /assets/images/blog/python-netmiko-automation.webp
+thumbnail_small: /assets/images/blog/python-netmiko-automation-640.webp
+thumbnail_width: 1200
+thumbnail_height: 675
 date: 2025-05-18
 author: Imran Sarwar
 tags:

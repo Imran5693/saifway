@@ -23,7 +23,7 @@ layout: default
         {% endif %}
         <span>{{ reading_minutes }} min read</span>
       </div>
-      {% if page.thumbnail %}<img src="{{ page.thumbnail | relative_url }}" alt="{{ page.image_alt | default: page.title | escape }}" class="blog-cover" width="{{ page.thumbnail_width | default: 1200 }}" height="{{ page.thumbnail_height | default: 630 }}" fetchpriority="high" decoding="async">{% endif %}
+      {% if page.thumbnail %}<img src="{{ page.thumbnail | relative_url }}"{% if page.thumbnail_small %} srcset="{{ page.thumbnail_small | relative_url }} 640w, {{ page.thumbnail | relative_url }} {{ page.thumbnail_width }}w" sizes="(min-width: 1240px) 1200px, calc(100vw - 40px)"{% endif %} alt="{{ page.image_alt | default: page.title | escape }}" class="blog-cover" width="{{ page.thumbnail_width | default: 1200 }}" height="{{ page.thumbnail_height | default: 630 }}" fetchpriority="high" decoding="async">{% endif %}
     </header>
     <div class="blog-grid">
       <div class="blog-main">

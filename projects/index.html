@@ -23,7 +23,7 @@ permalink: /projects/
         <div class="col-md-6 col-lg-4">
           <article class="project-card h-100">
             {% if project.thumbnail %}
-              <img src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}" class="project-thumbnail" loading="lazy">
+              <img src="{{ project.thumbnail_small | default: project.thumbnail | relative_url }}" alt="{{ project.title }}" class="project-thumbnail" loading="lazy">
             {% endif %}
             <div class="project-content">
               <small class="project-meta">{{ project.date | date: "%B %Y" }}</small>

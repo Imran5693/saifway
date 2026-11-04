@@ -10,7 +10,10 @@ tags:
 - Python network automation interfaces
 - NETCONF capabilities
 expertise: automation
-thumbnail: /assets/images/blog/python-netmiko-automation.png
+thumbnail: /assets/images/blog/python-netmiko-automation.webp
+thumbnail_small: /assets/images/blog/python-netmiko-automation-640.webp
+thumbnail_width: 1200
+thumbnail_height: 675
 excerpt: 'Choose a Python network automation interface: compare Netmiko SSH, NETCONF RPCs, RESTCONF resources and vendor APIs, with capability and validation checks.'
 modified_date: '2026-10-17T16:00:00+04:00'
 author: Imran Sarwar

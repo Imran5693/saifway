@@ -5,7 +5,10 @@ title: "Multi-Vendor Configuration Management with Python and Netmiko"
 description: "Review a Python and Netmiko project for multi-vendor configuration management: inventory filtering, account workflows, CLI differences and verification limits."
 date: 2025-06-27
 modified_date: '2026-10-20T12:00:00+04:00'
-thumbnail: "/assets/images/projects/multi-vendor_project.png"
+thumbnail: "/assets/images/projects/multi-vendor_project.webp"
+thumbnail_small: /assets/images/projects/multi-vendor_project-640.webp
+thumbnail_width: 1200
+thumbnail_height: 675
 tags: [Python Network Automation, Netmiko, Configuration Management, Multi-Vendor Infrastructure]
 sitemap: true
 ---

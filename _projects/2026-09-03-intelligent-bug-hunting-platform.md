@@ -411,7 +411,9 @@ The AI component should operate within controlled workflows and its generated fi
 
 <div class="project-image-wrapper my-4">
   <img
-    src="{{ '/assets/images/projects/intelligent-bug-hunting-platform/intelligent-bug-hunting-platform-system-workflow.png' | relative_url }}"
+    src="{{ '/assets/images/projects/intelligent-bug-hunting-platform/intelligent-bug-hunting-platform-system-workflow.webp' | relative_url }}"
+    width="1536"
+    height="1024"
     alt="Intelligent Bug Hunting Platform system workflow"
     class="project-image"
     loading="lazy">

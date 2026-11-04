@@ -5,7 +5,10 @@ title: Security by Design Checklist for Infrastructure Deployments
 description: An infrastructure security-by-design checklist covering access paths, management boundaries, certificates, logging and recovery evidence before deployment.
 date: 2026-03-15
 author: Imran Sarwar
-thumbnail: /assets/images/blog/security-by-design-infrastructure.png
+thumbnail: /assets/images/blog/security-by-design-infrastructure.webp
+thumbnail_small: /assets/images/blog/security-by-design-infrastructure-640.webp
+thumbnail_width: 1200
+thumbnail_height: 675
 tags:
 - Secure infrastructure delivery
 - infrastructure security by design checklist

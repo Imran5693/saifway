@@ -187,7 +187,7 @@ and cybersecurity-focused AI projects.</p>
         <div class="col-md-6 col-lg-4">
           <article class="project-card h-100">
             {% if project.thumbnail %}
-              <img src="{{ project.thumbnail | relative_url }}" class="project-thumbnail" alt="{{ project.title }}" loading="lazy">
+              <img src="{{ project.thumbnail_small | default: project.thumbnail | relative_url }}" class="project-thumbnail" alt="{{ project.title }}" loading="lazy">
             {% endif %}
             <div class="project-content">
               <h3 class="project-title">{{ project.title }}</h3>
