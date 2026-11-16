@@ -1,7 +1,7 @@
 ---
 layout: default
 title: VU CS619 Project Topics & Technical Support
-description: Browse project examples for Virtual University CS619 students. Explore the Intelligent Bug Hunting Platform and discuss scope, debugging and project support.
+description: Explore Fall 2026 VU CS619 project topics matched to Python, Flask, cybersecurity, NLP and machine learning experience, with scope and technical support guidance.
 permalink: /students/projects/
 student_section: true
 ---
@@ -9,7 +9,7 @@ student_section: true
   <div class="container">
     <span class="section-kicker">Saif Way Tech Student Help Desk</span>
     <h1>VU CS619 project topics and support</h1>
-    <p class="lead">Explore a project example, review its technical scope, then discuss the support you need.</p>
+    <p class="lead">Find a project that fits Python, Flask, cybersecurity, NLP and machine-learning experience, review its scope, then discuss the guidance you need.</p>
     <p>This independent catalogue is maintained by Saif Way Tech. A listing does not mean the project is currently offered or approved by Virtual University. Confirm your current project title, requirements and selection process with your supervisor or VULMS.</p>
     {% assign project_months = site.data.student_projects | group_by: 'catalogue_month' | sort: 'name' | reverse %}
     {% for month in project_months %}
@@ -26,9 +26,29 @@ student_section: true
     </article>
     {% endfor %}
     {% endfor %}
+    <h2 id="fall-2026">Fall 2026 projects matched to portfolio experience</h2>
+    <p>Reviewed from the supplied Fall 2026 project list. The 12 strong matches share a demonstrated technical foundation; new tools still need a prototype. One advanced NLP topic is conditional, and two PHP-based projects are listed for partial support. These are support assessments, not completed-project claims.</p>
+    <p><a href="{{ '/professional-profile/' | relative_url }}">Review Imran's experience</a> · <a href="{{ '/final-year-project-help/#project-phases' | relative_url }}">Plan your SRS</a></p>
+    {% assign fit_groups = 'Strong match,Conditional match,Partial support' | split: ',' %}
+    {% for fit in fit_groups %}
+    <h3 class="mt-5">{{ fit | escape }}</h3>
+    <div class="row g-4">
+      {% for project in site.data.fall2026_projects %}{% if project.fit == fit %}
+      <div class="col-md-6"><article class="professional-card h-100">
+        <p class="small text-muted">{{ project.domain | escape }} · {{ project.fit | escape }}</p>
+        <h4><a href="{{ project.url | relative_url }}">{{ project.title | escape }}</a></h4>
+        <p>{{ project.summary | escape }}</p>
+        <p><strong>Stack:</strong> {{ project.technologies | escape }}</p>
+        <a class="btn btn-outline-primary" href="{{ project.url | relative_url }}">Review scope and support fit</a>
+      </article></div>
+      {% endif %}{% endfor %}
+    </div>
+    {% endfor %}
     {% assign uploaded_projects = site.student_projects | sort: 'date' | reverse %}
     {% for project in uploaded_projects %}
+    {% unless project.f26_slug %}
     <article class="professional-card mt-4"><h2><a href="{{ project.url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ project.title | escape }}</a></h2><p>{{ project.description | escape }}</p><p>{{ project.domain | escape }} · {{ project.technologies | escape }}</p><p>Listed {{ project.date | date: '%B %Y' }}</p><a href="{{ project.url | relative_url }}" target="_blank" rel="noopener noreferrer">Read project scope and download brief →</a></article>
+    {% endunless %}
     {% endfor %}
     <h2 class="mt-5">Have a different project title?</h2>
     <p>Share your official brief, technology stack, current phase and deadline. Support availability is assessed for each topic; this catalogue is not an automatic project booking or university selection system.</p>

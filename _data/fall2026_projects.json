@@ -1,0 +1,272 @@
+[
+  {
+    "title": "AI-Powered Active Directory Risk Profiling and Network Security Monitoring System",
+    "fit": "Strong match",
+    "technologies": "Windows Server AD, Python, Flask/FastAPI, SQLite",
+    "domain": "Security and infrastructure",
+    "evidence": "NOC operations, cloud IAM and the ML cyber-attack detection portfolio",
+    "portfolio": "/projects/2026-04-24-ml-cyber-attack-detection/",
+    "summary": "Create a controlled AD lab, collect Windows events and turn rule-based findings into user and asset risk profiles.",
+    "modules": [
+      "Configure test users, groups and Windows event collection",
+      "Store timestamped events and implement explainable risk rules",
+      "Build authenticated dashboards, event filters and exportable reports"
+    ],
+    "caveat": "Agree the monitored event IDs and lab resources first. AI explanations must remain tied to collected evidence; this is a laboratory monitoring project.",
+    "validation": "Test failed logins, account changes, access permissions and collector failure. Compare dashboard findings with the original Windows events.",
+    "slug": "ai-powered-active-directory-risk-profiling-and-network-security-monitoring-system",
+    "url": "/students/projects/ai-powered-active-directory-risk-profiling-and-network-security-monitoring-system/"
+  },
+  {
+    "title": "AI-Based Sentiment and Emotion Analysis of Text Using Natural Language Processing",
+    "fit": "Strong match",
+    "technologies": "Python, scikit-learn, NLTK/spaCy, Flask/Streamlit, SQLite/MySQL",
+    "domain": "NLP",
+    "evidence": "the text-based emotion recognition portfolio",
+    "portfolio": "/projects/2025-11-21-text-based-emotion-recognition/",
+    "summary": "Classify sentiment and emotion in submitted text, with prediction history, confidence information and evaluation charts.",
+    "modules": [
+      "Prepare labelled sentiment and emotion datasets",
+      "Compare TF-IDF classification baselines and evaluate each label",
+      "Connect manual text and batch input to a results dashboard"
+    ],
+    "caveat": "Check dataset licences, label definitions and language coverage before training. Confidence scores need careful interpretation and do not establish a person’s actual emotional state.",
+    "validation": "Keep test records separate from preprocessing and training. Report per-class precision, recall, F1 and examples of misclassified text.",
+    "slug": "ai-based-sentiment-and-emotion-analysis-of-text-using-natural-language-processing",
+    "url": "/students/projects/ai-based-sentiment-and-emotion-analysis-of-text-using-natural-language-processing/"
+  },
+  {
+    "title": "Fake News Detection System",
+    "fit": "Strong match",
+    "technologies": "Python, pandas, NLTK, scikit-learn, Matplotlib",
+    "domain": "NLP",
+    "evidence": "text classification and machine-learning evaluation experience",
+    "portfolio": "/projects/2025-11-21-text-based-emotion-recognition/",
+    "summary": "Compare text classifiers that label news as potentially fake or potentially genuine and explain the limits of those predictions.",
+    "modules": [
+      "Clean and deduplicate article titles and bodies",
+      "Compare Logistic Regression, Multinomial Naive Bayes and SVM using TF-IDF",
+      "Present confusion matrices, model comparisons and error analysis"
+    ],
+    "caveat": "The brief specifies a Python classification application. A Flask interface would be an additional scope choice, not a stated requirement. Predictions do not independently verify facts.",
+    "validation": "Split data before fitting the vectorizer. Examine duplicate leakage and changes in predictions caused by punctuation, spacing and publication topics.",
+    "slug": "fake-news-detection-system",
+    "url": "/students/projects/fake-news-detection-system/"
+  },
+  {
+    "title": "ExamPredict - Intelligent Student Performance Prediction and Early Warning System",
+    "fit": "Strong match",
+    "technologies": "Python, Flask, pandas, scikit-learn",
+    "domain": "Academic analytics",
+    "evidence": "Flask REST integration and applied machine-learning projects",
+    "portfolio": "/projects/2026-04-24-ml-cyber-attack-detection/",
+    "summary": "Predict examination scores and compare Linear Regression with Random Forest Regression through a Flask analytics application.",
+    "modules": [
+      "Prepare academic and study-habit inputs with a reproducible split",
+      "Implement prediction, model-comparison, history and metrics endpoints",
+      "Display estimated scores, instructor-defined risk levels and study suggestions"
+    ],
+    "caveat": "The brief describes a synthetic student dataset. Results demonstrate a modelling workflow and cannot establish real student outcomes.",
+    "validation": "Compare MAE, RMSE and R-squared on held-out data. Verify input ranges and ensure prediction uses the fitted training preprocessing pipeline.",
+    "slug": "exampredict-intelligent-student-performance-prediction-and-early-warning-system",
+    "url": "/students/projects/exampredict-intelligent-student-performance-prediction-and-early-warning-system/"
+  },
+  {
+    "title": "GraduPredict Graduate Placement Prediction System",
+    "fit": "Strong match",
+    "technologies": "Python, Streamlit, SQLite, pandas, NumPy, openpyxl",
+    "domain": "Academic analytics",
+    "evidence": "Python classification, dashboards and data processing",
+    "portfolio": "/projects/2026-04-24-ml-cyber-attack-detection/",
+    "summary": "Estimate placement readiness using Logistic Regression and a shallow Decision Tree, with individual and teacher batch predictions.",
+    "modules": [
+      "Implement student and teacher permissions",
+      "Validate Excel uploads with at least three student records",
+      "Compare decision thresholds, model disagreement and exported results"
+    ],
+    "caveat": "Streamlit is an adjacent framework to the demonstrated Flask experience. Placement estimates are advisory and must not be presented as employment guarantees.",
+    "validation": "Test batch column validation, invalid values and cross-user access. Measure classification performance and investigate threshold sensitivity.",
+    "slug": "gradupredict-graduate-placement-prediction-system",
+    "url": "/students/projects/gradupredict-graduate-placement-prediction-system/"
+  },
+  {
+    "title": "Rule-Based Student Academic Advising and Course Recommendation System",
+    "fit": "Strong match",
+    "technologies": "Python, Flask, MySQL, Bootstrap, Pytest",
+    "domain": "Python web applications",
+    "evidence": "Flask applications, access control and relational database workflows",
+    "portfolio": "/projects/2025-05-04-preowned-goods/",
+    "summary": "Turn explicit academic rules into explainable course-load recommendations that can be reviewed and approved.",
+    "modules": [
+      "Model course prerequisites and student academic inputs",
+      "Implement eligibility checks, course prioritization and explanations",
+      "Build the student-entry and approval workflow"
+    ],
+    "caveat": "This is a rule-based system. Confirm the university’s actual advising rules instead of substituting an ML model or invented academic policy.",
+    "validation": "Use cases should cover blocked prerequisites, course-load boundaries, conflicting inputs and approval permissions. Trace each recommendation to its rule.",
+    "slug": "rule-based-student-academic-advising-and-course-recommendation-system",
+    "url": "/students/projects/rule-based-student-academic-advising-and-course-recommendation-system/"
+  },
+  {
+    "title": "TopicTrace: Concept-Level Learning Gap Detector and Adaptive Revision Planner",
+    "fit": "Strong match",
+    "technologies": "Python, scikit-learn, XGBoost, SHAP, Flask/Django, SQL",
+    "domain": "Academic analytics",
+    "evidence": "Python analytics and explainable prediction dashboards",
+    "portfolio": "/projects/2026-04-24-ml-cyber-attack-detection/",
+    "summary": "Use assessment evidence to identify concept-level learning gaps and produce an explained revision plan.",
+    "modules": [
+      "Map questions and assessment outcomes to concepts",
+      "Prepare model features and explained learning-gap alerts",
+      "Show revision priorities and teacher-facing analytics"
+    ],
+    "caveat": "Topic-level recommendations depend on correctly tagged assessment data. XGBoost and SHAP are extensions of the demonstrated ML stack and need an initial feasibility check.",
+    "validation": "Hold out evaluation records, review explanation stability and check that weak concepts lead to relevant revision activities rather than generic advice.",
+    "slug": "topictrace-concept-level-learning-gap-detector-and-adaptive-revision-planner",
+    "url": "/students/projects/topictrace-concept-level-learning-gap-detector-and-adaptive-revision-planner/"
+  },
+  {
+    "title": "SMART-EDU: An AI-Based Early Academic Warning and Personalized Learning Recommendation System",
+    "fit": "Strong match",
+    "technologies": "Python, pandas, scikit-learn Decision Tree, Streamlit",
+    "domain": "Academic analytics",
+    "evidence": "Python machine-learning pipelines and dashboard development",
+    "portfolio": "/projects/2026-04-24-ml-cyber-attack-detection/",
+    "summary": "Use pre-midterm information to estimate academic risk and connect topic-tagged assessment results with learning recommendations.",
+    "modules": [
+      "Prepare historical pre-midterm inputs and actual midterm labels",
+      "Train and evaluate a Decision Tree baseline",
+      "Display early warnings and topic-based support suggestions"
+    ],
+    "caveat": "Historical outcomes and topic-tagged assessments are needed for different parts of the system. Streamlit is an adjacent framework; data availability is the first feasibility check.",
+    "validation": "Exclude outcome-derived features from prediction inputs. Validate the warning threshold and verify that recommendations correspond to the assessed topic gaps.",
+    "slug": "smart-edu-an-ai-based-early-academic-warning-and-personalized-learning-recommendation-system",
+    "url": "/students/projects/smart-edu-an-ai-based-early-academic-warning-and-personalized-learning-recommendation-system/"
+  },
+  {
+    "title": "Crop Data Processing and Analytical Reporting System for Pakistan",
+    "fit": "Strong match",
+    "technologies": "Python, PostgreSQL, pandas, SQLAlchemy/psycopg, Streamlit, Plotly",
+    "domain": "Data engineering",
+    "evidence": "Python automation, data validation and database-backed applications",
+    "portfolio": "/network-automation-python/",
+    "summary": "Build a reproducible crop-data ingestion and reporting pipeline with explicit mapping, observation keys and transaction behaviour.",
+    "modules": [
+      "Read source CSV fields as text and validate configured mappings",
+      "Implement observation keys, numeric parsing and database transactions",
+      "Expose analytical reports through a local Streamlit interface"
+    ],
+    "caveat": "PostgreSQL ETL and Streamlit extend the existing Python foundation. Follow the supplied input contract; do not replace it with an external AI service or assume large-scale performance from a small sample.",
+    "validation": "Test malformed numeric values, duplicate observations, reruns and rollback on invalid records. Reconcile report totals with the accepted source rows.",
+    "slug": "crop-data-processing-and-analytical-reporting-system-for-pakistan",
+    "url": "/students/projects/crop-data-processing-and-analytical-reporting-system-for-pakistan/"
+  },
+  {
+    "title": "Smart English Text Error Detection and Correction System",
+    "fit": "Strong match",
+    "technologies": "Python, Flask/Django, spaCy, LanguageTool, python-docx",
+    "domain": "NLP",
+    "evidence": "NLP pipelines and Python web application experience",
+    "portfolio": "/projects/2025-11-21-text-based-emotion-recognition/",
+    "summary": "Detect English writing errors, let users review individual corrections and export corrected documents while preserving paragraph order.",
+    "modules": [
+      "Accept text and DOCX input with safe validation",
+      "Classify writing errors and show explanations and suggestions",
+      "Apply accepted corrections and generate a corrected DOCX"
+    ],
+    "caveat": "LanguageTool integration and document processing need a prototype. Preserve the original text so users can inspect every suggested change.",
+    "validation": "Test accepted and rejected edits, overlapping suggestions, punctuation and multi-paragraph documents. Compare exported text order against the source.",
+    "slug": "smart-english-text-error-detection-and-correction-system",
+    "url": "/students/projects/smart-english-text-error-detection-and-correction-system/"
+  },
+  {
+    "title": "Student Fee and Scholarship Management System Using Python",
+    "fit": "Strong match",
+    "technologies": "Python, Tkinter, SQLite/MySQL",
+    "domain": "Python desktop applications",
+    "evidence": "Python programming, data modelling and access-control workflows",
+    "portfolio": "/projects/2025-05-04-preowned-goods/",
+    "summary": "Manage student fees, scholarship adjustments, instalments, receipts and outstanding balances in a desktop application.",
+    "modules": [
+      "Model students, departments, fee structures and scholarships",
+      "Implement accountant, administrator and student access",
+      "Calculate balances and create receipts and collection reports"
+    ],
+    "caveat": "The brief requires a Tkinter desktop application, not a Flask website. Tkinter is an adjacent skill; prototype the GUI and printing workflow before committing to delivery.",
+    "validation": "Check scholarship percentages, late fines, partial payments and repeated receipt actions. Use decimal arithmetic and reconcile every balance with payment history.",
+    "slug": "student-fee-and-scholarship-management-system-using-python",
+    "url": "/students/projects/student-fee-and-scholarship-management-system-using-python/"
+  },
+  {
+    "title": "Simulation-Based Web Application for Visualization and Comparative Analysis of Disk Scheduling Algorithms",
+    "fit": "Strong match",
+    "technologies": "Python, Flask/Django, JavaScript, Chart.js/Plotly, SQLite/MySQL",
+    "domain": "Python web applications",
+    "evidence": "Python logic, Flask interfaces and technical visualization",
+    "portfolio": "/network-automation-python/",
+    "summary": "Visualize disk-head movement and compare scheduling algorithms using consistent request queues and seek-distance calculations.",
+    "modules": [
+      "Validate request queues, disk bounds and initial head position",
+      "Implement the algorithms required by the approved brief",
+      "Plot movement and compare results with worked examples"
+    ],
+    "caveat": "Algorithm correctness is central. Confirm direction and boundary conventions for each algorithm before drawing comparisons; the tool list alone does not define the required implementation.",
+    "validation": "Use hand-calculated cases, repeated requests, empty queues and disk-edge positions. Verify reported total movement against the plotted head path.",
+    "slug": "simulation-based-web-application-for-visualization-and-comparative-analysis-of-disk-scheduling-algorithms",
+    "url": "/students/projects/simulation-based-web-application-for-visualization-and-comparative-analysis-of-disk-scheduling-algorithms/"
+  },
+  {
+    "title": "Aspect-Based Sentiment Analysis on E-Commerce Reviews",
+    "fit": "Conditional match",
+    "technologies": "Python, Transformers, PyTorch/TensorFlow, spaCy, Flask/Streamlit",
+    "domain": "Advanced NLP",
+    "evidence": "existing text emotion recognition work",
+    "portfolio": "/projects/2025-11-21-text-based-emotion-recognition/",
+    "summary": "Extract product aspects and classify sentiment toward each aspect instead of assigning one label to an entire review.",
+    "modules": [
+      "Establish an aspect-labelled dataset and baseline",
+      "Implement aspect extraction and compare sentiment models",
+      "Build CSV review upload and aspect-level charts"
+    ],
+    "caveat": "Transformer fine-tuning and sequence labelling go beyond the demonstrated baseline. Confirm dataset access through the student’s VU account and available compute before accepting the full scope.",
+    "validation": "Evaluate extraction and sentiment separately. Include reviews that praise one aspect while criticizing another and report per-aspect errors.",
+    "slug": "aspect-based-sentiment-analysis-on-e-commerce-reviews",
+    "url": "/students/projects/aspect-based-sentiment-analysis-on-e-commerce-reviews/"
+  },
+  {
+    "title": "SmartAssist: AI-Powered Help Desk and Ticket Support System",
+    "fit": "Partial support",
+    "technologies": "PHP 8, Laravel, MySQL, AI API, Bootstrap",
+    "domain": "Help desk and API integration",
+    "evidence": "support operations, REST integration and authentication concepts",
+    "portfolio": "/network-automation-services/",
+    "summary": "Connect knowledge-based AI support with ticket escalation, support-agent replies and resolution tracking.",
+    "modules": [
+      "Model ticket lifecycle, permissions and knowledge-base records",
+      "Review AI integration and human escalation behaviour",
+      "Define analytics, validation and API troubleshooting checks"
+    ],
+    "caveat": "The official backend is PHP 8 with Laravel. The portfolio demonstrates Python/Flask rather than Laravel; offer requirements, API and debugging guidance only unless that skill gap is resolved.",
+    "validation": "Test role separation, ticket ownership, unhelpful AI responses, escalation and status transitions. Confirm users can reach a human when automated support fails.",
+    "slug": "smartassist-ai-powered-help-desk-and-ticket-support-system",
+    "url": "/students/projects/smartassist-ai-powered-help-desk-and-ticket-support-system/"
+  },
+  {
+    "title": "AI-Powered Smart Job Portal with Resume Screening and Career Guidance",
+    "fit": "Partial support",
+    "technologies": "PHP, MySQL, Python NLP service, REST API",
+    "domain": "NLP and API integration",
+    "evidence": "Python NLP and REST integration experience",
+    "portfolio": "/projects/2025-11-21-text-based-emotion-recognition/",
+    "summary": "Extract resume information, compare candidates with job descriptions and provide explainable match scores through a Python service.",
+    "modules": [
+      "Define resume parsing and skills-normalization contracts",
+      "Develop and evaluate matching and missing-skill explanations",
+      "Review the REST boundary between the PHP portal and Python service"
+    ],
+    "caveat": "The brief requires a PHP/MySQL portal plus a separate Python AI service. Python/NLP support fits the portfolio; full PHP delivery needs additional demonstrated capability.",
+    "validation": "Test missing resume fields, malformed files and scoring consistency. Treat match scores as decision support and check for unjustified ranking differences.",
+    "slug": "ai-powered-smart-job-portal-with-resume-screening-and-career-guidance",
+    "url": "/students/projects/ai-powered-smart-job-portal-with-resume-screening-and-career-guidance/"
+  }
+]
